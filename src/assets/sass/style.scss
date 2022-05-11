@@ -1,5 +1,7 @@
-$clr-prime: #dc3c0b;
-body {
-  font-family: sans-serif;
-  background-color: $clr-prime;
-}
+
+@use 'reset';
+@use 'vars' as *;
+@use 'mixins' as *;
+@use 'typography' as *;
+@use 'layout';
+
