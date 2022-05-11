@@ -1,4 +1,8 @@
-import another from './another';
+import booking from "./booking";
+import map from "./map";
+import gallery from "./gallery";
 
-another();
+booking();
+gallery();
+map();
 
