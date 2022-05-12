@@ -1,6 +1,33 @@
 
-// Colors
-$clr-bg-red: red;
+$color-txt-body               : #4a4a4a;
+$color-txt-highlight          : #ff5720;
+$color-black                  : #2a2929;
+$color-green                  : #8BC349;
+$color-blue                   : #2096F3;
+$color-blue-light             : #e2f0f3;
+$color-petrol                 : #00BCD3;
+$color-grey-light             : #9E9E9E;
+$color-slate                  : #607D8B;
+$color-brand                  : #00a69b;
 
-// Fonts
-$font-family-default: sans-serif;
+$font-family                  : 'Rubik', sans-serif;
+$font-family-display          : 'Antonio', sans-serif;
+$font-weight-normal           : 300;
+$font-weight-bold             : 400;
+
+$layout-max-width             : 1060px;
+$mq-narrow                    : 35em; // 700px
+$mq-medium                    : 48em; // 960px
+$mq-wide                      : 59em; // 1200px
+
+/**
+* Hamburger menu button
+* ------------------------------------
+*
+**/
+$hamburger-padding-x          : 10px ;
+$hamburger-padding-y          : 10px ;
+$hamburger-layer-width        : 30px ;
+$hamburger-layer-height       : 3px ;
+$hamburger-layer-spacing      : 5px ;
+$hamburger-layer-color        : #fff ;

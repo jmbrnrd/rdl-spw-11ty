@@ -1,9 +1,12 @@
 ---
-title: "SPW Index"
+title: "SPW Templates"
 layout: "layouts/base.njk"
 ---
 
+
 <ul>
-    <li><a href="{{ 'templates/member.html' | url }}">Member SPW</a></li>
+    <li><a href="{{ '/templates/member.html' | url }}">Member SPW {{ pkg.version }}</a></li>
+    <li><a href="{{ '/templates/curated.html' | url }}">Curated SPW {{ pkg.version }}</a></li>
+    <li><a href="{{ '/templates/auto.html' | url }}">Auto SPW {{ pkg.version }}</a></li>
 </ul>
 
