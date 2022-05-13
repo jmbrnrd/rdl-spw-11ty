@@ -1,0 +1,27 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+
+/**
+ * Google map component
+ * -------------------------------------------------
+ */
+#map {
+  height: 480px;
+  width:100%;
+  @include mq($mq-wide) {
+    height: 800px;
+  }
+}
+.map-infowindow {
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+  font-size: 1.8rem;
+  padding: .4rem;
+  text-align: center;
+}

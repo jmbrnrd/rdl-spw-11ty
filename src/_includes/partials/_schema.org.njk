@@ -1,0 +1,30 @@
+<!-- schema -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "{{ restaurant.name }}",
+        "@id": "{{ restaurant.spwUrl }}#id",
+        "url": "{{ restaurant.spwUrl }}",
+        "telephone": "{{ restaurant.phone }}",
+        "servesCuisine": "{{ restaurant.cuisine }}",
+        "acceptsReservations": "true",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ restaurant.streetAddress }}",
+            "addressLocality": "{{ restaurant.addressLocality }}",
+            "postalCode": "{{ restaurant.postalCode }}",
+            "addressCountry": {{ restaurant.addressCountry }}
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": {{ restaurant.geocode.lat }},
+    "longitude": {{ restaurant.geocode.lng }}
+    },
+    "sameAs": [
+        "{{ restaurant.social.facebook }}",
+        "{{ restaurant.social.instagram }}",
+        "{{ restaurant.social.twitter }}"
+        ]
+    }
+</script>

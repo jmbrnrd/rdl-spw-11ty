@@ -1,6 +1,24 @@
 
     {
         "name": "RC Demo Restaurant",
-        "addressStreet": ""
+        "streetAddress": "115 Woodmansterne Road",
+        "addressLocality": "Carshalton Beeches",
+        "addressCountry": "GB",
+        "postalCode": "SM5 4EG",
+        "phone": "07467 030572",
+        "cuisine": "British",
+        "spwUrl": "https://spw.restaurantcollective.org.uk/RC-Demo-Restaurant/",
+        "geocode": {
+            "lat": "50",
+            "lng": "-1"
+        },
+        "social": {
+            "facebook": "",
+            "instagram": "",
+            "twitter": ""
+        },
+        "image": "",
+        "subtitle": "RESTAURANT & BAR"
+
     }
 

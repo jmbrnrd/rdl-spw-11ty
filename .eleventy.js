@@ -6,7 +6,7 @@ module.exports = function (config) {
     //templateFormats: ['md', '11ty.js'],
     dir: {
       input: "src",
-      output: "public",
+      output: "public"
     },
   };
 };

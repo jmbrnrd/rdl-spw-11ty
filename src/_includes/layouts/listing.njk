@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+
+<!-- {{ pkg.version }} -->
+
+<head>
+
+	<meta charset="utf-8">
+    <title>{{ restaurant.name }} | {{ restaurant.streetAddress }} {{ restaurant.postalCode }}</title>
+    <meta name="description" content="Site designed & developed by Restaurant Developments Ltd">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'partials/_schema.org.njk' %}
+
+    {% include 'partials/_open-graph.njk' %}
+
+    {% include 'partials/_google-fonts.njk' %}
+
+	<link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}" />
+	<script type="module" src="{{ '/assets/scripts/listing.js' | url }}" defer></script>
+
+</head>
+
+<body>
+
+	{{ content | safe }}
+
+</body>
+</html>
