@@ -1,0 +1,10 @@
+@use "vars";
+@use "reset";
+@use "typography";
+
+body {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

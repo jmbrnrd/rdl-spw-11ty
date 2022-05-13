@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ language }}">
+
+<!-- {{ pkg.version }} -->
+
+<head>
+
+	<meta charset="utf-8">
+    <title>{{ restaurant.name }} | {{ restaurant.streetAddress }} {{ restaurant.postalCode }}</title>
+    <meta name="description" content="Site designed & developed by Restaurant Developments Ltd">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'partials/_google-fonts.njk' %}
+
+	<link rel="stylesheet" href="{{ '/assets/styles/index.css' | url }}" />
+
+</head>
+
+<body>
+
+	{{ content | safe }}
+
+</body>
+</html>

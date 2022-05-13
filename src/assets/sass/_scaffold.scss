@@ -171,3 +171,122 @@ footer {
     grid-column: 2 / 4;
   }
 }
+
+/**
+ * Sections
+ * ---------------------------------------------------
+ */
+.content-section {
+  max-width: $layout-max-width;
+  margin: 0 auto;
+  padding: 1rem 32px 2rem;
+  @include mq($mq-medium) {
+    padding-top: 8rem;
+  }
+}
+.content-section-full-width {
+  max-width: 100vw;
+  padding: 0;
+  margin:0;
+}
+.content-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 2rem;
+  aside {
+    flex: 1;
+    &:not(:first-child){ padding: 1rem 0 0 0; }
+    h2 {
+      font-size: 1.25rem;
+      color: $color-txt-highlight;
+      font-weight: $font-weight-bold;
+    }
+  }
+  @include mq($mq-medium) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 3rem;
+    aside {
+      &:not(:first-child){
+        padding: 0 0 0 2rem;
+      }
+    }
+  }
+}
+.descriptions {
+  p:first-child {
+    font-weight: $font-weight-bold;
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+  @include mq($mq-medium) {
+    flex: 2;
+    padding-right: 1rem;
+    p:first-child { font-size: 2.8rem; }
+  }
+}
+.opening-times {
+  margin-top: 2rem;
+  dd {
+    white-space: pre-line;
+  }
+  @include mq($mq-medium) {
+    margin-top: 0;
+    padding-left: 1rem;
+    flex: 1;
+  }
+}
+.additional-features {
+  font-size: 0;
+  margin-top: 3rem;
+  li {
+    display: inline-block;
+    padding: 6px 12px;
+    background: $color-petrol;
+    border-radius: 300px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: $font-weight-bold;
+    color: #fff;
+    margin: 0 .2rem .2rem 0;
+    @include mq($mq-medium) {
+      font-size: 1.4rem;
+    }
+  }
+}
+dd {
+  .social-links {
+    display: flex;
+    height: auto;
+    padding-top: 1rem;
+    gap: 8px;
+    white-space: normal;
+
+    a {
+      display: inline-block;
+      width: 40px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+.social {
+  dd {
+    font-size: 0;
+    margin: 1rem 1rem 0 0;
+    float: left;
+    a.social-link {
+      display: inline-block;
+      width: 4rem;
+      height: auto;
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 
 @use 'reset';
-@use 'vars';
-@use 'mixins';
 @use 'typography';
 @use 'animations';
 @use 'scaffold';
 @use 'navigation';
+@use "gallery";
 @use "map";
+@use "bookings";
 @use "menus";
 
 
