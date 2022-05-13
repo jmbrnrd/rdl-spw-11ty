@@ -73,7 +73,7 @@ permalink: "/templates/member.html"
             <li><a href="#contacts" title="Contact">CONTACTS</a></li>
             <li><a href="#location" title="Find">Location</a></li>
         </ul>
-        <h2 class="desc-one-sentence">One sentence restaurant description</h2>
+        <h2 class="desc-one-sentence">{{ restaurant.description.sentence }}</h2>
 
     </section>
 
@@ -83,73 +83,45 @@ permalink: "/templates/member.html"
 
             <div class="descriptions desc-full" aria-label="description">
 
-                <p>This is the first sentence of the FULL DESCRIPTION that is extracted and used as a lead paragraph. The
-                    rest of the full description is then displayed below. This is used for a detailed marketing heavy
-                    description of the restaurant and its attractions.</p>
+                <p>{{ restaurant.description.full }}</p>
 
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
+
+                    {%- for feature in restaurant.features -%}
+                    <li>{{ feature }}</li>
+                    {%- endfor -%}
+
                 </ul>
 
             </div>
 
             <!-- times -->
             <aside class="opening-times">
-                <button
-                        class="btn-book"
+                <button class="btn-book"
                         data-mzid="61c46fa7ccf9d0cba39b6387"
                         data-mzkey="61a45e24757d22026a87f369">
                     BOOK ONLINE
                 </button>
                 <dl>
                     <dt>Telephone</dt>
-                    <dd><a href="tel:+33492005090">+33 (0)4 92 00 50 90</a></dd>
+                    <dd><a href="tel:{{ restaurant.phone }}">{{ restaurant.phone }}</a></dd>
                     <dt>Address</dt>
-                    <dd>7 Promenade des Anglais, 06000 Nice, France</dd>
+                    <dd>{{ restaurant.addressStreet }}</dd>
+                    <dd>{{ restaurant.addressLocality }}</dd>
+                    <dd>{{ restaurant.addressRegion }} {{ restaurant.postalCode }}</dd>
                     <dt>Opening Times</dt>
-                    <dd>BREAKFAST: Everyday 8am – 12
-                        LUNCH: Everyday 12noon – 3pm
-                        DINNER: Everyday 5pm – 11pm
-                        BAR: Everyday 8am - 12:30pm
-                    </dd>
+                    <dd>{{ restaurant.openingTimes }}</dd>
                     <!-- Optional section tag start - Opening Notes -->
                     <dt>PLEASE NOTE:</dt>
-                    <dd>Opening notes</dd>
+                    <dd>{{ restaurant.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
                 </dl>
             </aside>
         </div>
 
-        <!-- gallery -->
-        <div aria-label="gallery" class="image-gallery">
-            <a
-                    class="glightbox"
-                    href="https://res.cloudinary.com/rdl/image/upload/q_auto,f_auto/images/n1a7y8edfgrdzmovaw00.jpg">
-                <img
-                        loading="lazy"
-                        src="https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,f_auto/images/n1a7y8edfgrdzmovaw00.jpg"
-                        alt="Restaurant image 1"/>
-            </a>
-            <a
-                    class="glightbox"
-                    href="https://res.cloudinary.com/rdl/image/upload/q_auto,f_auto/images/kct4ixuc1kjoqydsnd3h.jpg">
-                <img
-                        loading="lazy"
-                        src="https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,f_auto/images/kct4ixuc1kjoqydsnd3h.jpg"
-                        alt="Restaurant image 2"/>
-            </a>
-            <a
-                    class="glightbox"
-                    href="https://res.cloudinary.com/rdl/image/upload/q_auto,f_auto/images/spwtf1dmc8thrggwbn2l.png">
-                <img
-                        loading="lazy"
-                        src="https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,f_auto/images/spwtf1dmc8thrggwbn2l.png"
-                        alt="Restaurant image 3"/>
-            </a>
-        </div>
+        {% include 'partials/_gallery.njk' %}
+
     </section>
 
     <!-- menu -->

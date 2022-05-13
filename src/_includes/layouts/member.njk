@@ -17,6 +17,9 @@
     {% include 'partials/_google-fonts.njk' %}
 
 	<link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}" />
+
+	{% include 'partials/_hero-image.njk' %}
+
 	<script type="module" src="{{ '/assets/scripts/main.js' | url }}" defer></script>
 	<script async defer src="https://www.googletagmanager.com/gtag/js?id={{ gtag }}"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6ktQeIUDl0vJBtQoXeAczfWs3EyPMWU&language={{ language }}"></script>

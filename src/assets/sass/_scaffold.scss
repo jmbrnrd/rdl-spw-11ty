@@ -123,6 +123,7 @@
     border-width: 0 0 2px 2px;
   }
 }
+
 footer {
   color: $color-grey-light;
   background-color: $color-black;
@@ -182,6 +183,10 @@ footer {
   padding: 1rem 32px 2rem;
   @include mq($mq-medium) {
     padding-top: 8rem;
+  }
+  h2 {
+    font-size: 3.25rem;
+    font-weight: $font-weight-bold;
   }
 }
 .content-section-full-width {

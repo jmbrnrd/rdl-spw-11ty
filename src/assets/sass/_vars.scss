@@ -25,9 +25,12 @@ $mq-wide                      : 59em; // 1200px
 * ------------------------------------
 *
 **/
-$hamburger-padding-x          : 10px ;
-$hamburger-padding-y          : 10px ;
-$hamburger-layer-width        : 30px ;
-$hamburger-layer-height       : 3px ;
-$hamburger-layer-spacing      : 5px ;
-$hamburger-layer-color        : #fff ;
+$hamburger-padding                         : 8px 12px ;
+$hamburger-layer-color                     : #fff ;
+$hamburger-line-width                      : 40px !default;
+$hamburger-line-height                     : 4px !default;
+$hamburger-line-spacing                    : 6px !default;
+$hamburger-line-color                      : white;
+$hamburger-line-border-radius              : 2px !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
