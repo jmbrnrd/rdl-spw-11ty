@@ -8,9 +8,9 @@
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass  --no-source-map src/assets/sass:public/assets/styles",
     "build:eleventy": "eleventy",
-    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
+    "postbuild": "postcss public/assets/styles/*.css -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy"
+    "build": "MY_ENVIRONMENT=production npm-run-all build:sass build:eleventy"
   },
   "repository": {
     "type": "git",
