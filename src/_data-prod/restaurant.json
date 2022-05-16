@@ -3,23 +3,23 @@
         "id": "{{ rdl_restaurant_id }}",
         "name": "{{ rdl_restaurant_name }}",
         "subtitle": "{{ rdl_strapline }}",
-        "addressStreet": "115 Woodmansterne Road",
-        "addressLocality": "Carshalton",
-        "addressRegion": "Surrey",
-        "addressCountry": "GB",
-        "postalCode": "SM5 4EG",
-        "phone": "07467 030572",
+        "addressStreet": "{{ rdl_streetAddress }}",
+        "addressLocality": "{{ rdl_addressLocality }}",
+        "addressRegion": "{{ rdl_addressRegion }}",
+        "addressCountry": "{{ rdl_addressCountry }}",
+        "postalCode": "{{ rdl_postalCode }}",
+        "phone": "{{ rdl_phone }}",
         "email": "info@sarao-restaurant.com",
         "website": "https://www.sarao-restaurant.com/",
-        "cuisine": "British",
-        "spwUrl": "https://spw.restaurantcollective.org.uk/RC-Demo-Restaurant/",
+        "cuisine": "{{ rdl_cuisine }}",
+        "spwUrl": "{{ spw_url }}",
         "openingTimes": "Sun: Closed all day\n Mon: 08:00 - 18:00\n Tue: 08:00 - 18:00\n Wed: 08:00 - 18:00\n Thu: 08:00 - 18:00\n Fri: 08:00 - 18:00\n Sat: Closed all day",
         "openingNotes": "Open all year",
         "groupBookings": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com.com or by phone at +33 (0) 4 92 00 50 90.",
         "privateDining": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events.",
         "geocode": {
-            "lat": "51.347964322477",
-            "lng": "-0.17375967116461313"
+            "lat": {{ rdl_restaurant_lat }},
+            "lng": {{ rdl_restaurant_lng }}
         },
         "social": {
             "facebook": "https://www.facebook.com/restaurantcollective/",
@@ -28,9 +28,9 @@
         },
         "imageDefault": "dbh7yg82buiqmrfbamny.jpg",
         "imageGallery": [
-            "i1tw0w59iplkvn1xw1tm.jpg",
-            "gohsy0y0px96f2jofs2r.jpg",
-            "ql4kyfak10hqfyqngopq.jpg"
+            "{{ url_facebook }}",
+            "{{ url_instagram }}",
+            "{{ url_twitter }}"
         ],
         "description": {
             "sentence": "A one sentence restaurant description",

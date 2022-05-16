@@ -111,26 +111,27 @@ permalink: "/templates/member.html"
                     <dd>{{ restaurant.addressRegion }} {{ restaurant.postalCode }}</dd>
                     <dt>Opening Times</dt>
                     <dd class="times">{{ restaurant.openingTimes }}</dd>
+
                     <!-- Optional section tag start - Opening Notes -->
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ restaurant.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
+
                 </dl>
             </aside>
         </div>
-
+        <!-- Optional section tag start - Images -->
         {% include 'partials/_gallery.njk' %}
-
+        <!-- Optional section tag end - Images -->
     </section>
 
+    <!-- Optional section tag start - HTML Menus -->
     <!-- menu -->
     <section id="menus" class="content-section">
         <h2>Menus</h2>
         <div class=" menu-html">
             <!-- general -->
-            <p>The following dishes are selected from our current menus as a sample. Our ingredients are predominately
-                fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or
-                gluten-free diets. All of our fish are from sustainable sources.</p>
+            <p>{{ rdl_menus_overview }}</p>
             <p><a href="#pdfMenus">Our latest menus can be downloaded in PDF format below.</a></p>
             <!-- sample Menu -->
             <div class="content-sub-section">
@@ -240,7 +241,10 @@ permalink: "/templates/member.html"
             </div>
         </div>
     </section>
+    <!-- Optional section tag end - HTML Menus -->
+
     <!-- menu downloads -->
+    <!-- Optional section tag start - Downloadable Menus -->
     <section class="content-section menu-pdf" id="pdfMenus">
         <h2>downloadable menus</h2>
         <p>Any of these menus can be download to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
@@ -264,6 +268,7 @@ permalink: "/templates/member.html"
             </div>
         </div>
     </section>
+    <!-- Optional section tag end - Downloadable Menus -->
 
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
