@@ -6,10 +6,9 @@ gtag: "G-RX7PGJKJGS"
 permalink: "/templates/member.html"
 ---
 
-
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="View Navigation">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ restaurant.name }} navigation menu">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -111,7 +110,7 @@ permalink: "/templates/member.html"
                     <dd>{{ restaurant.addressLocality }}</dd>
                     <dd>{{ restaurant.addressRegion }} {{ restaurant.postalCode }}</dd>
                     <dt>Opening Times</dt>
-                    <dd>{{ restaurant.openingTimes }}</dd>
+                    <dd class="times">{{ restaurant.openingTimes }}</dd>
                     <!-- Optional section tag start - Opening Notes -->
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ restaurant.openingNotes }}</dd>
@@ -333,10 +332,9 @@ permalink: "/templates/member.html"
             <aside>
                 <dl>
                     <dt>Public Transport</dt>
-                    <dd>Nice mainline station is 1.6km</dd>
-                    <dd>Bus routes 27, 34, 102</dd>
+                    <dd>{{ restaurant.publicTransport }}</dd>
                     <dt>Parking</dt>
-                    <dd>There are pay and display bays in the streets surrounding the restaurant.</dd>
+                    <dd>{{ restaurant.parking }}</dd>
                 </dl>
             </aside>
         </div>
@@ -346,9 +344,9 @@ permalink: "/templates/member.html"
     <section class="map-section" aria-label="map">
         <div class="content-block"
              id="location"
-             data-lat="43.6950706"
-             data-lng="7.2617046"
-             data-label="Sarao Restaurant & Bar">
+             data-lat="{{ restaurant.geocode.lat }}"
+             data-lng="{{ restaurant.geocode.lng }}"
+             data-label="{{ restaurant.name }}">
             <div id="map" data-intersection="300"></div>
         </div>
     </section>
@@ -356,6 +354,12 @@ permalink: "/templates/member.html"
 
 <footer>
     <section class="footer-section">
+        <div class="col-span-2">
+            <p><strong>Sarao Restaurant</strong> is a member of the Restaurant Collective, a non-profit organisation of
+                leading restaurateurs and industry professionals whose goal is to deliver value to their customers whilst
+                making a positive contribution to the local community and environment. Visit <a
+                        href="https://restaurantcollective.org.uk">restaurantcollective.org.uk</a> for more information</p>
+        </div>
         <div>
             <a href="https://restaurantcollective.uk" class="ftr-logo-sml">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 178">
@@ -365,12 +369,6 @@ permalink: "/templates/member.html"
                     </g>
                 </svg>
             </a>
-        </div>
-        <div class="col-span-2">
-            <p><strong>Sarao Restaurant</strong> is a member of the Restaurant Collective, a non-profit organisation of
-                leading restaurateurs and industry professionals whose goal is to deliver value to their customers whilst
-                making a positive contribution to the local community and environment. Visit <a
-                        href="https://restaurantcollective.org.uk">restaurantcollective.org.uk</a> for more information</p>
         </div>
     </section>
 </footer>

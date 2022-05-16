@@ -1,7 +1,5 @@
 @use 'vars' as *;
 
-
-
 /* Set base font size to 62.5% (10px) to simplify the use of REM i.e. 1.6rem = 16px etc. */
 html {
   font-size: 62.5%;
@@ -20,7 +18,6 @@ input {
   font: normal $font-weight-normal 2rem / 1.4 $font-family;
   color: $color-txt-body;
 }
-
 h1 {
   font-size: 3.2rem;
   line-height: 1.1;

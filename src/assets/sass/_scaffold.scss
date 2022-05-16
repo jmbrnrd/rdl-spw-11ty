@@ -95,6 +95,7 @@
 
   }
 }
+
 // scroll arrow
 .scroll-down {
   position: absolute;
@@ -129,15 +130,18 @@ footer {
   background-color: $color-black;
   padding: 2rem;
   .footer-section {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-    max-width: $layout-max-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    //max-width: $layout-max-width;
     margin: auto;
     div {
       color: #ddd;
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 1rem;
       h3 { text-transform: none; }
       p { font-size: 1.2rem; margin: 0;}
@@ -165,7 +169,7 @@ footer {
       }
     }
     @include mq($mq-medium) {
-      grid-template-columns: 1fr 2fr 1fr;
+      flex-direction: row;
     }
   }
   .col-span-2 {
@@ -235,7 +239,7 @@ footer {
 }
 .opening-times {
   margin-top: 2rem;
-  dd {
+  dd.times {
     white-space: pre-line;
   }
   @include mq($mq-medium) {
