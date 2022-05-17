@@ -41,11 +41,27 @@
     "Dog-friendly",
     "Outside seating"
   ],
-    "publicTransport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
-    "parking": "There are pay and display bays in the streets surrounding the restaurant.",
-    "menus": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
-    "reservations": {
-        "info": ""
-    }
+  "publicTransport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
+  "parking": "There are pay and display bays in the streets surrounding the restaurant.",
+  "menus": {
+    "overview": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
+    "sections": [
+      {
+        "name": "Section 1",
+        "dishes": [
+          {
+            "name": "",
+            "price": "",
+            "description": "",
+            "attributes": ""
+          }
+        ]
+      }
+    ]
+  },
+
+  "reservations": {
+      "info": ""
+  }
 }
 

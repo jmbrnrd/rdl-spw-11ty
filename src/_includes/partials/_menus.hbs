@@ -1,0 +1,69 @@
+<!-- Optional section tag start - HTML Menus -->
+<section id="menus" class="content-section">
+    <h2>MENUS</h2>
+    <div class="menu-html">
+        <p>{{ rdl_menus_overview }}</p>
+        <!-- sample Menu -->
+        <div class="content-sub-section">
+            <div class="menu-html">
+                <ul class="menu-key">
+                    <li><i class="vt"></i>Vegetarian</li>
+                    <li><i class="vg"></i>Vegan</li>
+                    <li><i class="gf"></i>Gluten-free</li>
+                </ul>
+                <!-- Optional section tag start - Dish Section 1 -->
+                <div id="menu_section_1" class="menu-section">
+                    <h3 class="menu-section-title">{{ menu_section_1_name }}</h3>
+                    <ul class="menu-items">
+                        {{#each menu_section_1_dishes }}
+                            <li>
+                                <h4>{{ dish_name }}</h4>
+                                <span>£{{ dish_price }}</span>
+                                <span>{{ dish_desc }}</span>
+                                {{#each dish_attributes}}
+                                    <i class="{{ this }}"></i>
+                                {{/each}}
+                            </li>
+                        {{/each }}
+                    </ul>
+                </div>
+                <!-- Optional section tag end - Dish Section 1 -->
+                <!-- Optional section tag start - Dish Section 2 -->
+                <div id="menu_section_2" class="menu-section">
+                    <h3 class="menu-section-title">{{ menu_section_2_name }}</h3>
+                    <ul class="menu-items">
+                        {{#each menu_section_2_dishes }}
+                            <li>
+                                <h4 class="v">{{ dish_name }}</h4>
+                                <span>£{{ dish_price }}</span>
+                                <span>{{ dish_desc }}</span>
+                                {{#each dish_attributes}}
+                                    <i class="{{ this }}"></i>
+                                {{/each}}
+                            </li>
+                        {{/each }}
+                    </ul>
+                </div>
+                <!-- Optional section tag end - Dish Section 2 -->
+                <!-- Optional section tag start - Dish Section 3 -->
+                <div id="menu_section_3" class="menu-section">
+                    <h3 class="menu-section-title">{{ menu_section_3_name }}</h3>
+                    <ul class="menu-items">
+                        {{#each menu_section_3_dishes }}
+                            <li>
+                                <h4 class="v">{{ dish_name }}</h4>
+                                <span>£{{ dish_price }}</span>
+                                <span>{{ dish_desc }}</span>
+                                {{#each dish_attributes}}
+                                    <i class="{{ this }}"></i>
+                                {{/each}}
+                            </li>
+                        {{/each }}
+                    </ul>
+                </div>
+                <!-- Optional section tag end - Dish Section 3 -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Optional section tag end - HTML Menus -->
