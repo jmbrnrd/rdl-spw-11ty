@@ -11,17 +11,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
 
-    {% include 'partials/_schema.org.njk' %}
+    {{> partials/_schema.org }}
 
-    {% include 'partials/_open-graph.njk' %}
+    {{> partials/_open-graph }}
 
-    {% include 'partials/_fonts.njk' %}
+    {{> partials/_fonts }}
 
-	<link rel="stylesheet" href="{{ '/assets/styles/style.css' | url }}" />
+	<link rel="stylesheet" href="/assets/styles/style.css" />
 
-	{% include 'partials/_hero-image.njk' %}
+	{{> partials/_hero-image }}
 
-	<script type="module" src="{{ '/assets/scripts/main.js' | url }}" defer></script>
+	<script type="module" src="/assets/scripts/main.js" defer></script>
 	<script async defer src="https://www.googletagmanager.com/gtag/js?id={{ gtag }}"></script>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6ktQeIUDl0vJBtQoXeAczfWs3EyPMWU&language={{ language }}"></script>
 
@@ -29,7 +29,7 @@
 
 <body>
 
-	{{ content | safe }}
+	{{{ content }}}
 
 </body>
 </html>

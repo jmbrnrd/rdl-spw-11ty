@@ -14,12 +14,12 @@
             "streetAddress": "{{ restaurant.streetAddress }}",
             "addressLocality": "{{ restaurant.addressLocality }}",
             "postalCode": "{{ restaurant.postalCode }}",
-            "addressCountry": {{ restaurant.addressCountry }}
+            "addressCountry": "{{ restaurant.addressCountry }}"
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": {{ restaurant.geocode.lat }},
-    "longitude": {{ restaurant.geocode.lng }}
+            "latitude": "{{ restaurant.geocode.lat }}",
+    "longitude": "{{ restaurant.geocode.lng }}"
     },
     "sameAs": [
         "{{ restaurant.social.facebook }}",

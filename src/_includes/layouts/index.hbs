@@ -10,15 +10,15 @@
     <meta name="description" content="Site designed & developed by Restaurant Developments Ltd">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% include 'partials/_fonts.njk' %}
+    {{> partials/_fonts }}
 
-	<link rel="stylesheet" href="{{ '/assets/styles/index.css' | url }}" />
+	<link rel="stylesheet" href="/assets/styles/index.css" />
 
 </head>
 
 <body>
 
-	{{ content | safe }}
+	{{{ content }}}
 
 </body>
 </html>

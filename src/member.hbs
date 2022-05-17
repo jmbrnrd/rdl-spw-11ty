@@ -1,7 +1,7 @@
 ---
 title: "Member SPW"
 language: "en"
-layout: "layouts/member.njk"
+layout: "layouts/member.hbs"
 gtag: "G-RX7PGJKJGS"
 permalink: "/templates/member.html"
 ---
@@ -86,11 +86,9 @@ permalink: "/templates/member.html"
 
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">
-
-                    {%- for feature in restaurant.features -%}
-                    <li>{{ feature }}</li>
-                    {%- endfor -%}
-
+                    {{#each restaurant.features }}
+                    <li>{{ this }}</li>
+                    {{/each}}
                 </ul>
 
             </div>
@@ -121,7 +119,7 @@ permalink: "/templates/member.html"
             </aside>
         </div>
         <!-- Optional section tag start - Images -->
-        {% include 'partials/_gallery.njk' %}
+        {{> partials/_gallery }}
         <!-- Optional section tag end - Images -->
     </section>
 

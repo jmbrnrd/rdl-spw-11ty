@@ -7,7 +7,7 @@ module.exports = function (config) {
     dir: {
       input: "src",
       output: "public",
-      data: process.env.MY_ENVIRONMENT === "production" ? "_data-prod" : "_data-dev"
+      data: process.env.MY_ENVIRONMENT === "production" ? "_data/prod" : "_data/dev"
     },
   };
 };
