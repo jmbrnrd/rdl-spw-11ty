@@ -1,5 +1,5 @@
 export default function() {
-    console.log('Booking Widget loaded');
+    console.log('booking.js loaded');
     // Reference the book button
     const bkgButtons = document.querySelectorAll('[data-mzid]');
 // Wait for DOM to be loaded

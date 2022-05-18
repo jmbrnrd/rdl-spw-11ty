@@ -1,5 +1,5 @@
 export default function () {
-    console.log('Map loaded');
+    console.log('map.js loaded');
     /**
      * Lazy load the Googlemap user scrolls
      */

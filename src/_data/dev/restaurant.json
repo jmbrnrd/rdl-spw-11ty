@@ -1,6 +1,8 @@
 
     {
         "id": "EN03392596",
+        "mzId": "61c46fa7ccf9d0cba39b6387",
+        "mzKey": "61a45e24757d22026a87f369",
         "name": "RC Demo Restaurant",
         "subtitle": "RESTAURANT & BAR",
         "addressStreet": "115 Woodmansterne Road",
@@ -151,6 +153,13 @@
                             "attributes": [ "vg", "vt", "gf" ]
                         }
                     ]
+                }
+            ],
+            "pdfs": [
+                {
+                    "name": "a la carte dinner menu",
+                    "date": "1 May 2018",
+                    "path": "https://res.cloudinary.com/rdl/image/upload/v1500984639/restaurants/1036/Iffley_Blue_-_Main_Menu.pdf"
                 }
             ]
         },

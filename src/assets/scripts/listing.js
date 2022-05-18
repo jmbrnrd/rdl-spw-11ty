@@ -1,8 +1,7 @@
 import map from "./map";
-import gallery from "./gallery";
 import formatting from "./formatting";
+import claim from './claim';
 
-gallery();
 formatting()
+claim();
 map();
-

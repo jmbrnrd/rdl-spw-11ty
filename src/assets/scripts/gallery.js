@@ -1,3 +1,7 @@
+import Glightbox from 'glightbox/src/js/glightbox';
+
 export default function () {
-    console.log('Image gallery loaded');
+    console.log('gallery.js loaded');
+    const lightbox = Glightbox();
+    console.log(lightbox);
 }

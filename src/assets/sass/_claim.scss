@@ -1,0 +1,207 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+/**
+ * Claim form model
+ * -------------------------------------------------
+ */
+.booking-request-thanks {
+  display: none;
+  align-items: center;
+  padding: 24px;
+  font-weight: $font-weight-bold;
+  background: white;
+  border-radius: 10px;
+  box-shadow: $modal-box-shadow;
+  opacity: 0;
+  img {
+    display: inline-block;
+    margin-right: 8px;
+  }
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  background-color: hsla(0, 0%, 0%, .4);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+
+  .modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 2.4rem;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+
+    h2 {
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin: 1.6rem 0 0;
+    }
+
+    input {
+      font-size: 2rem;
+      line-height: 1;
+      padding: 1rem 0 0.5rem;
+      width: 100%;
+      outline: none;
+      border: 0;
+      border-bottom: 3px solid #999;
+
+      &:focus {
+        border-bottom-color: #212121;
+      }
+    }
+  }
+
+  .claim-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: $modal-box-shadow;
+    opacity: 0;
+    transition: opacity 300ms ease-out;
+
+    form {
+      padding: 2.4rem;
+    }
+
+    .modal-actions {
+      display: flex;
+
+      .btn-cancel {
+        background: transparent;
+        color: $color-txt-body;
+      }
+
+      .btn-submit,
+      .btn-cancel {
+        font-size: 14px;
+        font-weight: $font-weight-normal;
+        letter-spacing: 1px;
+      }
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0 0 1rem;
+      font-size: 18px;
+      font-weight: $font-weight-normal;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    ul {
+      width: 100%;
+      list-style: none;
+
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        margin: 0 0 8px;
+        line-height: 3.2rem;
+
+        img {
+          display: inline-block;
+          height: 2.4rem;
+          margin-right: 16px;
+        }
+      }
+    }
+
+    button {
+      flex: 1;
+      background: $color-txt-highlight;
+      border: 0;
+      padding: 1.2rem;
+      border-radius: 8px;
+      color: #fff;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 200ms ease-out;
+
+      &:hover {
+        background-color: darken($color-txt-highlight, 5%);
+      }
+    }
+
+    .text-field {
+      position: relative;
+      margin: 2.4rem auto;
+      width: 320px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    input {
+      font-size: 2rem;
+      line-height: 1;
+      padding: 1rem 0 0.5rem;
+      width: 100%;
+      outline: none;
+      border: 0;
+      border-bottom: 3px solid #999;
+
+      &:focus {
+        border-bottom-color: #212121;
+      }
+    }
+
+    label {
+      font-size: 1.6rem;
+      position: absolute;
+      color: #666;
+      left: 0;
+      top: 13px;
+      pointer-events: none;
+      transition: 0.2s ease all;
+    }
+
+    form:focus,
+    input:focus,
+    input:valid {
+      ~ label {
+        top: -10px;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+    }
+
+    input:not(:placeholder-shown) {
+      ~ label {
+        top: -10px;
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+
+      &:invalid ~ label {
+        color: red;
+      }
+    }
+  }
+}
+

@@ -4,3 +4,66 @@ language: "en"
 layout: "layouts/listing.hbs"
 permalink: "/templates/curated.html"
 ---
+
+<main id="home">
+
+    <!-- hero -->
+    <section id="hero" class="hero-section golden-ratio">
+
+        <!-- branding -->
+        <div class="brand-container fade-in">
+            <h2>{{ restaurant.name }}</h2>
+            <h3 class="desc-strapline">{{ restaurant.subtitle }}</h3>
+        </div>
+
+        <h2 class="desc-one-sentence">{{ restaurant.description.sentence }}</h2>
+
+        <a href="#about" class="scroll-down"></a>
+
+    </section>
+
+    <!-- about -->
+    <section id="about" class="content-section" aria-label="introduction">
+        <div class="content-block">
+
+            <div class="descriptions desc-full" aria-label="description">
+
+                <p>{{ restaurant.description.full }}</p>
+
+                <!-- Feature keywords-->
+                <ul class="additional-features" aria-label="features">
+                    {{#each restaurant.features }}
+                        <li>{{ this }}</li>
+                    {{/each}}
+                </ul>
+
+                {{> partials/gallery }}
+
+            </div>
+
+            <!-- times -->
+            <aside class="opening-times">
+                <dl>
+                    <dt>Telephone</dt>
+                    <dd><a href="tel:{{ restaurant.phone }}">{{ restaurant.phone }}</a></dd>
+                    <dt>Address</dt>
+                    <dd>{{ restaurant.addressStreet }}</dd>
+                    <dd>{{ restaurant.addressLocality }}</dd>
+                    <dd>{{ restaurant.addressRegion }} {{ restaurant.postalCode }}</dd>
+                    <dt>Opening Times</dt>
+                    <dd class="times">{{ restaurant.openingTimes }}</dd>
+                    <!-- Optional section tag start - Opening Notes -->
+                    <dt>PLEASE NOTE:</dt>
+                    <dd>{{ restaurant.openingNotes }}</dd>
+                    <!-- Optional section tag end - Opening Notes -->
+                </dl>
+            </aside>
+        </div>
+
+    </section>
+
+    {{> partials/map }}
+
+</main>
+
+{{> partials/footer }}

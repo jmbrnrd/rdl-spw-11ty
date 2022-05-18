@@ -1,5 +1,7 @@
 {
   "id": "{{ rdl_restaurant_id }}",
+  "mzId": "{{ mzId }}",
+  "mzKey": "{{ mzkey }}",
   "name": "{{ rdl_restaurant_name }}",
   "subtitle": "{{ rdl_strapline }}",
   "addressStreet": "{{ rdl_streetAddress }}",
@@ -25,41 +27,26 @@
     "instagram": "https://www.instagram.com/restaurantcollectiveuk/",
     "twitter": ""
   },
-  "imageDefault": "dbh7yg82buiqmrfbamny.jpg",
-  "imageGallery": [
-    "{{ url_facebook }}",
-    "{{ url_instagram }}",
-    "{{ url_twitter }}"
-  ],
+  "imageDefault": "{{ rdl_default_image }}",
+  "imageGallery": "{{ rdl_images }}",
   "description": {
-    "sentence": "A one sentence restaurant description",
-    "paragraph": "",
-    "full": "This is the first sentence of the FULL description that is extracted and used as a lead paragraph. The rest of the full description is then displayed below. This is used for a detailed marketing heavy description of the restaurant and its attractions."
+    "sentence": "{{ rdl_desc_sentence }}",
+    "paragraph": "{{ rdl_desc_paragraph }}",
+    "full": "{{ rdl_desc_full }}"
   },
-  "features": "{{ rdl_restaurant_features }}",
+  "features": "{{ rdl_feature_tags }}",
   "publicTransport": "{{ rdl_restaurant_transport }}",
   "parking": "{{ rdl_restaurant_parking }}",
   "menus": {
     "overview": "{{ rdl_menus_overview }}",
-    "sections": [
-      {
-        "name": "Section 1",
-        "dishes": [
-          {
-            "name": "",
-            "price": "",
-            "description": "",
-            "attributes": [
-
-            ]
-          }
-        ]
-      }
-    ]
+    "sections": "{{ rdl_menu_sections }}",
+    "pdfs": "{{ rdl_menu_pdfs }}"
   },
 
   "reservations": {
-      "info": ""
+    "info": "{{ rdl_reservations_info }}",
+    "groups": "{{ rdl_bkg_groups }}",
+    "private": "{{ rdl_bkg_private  }}"
   }
 }
 

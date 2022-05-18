@@ -21,33 +21,13 @@ permalink: "/templates/member.html"
         <h1>{{ restaurant.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
-        <li>
-            <a href="#about" title="About ">
-                ABOUT
-            </a>
-        </li>
+        <li><a href="#about" title="About ">ABOUT</a></li>
         <!-- Optional section tag start - Menus NavBar -->
-        <li>
-            <a href="#menus" title="Menus ">
-                MENUS
-            </a>
-        </li>
+        <li><a href="#menus" title="Menus ">MENUS</a></li>
         <!-- Optional section tag end - Menus NavBar -->
-        <li>
-            <a href="#reservations" title="Reservations ">
-                RESERVATIONS
-            </a>
-        </li>
-        <li>
-            <a href="#contacts" title="Contact ">
-                CONTACTS
-            </a>
-        </li>
-        <li>
-            <a href="#location" title="Find ">
-                Location
-            </a>
-        </li>
+        <li><a href="#reservations" title="Reservations">RESERVATIONS</a></li>
+        <li><a href="#contacts" title="Contact ">CONTACTS</a></li>
+        <li><a href="#location" title="Find ">Location</a></li>
     </ul>
 </nav>
 
@@ -95,11 +75,13 @@ permalink: "/templates/member.html"
 
             <!-- times -->
             <aside class="opening-times">
+
                 <button class="btn-book"
-                        data-mzid="61c46fa7ccf9d0cba39b6387"
-                        data-mzkey="61a45e24757d22026a87f369">
+                        data-mzid="{{ restaurant.mzId }}"
+                        data-mzkey="{{ restaurant.mzKey }}">
                     BOOK ONLINE
                 </button>
+
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ restaurant.phone }}">{{ restaurant.phone }}</a></dd>
@@ -130,7 +112,7 @@ permalink: "/templates/member.html"
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2>Reservations</h2>
-        <p>You can <a data-mzid="61c46fa7ccf9d0cba39b6387" data-mzkey="61a45e24757d22026a87f369">BOOK ONLINE</a> at
+        <p>You can <a data-mzid="{{ restaurant.mzId }}" data-mzkey="{{ restaurant.mzKey }}">BOOK ONLINE</a> at
             anytime, or call us during restaurant opening hours on <a
                     href="tel:+33492005090">+33 (0) 4 92 00 50 90</a>.</p>
         <!-- booking extras -->
@@ -200,23 +182,14 @@ permalink: "/templates/member.html"
         </div>
     </section>
 
-    <!-- location -->
-    <section class="map-section" aria-label="map">
-        <div class="content-block"
-             id="location"
-             data-lat="{{ restaurant.geocode.lat }}"
-             data-lng="{{ restaurant.geocode.lng }}"
-             data-label="{{ restaurant.name }}">
-            <div id="map" data-intersection="300"></div>
-        </div>
-    </section>
+    {{> partials/map }}
 
 </main>
 
 <footer>
     <section class="footer-section">
         <div class="col-span-2">
-            <p><strong>Sarao Restaurant</strong> is a member of the Restaurant Collective, a non-profit organisation of
+            <p><strong>{{ restaurant.name }}</strong> is a member of the Restaurant Collective, a non-profit organisation of
                 leading restaurateurs and industry professionals whose goal is to deliver value to their customers whilst
                 making a positive contribution to the local community and environment. Visit <a
                         href="https://restaurantcollective.org.uk">restaurantcollective.org.uk</a> for more information</p>
