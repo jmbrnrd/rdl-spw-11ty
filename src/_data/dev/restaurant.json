@@ -44,9 +44,120 @@
         ],
         "publicTransport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
         "parking": "There are pay and display bays in the streets surrounding the restaurant.",
-        "menus": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
+        "menus": {
+            "overview": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
+            "sections": [
+                {
+                    "name": "Antipasti",
+                    "dishes": [
+                        {
+                            "name": "Paté di Fegatini",
+                            "price": "6.00",
+                            "description": "Home-made Chicken Liver Paté served with Rustic Sicilian Bread and Relish.",
+                            "attributes": []
+                        },
+                        {
+                            "name": "Mousse di Sgombro",
+                            "price": "10.00",
+                            "description": "A traditional Ligurian recipe of Smoked Mackerel Paté with Focaccia and Horseradish.",
+                            "attributes": [ "vg", "vt" ]
+                        },
+                        {
+                            "name": "Capesante alla Martini",
+                            "price": "8.50",
+                            "description": "Seared King Scallops served in a Martini Creamy Sauce on our home-made Crostino.",
+                            "attributes": [ "vg", "vt", "gf" ]
+                        },
+                        {
+                            "name": "Insalata Caprese GF",
+                            "price": "6.00",
+                            "description": "Sliced Beef Tomato, Mozzarella and Rocket with a drizzle of Virgin Olive Oil and Oregano / or with Avocado.",
+                            "attributes": ["vg", "vt"]
+                        },
+                        {
+                            "name": "Gamberoni alla Spagnola",
+                            "price": "9.00",
+                            "description": "Tiger Prawns pan-seared with Garlic, Fresh Parsley, Butter and Lemon Sauce.",
+                            "attributes": []
+                        },
+                        {
+                            "name": "Grigliata di Ortaggi e Verdure",
+                            "price": "8.50",
+                            "description": "Grilled mixed Vegetables marinated in Extra Virgin Olive Oil and Vinegar.",
+                            "attributes": [ "vg", "vt", "gf" ]
+                        }
+                    ]
+                },
+                {
+                    "name": "La Paste",
+                    "dishes": [
+                        {
+                            "name": "Spaghetti alle Vongole",
+                            "price": "12.50",
+                            "description": "Spaghetti Tomates de San Marzano & Basilico.",
+                            "attributes": [ "vg" ]
+                        },
+                        {
+                            "name": "Ravioloni all'Aragosta",
+                            "price": "13.00",
+                            "description": "Homemade Pasta Parcels of Lobster and Ricotta, in its Bisque Sauce and Shrimps.",
+                            "attributes": []
+                        },
+                        {
+                            "name": "Linguine Montalbano",
+                            "price": "10.00",
+                            "description": "Pasta with half dozen of King Prawns, Garlic, Chilli and little bit of Tomato Sauce.",
+                            "attributes": []
+                        },
+                        {
+                            "name": "Risotto ai Funghi Porcini",
+                            "price": "13.95",
+                            "description": "Carmaroli Rice cooked in White Wine with Shallots and Porcini Mushrooms, drizzled with Truffle Oil, sprinkled with flakes of Parmigiano, topped with Wild Rocket.",
+                            "attributes": ["vt"]
+                        },
+                        {
+                            "name": "Agnolotti d'Agnello",
+                            "price": "13.95",
+                            "description": "Homemade Pasta Parcels filled with young Welsh Lamb, served in a Velvety Red Wine, fresh Rosemary and Garlic Sauce.",
+                            "attributes": []
+                        },
+                        {
+                            "name": "Malfatti Salsiccia e Rucola",
+                            "price": "14.95",
+                            "description": "Homemade twist Pasta with Tomato Sauce, Luganica Sausage, Garlic, Chillies and Wild Rocket.",
+                            "attributes": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Dolci e Gelati",
+                    "dishes": [
+                        {
+                            "name": "Tortino appiccicoso",
+                            "price": "6.00",
+                            "description": "Sticky Toffee Pudding coated in warm Butterscotch sauce and served with Vanilla ice cream.",
+                            "attributes": []
+                        },
+                        {
+                            "name": "Affogato al Caffè Liquoroso",
+                            "price": "10.00",
+                            "description": "A Trio of Vanilla ice cream with Espresso Coffee and a shot of Strega or Disaronno liqueur.",
+                            "attributes": [ "vg", "vt" ]
+                        },
+                        {
+                            "name": "Tiramisù (Individual Glass Portion)",
+                            "price": "8.50",
+                            "description": "Our version of this classic Italian dessert.",
+                            "attributes": [ "vg", "vt", "gf" ]
+                        }
+                    ]
+                }
+            ]
+        },
         "reservations": {
-            "info": ""
+            "info": "",
+            "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
+            "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
         }
 
 

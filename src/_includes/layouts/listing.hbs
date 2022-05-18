@@ -12,14 +12,20 @@
     <meta name="theme-color" content="#00a69b"/>
     <meta name="robots" content="noindex">
 
-    {{> partials/_schema.org }}
+    {{> partials/schema.org }}
 
-    {{> partials/_open-graph }}
+    {{> partials/open-graph }}
 
-    {{> partials/_fonts }}
+    {{> partials/fonts }}
 
 	<link rel="stylesheet" href="/assets/styles/style.css" />
+
+    {{> partials/hero-image }}
+
 	<script type="module" src="/assets/scripts/listing.js" defer></script>
+
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id={{ gtag }}"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6ktQeIUDl0vJBtQoXeAczfWs3EyPMWU&language={{ language }}"></script>
 
 </head>
 

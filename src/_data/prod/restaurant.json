@@ -36,15 +36,11 @@
     "paragraph": "",
     "full": "This is the first sentence of the FULL description that is extracted and used as a lead paragraph. The rest of the full description is then displayed below. This is used for a detailed marketing heavy description of the restaurant and its attractions."
   },
-  "features": [
-    "Free WiFi",
-    "Dog-friendly",
-    "Outside seating"
-  ],
-  "publicTransport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
-  "parking": "There are pay and display bays in the streets surrounding the restaurant.",
+  "features": "{{ rdl_restaurant_features }}",
+  "publicTransport": "{{ rdl_restaurant_transport }}",
+  "parking": "{{ rdl_restaurant_parking }}",
   "menus": {
-    "overview": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
+    "overview": "{{ rdl_menus_overview }}",
     "sections": [
       {
         "name": "Section 1",
@@ -53,7 +49,9 @@
             "name": "",
             "price": "",
             "description": "",
-            "attributes": ""
+            "attributes": [
+
+            ]
           }
         ]
       }
