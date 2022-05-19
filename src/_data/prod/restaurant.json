@@ -27,8 +27,10 @@
     "instagram": "https://www.instagram.com/restaurantcollectiveuk/",
     "twitter": ""
   },
-  "imageDefault": "{{ rdl_default_image }}",
-  "imageGallery": "{{ rdl_images }}",
+  "image": {
+    "default": "{{ rdl_default_image }}",
+    "gallery": "{{ rdl_images }}"
+  },
   "description": {
     "sentence": "{{ rdl_desc_sentence }}",
     "paragraph": "{{ rdl_desc_paragraph }}",

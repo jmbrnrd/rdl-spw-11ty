@@ -28,12 +28,14 @@
             "instagram": "https://www.instagram.com/restaurantcollectiveuk/",
             "twitter": ""
         },
-        "imageDefault": "dbh7yg82buiqmrfbamny.jpg",
-        "imageGallery": [
-            "i1tw0w59iplkvn1xw1tm.jpg",
-            "gohsy0y0px96f2jofs2r.jpg",
-            "ql4kyfak10hqfyqngopq.jpg"
-        ],
+        "image": {
+            "default": "dbh7yg82buiqmrfbamny.jpg",
+            "gallery": [
+                "i1tw0w59iplkvn1xw1tm.jpg",
+                "gohsy0y0px96f2jofs2r.jpg",
+                "ql4kyfak10hqfyqngopq.jpg"
+            ]
+        },
         "description": {
             "sentence": "A one sentence restaurant description",
             "paragraph": "",
