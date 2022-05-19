@@ -124,25 +124,20 @@ i {
 .content-block.menu-downloads {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 4px;
+  gap: 8px;
   @include mq($mq-medium) {
     grid-template-columns: repeat(3, 1fr);
   }
 
 }
 .menu-card-container {
-  //display: flex;
-  //justify-content: center;
-  //align-items: center;
-
-
   a.menu-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 3px solid $color-txt-body;
-    border-radius: 8px;
-    background-color: white;
+    // border: 3px solid $color-txt-body;
+    border-radius: 4px;
+    background-color: #eee;
     transition: background-color 300ms ease-out;
     padding: 3.2rem;
     text-align: center;
