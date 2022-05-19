@@ -136,20 +136,20 @@ permalink: "/templates/member.html"
             <aside>
                 <dl>
                     <dt>Address</dt>
-                    <dd>7 Promenade des Anglais</dd>
-                    <dd>06000 Nice</dd>
+                    <dd>{{ restaurant.addressStreet }}</dd>
+                    <dd>{{ restaurant.addressLocality }} {{ restaurant.postalCode }}</dd>
                     <dt>Telephone</dt>
                     <dd><a
-                            href="tel:+33492005090">+33 (0) 4 92 00 50 90</a></dd>
+                            href="{{ restaurant.phone }}">{{ restaurant.phone }}</a></dd>
                     <dt>Email</dt>
-                    <dd><a href="mailto:info@sarao-restaurant.com">info@sarao-restaurant.com</a></dd>
+                    <dd><a href="mailto:{{ restaurant.email }}">{{ restaurant.email }}</a></dd>
                 </dl>
             </aside>
             <!-- social -->
             <aside>
                 <dl>
                     <dt>Website</dt>
-                    <dd><a href="https://sarao-restaurant.com">www.sarao-restaurant.com</a></dd>
+                    <dd><a href="{{ restaurant.website }}">{{ restaurant.website }}</a></dd>
                     <dt>Social media</dt>
                     <dd>
                         <div class="social-links">
