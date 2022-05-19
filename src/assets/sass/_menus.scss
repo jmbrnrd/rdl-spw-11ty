@@ -1,5 +1,6 @@
 @use "vars" as *;
 @use "mixins" as *;
+@use "glightbox";
 
 // Menus
 // ================================
@@ -121,21 +122,25 @@ i {
 // Downloads
 // -----------------------------
 .content-block.menu-downloads {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 4px;
+  @include mq($mq-medium) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
 }
 .menu-card-container {
-  padding: .5rem;
-  flex: 1 1 100%;
-  @include mq($mq-medium) { flex: 0 1 33%; }
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+
+
   a.menu-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 4px solid $color-txt-body;
+    border: 3px solid $color-txt-body;
     border-radius: 8px;
     background-color: white;
     transition: background-color 300ms ease-out;

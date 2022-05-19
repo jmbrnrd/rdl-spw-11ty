@@ -2,7 +2,7 @@
 <div class="image-gallery" aria-label="gallery">
     {{#each restaurant.imageGallery }}
         <a class="glightbox"
-           href="https://res.cloudinary.com/rdl/image/upload/w_900,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../restaurant.id }}/{{ this }}">
+           href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../restaurant.id }}/{{ this }}">
             <img loading="lazy"
                  src="https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,dpr_auto,f_auto/restaurants/{{ ../restaurant.id }}/{{ this }}"
                  alt="{{ ../restaurant.name }} gallery image">
@@ -10,4 +10,6 @@
     {{/each}}
 </div>
 <!-- Optional section tag end - Images -->
+
+
 
