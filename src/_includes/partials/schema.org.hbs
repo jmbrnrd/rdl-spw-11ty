@@ -19,12 +19,8 @@
         "geo": {
             "@type": "GeoCoordinates",
             "latitude": "{{ restaurant.geocode.lat }}",
-    "longitude": "{{ restaurant.geocode.lng }}"
-    },
-    "sameAs": [
-        "{{ restaurant.social.facebook }}",
-        "{{ restaurant.social.instagram }}",
-        "{{ restaurant.social.twitter }}"
-        ]
+            "longitude": "{{ restaurant.geocode.lng }}"
+        },
+         "sameAs": "{{ restaurant.social.sameAs }}"
     }
 </script>
