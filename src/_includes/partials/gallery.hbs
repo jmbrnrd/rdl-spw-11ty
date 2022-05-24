@@ -1,5 +1,6 @@
 <!-- Optional section tag start - Images -->
 <div class="image-gallery" aria-label="gallery">
+    <!-- {{ restaurant.image.gallery }} -->
     {{#each restaurant.image.gallery }}
         <a class="glightbox"
            href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../restaurant.id }}/{{ this }}">
