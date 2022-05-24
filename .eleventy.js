@@ -8,7 +8,7 @@ module.exports = function (config) {
       input: "src",
       output: "public",
       data: process.env.MY_ENVIRONMENT === "production" ? "_data/prod" : "_data/dev"
-    },
+    }
   };
 };
 

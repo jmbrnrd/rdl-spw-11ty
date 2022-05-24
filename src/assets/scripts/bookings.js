@@ -2,7 +2,7 @@ export default function() {
     console.log('booking.js loaded');
     // Reference the book button
     const bkgButtons = document.querySelectorAll('[data-mzid]');
-// Wait for DOM to be loaded
+    // Wait for DOM to be loaded
     window.addEventListener('load', function () {
         // Abort if no button
         if (!bkgButtons[0]) {
