@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ language }}">
+<html lang="{{ language }}" xmlns="http://www.w3.org/1999/html">
 
 <!-- {{ pkg.version }} -->
 
@@ -9,6 +9,8 @@
     <title>{{ restaurant.name }} | {{ restaurant.streetAddress }} {{ restaurant.postalCode }}</title>
     <meta name="description" content="{{ restaurant.description.sentence }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: should only be applied to previews -->
     <meta name="robots" content="noindex">
 
     {{> partials/schema.org }}
@@ -25,8 +27,7 @@
 
 	<script type="module" src="/assets/scripts/main.js" defer></script>
 
-	<script async defer src="https://www.googletagmanager.com/gtag/js?id={{ gtag }}"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm6ktQeIUDl0vJBtQoXeAczfWs3EyPMWU&language={{ language }}"></script>
+    {{> partials/google-apis }}
 
 </head>
 
