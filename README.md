@@ -2,7 +2,7 @@
 
 # 11ty Template
 
-Created by @jmbrnrd (https://jmbrnrd.com)</small>
+Whenever a Github commit is made to the master branch, it will trigger a build on Netlify and deploy to https://spwdev.netlify.app
 
 ## Development Scripts
 
@@ -12,7 +12,10 @@ Created by @jmbrnrd (https://jmbrnrd.com)</small>
 
 **`npm run build`**
 
-> Production build includes minified, autoprefixed CSS, minified js with ES6 module support
+> Production build includes minified, autoprefixed CSS, minified js with ES6 module support. 
+> Uses dummy restaurant data to populate Handlebars template.
 
-Use this as the "Publish" for Netlify.
+**`npm run build:prod`**
 
+> Production build includes minified, autoprefixed CSS, minified js with ES6 module support.
+> Outputs the templates with Handlebars references.
