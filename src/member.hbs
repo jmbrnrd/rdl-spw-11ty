@@ -34,44 +34,22 @@ permalink: "/templates/member.html"
 <main id="home">
 
     <section id="hero" class="hero-section hero-stack">
-                <div class="brand-container fade-in">
-                    <h2>{{ restaurant.name }}</h2>
-                    <h3 class="desc-strapline">{{ restaurant.subtitle }}</h3>
-                </div>
-                <!-- hero nav -->
-                <ul class="hero-nav fade-in">
-                    <li><a href="#about" title="About ">ABOUT</a></li>
-                    <!-- Optional section tag start - Menus Hero -->
-                    <li><a href="#menus" title="Menus ">MENUS</a></li>
-                    <!-- Optional section tag end - Menus Hero -->
-                    <li><a href="#reservations" title="Reservations">RESERVATIONS</a></li>
-                    <li><a href="#contacts" title="Contact">CONTACTS</a></li>
-                    <li><a href="#location" title="Find">Location</a></li>
-                </ul>
-                <h2 class="desc-one-sentence">{{ restaurant.description.sentence }}</h2>
-
-        <img src="https://res.cloudinary.com/rdl/image/upload/w_800,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121/restaurants/{{ restaurant.id }}/{{ restaurant.image.default }}" alt="">
+        <div class="brand-container fade-in">
+            <h2>{{ restaurant.name }}</h2>
+            <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
+            <ul class="hero-nav fade-in">
+                <li><a href="#about" title="About ">ABOUT</a></li>
+                <!-- Optional section tag start - Menus Hero -->
+                <li><a href="#menus" title="Menus ">MENUS</a></li>
+                <!-- Optional section tag end - Menus Hero -->
+                <li><a href="#reservations" title="Reservations">RESERVATIONS</a></li>
+                <li><a href="#contacts" title="Contact">CONTACTS</a></li>
+                <li><a href="#location" title="Find">Location</a></li>
+            </ul>
+            <span class="desc-one-sentence fade-in" >{{ restaurant.description.sentence }}</span>
+        </div>
+        {{> partials/hero-image }}
     </section>
-
-    <!-- hero -->
-<!--    <section id="hero" class="hero-section">-->
-<!--        &lt;!&ndash; branding &ndash;&gt;-->
-<!--        <div class="brand-container fade-in">-->
-<!--            <h2>{{ restaurant.name }}</h2>-->
-<!--            <h3 class="desc-strapline">{{ restaurant.subtitle }}</h3>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; hero nav &ndash;&gt;-->
-<!--        <ul class="hero-nav fade-in">-->
-<!--            <li><a href="#about" title="About ">ABOUT</a></li>-->
-<!--            &lt;!&ndash; Optional section tag start - Menus Hero &ndash;&gt;-->
-<!--            <li><a href="#menus" title="Menus ">MENUS</a></li>-->
-<!--            &lt;!&ndash; Optional section tag end - Menus Hero &ndash;&gt;-->
-<!--            <li><a href="#reservations" title="Reservations">RESERVATIONS</a></li>-->
-<!--            <li><a href="#contacts" title="Contact">CONTACTS</a></li>-->
-<!--            <li><a href="#location" title="Find">Location</a></li>-->
-<!--        </ul>-->
-<!--        <h2 class="desc-one-sentence">{{ restaurant.description.sentence }}</h2>-->
-<!--    </section>-->
 
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
