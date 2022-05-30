@@ -3,6 +3,8 @@
 <section class="map-section" aria-label="map">
     <div class="content-block"
          id="location"
+         data-bkg-id="{{ restaurant.mzId }}"
+         data-bkg-key="{{ restaurant.mzKey }}"
          data-lat="{{ restaurant.geocode.lat }}"
          data-lng="{{ restaurant.geocode.lng }}"
          data-label="{{ restaurant.name }}">

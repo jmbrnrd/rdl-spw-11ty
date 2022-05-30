@@ -32,24 +32,23 @@ permalink: "/templates/member.html"
 </nav>
 
 <main id="home">
-    <!-- hero -->
-    <section id="hero" class="hero-section">
-        <!-- branding -->
+
+    <section id="hero" class="hero-section hero-stack">
         <div class="brand-container fade-in">
             <h2>{{ restaurant.name }}</h2>
-            <h3 class="desc-strapline">{{ restaurant.subtitle }}</h3>
+            <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
+            <ul class="hero-nav fade-in">
+                <li><a href="#about" title="About ">About</a></li>
+                <!-- Optional section tag start - Menus Hero -->
+                <li><a href="#menus" title="Menus ">Menus</a></li>
+                <!-- Optional section tag end - Menus Hero -->
+                <li><a href="#reservations" title="Reservations">Reservations</a></li>
+                <li><a href="#contacts" title="Contact">Contacts</a></li>
+                <li><a href="#location" title="Find">Location</a></li>
+            </ul>
+            <span class="desc-one-sentence fade-in" >{{ restaurant.description.sentence }}</span>
         </div>
-        <!-- hero nav -->
-        <ul class="hero-nav fade-in">
-            <li><a href="#about" title="About ">ABOUT</a></li>
-            <!-- Optional section tag start - Menus Hero -->
-            <li><a href="#menus" title="Menus ">MENUS</a></li>
-            <!-- Optional section tag end - Menus Hero -->
-            <li><a href="#reservations" title="Reservations">RESERVATIONS</a></li>
-            <li><a href="#contacts" title="Contact">CONTACTS</a></li>
-            <li><a href="#location" title="Find">Location</a></li>
-        </ul>
-        <h2 class="desc-one-sentence">{{ restaurant.description.sentence }}</h2>
+        {{> partials/hero-image }}
     </section>
 
     <!-- about -->
@@ -109,7 +108,7 @@ permalink: "/templates/member.html"
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2>Reservations</h2>
-        <p>You can <a data-mzid="{{ restaurant.mzId }}" data-mzkey="{{ restaurant.mzKey }}">BOOK ONLINE</a> at
+        <p>You can <a href="#reservations" data-mzid="{{ restaurant.mzId }}" data-mzkey="{{ restaurant.mzKey }}">BOOK ONLINE</a> at
             anytime, or call us during restaurant opening hours on <a
                     href="tel:+33492005090">+33 (0) 4 92 00 50 90</a>.</p>
         <!-- booking extras -->

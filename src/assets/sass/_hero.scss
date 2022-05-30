@@ -1,0 +1,13 @@
+.hero-stack {
+  display: grid;
+  place-items: center;
+  > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  > img {
+    height: inherit;
+    width: 100vw;
+    object-fit: cover;
+  }
+}
