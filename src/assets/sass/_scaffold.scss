@@ -2,27 +2,11 @@
 @use "mixins" as *;
 
 .hero-section {
-  // Position 'fixed' doesn't work on iPhones
-  // Add 'fixed' position for larger screens
-  position: relative;
-  background-color: $color-brand;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
   &.golden-ratio { height: 62vh; }
-  @include mq($mq-medium) {
-    background-attachment: fixed;
-  }
   .brand-container {
     font-family: $font-family-display;
     text-align: center;
-    img { height: 100%; }
     h2 {
       font-size: 4.8rem;
       color: #fff;
@@ -50,6 +34,7 @@
     max-width: 80vw;
     text-align: center;
     margin: 0 auto;
+    animation-delay: 750ms;
     @include mq($mq-wide) {
       font-size: 3.2rem;
       max-width: 62vw;
@@ -85,7 +70,7 @@
   }
   .img-credit {
     position: absolute;
-    z-index: 100;
+    z-index: 500;
     bottom: 2rem;
     left: 2rem;
     display: block;
