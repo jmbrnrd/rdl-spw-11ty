@@ -3,44 +3,50 @@
 
 .hero-section {
   height: 100vh;
+  display: grid;
+  place-items: center;
+  > * {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  > img {
+    position: fixed;
+    inset: 0 0 0 0;
+    z-index: -1;
+    height: inherit;
+    width: 100vw;
+    object-fit: cover;
+  }
   &.golden-ratio { height: 62vh; }
   .brand-container {
     font-family: $font-family-display;
     text-align: center;
+    width: min(90%, 800px);
     h2 {
-      font-size: 4.8rem;
+      font-size: clamp(5rem, 5vw, 8rem);
       color: #fff;
       line-height: 1.1;
     }
     h3 {
       color: #fff;
-      font-size: 2.4rem;
+      font-size: clamp(2.4rem, 3vw, 4rem  );
       font-weight: 200;
       margin: 0 0 1rem;
       padding: 0 2rem;
     }
-    @include mq($mq-wide) {
-      h2 { font-size: 8rem; font-weight: 300;}
-      h3 { font-size: 3.6rem;}
-    }
   }
   .desc-one-sentence {
     font-family: $font-family;
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 4rem  );
     line-height: 1.1;
     color: rgba(white, 0.75);
     font-weight: $font-weight-normal;
     text-transform: none;
-    max-width: 80vw;
     text-align: center;
     margin: 0 auto;
     animation-delay: 750ms;
-    @include mq($mq-wide) {
-      font-size: 3.2rem;
-      max-width: 62vw;
-    }
   }
-  ul.hero-nav {
+  .hero-nav {
     display: none;
     padding: 1rem 0;
     li {
@@ -79,10 +85,11 @@
     padding: 4px;
     color: white;
     background-color: rgba(0,0,0,.5);
-
   }
 }
-
+main {
+  background-color: white;
+}
 footer {
   color: $color-grey-light;
   background-color: $color-black;
@@ -93,7 +100,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    //max-width: $layout-max-width;
+    max-width: $layout-max-width;
     margin: auto;
     div {
       color: #ddd;
@@ -124,6 +131,7 @@ footer {
         cursor: pointer;
         height: 40px;
         padding: .8rem;
+        white-space: nowrap;
       }
     }
     @include mq($mq-medium) {

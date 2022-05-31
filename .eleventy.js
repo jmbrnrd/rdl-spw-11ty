@@ -4,7 +4,6 @@ module.exports = function (config) {
   config.addWatchTarget('./src/assets/scripts/');
   config.addPassthroughCopy("./src/assets/imgs/");
   return {
-    //templateFormats: ['md', '11ty.js'],
     dir: {
       input: "src",
       output: "public",

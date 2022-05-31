@@ -47,6 +47,11 @@
     "info": "{{ rdl_reservations_info }}",
     "groups": "{{ rdl_bkg_groups }}",
     "private": "{{ rdl_bkg_private  }}"
+  },
+  "brand": {
+    "prefix": "{{ company_prefix }}",
+    "name":"{{ company_name }}",
+    "web": "{{ company_website }}"
   }
 }
 

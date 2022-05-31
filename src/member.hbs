@@ -31,34 +31,32 @@ permalink: "/templates/member.html"
     </ul>
 </nav>
 
-<main id="home">
+<!-- hero -->
+<section id="hero" class="hero-section">
+    <div class="brand-container fade-in">
+        <h2>{{ restaurant.name }}</h2>
+        <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
+        <ul class="hero-nav fade-in">
+            <li><a href="#about" title="About ">About</a></li>
+            <!-- Optional section tag start - Menus Hero -->
+            <li><a href="#menus" title="Menus ">Menus</a></li>
+            <!-- Optional section tag end - Menus Hero -->
+            <li><a href="#reservations" title="Reservations">Reservations</a></li>
+            <li><a href="#contacts" title="Contact">Contacts</a></li>
+            <li><a href="#location" title="Find">Location</a></li>
+        </ul>
+        <span class="desc-one-sentence fade-in" >{{ restaurant.description.sentence }}</span>
+    </div>
+    {{> partials/hero-image }}
+</section>
 
-    <section id="hero" class="hero-section hero-stack">
-        <div class="brand-container fade-in">
-            <h2>{{ restaurant.name }}</h2>
-            <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
-            <ul class="hero-nav fade-in">
-                <li><a href="#about" title="About ">About</a></li>
-                <!-- Optional section tag start - Menus Hero -->
-                <li><a href="#menus" title="Menus ">Menus</a></li>
-                <!-- Optional section tag end - Menus Hero -->
-                <li><a href="#reservations" title="Reservations">Reservations</a></li>
-                <li><a href="#contacts" title="Contact">Contacts</a></li>
-                <li><a href="#location" title="Find">Location</a></li>
-            </ul>
-            <span class="desc-one-sentence fade-in" >{{ restaurant.description.sentence }}</span>
-        </div>
-        {{> partials/hero-image }}
-    </section>
+<main id="home">
 
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-
             <div class="descriptions desc-full" aria-label="description">
-
                 <p>{{ restaurant.description.full }}</p>
-
                 <!-- Feature keywords-->
                 <!-- TODO -->
                 <ul class="additional-features" aria-label="features">
@@ -66,18 +64,14 @@ permalink: "/templates/member.html"
                     <li>{{ this }}</li>
                     {{/each}}
                 </ul>
-
             </div>
-
             <!-- times -->
             <aside class="opening-times">
-
                 <button class="btn-book"
                         data-mzid="{{ restaurant.mzId }}"
                         data-mzkey="{{ restaurant.mzKey }}">
                     BOOK ONLINE
                 </button>
-
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ restaurant.phone }}">{{ restaurant.phone }}</a></dd>
@@ -92,7 +86,6 @@ permalink: "/templates/member.html"
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ restaurant.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
-
                 </dl>
             </aside>
         </div>

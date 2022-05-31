@@ -5,17 +5,16 @@ layout: "layouts/listing.hbs"
 permalink: "/templates/curated.html"
 ---
 
+<section id="hero" class="hero-section golden-ratio">
+    <div class="brand-container fade-in">
+        <h2>{{ restaurant.name }}</h2>
+        <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
+        <a href="#about" class="scroll-down"></a>
+    </div>
+    {{> partials/hero-image }}
+</section>
+
 <main id="home">
-
-    <section id="hero" class="hero-section hero-stack golden-ratio">
-        <div class="brand-container fade-in">
-            <h2>{{ restaurant.name }}</h2>
-            <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
-            <a href="#about" class="scroll-down"></a>
-        </div>
-        {{> partials/hero-image }}
-    </section>
-
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
