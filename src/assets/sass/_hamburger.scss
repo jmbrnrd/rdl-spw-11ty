@@ -19,8 +19,8 @@
   cursor: pointer;
 
   transition-property: opacity, filter;
-  transition-duration: $hamburger-hover-transition-duration;
-  transition-timing-function: $hamburger-hover-transition-timing-function;
+  transition-duration: $hamburger-hover-trans-dur;
+  transition-timing-function: $hamburger-hover-trans-func;
 }
 
 .hamburger-box {

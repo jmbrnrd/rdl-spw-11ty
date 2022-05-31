@@ -1,7 +1,59 @@
 @use "vars" as *;
 @use "mixins" as *;
-body {
-  background-color: black;
+
+body { background-color: $color-black; }
+main { background-color: white; }
+footer {
+  color: $color-grey-light;
+  background-color: $color-black;
+  padding: 2rem;
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: $layout-max-width;
+    margin: auto;
+    div {
+      color: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      h3 { text-transform: none; }
+      p { font-size: 1.2rem; margin: 0;}
+      a {
+        color: $color-txt-highlight;
+        font-weight: $font-weight-normal;
+      }
+      a.ftr-logo-sml {
+        height: 100%;
+        opacity: .7;
+        svg {
+          height: 40px;
+        }
+        &:hover { opacity: 1; }
+      }
+      button {
+        background: 0;
+        border-radius: $radius-sml;
+        border: 1px solid white;
+        font-size: 1.4rem;
+        color: white;
+        cursor: pointer;
+        height: 40px;
+        padding: .8rem;
+        white-space: nowrap;
+      }
+    }
+    @include mq($mq-medium) {
+      flex-direction: row;
+    }
+  }
+  .col-span-2 {
+    grid-column: 2 / 4;
+  }
 }
 .hero-section {
   height: 100vh;
@@ -96,8 +148,6 @@ body {
     background-color: rgba(0,0,0,.5);
   }
 }
-
-main { background-color: white; }
 .content-section {
   max-width: $layout-max-width;
   margin: 0 auto;
@@ -171,14 +221,15 @@ main { background-color: white; }
   li {
     cursor: default;
     display: inline-block;
-    padding: .75em 1.25em;
+    padding: .5em 1em;
     background: $clr-grey-100;
-    border-radius: 300px;
+    border-radius: 2rem;
     text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: $font-weight-bold;
     color: $color-txt-body;
-    margin: 0 .25rem .25rem 0;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
     @include mq($mq-medium) {
       font-size: 1.4rem;
     }
@@ -215,57 +266,5 @@ dd {
         transform: scale(1.15);
       }
     }
-  }
-}
-footer {
-  color: $color-grey-light;
-  background-color: $color-black;
-  padding: 2rem;
-  .footer-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    max-width: $layout-max-width;
-    margin: auto;
-    div {
-      color: #ddd;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      h3 { text-transform: none; }
-      p { font-size: 1.2rem; margin: 0;}
-      a {
-        color: $color-txt-highlight;
-        font-weight: $font-weight-normal;
-      }
-      a.ftr-logo-sml {
-        height: 100%;
-        opacity: .7;
-        svg {
-          height: 40px;
-        }
-        &:hover { opacity: 1; }
-      }
-      button {
-        background: 0;
-        border-radius: 6px;
-        border: 1px solid white;
-        font-size: 1.4rem;
-        color: white;
-        cursor: pointer;
-        height: 40px;
-        padding: .8rem;
-        white-space: nowrap;
-      }
-    }
-    @include mq($mq-medium) {
-      flex-direction: row;
-    }
-  }
-  .col-span-2 {
-    grid-column: 2 / 4;
   }
 }
