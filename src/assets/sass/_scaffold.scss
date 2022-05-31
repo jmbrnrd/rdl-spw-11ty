@@ -17,7 +17,14 @@
     width: 100vw;
     object-fit: cover;
   }
-  &.golden-ratio { height: 62vh; }
+  &.golden-ratio {
+    height: 62vh;
+    .brand-container {
+      // adjust to re-center vertically
+      // when using scroll-button
+      margin-top: 8rem;
+    }
+  }
   .brand-container {
     font-family: $font-family-display;
     text-align: center;
