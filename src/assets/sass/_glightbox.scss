@@ -446,7 +446,7 @@ iframe.wait-autoplay {
 .glightbox-clean .gslide-title {
   font-size: 1em;
   font-weight: normal;
-  font-family: $font-family;
+  font-family: $font-family-default;
   color: #000;
   margin-bottom: 19px;
   line-height: 1.4em;
@@ -455,7 +455,7 @@ iframe.wait-autoplay {
 .glightbox-clean .gslide-desc {
   font-size: 0.86em;
   margin-bottom: 0;
-  font-family: $font-family;
+  font-family: $font-family-default;
   line-height: 1.4em;
 }
 
