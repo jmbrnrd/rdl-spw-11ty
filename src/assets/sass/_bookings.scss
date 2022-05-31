@@ -2,21 +2,22 @@
 @use "mixins" as *;
 
 .btn-book {
-  cursor: pointer;
-  background-color: hsl(187, 100%, 41%);
-  border-radius: 5px;
-  border: 0;
+  width: 100%;
   display: inline-flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  background-color: $color-petrol;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
   padding-inline: 2rem;
   padding-block: 1.5rem;
   font-weight: $font-weight-bold;
-  font-size: 2.8rem;
-  color: hsl(187, 100%, 80%);
+  font-size: max(2rem, 2vw);
+  color: hsl(255 100% 100% / .5);
   letter-spacing: .1rem;
-  width: 100%;
+  line-height: 1;
   margin-bottom: 2rem;
   transition: all .3s ease-out;
   &::before {
@@ -24,14 +25,14 @@
     display: inline-flex;
     height: 36px;
     width: 36px;
-    margin-right: 1.4rem;
+    margin-right: .1rem;
     opacity: .5;
     content: '';
     transition: opacity .3s ease-in-out;
   }
   &:hover {
-    color: Hsl(187 100% 90%);
-    background-color: hsl(187, 100%, 38%);
+    color: hsl(255 100% 100% / 1);
+    background-color: $color-petrol;
     &::before {
       opacity: .85;
     }
