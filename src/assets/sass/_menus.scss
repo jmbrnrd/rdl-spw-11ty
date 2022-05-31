@@ -135,9 +135,8 @@ i {
     position: relative;
     display: flex;
     flex-direction: column;
-    // border: 3px solid $color-txt-body;
     border-radius: 4px;
-    background-color: #eee;
+    background-color: $clr-grey-100;
     transition: background-color 300ms ease-out;
     padding: 3.2rem;
     text-align: center;
