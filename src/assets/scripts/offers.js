@@ -18,7 +18,7 @@ export default function () {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
+                api_key: '',
                 user_code: 'CF-418-Beta',
                 restaurant_id: '2832',
                 valid: false
