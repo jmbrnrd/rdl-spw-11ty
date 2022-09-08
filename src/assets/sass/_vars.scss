@@ -11,7 +11,7 @@ $color-slate                  : #607D8B;
 $color-brand                  : #00a69b;
 $clr-grey-100                 : #eee;
 
-$font-family-default          : 'Rubik', sans-serif;
+$font-family-default          : system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 $font-family-display          : 'Antonio', sans-serif;
 $font-weight-normal           : 300;
 $font-weight-bold             : 400;
@@ -42,3 +42,14 @@ $hamburger-line-color         : white;
 $hamburger-line-border-radius : 2px !default;
 $hamburger-hover-trans-dur    : 0.15s !default;
 $hamburger-hover-trans-func   : linear !default;
+
+$rdl-width: 360px;
+$rdl-height: 480px;
+$rdl-radius: 12px;
+$btn-size: 80px;
+$btn-size-max: 90vw;
+$shadow: rgba(0, 0, 0, 0.25) 0 54px 55px,
+rgba(0, 0, 0, 0.12) 0 -12px 30px,
+rgba(0, 0, 0, 0.12) 0 4px 6px,
+rgba(0, 0, 0, 0.17) 0 12px 13px,
+rgba(0, 0, 0, 0.09) 0 -3px 5px;
