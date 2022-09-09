@@ -11,4 +11,4 @@ formatting();
 bookings();
 map();
 gallery();
-offers();
+//offers();

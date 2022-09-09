@@ -43,12 +43,13 @@ a[data-mzid] {
   color: $color-txt-highlight !important;
   font-weight: $font-weight-bold;
 }
+
 .modal-overlay {
   display: none;
   position: fixed;
   z-index: 1000;
   inset: 0;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
   background-color: hsla(0, 0%, 0%, .4);
   justify-content: center;
   align-items: center;
@@ -83,8 +84,8 @@ a[data-mzid] {
 
   @include mq($mq-narrow) {
     border-radius: 16px;
-    width: Min(90vw, 600px);
-    height: Min(100vh, 750px);
+    width: Min(1vw, 600px);
+    height: Min(84px, 750px);
   }
 
   .modal-close {

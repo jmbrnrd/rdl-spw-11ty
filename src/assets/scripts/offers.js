@@ -1,24 +1,24 @@
 
 export default function () {
     console.log(`offers.js loaded`);
-    const restaurantId = document.querySelector('html').dataset.id;
+    // const restaurantId = document.querySelector('html').dataset.id;
+    const restaurantId = '2832';
     const devServer = 'http://localhost:4000';
     const prodServer = 'http://restaurantcollective.io';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
-    const offersOpen = false;
 
     window.addEventListener('load', function () {
         console.log('Window loaded');
-        getOffers(restaurantId);
+        getOffers();
     });
 
-    function getOffers(restaurant_id) {
+    function getOffers() {
         console.log('Fetch any offers');
         fetch(`${api}/public/restaurantoffers`, {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                api_key: '',
+                api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
                 user_code: 'CF-418-Beta',
                 restaurant_id: '2832',
                 valid: false
