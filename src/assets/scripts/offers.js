@@ -2,6 +2,7 @@
 export default function () {
     console.log(`offers.js loaded`);
     // const restaurantId = document.querySelector('html').dataset.id;
+    let messagesLoaded = false;
     const restaurantId = '2832';
     const devServer = 'http://localhost:4000';
     const prodServer = 'http://restaurantcollective.io';
@@ -13,14 +14,18 @@ export default function () {
     });
 
     function getOffers() {
-        console.log('Fetch any offers');
+
+        console.log(`Messages loaded: ${ messagesLoaded }`);
+
+        if (messagesLoaded) { return false; }
+
         fetch(`${api}/public/restaurantoffers`, {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
                 user_code: 'CF-418-Beta',
-                restaurant_id: '2832',
+                restaurant_id: restaurantId,
                 valid: false
             })
         })
@@ -41,40 +46,53 @@ export default function () {
         if (offers.length < 1) { return false; }
 
         const fragment = document.createDocumentFragment();
-        const btn = document.createElement('div');
-        btn.className = 'rdl-btn-offers';
+        const messageContainer = document.createElement('div');
+        const messageHeader = document.createElement('div');
+        const messageBody = document.createElement('div');
 
-        fragment.appendChild(btn);
+        messageContainer.className = 'modal-messages';
+        messageHeader.className = 'msg-header';
+        messageBody.className = 'msg-body';
+
+        messageContainer.append(messageHeader, messageBody);
+        fragment.append(messageContainer);
         document.body.appendChild(fragment);
 
-        btn.addEventListener('animationend', () => {
+        messageContainer.addEventListener('animationend', () => {
             console.log('Transition ended');
-            btn.innerText = `View Available Offers`;
+            messageHeader.innerHTML = '<h2>Latest Offers & Information</h2>';
         });
 
-        btn.addEventListener('click', () => {
-            console.log('Btn clicked');
-            dspOffers(btn, offers)
-            btn.classList.add('grow');
+
+        messageContainer.addEventListener('click', () => {
+            console.log('Messages clicked');
+            dspOffers(messageBody, offers);
+            messageBody.classList.toggle('active');
+
         });
 
-        btn.classList.add('scale-in-center');
+        messageContainer.classList.add('scale-in-center');
 
     }
 
-    function dspOffers(btn, offers) {
+    function dspOffers(container, messages) {
+        if (messagesLoaded) {
+            return false;
+        }
         const listFragment = document.createDocumentFragment();
         const list = document.createElement('ul');
-        list.className = 'offer-list closed';
+        list.className = 'offer-list';
         let listItem;
-        offers.forEach(item => {
+        let listTitle;
+        messages.forEach(item => {
           console.log(item);
           listItem = document.createElement('li');
-          listItem.innerText = item['offer_text'];
+          listItem.innerHTML = `<h3>${item['offer_strapline']}</h3><p>${item['offer_text']}</p><a href="#">CTA</a>`;
           list.appendChild(listItem);
         });
         listFragment.appendChild(list);
-        btn.appendChild(listFragment);
+        container.appendChild(listFragment);
+        messagesLoaded = true;
     }
 
 }

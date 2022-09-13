@@ -1,26 +1,24 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-.rdl-btn-offers {
+.modal-messages {
   z-index: 10;
   position: fixed;
   bottom: 25px;
   right: 50%;
   translate: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
+
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  //align-items: center;
   width: $btn-size;
   max-width: $btn-size-max;
-  height: $btn-size;
-  min-height: $btn-size;
+  height: auto;
+  //min-height: $btn-size;
+
   border-radius: $btn-size/6;
-  color: $color-txt-highlight;
-  text-transform: uppercase;
-  font-weight: $font-weight-bold;
-  letter-spacing: 1px;
+  background-color: white;
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
@@ -33,7 +31,7 @@
     height: auto;
   }
   &:hover {
-    color: black;
+    //color: black;
   }
   span {
     display: flex;
@@ -52,26 +50,53 @@
 
   @include mq(800px) {
     position: fixed;
-    bottom: 150px;
-    right: 50%;
-    translate: 50%;
-  }
-  ul {
-    margin-block: 2rem;
+    bottom: 24px;
+    right: 24px;
+    translate: 0;
   }
 
+  .msg-header {
+    padding: 2rem;
+    background-color: #00a69b;
+    h2 {
+      color: white;
+      letter-spacing: 1px;
+      font-size: 1.8rem;
+    }
+  }
+  .msg-body {
+    height: auto;
+    max-height: 0;
+    transition: max-height .3s ease-out;
+    padding-inline: 2rem;
+    &.active {
+      max-height: 62vh;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      margin-block: 2rem 3rem;
+    }
+    li {
+      border-left: 5px solid $color-blue-light;
+      padding: 1rem 0 0 1rem;
+      h3 {
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        color: black;
+      }
+      p {
+        margin-top: 1rem;
+        font-weight: $font-weight-normal;
+        line-height: 1.4;
+      }
+      a {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
 
 
 }
-
-.msg-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  h4 {
-    font-size: 1.8rem;
-  }
-
-}
-
-

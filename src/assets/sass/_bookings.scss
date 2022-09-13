@@ -84,8 +84,8 @@ a[data-mzid] {
 
   @include mq($mq-narrow) {
     border-radius: 16px;
-    width: Min(1vw, 600px);
-    height: Min(84px, 750px);
+    width: Min(38vw, 600px);
+    height: Min(80vh, 750px);
   }
 
   .modal-close {
