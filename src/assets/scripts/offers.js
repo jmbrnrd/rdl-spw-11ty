@@ -40,8 +40,8 @@ export default function () {
     }
 
     /**
-     *
-     * @param offers - array return from getOffers()
+     * Build the DOM elements
+     * @param offers - array returned from getOffers()
      * @returns {boolean} guard clause
      */
     function createOffersButton(offers) {
@@ -72,7 +72,7 @@ export default function () {
         messageContainer.addEventListener('animationend', () => {
             messageHeader.classList.add('reveal');
         });
-        // reveal offers/messages
+        // open offers/messages
         messageContainer.addEventListener('click', () => {
             dspOffers(messageBody, offers);
             messageBody.classList.toggle('active');
@@ -82,7 +82,7 @@ export default function () {
     }
 
     /**
-     *
+     * Display the list of offers/messages
      * @param container - contain DOM element for our messages
      * @param messages - loaded offers/messages array
      * @returns {boolean}
@@ -110,5 +110,4 @@ export default function () {
         container.appendChild(listFragment);
         messagesLoaded = true;
     }
-
 }
