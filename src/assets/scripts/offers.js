@@ -4,7 +4,7 @@ export default function () {
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
     const devServer = 'http://localhost:4000';
-    const prodServer = 'http://restaurantcollective.io';
+    const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
 
     // Wait for page load
@@ -13,9 +13,8 @@ export default function () {
         getOffers();
     });
 
-
     function getOffers() {
-        // Are they already loaded?
+        // Are they already loaded ?
         if (messagesLoaded) { return false; }
 
         fetch(`${api}/public/restaurantoffers`, {
