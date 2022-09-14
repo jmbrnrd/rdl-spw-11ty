@@ -1,5 +1,6 @@
 {
   "id": "{{ rdl_restaurant_id }}",
+  "number": "{{ rdl_restaurant_number }}",
   "mzId": "{{ mzId }}",
   "mzKey": "{{ mzkey }}",
   "name": "{{ rdl_restaurant_name }}",
