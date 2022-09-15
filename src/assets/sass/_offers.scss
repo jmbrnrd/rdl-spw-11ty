@@ -1,10 +1,13 @@
 @use "vars" as *;
 @use "mixins" as *;
 
+$msg-header-height: 72px;
+$msg-gutter: 48px;
+
 .modal-messages {
   z-index: 10;
   position: fixed;
-  bottom: 25px;
+  bottom: $msg-gutter;
   right: 50%;
   translate: 50%;
   width: $btn-size;
@@ -23,8 +26,8 @@
 
   @include mq(800px) {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: $msg-gutter;
+    right: $msg-gutter;
     translate: 0;
   }
 
@@ -33,9 +36,9 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2rem;
     background-color: $color-brand;
-    min-height: 4rem;
+    height: $msg-header-height;
     h2 {
       color: white;
       letter-spacing: 1px;
@@ -57,18 +60,18 @@
     height: auto;
     max-height: 0;
     transition: max-height .3s ease-out;
-    padding-inline: 2rem;
-    &.active { max-height: 62vh; }
+    padding-inline: 2.4rem;
+    overflow-y: scroll;
+    &.active { max-height: calc(100vh - (#{ $msg-header-height } + 2 * #{ $msg-gutter })) };
     ul {
       display: flex;
       flex-direction: column;
     }
     li {
       &:last-child { margin-bottom: 3rem; }
-      // border-left: 5px solid $color-blue-light;
-      padding-top: 1rem;
+      padding-top: 1.6rem;
       img {
-        height: 6.4rem;
+        height: 56px;
         margin-bottom: 1rem;
       }
       h3 {
