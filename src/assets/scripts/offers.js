@@ -45,25 +45,32 @@ export default function () {
      * @returns {boolean} guard clause
      */
     function createOffersButton(offers) {
+
         // double-check that we have some content
         if (offers.length < 1) { return false; }
+
         // build DOM elements
         const fragment = document.createDocumentFragment();
-        const messageContainer = document.createElement('div');
+        const messageContainer = document.createElement('aside');
         const messageHeader = document.createElement('div');
         const messageBody = document.createElement('div');
+        const messageFooter = document.createElement('div');
 
         // apply classes
         messageContainer.className = 'modal-messages';
         messageHeader.className = 'msg-header';
         messageBody.className = 'msg-body';
+        messageFooter.className = 'msg-footer';
 
         // add content
         messageHeader.innerHTML =
             '<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"/></svg>' +
             '<h2>View Our Latest Offers</h2>';
 
+        messageFooter.innerHTML = `CLOSE`;
+
         // add to DOM
+        messageBody.appendChild(messageFooter);
         messageContainer.append(messageHeader, messageBody);
         fragment.append(messageContainer);
         document.body.appendChild(fragment);
@@ -72,11 +79,13 @@ export default function () {
         messageContainer.addEventListener('animationend', () => {
             messageHeader.classList.add('reveal');
         });
+
         // open offers/messages
         messageContainer.addEventListener('click', () => {
             dspOffers(messageBody, offers);
             messageBody.classList.toggle('active');
         });
+
         // init button
         messageContainer.classList.add('scale-in-center');
     }
@@ -94,7 +103,6 @@ export default function () {
         const listFragment = document.createDocumentFragment();
         const list = document.createElement('ul');
         list.className = 'offer-list';
-        // create list of offers/messages
         let listItem;
         messages.forEach((item, index) => {
           listItem = document.createElement('li');
@@ -102,12 +110,13 @@ export default function () {
               `<img src="https://res.cloudinary.com/rdl/image/upload/v1653385892/directory_assets/camc/logo.svg" alt="logo" />` +
               `<h3>${item['offer_strapline']}</h3>` +
               `<p>${item['offer_text']}</p>` +
-              `<a href="#reservations">Action</a>`;
+              `<a href="#reservations">Action?</a>`;
           list.appendChild(listItem);
         });
+
         // add to DOM
         listFragment.appendChild(list);
-        container.appendChild(listFragment);
+        container.prepend(listFragment);
         messagesLoaded = true;
     }
 }
