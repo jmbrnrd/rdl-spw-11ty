@@ -82,13 +82,16 @@ $msg-gutter: 48px;
         text-transform: none;
       }
       p {
-        margin-top: 1rem;
+        margin-top: .75rem;
         font-weight: $font-weight-normal;
         line-height: 1.4;
       }
       a {
         display: flex;
         justify-content: flex-end;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
     }
   }

@@ -1,6 +1,6 @@
 
 export default function () {
-    console.log(`offers.js loaded`);
+
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
     const devServer = 'http://localhost:4000';
@@ -9,12 +9,13 @@ export default function () {
 
     // Wait for page load
     window.addEventListener('load', function () {
-        console.log('Window loaded');
+        console.log(`Fetch offers`);
         getOffers();
     });
 
     function getOffers() {
-        // Are they already loaded ?
+
+        // Abort if already loaded
         if (messagesLoaded) { return false; }
 
         fetch(`${api}/public/restaurantoffers`, {
@@ -29,11 +30,13 @@ export default function () {
         })
             // check for valid response
             .then(response => {
+                // format
                 return response.json();
             })
             .then(data => {
-                // Any offers/messages?
+                // abort if array is empty
                 if (data.count < 1) { return false; }
+                // process
                 createOffersButton(data['offers']);
             })
             .catch(err => console.log(err));
@@ -46,7 +49,7 @@ export default function () {
      */
     function createOffersButton(offers) {
 
-        // double-check that we have some content
+        // abort if no offers returned
         if (offers.length < 1) { return false; }
 
         // build DOM elements
@@ -99,12 +102,13 @@ export default function () {
     function dspOffers(container, messages) {
         // abort if already loaded
         if (messagesLoaded) { return false; }
+
         // build DOM elements
         const listFragment = document.createDocumentFragment();
         const list = document.createElement('ul');
         list.className = 'offer-list';
         let listItem;
-        messages.forEach((item, index) => {
+        messages.forEach((item) => {
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<img src="https://res.cloudinary.com/rdl/image/upload/v1653385892/directory_assets/camc/logo.svg" alt="logo" />` +

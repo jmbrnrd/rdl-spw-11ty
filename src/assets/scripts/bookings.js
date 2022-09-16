@@ -9,6 +9,7 @@ export default function() {
             console.log('No booking button found!');
             return;
         }
+        console.log('Create booking widget');
         // Grab the mz keys
         const id = bkgButtons[0].dataset.mzid;
         const key = bkgButtons[0].dataset.mzkey;
