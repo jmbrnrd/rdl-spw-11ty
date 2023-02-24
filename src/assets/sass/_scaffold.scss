@@ -1,11 +1,11 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-body { background-color: $color-black; }
-main { background-color: white; }
+body { background-color: black; }
+main { background-color: $color-page-bg; }
 footer {
-  color: $color-grey-light;
-  background-color: $color-black;
+  color: $color-nav-menu;
+  background-color: black;
   padding: 2rem;
   .footer-section {
     display: flex;
@@ -16,7 +16,7 @@ footer {
     max-width: $layout-max-width;
     margin: auto;
     div {
-      color: #ddd;
+      color: rgba($color-nav-menu, .75);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,8 +24,7 @@ footer {
       h3 { text-transform: none; }
       p { font-size: 1.2rem; margin: 0;}
       a {
-        color: $color-txt-highlight;
-        font-weight: $font-weight-normal;
+        font-weight: $font-weight-bold;
       }
       a.ftr-logo-sml {
         height: 100%;
@@ -38,13 +37,18 @@ footer {
       button {
         background: 0;
         border-radius: $radius-sml;
-        border: 1px solid white;
+        border: 1px solid $color-nav-accent;
         font-size: 1.4rem;
-        color: white;
+        color: $color-nav-accent;
         cursor: pointer;
         height: 40px;
         padding: .8rem;
         white-space: nowrap;
+        transition: all .3s ease-out;
+        &:hover {
+          border-color: $color-nav-menu;
+          color: $color-nav-menu;
+        }
       }
     }
     @include mq($mq-medium) {
@@ -85,12 +89,12 @@ footer {
     width: min(90%, 800px);
     h2 {
       font-size: clamp(5rem, 5vw, 8rem);
-      color: #fff;
+      color: white;
       line-height: 1.1;
     }
     h3 {
-      color: #fff;
-      font-size: clamp(2.4rem, 3vw, 4rem  );
+      color: white;
+      font-size: clamp(2.4rem, 3vw, 3rem  );
       font-weight: 200;
       margin: 0 0 1rem;
       padding: 0 2rem;
@@ -114,7 +118,7 @@ footer {
       display: inline-block;
       margin: 0 1rem;
       a {
-        color: #fff;
+        color: white;
         font-family: $font-family-default;
         font-size: 1.6rem;
         font-weight: $font-weight-normal;
@@ -176,7 +180,7 @@ footer {
     &:not(:first-child){ padding: 1rem 0 0 0; }
     h2 {
       font-size: 1.25rem;
-      color: $color-txt-highlight;
+      color: $color-page-accent;
       font-weight: $font-weight-bold;
     }
   }
@@ -228,12 +232,12 @@ footer {
     cursor: default;
     display: inline-block;
     padding: .5em 1em;
-    background: $clr-grey-100;
+    background: $color-grey-light;
     border-radius: 2rem;
     text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: $font-weight-bold;
-    color: $color-txt-body;
+    color: $color-page-text;
     margin-right: .5rem;
     margin-bottom: .5rem;
     @include mq($mq-medium) {
@@ -246,17 +250,29 @@ dd {
     display: flex;
     height: auto;
     padding-top: 1rem;
-    gap: 8px;
+    gap: 24px;
     white-space: normal;
+
 
     a {
       display: inline-block;
       width: 40px;
-
+      opacity: .675;
+      transition: opacity .3s ease-in-out;
       &:hover {
-        transform: scale(1.1);
+        opacity: 1;
       }
+
     }
+  }
+  span {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 2px;
   }
 }
 .social {
@@ -268,8 +284,10 @@ dd {
       display: inline-block;
       width: 4rem;
       height: auto;
+      opacity: .75;
+      transition: opacity .3s ease-in-out;
       &:hover {
-        transform: scale(1.15);
+        opacity: 1;
       }
     }
   }

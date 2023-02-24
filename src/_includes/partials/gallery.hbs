@@ -1,12 +1,12 @@
 <!-- Optional section tag start - Images -->
 <div class="image-gallery" aria-label="gallery">
-    <!-- {{ restaurant.image.gallery }} -->
-    {{#each restaurant.image.gallery }}
+    <!-- {{ demo.image.gallery }} -->
+    {{#each demo.image.gallery }}
         <a class="glightbox"
-           href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../restaurant.id }}/{{ this }}">
+           href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../demo.id }}/{{ this }}">
             <img loading="lazy"
-                 src="https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,dpr_auto,f_auto/restaurants/{{ ../restaurant.id }}/{{ this }}"
-                 alt="{{ ../restaurant.name }} gallery image">
+                 src="https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,dpr_auto,f_auto/restaurants/{{ ../demo.id }}/{{ this }}"
+                 alt="{{ ../demo.name }} gallery image">
         </a>
     {{/each}}
 </div>

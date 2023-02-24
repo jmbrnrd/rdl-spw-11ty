@@ -19,7 +19,6 @@
     margin-right: 8px;
   }
 }
-
 .modal-container {
   display: none;
   position: fixed;
@@ -31,7 +30,6 @@
   align-items: center;
   opacity: 0;
   transition: opacity 200ms ease-out;
-
   .modal {
     position: relative;
     display: flex;
@@ -66,7 +64,6 @@
       }
     }
   }
-
   .claim-form {
     position: relative;
     display: flex;
@@ -87,7 +84,7 @@
 
       .btn-cancel {
         background: transparent;
-        color: $color-txt-body;
+        color: $color-page-text;
       }
 
       .btn-submit,
@@ -139,7 +136,7 @@
 
     button {
       flex: 1;
-      background: $color-txt-highlight;
+      background: $color-page-accent;
       border: 0;
       padding: 1.2rem;
       border-radius: 8px;
@@ -149,7 +146,7 @@
       transition: background-color 200ms ease-out;
 
       &:hover {
-        background-color: darken($color-txt-highlight, 5%);
+        background-color: $color-cta-bg-dark;
       }
     }
 

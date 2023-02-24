@@ -16,7 +16,7 @@ body {
 body,
 input {
   font: normal $font-weight-normal 2rem / 1.4 $font-family-default;
-  color: $color-txt-body;
+  color: $color-page-text;
 }
 h1 {
   font-size: 3.2rem;
@@ -25,14 +25,14 @@ h1 {
   padding: 1rem 0 0.5rem;
 }
 h1, h2, h3 {
-  color: $color-txt-body;
+  color: $color-page-text;
   text-transform: uppercase;
 }
 h4 {
   font-size: .75rem;
   font-weight: $font-weight-bold;
   letter-spacing: .1em;
-  color: $color-txt-highlight;
+  color: $color-page-accent;
   text-transform: uppercase;
 }
 p { margin: 0 0 1.6rem; }
@@ -48,7 +48,7 @@ dl {
     font-size: 1.2rem;
     font-weight: $font-weight-bold;
     letter-spacing: .1rem;
-    color: $color-txt-highlight;
+    color: $color-page-accent;
     text-transform: uppercase;
     ~ dt { margin-top: 1.6em; }
   }
@@ -66,12 +66,12 @@ dd > a:not([class]), {
     display: block;
     margin-top: 0;
     right: 0;
-    background: $color-txt-body;
+    background: $color-page-text;
     transition: width .2s ease;
   }
   &:hover:after{
     width: 100%;
     left: 0;
-    background: $color-txt-body;
+    background: $color-page-text;
   }
 }

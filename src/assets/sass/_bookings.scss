@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: $color-petrol;
+  background-color: $color-page-accent;
   border-radius: $radius-sml;
   border: 0;
   cursor: pointer;
@@ -15,7 +15,7 @@
   padding-block: 1.5rem;
   font-weight: $font-weight-bold;
   font-size: clamp(2rem, 1vw + 1rem, 4rem);
-  color: hsl(255 100% 100% / .5);
+  color: hsl(255 100% 100% / 1);
   letter-spacing: .1rem;
   line-height: 1;
   margin-bottom: 2rem;
@@ -32,7 +32,7 @@
   }
   &:hover {
     color: hsl(255 100% 100% / 1);
-    background-color: $color-petrol;
+    background-color: $color-page-accent-dark;
     &::before {
       opacity: .85;
     }
@@ -40,7 +40,7 @@
 }
 a[data-mzid] {
   cursor: pointer;
-  color: $color-txt-highlight !important;
+  color: $color-page-accent !important;
   font-weight: $font-weight-bold;
 }
 
@@ -67,7 +67,7 @@ a[data-mzid] {
   justify-content: center;
   border-radius: 0;
   padding-inline: 1.5rem;
-  padding-block: 3rem 2rem;
+  padding-block: 5rem 2rem;
   background-color: white;
   width: 100vw;
   height: 100vh;
@@ -80,6 +80,7 @@ a[data-mzid] {
   iframe {
     width: 98%;
     height: auto;
+    border: none;
   }
 
   @include mq($mq-narrow) {
@@ -116,3 +117,4 @@ a[data-mzid] {
 .stopScroll {
   overflow: hidden;
 }
+

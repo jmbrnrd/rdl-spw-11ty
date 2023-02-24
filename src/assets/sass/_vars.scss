@@ -1,21 +1,27 @@
+// Theme colours
+$color-page-bg                : var(--clr-page-bg, White);
+$color-page-text              : var(--clr-page-txt, DimGrey);
+$color-page-accent            : var(--clr-page-accent, OrangeRed);
+$color-page-accent-dark       : var(--clr-page-accent-dark, OrangeRed);
+$color-nav-bg                 : var(--clr-nav-bg, DimGrey);
+$color-nav-menu               : var(--clr-nav-menu, White);
+$color-nav-accent             : var(--clr-nav-accent, MediumTurquoise);
+$color-cta-bg                 : var(--clr-cta-bg, OrangeRed);
+$color-cta-label              : var(--clr-cta-label, white);
+$color-cta-bg-dark            : var(--clr-cta-bg-dark);
 
-$color-txt-body               : #4a4a4a;
-$color-txt-highlight          : #ff5720;
-$color-black                  : #2a2929;
-$color-green                  : #8BC349;
-$color-blue                   : #2096F3;
-$color-blue-light             : #e2f0f3;
-$color-petrol                 : #00BCD3;
-$color-grey-light             : #9E9E9E;
-$color-slate                  : #607D8B;
-$color-brand                  : #00a69b;
-$clr-grey-100                 : #eee;
 
+// Standard UI colours
+$color-black                  : hsl(0, 0%, 5%);
+$color-grey-light             : hsl(0, 0%, 93%);
+
+// fonts
 $font-family-default          : system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 $font-family-display          : 'Antonio', sans-serif;
 $font-weight-normal           : 300;
 $font-weight-bold             : 400;
 
+// layout
 $layout-max-width             : 1060px;
 $mq-narrow                    : 35em; // 700px
 $mq-medium                    : 48em; // 960px
@@ -34,11 +40,11 @@ $radius-sml                   : 5px;
 *
 **/
 $hamburger-padding            : 8px 12px ;
-$hamburger-layer-color        : #fff ;
+$hamburger-layer-color        : $color-nav-bg;
 $hamburger-line-width         : 40px !default;
 $hamburger-line-height        : 4px !default;
 $hamburger-line-spacing       : 6px !default;
-$hamburger-line-color         : white;
+$hamburger-line-color         : $color-nav-menu;
 $hamburger-line-border-radius : 2px !default;
 $hamburger-hover-trans-dur    : 0.15s !default;
 $hamburger-hover-trans-func   : linear !default;
@@ -48,8 +54,5 @@ $rdl-height: 480px;
 $rdl-radius: 12px;
 $btn-size: 80px;
 $btn-size-max: 90vw;
-$shadow: rgba(0, 0, 0, 0.25) 0 54px 55px,
-rgba(0, 0, 0, 0.12) 0 -12px 30px,
-rgba(0, 0, 0, 0.12) 0 4px 6px,
-rgba(0, 0, 0, 0.17) 0 12px 13px,
-rgba(0, 0, 0, 0.09) 0 -3px 5px;
+$shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;

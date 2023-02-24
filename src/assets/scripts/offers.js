@@ -114,7 +114,7 @@ export default function () {
               `<img src="https://res.cloudinary.com/rdl/image/upload/v1653385892/directory_assets/camc/logo.svg" alt="logo" />` +
               `<h3>${item['offer_strapline']}</h3>` +
               `<p>${item['offer_text']}</p>` +
-              `<a href="#reservations">Action?</a>`;
+              `<a href="https://www.caravanclub.co.uk/membership/member-offers/roadchef/">View Details</a>`;
           list.appendChild(listItem);
         });
 

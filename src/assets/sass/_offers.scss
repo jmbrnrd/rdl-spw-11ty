@@ -22,7 +22,7 @@ $msg-gutter: 48px;
   transition: all .3s ease-out;
   transform-origin: center;
   overflow: hidden;
-  box-shadow: $shadow;
+  box-shadow: $modal-box-shadow;
 
   @include mq(800px) {
     position: fixed;
@@ -37,8 +37,12 @@ $msg-gutter: 48px;
     align-items: center;
     gap: 1rem;
     padding: 2rem;
-    background-color: $color-brand;
+    background-color: $color-cta-bg;
     height: $msg-header-height;
+    transition: background-color .3s ease-out;
+    &:hover {
+      background-color: $color-cta-bg-dark;
+    }
     h2 {
       color: white;
       letter-spacing: 1px;
@@ -82,7 +86,7 @@ $msg-gutter: 48px;
         text-transform: none;
       }
       p {
-        margin-top: .75rem;
+        margin-block: .75rem 0;
         font-weight: $font-weight-normal;
         line-height: 1.4;
       }
@@ -90,8 +94,7 @@ $msg-gutter: 48px;
         display: flex;
         justify-content: flex-end;
         font-size: 1.6rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        font-weight: $font-weight-bold;
       }
     }
   }
