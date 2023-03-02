@@ -139,11 +139,12 @@ permalink: "/templates/index.html"
                     <dd>
                         <div class="social-links">
                         {{#each demo.social.networks }}
-                            <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                <img src="/assets/imgs/{{ this.name }}.svg" alt="{{ this.name }} logo">
+                            <div>
+                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                    <img src="/assets/imgs/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
+                                </a>
                                 <span>{{ this.name }}</span>
-                            </a>
-
+                            </div>
                         {{/each}}
                         </div>
                     </dd>

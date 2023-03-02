@@ -37,11 +37,11 @@ $msg-gutter: 48px;
     align-items: center;
     gap: 1rem;
     padding: 2rem;
-    background-color: $color-cta-bg;
+    background-color: $color-cta-bgd;
     height: $msg-header-height;
     transition: background-color .3s ease-out;
     &:hover {
-      background-color: $color-cta-bg-dark;
+      background-color: $color-cta-bgd-dark;
     }
     h2 {
       color: white;

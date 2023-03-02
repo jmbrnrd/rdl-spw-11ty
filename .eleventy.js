@@ -3,6 +3,7 @@ module.exports = function (config) {
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
   config.addWatchTarget('./src/assets/scripts/');
   config.addPassthroughCopy("./src/assets/imgs/");
+  config.addPassthroughCopy("./src/assets/manifest.json");
   return {
     dir: {
       input: "src",
