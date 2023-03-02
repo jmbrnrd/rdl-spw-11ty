@@ -6,8 +6,9 @@
   position: fixed;
   top: 8px; right: 8px;
   z-index: 500;
-  background-color: hsl(0 0% 0% / .75);
+  background-color: $color-nav-bgd;
   border-radius: 4px;
+  opacity: .85;
   @include mq($mq-medium) { display: none; }
 }
 

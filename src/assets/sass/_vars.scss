@@ -1,19 +1,20 @@
-// Theme colours
-$color-page-bg                : var(--clr-page-bg, White);
-$color-page-text              : var(--clr-page-txt, DimGrey);
-$color-page-accent            : var(--clr-page-accent, OrangeRed);
-$color-page-accent-dark       : var(--clr-page-accent-dark, OrangeRed);
-$color-nav-bg                 : var(--clr-nav-bg, DimGrey);
-$color-nav-menu               : var(--clr-nav-menu, White);
-$color-nav-accent             : var(--clr-nav-accent, MediumTurquoise);
-$color-cta-bg                 : var(--clr-cta-bg, OrangeRed);
-$color-cta-label              : var(--clr-cta-label, white);
-$color-cta-bg-dark            : var(--clr-cta-bg-dark);
-
-
+// Colours
+$color-page-bgd               : var(--clr-grey-50, #eee);
+$color-page-text              : var(--clr-grey-700, #333);
+$color-page-text-accent       : var(--clr-accent-700, #FF4500);
+$color-page-text-header       : var(--clr-grey-900, #000);
+// navigation
+$color-nav-bgd                : var(--clr-primary-500, #081b23);
+$color-nav-menu               : var(--clr-primary-50, #081b23);
+$color-nav-accent             : var(--clr-primary-50, white);
+// accents
+$color-cta-bg                 : var(--clr-primary-500, #FF4500);
+$color-cta-label              : var(--clr-accent-100, white);
+$color-cta-bg-dark            : var(--clr-accent-900, #e83700);
 // Standard UI colours
-$color-black                  : hsl(0, 0%, 5%);
-$color-grey-light             : hsl(0, 0%, 93%);
+$color-black                  : #000;
+$color-white                  : #fff;
+$color-grey-light             : var(--clr-grey-100, #333);
 
 // fonts
 $font-family-default          : system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -40,7 +41,7 @@ $radius-sml                   : 5px;
 *
 **/
 $hamburger-padding            : 8px 12px ;
-$hamburger-layer-color        : $color-nav-bg;
+$hamburger-layer-color        : $color-nav-bgd;
 $hamburger-line-width         : 40px !default;
 $hamburger-line-height        : 4px !default;
 $hamburger-line-spacing       : 6px !default;

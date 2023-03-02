@@ -61,5 +61,4 @@ export default function() {
             document.body.classList.toggle('stopScroll');
         }
     });
-
 }

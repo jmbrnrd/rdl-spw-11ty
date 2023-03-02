@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: $color-page-accent;
+  background-color: $color-page-text-accent;
   border-radius: $radius-sml;
   border: 0;
   cursor: pointer;
@@ -32,7 +32,7 @@
   }
   &:hover {
     color: hsl(255 100% 100% / 1);
-    background-color: $color-page-accent-dark;
+    background-color: $color-cta-bg-dark;
     &::before {
       opacity: .85;
     }
@@ -40,7 +40,7 @@
 }
 a[data-mzid] {
   cursor: pointer;
-  color: $color-page-accent !important;
+  color: $color-page-text-accent !important;
   font-weight: $font-weight-bold;
 }
 

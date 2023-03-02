@@ -1,0 +1,23 @@
+@use "theme-gen" as *;
+
+// Base palette
+$clr-primary:   #1bb776;
+$clr-accent:    #ec6509;
+$clr-grey:      #666666;
+$clr-warn:      #EF0606;
+$clr-success:   #90EE90;
+$clr-white:     #fff;
+$clr-black:     #000;
+
+// Generate CSS variables
+:root {
+  @each $shade, $color in makeColorPalette($clr-primary) {
+    --clr-primary-#{$shade}: #{$color};
+  }
+  @each $shade, $color in makeColorPalette($clr-accent) {
+    --clr-accent-#{$shade}: #{$color};
+  }
+  @each $shade, $color in makeColorPalette($clr-grey) {
+    --clr-grey-#{$shade}: #{$color};
+  }
+}

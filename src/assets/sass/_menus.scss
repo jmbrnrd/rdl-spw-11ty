@@ -20,7 +20,7 @@ ul.menu-key {
     font-weight: $font-weight-bold;
     font-size: 2.4rem;
     text-align: center;
-    color: inherit;
+    color: var(--clr-grey-300);
     ~ h3 { margin-top: 3rem; }
     @include mq($mq-wide) {
       //font-size: 3.6rem;
@@ -43,7 +43,7 @@ ul.menu-key {
         font-weight: $font-weight-bold;
         flex: 75%;
         margin-right: auto;
-        color: inherit;
+        color: var(--clr-grey-800);
         @include mq($mq-medium) {
           font-size: 1.6rem;
         }
@@ -129,7 +129,7 @@ i {
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    background-color: $color-grey-light;
+    background-color: var(--clr-primary-100);
     transition: all 300ms ease-out;
     padding: 3.2rem;
     text-align: center;
@@ -161,7 +161,7 @@ i {
     }
     &:hover {
       box-shadow: $shadow;
-      background-color: $color-nav-bg;
+      background-color: $color-nav-bgd;
       color: white;
       &:after { transform: translateY(8px); }
     }

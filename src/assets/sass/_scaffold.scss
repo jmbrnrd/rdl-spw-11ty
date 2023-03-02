@@ -2,7 +2,7 @@
 @use "mixins" as *;
 
 body { background-color: black; }
-main { background-color: $color-page-bg; }
+main { background-color: $color-page-bgd; }
 footer {
   color: $color-nav-menu;
   background-color: black;
@@ -178,7 +178,7 @@ footer {
     &:not(:first-child){ padding: 1rem 0 0 0; }
     h2 {
       font-size: 1.25rem;
-      color: $color-page-accent;
+      color: $color-page-text-accent;
       font-weight: $font-weight-bold;
     }
   }
@@ -230,7 +230,7 @@ footer {
     cursor: default;
     display: inline-block;
     padding: .5em 1em;
-    background: $color-grey-light;
+    background: var(--clr-primary-100);
     border-radius: 2rem;
     text-transform: uppercase;
     font-size: 1.1rem;
@@ -256,9 +256,10 @@ dd {
       display: inline-block;
       width: 40px;
       opacity: .675;
-      transition: opacity .3s ease-in-out;
+      transition: all .3s ease-in-out;
       &:hover {
         opacity: 1;
+        scale: 1.05;
       }
 
     }
