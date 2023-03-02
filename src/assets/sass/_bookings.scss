@@ -7,7 +7,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: $color-page-text-accent;
+  background-color: $color-body-text-accent;
   border-radius: $radius-sml;
   border: 0;
   cursor: pointer;
@@ -40,7 +40,7 @@
 }
 a[data-mzid] {
   cursor: pointer;
-  color: $color-page-text-accent !important;
+  color: $color-body-text-accent !important;
   font-weight: $font-weight-bold;
 }
 
@@ -68,7 +68,7 @@ a[data-mzid] {
   border-radius: 0;
   padding-inline: 1.5rem;
   padding-block: 5rem 2rem;
-  background-color: white;
+  background-color: $color-white;
   width: 100vw;
   height: 100vh;
   box-shadow:

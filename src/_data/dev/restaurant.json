@@ -209,6 +209,7 @@
             "prefix": "rc",
             "name": "Restaurant Collective",
             "web": "restaurantcollective.org.uk"
-        }
+        },
+        "theme": "nyjc"
     }
 

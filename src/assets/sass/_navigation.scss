@@ -18,7 +18,7 @@ nav {
   height: 100vh;
   padding: 8rem 3rem 2rem;
   background-color: $color-nav-bgd;
-  color: $color-nav-accent;
+  color: $color-nav-label;
   transition: opacity 300ms ease-out;
   pointer-events: none;
   font-size: 2rem;
@@ -37,7 +37,7 @@ nav {
       letter-spacing: .2rem;
       font-weight: $font-weight-bold;
       line-height: inherit;
-      color: $color-nav-accent;
+      color: $color-nav-label;
       padding: 0;
       margin-bottom: 2.4rem
     }
