@@ -1,27 +1,25 @@
 // Colours
-$color-page-bgd               : var(--clr-grey-50, #eee);
+$color-page-bgd               : var(--clr-grey-50, #fff);
 $color-page-text              : var(--clr-grey-700, #333);
-$color-page-text-accent       : var(--clr-accent-700, #FF4500);
+$color-page-text-accent       : var(--clr-accent-700, #666);
 $color-page-text-header       : var(--clr-grey-900, #000);
 // navigation
-$color-nav-bgd                : var(--clr-primary-500, #081b23);
-$color-nav-menu               : var(--clr-primary-50, #081b23);
+$color-nav-bgd                : var(--clr-primary-500, #000);
+$color-nav-menu               : var(--clr-primary-50, #fff);
 $color-nav-accent             : var(--clr-primary-50, white);
 // accents
-$color-cta-bgd                : var(--clr-accent-500, #FF4500);
-$color-cta-label              : var(--clr-accent-100, white);
-$color-cta-bgd-dark           : var(--clr-accent-900, #e83700);
+$color-cta-bgd                : var(--clr-accent-500, #666);
+$color-cta-label              : var(--clr-accent-100, #eee);
+$color-cta-bgd-dark           : var(--clr-accent-900, #444);
 // Standard UI colours
 $color-black                  : #000;
 $color-white                  : #fff;
 $color-grey-light             : var(--clr-grey-100, #333);
-
 // fonts
 $font-family-default          : system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 $font-family-display          : 'Antonio', sans-serif;
 $font-weight-normal           : 300;
 $font-weight-bold             : 400;
-
 // layout
 $layout-max-width             : 1060px;
 $mq-narrow                    : 35em; // 700px

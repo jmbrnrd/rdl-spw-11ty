@@ -137,12 +137,14 @@ permalink: "/templates/member.html"
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                        {{#each restaurant.social.networks }}
-                            <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                <img src="/assets/imgs/{{ this.name }}.svg" alt="{{ this.name }} logo">
-                                <span>{{ this.name }}</span>
-                            </a>
-                        {{/each}}
+                            {{#each restaurant.social.networks }}
+                                <div>
+                                    <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                        <img src="/assets/imgs/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
+                                    </a>
+                                    <span>{{ this.name }}</span>
+                                </div>
+                            {{/each}}
                         </div>
                     </dd>
                 </dl>

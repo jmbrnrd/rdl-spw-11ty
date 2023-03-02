@@ -21,4 +21,5 @@ module.exports = class {
             target: isProduction ? 'es6' : 'esnext'
         })
     }
+
 }

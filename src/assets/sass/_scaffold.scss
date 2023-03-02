@@ -171,11 +171,11 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  gap: 3rem;
   margin-top: 2rem;
   aside {
     flex: 1;
-    &:not(:first-child){ padding: 1rem 0 0 0; }
+    //&:not(:first-child){ padding: 1rem 0 0 0; }
     h2 {
       font-size: 1.25rem;
       color: $color-page-text-accent;
@@ -189,7 +189,7 @@ footer {
     margin-top: 3rem;
     aside {
       &:not(:first-child){
-        padding: 0 0 0 2rem;
+        //padding: 0 0 0 2rem;
       }
     }
   }
@@ -218,7 +218,6 @@ footer {
   }
   @include mq($mq-medium) {
     margin-top: 0;
-    padding-left: 1rem;
     flex: 1;
   }
 }
@@ -246,20 +245,29 @@ footer {
 dd {
   .social-links {
     display: flex;
+    justify-content: flex-start;
     height: auto;
-    padding-top: 1rem;
+    margin-top: 1rem;
     gap: 1rem;
     white-space: normal;
+    width: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: auto
+    }
 
     a {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 1rem;
-      width: 48px;
-      height: 48px;
-      border-radius: 28px;
+      padding: 1.5rem;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
       background-color: $color-cta-bgd;
       transition: all .3s ease-in-out;
       &:hover {
@@ -276,7 +284,7 @@ dd {
     justify-content: center;
     width: 100%;
     font-size: 1rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-align: center;
     padding: 2px;
   }
