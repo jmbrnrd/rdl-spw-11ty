@@ -14,7 +14,7 @@
   "email": "{{ rdl_email }}",
   "website": "{{ rdl_website }}",
   "cuisine": "{{ rdl_cuisine }}",
-  "spwUrl": "{{ spw_url }}",
+  "rdl": "{{ spw_url }}",
   "openingTimes": "{{ rdl_opening_times }}",
   "openingNotes": "{{ rdl_opening_notes }}",
   "geocode": {
@@ -53,6 +53,7 @@
     "prefix": "{{ company_prefix }}",
     "name":"{{ company_name }}",
     "web": "{{ company_website }}"
-  }
+  },
+  "theme": "{{ theme }}"
 }
 

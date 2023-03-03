@@ -252,13 +252,14 @@ dd {
     }
 
     a {
+      $diameter: 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 1.5rem;
-      width: 64px;
-      height: 64px;
+      padding: 1.6rem;
+      width: $diameter;
+      height: $diameter;
       border-radius: 50%;
       background-color: $color-cta-bgd;
       transition: all .3s ease-in-out;
@@ -275,10 +276,10 @@ dd {
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: 1rem;
+    font-size: .9rem;
     text-transform: uppercase;
     text-align: center;
-    padding: 2px;
+    margin-top: .5rem;
   }
 }
 .social {
