@@ -47,7 +47,7 @@ permalink: "/templates/apptiser.html"
         </ul>
         <span class="desc-one-sentence fade-in" >{{ demo.description.sentence }}</span>
     </div>
-    {{> partials/hero-image-demo }}
+    {{> partials/hero-image dataSrc = demo }}
 </section>
 
 <main id="home">
@@ -94,9 +94,9 @@ permalink: "/templates/apptiser.html"
 
     </section>
 
-    {{> partials/menus-demo }}
+    {{> partials/menus dataSrc=demo }}
 
-    {{> partials/menu-downloads-demo }}
+    {{> partials/menu-downloads dataSrc=demo }}
 
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">

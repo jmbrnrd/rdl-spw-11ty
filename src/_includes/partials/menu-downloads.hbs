@@ -4,7 +4,7 @@
     <h2>downloadable menus</h2>
     <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
     <div class="content-block menu-downloads">
-        {{#each restaurant.menus.pdfs }}
+        {{#each dataSrc.menus.pdfs }}
             <div class="menu-card-container">
                 <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
                     <h3>{{ name }}</h3>
