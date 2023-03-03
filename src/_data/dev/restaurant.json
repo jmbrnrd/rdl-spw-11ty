@@ -15,7 +15,7 @@
         "email": "info@sarao-restaurant.com",
         "website": "https://www.sarao-restaurant.com/",
         "cuisine": "British",
-        "spwUrl": "https://spw.restaurantcollective.org.uk/RC-Demo-Restaurant/",
+        "rdl": "https://spw.restaurantcollective.org.uk/RC-Demo-Restaurant/",
         "openingTimes": "Sun: Closed all day\n Mon: 08:00 - 18:00\n Tue: 08:00 - 18:00\n Wed: 08:00 - 18:00\n Thu: 08:00 - 18:00\n Fri: 08:00 - 18:00\n Sat: Closed all day",
         "openingNotes": "Open all year",
         "geocode": {
@@ -210,6 +210,6 @@
             "name": "Restaurant Collective",
             "web": "restaurantcollective.org.uk"
         },
-        "theme": "nyjc"
+        "theme": "collective"
     }
 
