@@ -1,0 +1,66 @@
+{
+  "id": "{{ id }}",
+  "number": "{{ number }}",
+  "mzId": "{{ mzId }}",
+  "mzKey": "{{ mzKey }}",
+  "name": "{{ name }}",
+  "subtitle": "{{ subtitle }}",
+  "addressStreet": "{{ addressStreet }}",
+  "addressLocality": "{{ addressLocality }}",
+  "addressRegion": "{{ addressRegion }}",
+  "addressCountry": "{{ addressCountry }}",
+  "postalCode": "{{ postalCode }}",
+  "phone": "{{ phone }}",
+  "email": "{{ email }}",
+  "website": "{{ website }}",
+  "cuisine": "{{ cuisine }}",
+  "rdl": "{{ spwUrl }}",
+  "openingTimes": "{{ openingTimes }}",
+  "openingNotes": "{{ openingNotes }}",
+  "geocode": {
+    "lat": "{{ geocode.lat }}",
+    "lng": "{{ geocode.lng }}"
+  },
+  "sameAs": "{{ social.sameAs }}",
+  "social": {
+    "sameAs": "{{ social.sameAs }}",
+    "networks": "{{ social.networks }}"
+  },
+  "image": {
+    "default": "{{ image.default }}",
+    "opengraph": "{{ image.default }}",
+    "gallery": "{{ image.gallery }}"
+  },
+  "description": {
+    "sentence": "{{ description.sentence }}",
+    "paragraph": "{{ description.paragraph }}",
+    "full": "{{ description.full }}"
+  },
+  "features": "{{ features }}",
+  "transport": "{{ transport }}",
+  "parking": "{{ parking }}",
+  "menus": {
+    "overview": "{{ menus.overview }}",
+    "sections": "{{ menus.sections }}",
+    "pdfs": "{{ menus.pdfs }}"
+  },
+  "reservations": {
+    "info": "{{ reservations.info }}",
+    "groups": "{{ reservations.groups }}",
+    "private": "{{ reservations.private  }}",
+    "tgtUrl": "{{ reservations.tgturl }}",
+    "maxcover": "{{ reservations.maxcover }}",
+    "provider": "{{ reservations.provider }}",
+    "restId": "{{ reservations.rest_id }}",
+    "bkgAdvDays": "{{ reservations.bkgAdvDays }}"
+  },
+  "brand": {
+    "prefix": "{{ brand.prefix }}",
+    "name":"{{ brand.name }}",
+    "web": "{{ brand.web }}",
+    "logo": "{{ brand.logo }}",
+    "language": "{{ brand.language }}"
+  },
+  "theme": "{{ theme }}"
+}
+
