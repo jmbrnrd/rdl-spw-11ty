@@ -20,12 +20,15 @@ export default function () {
                 mapId,
                 mapTypeControl: false,
             });
+            // Get the primary theme color
+            const clrMarker = getComputedStyle(document.documentElement)
+                            .getPropertyValue('--clr-accent-500') || '#000';
             // map marker
             const marker = new google.maps.Marker({
                 position: center,
                 icon: {
                     path: 'M18,46 C5,37 0,27.9411255 0,18 C0,8.0588745 8.0588745,7.10542736e-15 18,7.10542736e-15 C27.9411255,7.10542736e-15 36,8.0588745 36,18 C36,27.9411255 31,37 18,46 Z M18,24 C21.3137085,24 24,21.3137085 24,18 C24,14.6862915 21.3137085,12 18,12 C14.6862915,12 12,14.6862915 12,18 C12,21.3137085 14.6862915,24 18,24 Z',
-                    fillColor: '#ff5724',
+                    fillColor: clrMarker,
                     fillOpacity: .75,
                     strokeWeight: 0,
                     strokeColor: '#000',

@@ -13,16 +13,17 @@
     <!-- TODO: should only be applied to previews -->
 <!--    <meta name="robots" content="noindex">-->
 
-    {{> partials/schema.org }}
+    {{> partials/schema.org dataSrc=restaurant }}
 
-    {{> partials/open-graph }}
+    {{> partials/open-graph dataSrc=restaurant}}
 
-    {{> partials/favicons }}
+    {{> partials/favicons-spw }}
 
     {{> partials/fonts }}
 
     {{> partials/theme }}
 
+    <link rel="stylesheet" href="/assets/styles/themes/{{ restaurant.theme }}.css" />
 	<link rel="stylesheet" href="/assets/styles/member.css" />
 
 	<script type="module" src="/assets/scripts/main.js" defer></script>

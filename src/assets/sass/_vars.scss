@@ -1,43 +1,50 @@
-// Colours
-$color-page-bgd               : var(--clr-grey-50, #fff);
-$color-page-text              : var(--clr-grey-700, #333);
-$color-page-text-accent       : var(--clr-accent-700, #666);
-$color-page-text-header       : var(--clr-grey-900, #000);
+// body
+$color-body-bgd               : #fff;
+$color-body-text              : var(--clr-grey-700, #333);
+$color-body-text-accent       : var(--clr-accent-700, #666);
+$color-body-header            : var(--clr-grey-900, #000);
+
 // navigation
 $color-nav-bgd                : var(--clr-primary-500, #000);
 $color-nav-menu               : var(--clr-primary-50, #fff);
-$color-nav-accent             : var(--clr-primary-50, white);
+$color-nav-label              : #fff;
+
+// primaries
+$color-primary                : var(--clr-primary-500, #666);
+$color-primary-light          : var(--clr-primary-100, #eee);
+$color-primary-dark           : var(--clr-primary-900, #000);
+
 // accents
 $color-cta-bgd                : var(--clr-accent-500, #666);
-$color-cta-label              : var(--clr-accent-100, #eee);
+$color-cta-label-light        : var(--clr-accent-100, #eee);
 $color-cta-bgd-dark           : var(--clr-accent-900, #444);
-// Standard UI colours
+
+// basics
 $color-black                  : #000;
 $color-white                  : #fff;
+$color-grey                   : var(--clr-grey-500, #666);
 $color-grey-light             : var(--clr-grey-100, #333);
+$color-grey-dark              : var(--clr-grey-800, #111);
+
 // fonts
 $font-family-default          : system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 $font-family-display          : 'Antonio', sans-serif;
 $font-weight-normal           : 300;
 $font-weight-bold             : 400;
-// layout
+
+// layouts
 $layout-max-width             : 1060px;
 $mq-narrow                    : 35em; // 700px
 $mq-medium                    : 48em; // 960px
 $mq-wide                      : 59em; // 1200px
-
+$radius-sml                   : 5px;
 $modal-box-shadow             : rgba(0, 0, 0, 0.25) 0 54px 55px,
                                 rgba(0, 0, 0, 0.12) 0 -12px 30px,
                                 rgba(0, 0, 0, 0.12) 0 4px 6px,
                                 rgba(0, 0, 0, 0.17) 0 12px 13px,
                                 rgba(0, 0, 0, 0.09) 0 -3px 5px;
-$radius-sml                   : 5px;
 
-/**
-* Hamburger menu button
-* ------------------------------------
-*
-**/
+// Hamburger button
 $hamburger-padding            : 8px 12px ;
 $hamburger-layer-color        : $color-nav-bgd;
 $hamburger-line-width         : 40px !default;

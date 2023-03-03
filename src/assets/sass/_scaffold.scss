@@ -2,18 +2,18 @@
 @use "mixins" as *;
 
 body { background-color: black; }
-main { background-color: $color-page-bgd; }
+main { background-color: $color-body-bgd; }
+
 footer {
   color: $color-nav-menu;
   background-color: black;
-  padding: 2rem;
+  padding: 1rem 1rem 2rem;
   .footer-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 1rem;
-    max-width: $layout-max-width;
     margin: auto;
     div {
       color: rgba($color-nav-menu, .75);
@@ -28,16 +28,16 @@ footer {
       }
       a.ftr-logo-sml {
         display: inline-block;
-        height: 3rem;
+        height: 2rem;
         opacity: .7;
         &:hover { opacity: 1; }
       }
       button {
         background: 0;
         border-radius: $radius-sml;
-        border: 1px solid $color-nav-accent;
+        border: 1px solid $color-nav-label;
         font-size: 1.4rem;
-        color: $color-nav-accent;
+        color: $color-nav-label;
         cursor: pointer;
         height: 40px;
         padding: .8rem;
@@ -91,7 +91,7 @@ footer {
       line-height: 1.1;
     }
     h3 {
-      color: white;
+      color: $color-white;
       font-size: clamp(2.4rem, 3vw, 3rem  );
       font-weight: 200;
       margin: 0 0 1rem;
@@ -102,7 +102,7 @@ footer {
     font-family: $font-family-default;
     font-size: clamp(2rem, 3vw, 4rem  );
     line-height: 1.1;
-    color: rgba(white, 0.75);
+    color: rgba($color-white, 0.75);
     font-weight: $font-weight-normal;
     text-transform: none;
     text-align: center;
@@ -116,7 +116,7 @@ footer {
       display: inline-block;
       margin: 0 1rem;
       a {
-        color: white;
+        color: $color-white;
         font-family: $font-family-default;
         font-size: 1.6rem;
         font-weight: $font-weight-normal;
@@ -147,7 +147,7 @@ footer {
     font-size: 11px;
     padding: 4px;
     color: white;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba($color-black, .5);
   }
 }
 .content-section {
@@ -175,10 +175,9 @@ footer {
   margin-top: 2rem;
   aside {
     flex: 1;
-    //&:not(:first-child){ padding: 1rem 0 0 0; }
     h2 {
       font-size: 1.25rem;
-      color: $color-page-text-accent;
+      color: $color-body-text-accent;
       font-weight: $font-weight-bold;
     }
   }
@@ -187,11 +186,6 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 3rem;
-    aside {
-      &:not(:first-child){
-        //padding: 0 0 0 2rem;
-      }
-    }
   }
 }
 .descriptions {
@@ -213,9 +207,7 @@ footer {
 }
 .opening-times {
   margin-top: 2rem;
-  dd.times {
-    white-space: pre-line;
-  }
+  dd.times { white-space: pre-line; }
   @include mq($mq-medium) {
     margin-top: 0;
     flex: 1;
@@ -229,12 +221,12 @@ footer {
     cursor: default;
     display: inline-block;
     padding: .5em 1em;
-    background: var(--clr-primary-100);
+    background: $color-primary-light;
     border-radius: 2rem;
     text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: $font-weight-bold;
-    color: $color-page-text;
+    color: $color-primary-dark;
     margin-right: .5rem;
     margin-bottom: .5rem;
     @include mq($mq-medium) {

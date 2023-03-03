@@ -47,7 +47,7 @@ permalink: "/templates/member.html"
         </ul>
         <span class="desc-one-sentence fade-in" >{{ restaurant.description.sentence }}</span>
     </div>
-    {{> partials/hero-image }}
+    {{> partials/hero-image dataSrc=restaurant }}
 </section>
 
 <main id="home">
@@ -90,13 +90,13 @@ permalink: "/templates/member.html"
             </aside>
         </div>
 
-        {{> partials/gallery }}
+        {{> partials/gallery dataSrc=restaurant }}
 
     </section>
 
-    {{> partials/menus }}
+    {{> partials/menus dataSrc=restaurant }}
 
-    {{> partials/menu-downloads }}
+    {{> partials/menu-downloads dataSrc=restaurant }}
 
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">

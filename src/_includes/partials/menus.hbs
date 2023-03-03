@@ -3,7 +3,7 @@
 
     <h2>MENUS</h2>
     <div class="menu-html">
-        <p>{{ restaurant.menus.overview }}</p>
+        <p>{{ dataSrc.menus.overview }}</p>
 
         <!-- sample Menu -->
         <div class="content-sub-section">
@@ -14,7 +14,7 @@
                     <li><i class="gf"></i>Gluten-free</li>
                 </ul>
 
-                {{#each restaurant.menus.sections }}
+                {{#each dataSrc.menus.sections }}
                     <div id="menu_section_1" class="menu-section">
                         <h3 class="menu-section-title">{{ name }}</h3>
                         <ul class="menu-items">
