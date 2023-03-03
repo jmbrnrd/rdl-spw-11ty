@@ -1,39 +1,36 @@
 ---
-title: "Curated SPW"
+title: "Auto SPW"
 language: "en"
+gtag: "G-RX7PGJKJGS"
 layout: "layouts/listing.hbs"
-permalink: "/templates/curated.html"
+permalink: "/templates/auto.html"
 ---
 
-<section id="hero" class="hero-section golden-ratio">
+<!-- hero -->
+<section id="hero" class="hero-section hero-stack golden-ratio">
     <div class="brand-container fade-in">
         <h2>{{ restaurant.name }}</h2>
         <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
-        <a href="#about" class="scroll-down" title="Scroll page top main content"></a>
+        <a href="#about" class="scroll-down"></a>
     </div>
-    {{> partials/hero-image }}
+    <span class="img-credit">LIBRARY IMAGE</span>
+    {{> partials/hero-image dataSrc=restaurant }}
 </section>
 
 <main id="home">
+
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-
             <div class="descriptions desc-full" aria-label="description">
-
                 <p>{{ restaurant.description.full }}</p>
-
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">
                     {{#each restaurant.features }}
                         <li>{{ this }}</li>
                     {{/each}}
                 </ul>
-
-                {{> partials/gallery }}
-
             </div>
-
             <!-- times -->
             <aside class="opening-times">
                 <dl>
@@ -52,7 +49,6 @@ permalink: "/templates/curated.html"
                 </dl>
             </aside>
         </div>
-
     </section>
 
     {{> partials/map }}
@@ -60,3 +56,5 @@ permalink: "/templates/curated.html"
 </main>
 
 {{> partials/footer }}
+
+

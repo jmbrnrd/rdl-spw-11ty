@@ -1,8 +1,6 @@
 /**
 * Glightbox
 * -----------------------------------------
-* Removed browser specific style refs for -webkit etc.
-* as SASS will take care of those.
 */
 
 @use "vars" as *;
@@ -17,7 +15,6 @@
   overflow: hidden;
   -ms-touch-action: none;
   touch-action: none;
-  text-size-adjust: 100%;
   backface-visibility: hidden;
   outline: none;
 }
