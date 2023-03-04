@@ -1,30 +1,31 @@
-// body
-$color-body-bgd               : #fff;
-$color-body-text              : var(--clr-grey-700, #333);
-$color-body-text-accent       : var(--clr-accent-700, #666);
-$color-body-header            : var(--clr-grey-900, #000);
-
-// navigation
-$color-nav-bgd                : var(--clr-primary-500, #000);
-$color-nav-menu               : var(--clr-primary-50, #fff);
-$color-nav-label              : #fff;
-
-// primaries
-$color-primary                : var(--clr-primary-500, #666);
-$color-primary-light          : var(--clr-primary-100, #eee);
-$color-primary-dark           : var(--clr-primary-900, #000);
-
-// accents
-$color-cta-bgd                : var(--clr-accent-500, #666);
-$color-cta-label-light        : var(--clr-accent-100, #eee);
-$color-cta-bgd-dark           : var(--clr-accent-900, #444);
 
 // basics
-$color-black                  : #000;
-$color-white                  : #fff;
-$color-grey                   : var(--clr-grey-500, #666);
-$color-grey-light             : var(--clr-grey-100, #333);
-$color-grey-dark              : var(--clr-grey-800, #111);
+$color-black                  : hsla(0, 0%, 20%, 1);
+$color-white                  : hsla(0, 0%, 100%, 1);
+$color-grey                   : var(--clr-grey-500, hsla(0, 0%, 50%, 1));
+$color-grey-light             : var(--clr-grey-100, hsla(0, 0%, 80%, 1));
+$color-grey-dark              : var(--clr-grey-800, hsla(0, 0%, 10%, 1));
+
+// primaries
+$color-primary                : var(--clr-primary-500, hsla(0, 0%, 20%, 1));
+$color-primary-light          : var(--clr-primary-100, hsla(0, 0%, 90%, 1));
+$color-primary-dark           : var(--clr-primary-900, hsla(0, 0%, 15%, 1));
+
+// accents
+$color-cta-bgd                : var(--clr-accent-500, hsla(6, 78%, 57%, 1));
+$color-cta-label-light        : var(--clr-accent-100, hsla(6, 78%, 77%, 1));
+$color-cta-bgd-dark           : var(--clr-accent-900, hsla(6, 78%, 47%, 1));
+
+// body
+$color-body-bgd               : $color-white;
+$color-body-text              : var(--clr-grey-700, $color-black);
+$color-body-text-accent       : var(--clr-accent-700, $color-cta-bgd);
+$color-body-header            : var(--clr-grey-900, $color-black);
+
+// navigation
+$color-nav-bgd                : var(--clr-primary-500, $color-black);
+$color-nav-menu               : var(--clr-primary-50, $color-white);
+$color-nav-label              : $color-white;
 
 // fonts
 $font-family-default          : system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
