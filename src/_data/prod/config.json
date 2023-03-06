@@ -1,5 +1,4 @@
 {
-  "assets": "/assets",
   "image": {
     "url": "https://res.cloudinary.com/rdl/image/upload/",
     "folder":"/restaurants/",

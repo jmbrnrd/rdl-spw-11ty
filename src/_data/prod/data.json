@@ -14,7 +14,7 @@
   "email": "{{ email }}",
   "website": "{{ website }}",
   "cuisine": "{{ cuisine }}",
-  "rdl": "{{ spwUrl }}",
+  "rdl": "{{ rdl }}",
   "openingTimes": "{{ openingTimes }}",
   "openingNotes": "{{ openingNotes }}",
   "geocode": {

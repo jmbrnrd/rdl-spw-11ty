@@ -1,84 +1,80 @@
 
     {
-        "id": "EN01192628",
+        "id": "EN03392596",
         "number": "2832",
         "mzId": "61c46fa7ccf9d0cba39b6387",
         "mzKey": "61a45e24757d22026a87f369",
-        "name": "The Pityme Inn",
-        "subtitle": "Restaurant · Bar · Accommodation · Village shop · Takeaway",
-        "addressStreet": "Rock Rd",
-        "addressLocality": "St Minver",
-        "addressRegion": "Wadebridge",
+        "name": "RC Demo Restaurant",
+        "subtitle": "RESTAURANT & BAR",
+        "addressStreet": "115 Woodmansterne Road",
+        "addressLocality": "Carshalton",
+        "addressRegion": "Surrey",
         "addressCountry": "GB",
-        "postalCode": "PL27 6PQ",
-        "phone": "01208 862228",
-        "email": "contact@pitymeinn.co.uk",
-        "website": "https://www.pitymeinn.co.uk/",
+        "postalCode": "SM5 4EG",
+        "phone": "07467 030572",
+        "email": "info@sarao-restaurant.com",
+        "website": "https://www.sarao-restaurant.com/",
         "cuisine": "British",
-        "rdl": "https://restaurant.apptiser/92628-the-pityme-inn/",
-        "openingTimes": "Mon - Sat: 09:00 – 23:00\n Sun: 09:00 – 22:30",
+        "rdl": "https://spw.restaurantcollective.org.uk/RC-Demo-Restaurant/",
+        "openingTimes": "Sun: Closed all day\n Mon: 08:00 - 18:00\n Tue: 08:00 - 18:00\n Wed: 08:00 - 18:00\n Thu: 08:00 - 18:00\n Fri: 08:00 - 18:00\n Sat: Closed all day",
         "openingNotes": "Open all year",
         "geocode": {
-            "lat": "50.553859944790055",
-            "lng": "-4.8937113727320005"
+            "lat": "51.34797102359056",
+            "lng": "-0.17379185767195726"
         },
         "social": {
             "sameAs": [
-                "https://www.facebook.com/pitymeinnrock",
-                "https://www.instagram.com/pitymeinn/"
+                "https://www.facebook.com/restaurantcollective/",
+                "https://www.instagram.com/restaurantcollectiveuk/"
             ],
             "networks": [
                 {
                     "name": "email",
-                    "url": "mailto:contact@pitymeinn.co.uk",
+                    "url": "mailto:info@example-restaurant.com",
                     "alt": "Contact us via email"
                 },
                 {
                     "name": "website",
-                    "url": "https://www.pitymeinn.co.uk/",
+                    "url": "https://www.example-restaurant.com",
                     "alt": "Visit our website"
                 },
                 {
                     "name": "facebook",
-                    "url": "https://www.facebook.com/pitymeinnrock",
+                    "url": "https://www.facebook.com/restaurantcollective/",
                     "alt": "Visit our Facebook page"
                 },
                 {
                     "name": "instagram",
-                    "url": "https://www.instagram.com/pitymeinn/",
+                    "url": "https://www.instagram.com/restaurantcollectiveuk/",
                     "alt": "Follow us on Instagram"
                 }
-
             ]
         },
         "image": {
-            "default": "parl1uyeaddbwx58ox3j.jpg",
+            "default": "dbh7yg82buiqmrfbamny.jpg",
             "gallery": [
-                "parl1uyeaddbwx58ox3j.jpg",
-                "be0rzkjifcknueyw8ldk.jpg",
-                "ltvncqq5bnyhfuxudo1f.jpg",
-                "qajf0kvds1bvxffqcgim.jpg",
-                "bqh1xxhozudpfambqsok.jpg",
-                "bqnlre2esfmezsogqyht.jpg"
-                ]
+                "i1tw0w59iplkvn1xw1tm.jpg",
+                "gohsy0y0px96f2jofs2r.jpg",
+                "ql4kyfak10hqfyqngopq.jpg"
+            ]
         },
         "description": {
-            "sentence": "Perfectly located a mile from the beach at Rock",
+            "sentence": "A one sentence restaurant description.",
             "paragraph": "",
-            "full": "The Pityme Inn has been a pub in the village since 1970, prior to that the site was part of a farm, then a tea room, restaurant and finally a pub. We took over The Pityme Inn in late 2018 & have been working hard with our team to make the pub the best it can be. We have carried out extensive renovations both inside and out and introduced an outside kitchen, takeaway options and even a village shop! We work closely with local suppliers to bring the best of Cornwall to your plate and glass. We are passionate about locally sourced produce & where ever possible this is on our menu, from fresh fish, meat and vegetables to bread, eggs and cheese. Our bar is fully stocked with a wide selection of gins, rums & local spirits & we pride ourselves on our award winning selection of St Austell ales. \n\nWe also offer over night accommodation in our 4 en-suite King-size rooms. We are open from 9am serving food throughout the day so whenever you are passing you are sure of a warm welcome.\n\nFamilies and dogs are always welcome."
+            "full": "This is the first sentence of the FULL description that is extracted and used as a lead paragraph. The rest of the full description is then displayed below. This is used for a detailed marketing heavy description of the restaurant and its attractions."
         },
         "features": [
+            "Free WiFi",
             "Dog-friendly",
-            "Take-Away",
             "Outside seating",
-            "Accommodation",
-            "Electric Car Charging",
-            "Gift Cards & Vouchers"
+            "Free WiFi",
+            "Dog-friendly",
+            "Outside seating"
         ],
-        "transport": "Buses 96, 96S & 950P stop near by.",
-        "parking": "Plenty of free parking spaces available.",
+        "transport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
+        "parking": "There are pay and display bays in the streets surrounding the restaurant.",
         "menus": {
-            "overview": "Here are our menus made using locally sourced ingredients where possible. We pride ourselves on creating our menus with our passionate team of chefs who work with local suppliers to source the best ingredients.",
+            "overview": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
             "sections": [
                 {
                     "name": "Antipasti",
@@ -200,15 +196,19 @@
             ]
         },
         "reservations": {
-            "info": "We are lucky enough to have lots of outside space for you to enjoy. We now have 4 outside heated dining pods on our decked garden for you to enjoy all year round. Or if you fancy a quick bite to eat, or takeaway our outside kitchen has everything you need.",
-            "groups": "For group reservations of more than 6 people, please call first.",
-            "private": "We have several spaces than we can offer for private functions ranging from 10 to 100 seats."
+            "info": "",
+            "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
+            "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
         },
         "brand": {
             "prefix": "rc",
-            "name": "RDL",
-            "web": "restaurantdevelopments.ltd"
+            "name": "Restaurant Collective",
+            "web": "restaurantcollective.org.uk"
         },
-        "theme": "apptiser"
+        "theme": "collective",
+        "config": {
+            "menuHtml": false,
+            "promotions": false
+        }
     }
 

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ language }}" data-id="{{ restaurant.number }}" xmlns="http://www.w3.org/1999/html">
+<html lang="{{ language }}" data-id="{{ data.number }}" xmlns="http://www.w3.org/1999/html">
 
 <!-- {{ pkg.version }} -->
 
 <head>
 
 	<meta charset="utf-8">
-    <title>{{ restaurant.name }} | {{ restaurant.streetAddress }} {{ restaurant.postalCode }}</title>
-    <meta name="description" content="{{ restaurant.description.sentence }}">
+    <title>{{ data.name }} | {{ data.streetAddress }} {{ data.postalCode }}</title>
+    <meta name="description" content="{{ data.description.sentence }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- TODO: should only be applied to previews -->
 <!--    <meta name="robots" content="noindex">-->
 
-    {{> partials/schema.org dataSrc=restaurant }}
+    {{> partials/schema.org }}
 
-    {{> partials/open-graph dataSrc=restaurant}}
+    {{> partials/open-graph }}
 
     {{> partials/favicons-spw }}
 
@@ -23,7 +23,7 @@
 
     {{> partials/theme }}
 
-    <link rel="stylesheet" href="/assets/styles/themes/{{ restaurant.theme }}.css" />
+    <link rel="stylesheet" href="/assets/styles/themes/{{ data.theme }}.css" />
 	<link rel="stylesheet" href="/assets/styles/member.css" />
 
 	<script type="module" src="/assets/scripts/main.js" defer></script>

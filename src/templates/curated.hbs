@@ -5,10 +5,10 @@ layout: "layouts/listing.hbs"
 permalink: "/templates/curated.html"
 ---
 
-<section id="hero" class="hero-section golden-ratio">
+<section id="hero" class="section-hero golden-ratio">
     <div class="brand-container fade-in">
-        <h2>{{ restaurant.name }}</h2>
-        <h3 class="subtitle">{{ restaurant.subtitle }}</h3>
+        <h2>{{ data.name }}</h2>
+        <h3 class="subtitle">{{ data.subtitle }}</h3>
         <a href="#about" class="scroll-down" title="Scroll page top main content"></a>
     </div>
     {{> partials/hero-image dataSrc=restaurant }}
@@ -21,11 +21,11 @@ permalink: "/templates/curated.html"
 
             <div class="descriptions desc-full" aria-label="description">
 
-                <p>{{ restaurant.description.full }}</p>
+                <p>{{ data.description.full }}</p>
 
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">
-                    {{#each restaurant.features }}
+                    {{#each data.features }}
                         <li>{{ this }}</li>
                     {{/each}}
                 </ul>
@@ -38,16 +38,16 @@ permalink: "/templates/curated.html"
             <aside class="opening-times">
                 <dl>
                     <dt>Telephone</dt>
-                    <dd><a href="tel:{{ restaurant.phone }}">{{ restaurant.phone }}</a></dd>
+                    <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
                     <dt>Address</dt>
-                    <dd>{{ restaurant.addressStreet }}</dd>
-                    <dd>{{ restaurant.addressLocality }}</dd>
-                    <dd>{{ restaurant.addressRegion }} {{ restaurant.postalCode }}</dd>
+                    <dd>{{ data.addressStreet }}</dd>
+                    <dd>{{ data.addressLocality }}</dd>
+                    <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>Opening Times</dt>
-                    <dd class="times">{{ restaurant.openingTimes }}</dd>
+                    <dd class="times">{{ data.openingTimes }}</dd>
                     <!-- Optional section tag start - Opening Notes -->
                     <dt>PLEASE NOTE:</dt>
-                    <dd>{{ restaurant.openingNotes }}</dd>
+                    <dd>{{ data.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
                 </dl>
             </aside>

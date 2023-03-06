@@ -1,12 +1,12 @@
 <!-- Optional section tag start - Images -->
 <div class="image-gallery" aria-label="gallery">
-    <!-- {{ dataSrc.image.gallery }} -->
-    {{#each dataSrc.image.gallery }}
+    <!-- {{ data.image.gallery }} -->
+    {{#each data.image.gallery }}
         <a class="glightbox"
-           href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder }}{{ ../dataSrc.id }}/{{ this }}">
+           href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}">
             <img loading="lazy"
-                 src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../dataSrc.id }}/{{ this }}"
-                 alt="{{ ../dataSrc.name }} gallery image">
+                 src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}"
+                 alt="{{ ../data.name }} gallery image">
         </a>
     {{/each}}
 </div>
