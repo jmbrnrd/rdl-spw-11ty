@@ -26,6 +26,8 @@
 
     {{#if data.theme}}
         <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.theme }}.css" />
+    {{else}}
+        <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.brand.theme }}.css" />
     {{/if}}
 
 	<link rel="stylesheet" href="{{ config.assets }}/styles/member.css" />

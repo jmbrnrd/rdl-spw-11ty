@@ -19,6 +19,8 @@ export default function() {
         const id = bkgButtons[0].dataset.mzid;
         const key = bkgButtons[0].dataset.mzkey;
 
+        console.log(id);
+
         // Create a background overlay
         const modalOverlay = document.createElement('div');
         modalOverlay.classList.add('modal-overlay');

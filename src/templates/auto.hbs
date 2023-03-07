@@ -1,9 +1,10 @@
 ---
-title: "Auto SPW"
+title: "RDL Automated SPW"
 language: "en"
 gtag: "G-RX7PGJKJGS"
 layout: "layouts/listing.hbs"
-permalink: "/templates/auto.html"
+permalink: "/templates/rdl-auto.html"
+theme: "collective"
 ---
 
 <!-- hero -->
@@ -14,7 +15,7 @@ permalink: "/templates/auto.html"
         <a href="#about" class="scroll-down"></a>
     </div>
     <span class="img-credit">LIBRARY IMAGE</span>
-    {{> partials/hero-image dataSrc=restaurant }}
+    {{> partials/hero-image }}
 </section>
 
 <main id="home">
@@ -22,7 +23,7 @@ permalink: "/templates/auto.html"
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-            <div class="descriptions desc-full" aria-label="description">
+            <div class="description desc-full" aria-label="description">
                 <p>{{ data.description.full }}</p>
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">

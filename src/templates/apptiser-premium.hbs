@@ -3,7 +3,7 @@ title: "Apptiser Demo"
 language: "en"
 layout: "layouts/apptiser.hbs"
 gtag: "G-RX7PGJKJGS"
-permalink: "/templates/apptiser.html"
+permalink: "/templates/apptiser-premium.html"
 ---
 
 <!-- mobile nav -->
@@ -51,7 +51,6 @@ permalink: "/templates/apptiser.html"
 </section>
 
 <main id="home">
-
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
@@ -66,6 +65,11 @@ permalink: "/templates/apptiser.html"
             </div>
             <!-- times -->
             <aside class="opening-times">
+                <button class="btn-book"
+                        data-mzid="{{ data.mozrest.id }}"
+                        data-mzkey="{{ data.mozrest.key }}">
+                    BOOK ONLINE
+                </button>
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -98,6 +102,10 @@ permalink: "/templates/apptiser.html"
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
+        <p>
+            <a href="#reservations" data-mzid="{{ data.mozrest.id }}" data-mzkey="{{ data.mozrest.key }}">BOOK ONLINE</a> at
+            anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
+        </p>
         <!-- booking extras -->
         <div class="content-block">
             <aside>

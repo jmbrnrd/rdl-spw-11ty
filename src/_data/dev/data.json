@@ -2,8 +2,6 @@
     {
         "id": "EN03392596",
         "number": "2832",
-        "mzId": "61c46fa7ccf9d0cba39b6387",
-        "mzKey": "61a45e24757d22026a87f369",
         "name": "RC Demo Restaurant",
         "subtitle": "RESTAURANT & BAR",
         "addressStreet": "115 Woodmansterne Road",
@@ -196,19 +194,20 @@
             ]
         },
         "reservations": {
-            "info": "",
+            "info": "For table reservations, please telephone the restaurant during opening hours.",
             "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
             "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
         },
         "brand": {
             "prefix": "rc",
             "name": "Restaurant Collective",
-            "web": "restaurantcollective.org.uk"
+            "web": "restaurantcollective.org.uk",
+            "theme": "collective"
         },
-        "theme": "collective",
-        "config": {
-            "menuHtml": false,
-            "promotions": false
+        "theme": "apptiser",
+        "mozrest": {
+            "id": "61c46fa7ccf9d0cba39b6387",
+            "key": "61a45e24757d22026a87f369"
         }
     }
 

@@ -3,8 +3,8 @@ export default function() {
      * Create a lead paragraph using the first sentence of description
      */
     console.log('formatting.js loaded');
-    const desc = document.querySelector('.desc-full');
-    const ptag = document.querySelector('.desc-full p');
+    const desc = document.querySelector('.description');
+    const ptag = document.querySelector('.description p');
     const p = document.createElement('p');
 
     // split into sentence array

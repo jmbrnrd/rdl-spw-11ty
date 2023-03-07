@@ -192,17 +192,15 @@ footer {
     margin-top: 3rem;
   }
 }
-.descriptions {
-  p {
-    white-space: pre-line;
-  }
+.description {
+  p { white-space: pre-line; }
+  // Create lead sentence
   p:first-child {
     font-weight: $font-weight-bold;
     font-size: 2.4rem;
     line-height: 1.2;
     white-space: normal;
   }
-
   @include mq($mq-medium) {
     flex: 2;
     padding-right: 1rem;
@@ -241,18 +239,14 @@ footer {
 dd {
   .social-links {
     display: flex;
-    justify-content: flex-start;
-    height: auto;
-    margin-top: 1rem;
     gap: 1rem;
-    white-space: normal;
-    width: 100%;
+
 
     > div {
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex-basis: fit-content;
+      flex-basis: content;
     }
 
     a {
@@ -280,7 +274,7 @@ dd {
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: .9rem;
+    font-size: .8rem;
     text-transform: uppercase;
     text-align: center;
     margin-top: .5rem;
