@@ -1,12 +1,12 @@
 @use "theme-gen" as *;
 
 // Base palette
-$clr-primary: #733c1f;
-$clr-accent: #bb3613;
+$clr-primary    : hsla(0, 0%, 20%, 1);
+$clr-accent     : hsla(6, 78%, 57%, 1);
 
-$clr-grey:      #333;
-$clr-warn:      darkred;
-$clr-success:   lightgreen;
+$clr-grey       : hsla(0, 0%, 50%, 1);
+$clr-warn       : hsla(344, 100%, 41%, 1);
+$clr-success    : hsla(147, 98%, 35%, 1);
 
 // Generate CSS variables
 :root {

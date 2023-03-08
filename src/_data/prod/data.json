@@ -12,7 +12,7 @@
   "email": "{{ email }}",
   "website": "{{ website }}",
   "cuisine": "{{ cuisine }}",
-  "url": "{{ rdl }}",
+  "url": "{{ url }}",
   "openingTimes": "{{ openingTimes }}",
   "openingNotes": "{{ openingNotes }}",
   "geocode": {
@@ -54,8 +54,7 @@
   },
   "config": {
     "theme": "apptiser",
-    "domainName": "",
-    "publishDate": ""
+    "domain": ""
   },
   "mozrest": {
     "id": "61c46fa7ccf9d0cba39b6387",
