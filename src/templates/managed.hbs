@@ -1,8 +1,13 @@
 ---
 title: "Curated SPW"
 language: "en"
-layout: "layouts/listing.hbs"
-permalink: "/templates/rdl-curated.html"
+layout: "layouts/network.hbs"
+permalink: "/templates/rdl-managed.html"
+brand:
+    name: "RDL Network"
+    prefix: "rdl"
+    url: "https://rdl.network/"
+    theme: "rdl"
 ---
 
 <section id="hero" class="section-hero golden-ratio">
@@ -11,7 +16,7 @@ permalink: "/templates/rdl-curated.html"
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <a href="#about" class="scroll-down" title="Scroll page top main content"></a>
     </div>
-    {{> partials/hero-image dataSrc=restaurant }}
+    {{> partials/hero-image }}
 </section>
 
 <main id="home">
@@ -30,7 +35,7 @@ permalink: "/templates/rdl-curated.html"
                     {{/each}}
                 </ul>
 
-                {{> partials/gallery dataSrc=restaurant }}
+                {{> partials/gallery }}
 
             </div>
 

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="{{ language }}" data-id="{{ apptiser.number }}" xmlns="http://www.w3.org/1999/html">
+<html lang="{{ language }}" data-id="{{ data.number }}" xmlns="http://www.w3.org/1999/html">
 
 <!-- {{ pkg.version }} -->
 
@@ -24,11 +24,7 @@
 
     {{> partials/fonts }}
 
-    {{#if data.theme}}
-        <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.theme }}.css" />
-    {{else}}
-        <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.brand.theme }}.css" />
-    {{/if}}
+    <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.config.theme }}.css" />
 
 	<link rel="stylesheet" href="{{ config.assets }}/styles/member.css" />
 

@@ -1,8 +1,6 @@
 {
   "id": "{{ id }}",
   "number": "{{ number }}",
-  "mzId": "{{ mzId }}",
-  "mzKey": "{{ mzKey }}",
   "name": "{{ name }}",
   "subtitle": "{{ subtitle }}",
   "addressStreet": "{{ addressStreet }}",
@@ -14,7 +12,7 @@
   "email": "{{ email }}",
   "website": "{{ website }}",
   "cuisine": "{{ cuisine }}",
-  "rdl": "{{ rdl }}",
+  "url": "{{ rdl }}",
   "openingTimes": "{{ openingTimes }}",
   "openingNotes": "{{ openingNotes }}",
   "geocode": {
@@ -54,13 +52,14 @@
     "restId": "{{ reservations.rest_id }}",
     "bkgAdvDays": "{{ reservations.bkgAdvDays }}"
   },
-  "brand": {
-    "prefix": "{{ brand.prefix }}",
-    "name":"{{ brand.name }}",
-    "web": "{{ brand.web }}",
-    "logo": "{{ brand.logo }}",
-    "language": "{{ brand.language }}"
+  "config": {
+    "theme": "apptiser",
+    "domainName": "",
+    "publishDate": ""
   },
-  "theme": "{{ theme }}"
+  "mozrest": {
+    "id": "61c46fa7ccf9d0cba39b6387",
+    "key": "61a45e24757d22026a87f369"
+  }
 }
 
