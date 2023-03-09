@@ -7,7 +7,9 @@ main { background-color: $color-body-bgd; }
 footer {
   color: $color-nav-menu;
   background-color: black;
-  padding: 1rem 1rem 2rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
   .footer-section {
     display: flex;
     flex-direction: column;
@@ -52,6 +54,11 @@ footer {
     @include mq($mq-medium) {
       flex-direction: row;
     }
+  }
+  .logo {
+    height: 2rem;
+    width: auto;
+    fill: white;
   }
   .col-span-2 {
     grid-column: 2 / 4;
