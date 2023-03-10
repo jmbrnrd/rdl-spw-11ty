@@ -1,4 +1,10 @@
 export default function() {
+
+    if (!document.querySelectorAll('[data-mzid]')) {
+        console.log('No booking links found!');
+        return false;
+    }
+
     console.log('booking.js loaded');
 
     // Reference the book button
