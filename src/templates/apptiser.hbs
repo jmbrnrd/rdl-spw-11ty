@@ -1,6 +1,6 @@
 ---
 title: "Apptiser Standard"
-language: "en"
+language: "fr"
 layout: "layouts/apptiser.hbs"
 gtag: "G-RX7PGJKJGS"
 permalink: "/templates/apptiser.html"
@@ -95,9 +95,7 @@ brand:
 
     {{> partials/menus }}
 
-    {{#if data.menus.pdfs.length }}
-        {{> partials/menu-downloads }}
-    {{/if}}
+    {{> partials/menu-downloads }}
 
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
@@ -139,7 +137,7 @@ brand:
                         {{#each data.social.networks }}
                             <div>
                                 <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                    <img src="/assets/imgs/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
+                                    <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
                                 </a>
                                 <span>{{ this.name }}</span>
                             </div>

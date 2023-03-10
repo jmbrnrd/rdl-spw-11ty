@@ -199,8 +199,7 @@
         },
         "config": {
             "theme": "apptiser",
-            "domainName": "",
-            "publishDate": ""
+            "managedBy": ""
         },
         "mozrest": {
             "id": "61c46fa7ccf9d0cba39b6387",
