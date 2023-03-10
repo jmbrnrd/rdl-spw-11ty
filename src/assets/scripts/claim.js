@@ -4,6 +4,12 @@
  */
 export default function () {
 
+  // Guard clause
+  if(!document.querySelector('.modal-container')) {
+    console.log('No modal container found!');
+    return false;
+  }
+
   console.log('claim.js loaded');
   const modalContainer = document.querySelector('.modal-container');
   const modal = document.querySelector('.claim-form');
