@@ -1,6 +1,6 @@
 ---
 title: "Apptiser Standard"
-language: "fr"
+language: "en"
 layout: "layouts/apptiser.hbs"
 gtag: "G-RX7PGJKJGS"
 permalink: "/templates/apptiser.html"
@@ -57,7 +57,7 @@ brand:
 
 <main id="home">
 
-    <!-- about -->
+    <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
             <div class="description" aria-label="description">
@@ -101,16 +101,24 @@ brand:
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
+
         <!-- booking extras -->
         <div class="content-block">
+
+            <!-- Optional section tag start - Bookings Group -->
             <aside>
                 <h2 class="sub-section-title">Group bookings</h2>
                 <p>{{ data.reservations.groups }}</p>
             </aside>
+            <!-- Optional section tag end - Bookings Group -->
+
+            <!-- Optional section tag start - Bookings Private -->
             <aside>
                 <h2 class="sub-section-title">Private Dining</h2>
                 <p>{{ data.reservations.private }}</p>
             </aside>
+            <!-- Optional section tag end - Bookings Private -->
+
         </div>
     </section>
 
@@ -118,7 +126,7 @@ brand:
     <section id="contacts" class="content-section contact-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
-            <!-- address -->
+
             <aside>
                 <dl>
                     <dt>Address</dt>
@@ -128,7 +136,8 @@ brand:
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
                 </dl>
             </aside>
-            <!-- social -->
+
+            <!-- Optional section tag start - Links -->
             <aside>
                 <dl>
                     <dt>Links</dt>
@@ -146,15 +155,23 @@ brand:
                     </dd>
                 </dl>
             </aside>
-            <!-- transport -->
+            <!-- Optional section tag end - Links -->
+
+            <!-- Optional section tag start - Transport -->
             <aside>
                 <dl>
+                    <!-- Optional section tag start - Transport Public -->
                     <dt>Public Transport</dt>
                     <dd>{{ data.transport }}</dd>
+                    <!-- Optional section tag end - Transport Public -->
+
+                    <!-- Optional section tag start - Transport Parking -->
                     <dt>Parking</dt>
                     <dd>{{ data.parking }}</dd>
+                    <!-- Optional section tag end - Transport Parking -->
                 </dl>
             </aside>
+            <!-- Optional section tag end - Transport -->
         </div>
     </section>
 

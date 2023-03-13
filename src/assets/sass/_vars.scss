@@ -14,9 +14,9 @@ $color-primary-light          : var(--clr-primary-100, hsla(0, 0%, 90%, 1));
 $color-primary-dark           : var(--clr-primary-900, hsla(0, 0%, 15%, 1));
 
 // accents
-$color-cta-bgd                : var(--clr-accent-500, hsla(6, 78%, 57%, 1));
-$color-cta-label-light        : var(--clr-accent-100, hsla(6, 78%, 77%, 1));
-$color-cta-bgd-dark           : var(--clr-accent-900, hsla(6, 78%, 47%, 1));
+$color-cta-bgd                : var(--clr-accent-500, hsla(187, 100%, 42%, 1));
+$color-cta-label-light        : var(--clr-accent-100, hsla(187, 100%, 90%, 1));
+$color-cta-bgd-dark           : var(--clr-accent-900, hsla(187, 100%, 37%, 1));
 
 // body
 $color-body-bgd               : $color-white;
@@ -58,10 +58,10 @@ $hamburger-line-border-radius : 2px !default;
 $hamburger-hover-trans-dur    : 0.15s !default;
 $hamburger-hover-trans-func   : linear !default;
 
-$rdl-width: 360px;
-$rdl-height: 480px;
-$rdl-radius: 12px;
-$btn-size: 80px;
-$btn-size-max: 90vw;
-$shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+$rdl-width                    : 360px;
+$rdl-height                   : 480px;
+$rdl-radius                   : 12px;
+$btn-size                     : 80px;
+$btn-size-max                 : 90vw;
+$shadow                       : rgba(0, 0, 0, 0.3) 0px 19px 38px,
+                                rgba(0, 0, 0, 0.22) 0px 15px 12px;

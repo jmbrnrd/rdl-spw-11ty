@@ -5,6 +5,7 @@ body { background-color: $color-primary; }
 main { background-color: $color-body-bgd; }
 
 footer {
+  $link-height: 3rem;
   background-color: $color-black;
   padding: 1rem 1rem 2rem;
   color: $color-grey-light;
@@ -13,6 +14,7 @@ footer {
   .footer-container {
     max-width: $layout-max-width;
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     justify-content: center;
     align-items: center;
@@ -27,54 +29,45 @@ footer {
       }
 
     }
+    @include mq($mq-medium) {
+      flex-direction: row;
+    }
+    > a {
+      display: inline-block;
+      height: $link-height;
+    }
   }
 
   button {
     background: 0;
-    border-radius: $radius-sml;
-    border: 1px solid $color-nav-label;
-    font-size: 1.4rem;
+    border-radius: 8px;
+    border: 2px solid $color-nav-label;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     color: $color-nav-label;
     cursor: pointer;
-    height: 40px;
-    padding: .8rem;
+    padding: 1rem;
     white-space: nowrap;
     transition: all .3s ease-out;
     &:hover {
-      border-color: $color-nav-menu;
-      color: $color-nav-menu;
+      color: $color-black;
+      background-color: $color-nav-label;
     }
   }
 
 
-    //display: flex;
-
-    //div {
-    //  color: rgba($color-nav-menu, .75);
-    //  display: flex;
-    //  justify-content: center;
-    //  align-items: center;
-    //  gap: 1rem;
-    //  h3 { text-transform: none; }
-    //  p { font-size: 1.2rem; margin: 0;}
-    //  a {
-    //    font-weight: $font-weight-bold;
-    //  }
-    //  a.ftr-logo-sml {
-    //    display: inline-block;
-    //    height: 2rem;
-    //    opacity: .7;
-    //    &:hover { opacity: 1; }
-    //  }
-
-    @include mq($mq-medium) {
-      flex-direction: row;
-    }
 
   .logo {
-    height: 3rem;
+    display: inline-block;
+    height: $link-height;
     width: auto;
-    fill: white;
+    opacity: .7;
+    transition: all .3s ease-in-out;
+    .icon{fill: white;}
+    .label {fill: $color-nav-label;}
+    &:hover {
+      opacity: 1;
+    }
   }
 
 }
