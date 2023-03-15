@@ -1,12 +1,13 @@
 <!-- Optional section tag start - Images -->
-<div class="image-gallery" aria-label="gallery">
+<div class="image-gallery" aria-roledescription="Image gallery">
     <!-- {{ data.image.gallery }} -->
     {{#each data.image.gallery }}
         <a class="glightbox"
-           href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}">
+           href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}"
+           title="{{ ../lang.section.gallery.alt.open }} {{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}">
             <img loading="lazy"
-                 src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}"
-                 alt="{{ ../data.name }} gallery image">
+                 alt="{{ ../data.name }} {{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}"
+                 src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}">
         </a>
     {{/each}}
 </div>

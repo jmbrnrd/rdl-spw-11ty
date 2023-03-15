@@ -255,20 +255,14 @@ dd {
   .social-links {
     display: flex;
     gap: 1rem;
-    > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-basis: content;
-    }
-
+    margin-top: .5rem;
     a {
-      $diameter: 48px;
+      $diameter: 56px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: .85rem;
+      padding: 25%;
       width: $diameter;
       height: $diameter;
       border-radius: 50%;
@@ -279,9 +273,7 @@ dd {
         box-shadow: $shadow;
       }
     }
-    img {
-      height: 100%;
-    }
+    img { height: 100%; }
   }
   span {
     display: flex;

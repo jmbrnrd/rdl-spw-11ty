@@ -13,7 +13,7 @@ brand:
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ data.name }} navigation menu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ lang.nav.label.navMenuMobile }}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -22,33 +22,21 @@ brand:
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" title="Back to top">
+    <a href="#" class="brand" title="{{ lang.nav.label.backToTop }}">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
-        <li><a href="#about" title="About ">About</a></li>
-        <!-- Optional section tag start - Menus NavBar -->
-        <li><a href="#menus" title="Menus ">Menus</a></li>
-        <!-- Optional section tag end - Menus NavBar -->
-        <li><a href="#reservations" title="Reservations">Reservation</a></li>
-        <li><a href="#contacts" title="Contact ">Contacts</a></li>
-        <li><a href="#location" title="Find ">Location</a></li>
+        {{> partials/nav-options }}
     </ul>
 </nav>
 
-<!-- hero -->
+<!-- HERO -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
-            <li><a href="#about" title="About ">About</a></li>
-            <!-- Optional section tag start - Menus Hero -->
-            <li><a href="#menus" title="Menus ">Menus</a></li>
-            <!-- Optional section tag end - Menus Hero -->
-            <li><a href="#reservations" title="Reservations">Reservations</a></li>
-            <li><a href="#contacts" title="Contact">Contacts</a></li>
-            <li><a href="#location" title="Find">Location</a></li>
+            {{> partials/nav-options }}
         </ul>
         <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
     </div>
@@ -62,27 +50,27 @@ brand:
         <div class="content-block">
             <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
-                <!-- Feature keywords-->
+                <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
                     {{#each data.features }}
                     <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>
-            <!-- times -->
+            <!-- opening times -->
             <aside class="opening-times">
                 <dl>
-                    <dt>Telephone</dt>
+                    <dt>{{ lang.section.about.tel }}</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                    <dt>Address</dt>
+                    <dt>{{ lang.section.about.address }}</dt>
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }}</dd>
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>Opening Times</dt>
+                    <dt>{{ lang.section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
 
                     <!-- Optional section tag start - Opening Notes -->
-                    <dt>PLEASE NOTE:</dt>
+                    <dt>{{ lang.section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
                 </dl>
@@ -97,24 +85,24 @@ brand:
 
     {{> partials/menu-downloads }}
 
-    <!-- bookings -->
+    <!-- RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
-        <h2 class="section-title">Reservations</h2>
+        <h2 class="section-title">{{ lang.section.reservations.title }}</h2>
         <p>{{ data.reservations.info }}</p>
 
-        <!-- booking extras -->
+        <!-- group & private bookngs -->
         <div class="content-block">
 
             <!-- Optional section tag start - Bookings Group -->
             <aside>
-                <h2 class="sub-section-title">Group bookings</h2>
+                <h2 class="sub-section-title">{{ lang.section.reservations.groups }}</h2>
                 <p>{{ data.reservations.groups }}</p>
             </aside>
             <!-- Optional section tag end - Bookings Group -->
 
             <!-- Optional section tag start - Bookings Private -->
             <aside>
-                <h2 class="sub-section-title">Private Dining</h2>
+                <h2 class="sub-section-title">{{ lang.section.reservations.private }}</h2>
                 <p>{{ data.reservations.private }}</p>
             </aside>
             <!-- Optional section tag end - Bookings Private -->
@@ -122,17 +110,17 @@ brand:
         </div>
     </section>
 
-    <!-- contacts -->
+    <!-- CONTACTS -->
     <section id="contacts" class="content-section contact-section">
-        <h2 class="section-title">Contacts</h2>
+        <h2 class="section-title">{{ lang.section.contacts.title }}</h2>
         <div class="content-block">
 
             <aside>
                 <dl>
-                    <dt>Address</dt>
+                    <dt>{{ lang.section.contacts.address }}</dt>
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }} {{ data.postalCode }}</dd>
-                    <dt>Telephone</dt>
+                    <dt>{{ lang.section.contacts.tel }}</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
                 </dl>
             </aside>
@@ -140,12 +128,14 @@ brand:
             <!-- Optional section tag start - Links -->
             <aside>
                 <dl>
-                    <dt>Links</dt>
+                    <dt>{{ lang.section.contacts.links }}</dt>
                     <dd>
                         <div class="social-links">
                         {{#each data.social.networks }}
                             <div>
-                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                <a class="social-link" href="{{ this.url }}"
+                                   target="_blank"
+                                   title="{{ ../data.name }} {{ this.name }}">
                                     <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
                                 </a>
                                 <span>{{ this.name }}</span>
@@ -161,12 +151,12 @@ brand:
             <aside>
                 <dl>
                     <!-- Optional section tag start - Transport Public -->
-                    <dt>Public Transport</dt>
+                    <dt>{{ lang.section.contacts.transport }}</dt>
                     <dd>{{ data.transport }}</dd>
                     <!-- Optional section tag end - Transport Public -->
 
                     <!-- Optional section tag start - Transport Parking -->
-                    <dt>Parking</dt>
+                    <dt>{{ lang.section.contacts.parking }}</dt>
                     <dd>{{ data.parking }}</dd>
                     <!-- Optional section tag end - Transport Parking -->
                 </dl>

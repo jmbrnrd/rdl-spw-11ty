@@ -1,12 +1,15 @@
 
 <!-- Optional section tag start - Downloadable Menus -->
 <section class="content-section menu-pdf" id="pdfMenus">
-    <h2 class="section-title">downloadable menus</h2>
-    <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+    <h2 class="section-title">{{ lang.section.menuDownloads.title }}</h2>
+    <p>{{ lang.section.menuDownloads.info }}</p>
     <div class="content-block menu-downloads">
         {{#each data.menus.pdfs }}
             <div class="menu-card-container">
-                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                <a class="menu-card"
+                   download="{{ name }}-{{ date }}"
+                   href="{{ path }}"
+                   title="{{ ../lang.section.menuDownloads.alt }} {{ ../data.name }} {{ name }}">
                     <h3>{{ name }}</h3>
                     <span>Published: {{ date }}</span>
                 </a>
