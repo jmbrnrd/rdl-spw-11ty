@@ -4,7 +4,7 @@
     {{#each data.image.gallery }}
         <a class="glightbox"
            href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}"
-           title="{{ ../lang.section.gallery.alt.open }} {{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}">
+           title="{{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}">
             <img loading="lazy"
                  alt="{{ ../data.name }} {{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}"
                  src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}">
