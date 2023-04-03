@@ -1,7 +1,11 @@
 <script defer src="https://www.googletagmanager.com/gtag/js?id={{ gtag }}"></script>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUOxHaeFFu1_c0sEpjRCNOAKnl6r8YMvY&callback=initMap&language={{ language }}"></script>
 <script>
-    function initMap() {
-        console.log('Maps API available');
-    }
+    // Gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ gtag }}');
+    // Map
+    function initMap() { console.log('Maps API available');}
 </script>
