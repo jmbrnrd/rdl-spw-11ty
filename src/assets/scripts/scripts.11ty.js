@@ -4,6 +4,7 @@ const esbuild = require('esbuild')
 const isProduction = (process.env.NODE_ENV === 'production');
 
 module.exports = class {
+
     data() {
         return {
             permalink: false,
