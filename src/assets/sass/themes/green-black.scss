@@ -3,11 +3,11 @@
  * Theme name
  * MUST be the same as the filename!
  */
-$theme: 'collective';
+$theme: 'green-black';
 
 // Base palette
-$clr-primary: #01837d;
-$clr-accent:    #ff5720;
+$clr-primary: 	hsl(70, 100%, 24%);
+$clr-accent:    hsl(0, 0%, 10%);
 
 $clr-grey:      #333;
 $clr-warn:      hsla(344, 100%, 41%, 1);

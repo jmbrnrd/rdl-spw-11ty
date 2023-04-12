@@ -1,8 +1,14 @@
 @use "theme-gen" as *;
+/*
+ * Theme name
+ * MUST be the same as the filename!
+ */
+$theme: 'apptiser';
 
 // Base palette
-$clr-primary:   #223163;
+$clr-primary: #1b2a64;
 $clr-accent:    #0ca2de;
+
 $clr-grey:      #333;
 $clr-warn:      hsla(344, 100%, 41%, 1);
 $clr-success:   hsla(147, 98%, 35%, 1);
@@ -19,6 +25,10 @@ $clr-success:   hsla(147, 98%, 35%, 1);
     --clr-grey-#{$shade}: #{$color};
   }
 }
-
-
-
+// Create swatches
+.swatch-primary-#{$theme} {
+  background-color: $clr-primary;
+}
+.swatch-accent-#{$theme} {
+  background-color: $clr-accent;
+}

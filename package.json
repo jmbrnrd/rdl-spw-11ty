@@ -1,17 +1,17 @@
 {
   "name": "11ty-sass-skeleton",
-  "version": "2.0.0",
-  "description": "Featuring absolutely nothing beyond a base HTML5 template and the essential setup to watch and compile your Sass alongside 11ty.",
+  "version": "2.0.1",
+  "description": "RDL SPW & Apptiser Templates",
   "main": "index.html",
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/assets/sass:public/assets/styles",
     "watch:eleventy": "eleventy --serve",
     "build:sass": "sass  --no-source-map src/assets/sass:public/assets/styles",
     "build:eleventy": "eleventy",
-    "postbuild": "postcss public/assets/styles/*.css -u autoprefixer cssnano -r --no-map",
+    "postbuild": "postcss 'public/assets/styles/**/*.css' -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass build:eleventy",
-    "build:prod": "NODE_ENV=production npm-run-all build:sass build:eleventy"
+    "build:prod": "NODE_ENV=production npm-run-all build:sass build:eleventy postbuild"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,15 @@
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.15",
-    "esbuild": "^0.14.38",
+    "esbuild": "^0.14.54",
     "glightbox": "^3.2.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
     "postcss-cli": "^9.1.0",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "clean-css": "^5.3.2"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.2"
   }
 }

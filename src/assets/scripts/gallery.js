@@ -1,8 +1,8 @@
-import Glightbox from 'glightbox/dist/js/glightbox';
+import glightbox from 'glightbox/dist/js/glightbox';
 
 export default function () {
     console.log('gallery.js loaded');
-    const lightbox = Glightbox({
+    const gallery = glightbox({
         touchNavigation: true,
         autoplayVideos: true
     });

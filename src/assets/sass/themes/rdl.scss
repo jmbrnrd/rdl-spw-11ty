@@ -1,12 +1,17 @@
 @use "theme-gen" as *;
+/*
+ * Theme name
+ * MUST be the same as the filename!
+ */
+$theme: 'rdl';
 
 // Base palette
 $clr-primary    : hsla(0, 0%, 20%, 1);
 $clr-accent     : hsla(6, 78%, 57%, 1);
 
-$clr-grey       : hsla(0, 0%, 50%, 1);
-$clr-warn       : hsla(344, 100%, 41%, 1);
-$clr-success    : hsla(147, 98%, 35%, 1);
+$clr-grey:      #333;
+$clr-warn:      hsla(344, 100%, 41%, 1);
+$clr-success:   hsla(147, 98%, 35%, 1);
 
 // Generate CSS variables
 :root {
@@ -20,6 +25,10 @@ $clr-success    : hsla(147, 98%, 35%, 1);
     --clr-grey-#{$shade}: #{$color};
   }
 }
-
-
-
+// Create swatches
+.swatch-primary-#{$theme} {
+  background-color: $clr-primary;
+}
+.swatch-accent-#{$theme} {
+  background-color: $clr-accent;
+}

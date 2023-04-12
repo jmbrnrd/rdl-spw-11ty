@@ -3,7 +3,7 @@
     "short_name"      : "apptiser",
     "icons"           : [
         {
-            "src"  : "/assets/google-touch-icon.png",
+            "src"  : "/assets/images/google-touch-icon.png",
             "sizes": "512x512"
         }
     ],
