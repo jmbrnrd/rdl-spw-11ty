@@ -5,7 +5,7 @@ $msg-header-height: 72px;
 $msg-gutter: 48px;
 
 .modal-messages {
-  z-index: 10;
+  z-index: 500;
   position: fixed;
   bottom: $msg-gutter;
   right: 50%;
@@ -13,7 +13,8 @@ $msg-gutter: 48px;
   width: $btn-size;
   max-width: $btn-size-max;
   height: auto;
-  border-radius: calc(#{$btn-size}/6);
+
+  border-radius: calc(#{$btn-size}/4);
   font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
@@ -33,11 +34,12 @@ $msg-gutter: 48px;
   .msg-header {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     padding: 2rem;
     background-color: $color-cta-bgd;
-    height: $msg-header-height;
+    //height: $msg-header-height;
     transition: background-color .3s ease-out;
     &:hover {
       background-color: $color-cta-bgd-dark;
@@ -49,6 +51,7 @@ $msg-gutter: 48px;
       white-space: nowrap;
       opacity: 0;
       transition: opacity .3s ease-out;
+      text-align: center;
     }
     &.reveal h2 { opacity: 1; }
   }

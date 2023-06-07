@@ -1,0 +1,291 @@
+---
+title: "Apptiser Standard"
+language: "en"
+layout: "layouts/apptiser.hbs"
+gtag: "G-4FPKM2SVKM"
+permalink: "/templates/apptiser-live.html"
+brand:
+name: "Apptiser"
+prefix: "apt"
+url: "https://apptiser.io/"
+theme: "apptiser"
+---
+
+	
+<!-- mobile nav -->
+<div class="nav-menu" id="navMenu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ name }} navigation menu">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+    </button>
+</div>
+
+<!-- global nav -->
+<nav id="navBar" aria-label="primary">
+    <a href="#" class="brand" aria-label="Back to home">
+        <h1>{{ name }}</h1>
+    </a>
+    <ul class="nav-list-mobile" role="list">
+        <li><a href="#about" aria-label="About ">About</a></li>
+        <!-- Optional section tag start - Menus NavBar -->
+        <li><a href="#menus" aria-label="Menus ">Menus</a></li>
+        <!-- Optional section tag end - Menus NavBar -->
+        <!-- Optional section tag start - Reservations NavBar -->
+        <li><a href="#reservations" aria-label="Reservations">Reservations</a></li>
+        <!-- Optional section tag end - Reservations NavBar -->
+        <!-- Optional section tag start - Contacts NavBar -->
+        <li><a href="#contacts" aria-label="Contact ">Contacts</a></li>
+        <!-- Optional section tag end - Contacts NavBar -->
+        <!-- Optional section tag start - Location NavBar -->
+        <li><a href="#location" aria-label="Find ">Location</a></li>
+        <!-- Optional section tag end - Location NavBar -->
+    </ul>
+</nav>
+
+<!-- hero -->
+<section id="hero" class="section-hero">
+    <div class="brand-container fade-in">
+        <h2>{{ name }}</h2>
+        <h3 class="subtitle">{{ subtitle }}</h3>
+        <ul class="hero-nav fade-in">
+            <li><a href="#about" aria-label="About ">About</a></li>
+            <!-- Optional section tag start - Menus Hero -->
+            <li><a href="#menus" aria-label="Menus ">Menus</a></li>
+            <!-- Optional section tag end - Menus Hero -->
+            <!-- Optional section tag start - Reservations Hero -->
+            <li><a href="#reservations" aria-label="Reservations">Reservations</a></li>
+            <!-- Optional section tag end - Reservations Hero -->
+            <!-- Optional section tag start - Contacts Hero -->
+            <li><a href="#contacts" aria-label="Contact">Contacts</a></li>
+            <!-- Optional section tag end - Contacts Hero -->
+            <!-- Optional section tag start - Location Hero -->
+            <li><a href="#location" aria-label="Find">Location</a></li>
+            <!-- Optional section tag end - Location Hero -->
+        </ul>
+        <span class="desc-one-sentence fade-in" >{{ description.sentence }}</span>
+    </div>
+    
+    <img alt="Background of image of {{ name }} "
+         src="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}"
+         srcset="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  300w,
+         https://res.cloudinary.com/rdl/image/upload/w_600,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  600w,
+         https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
+         https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
+         sizes="100vw">
+    
+    
+</section>
+
+<main id="home">
+
+    <!-- about -->
+    <section id="about" class="content-section" aria-label="introduction">
+        <div class="content-block">
+            <div class="description" aria-label="description">
+                <p>{{ description.full }}</p>
+                <!-- Feature keywords-->
+                <ul class="additional-features" aria-label="features">
+                    <!-- Loop section tag start - Features
+                    {{#each features}}
+                        <li>{{ this }}</li>
+                    {{/each}}
+                    Loop section tag end - Features -->
+                </ul>
+            </div>
+            <!-- times -->
+            <aside class="opening-times">
+                <dl>
+                    <dt>Telephone</dt>
+                    <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+                    <dt>Address</dt>
+                    <dd>{{ addressStreet }}</dd>
+                    <dd>{{ addressLocality }}</dd>
+                    <dd>{{ addressRegion }} {{ postalCode }}</dd>
+                    <dt>Opening Times</dt>
+                    <dd class="times">{{ openingTimes }}</dd>
+
+                    <!-- Optional section tag start - Opening Notes -->
+                    <dt>PLEASE NOTE:</dt>
+                    <dd>{{ openingNotes }}</dd>
+                    <!-- Optional section tag end - Opening Notes -->
+                </dl>
+            </aside>
+        </div>
+
+        <!-- Optional section tag start - Images -->
+        <div class="image-gallery" aria-label="gallery">
+            <!-- Loop section tag start - Images
+            {{#each image.gallery}}
+
+            <a class="glightbox"
+                href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
+                    <img loading="lazy"
+                        src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
+                        alt="{{ ../name }} gallery image">
+                    </a>
+            {{/each}}
+            Loop section tag end - Images -->
+        </div>
+        <!-- Optional section tag end - Images -->
+    </section>
+
+    <!-- Optional section tag start - HTML Menus -->
+    <section id="menus" class="content-section">
+        <h2 class="section-title">MENUS</h2>
+        <div class="menu-html">
+            <!-- Optional section tag start - Menu Overview -->
+            <p>{{ menus.overview }}</p>
+            <!-- Optional section tag end - Menu Overview -->
+    
+            <!-- sample Menu -->
+            <div class="content-sub-section">
+                <div class="menu-html">
+                    <ul class="menu-key">
+                        <li><i class="vt" aria-label="Suitable for vegetarians"></i>Vegetarian</li>
+                        <li><i class="vg" aria-label="Suitable for vegans"></i>Vegan</li>
+                        <li><i class="gf" aria-label="Gluten-free"></i>Gluten-free</li>
+                    </ul>
+                    <!-- Loop section tag start - HTML Menus
+
+                    {{#each menus.sections }}
+                        <div id="menu_section_1" class="menu-section">
+                            <h3 class="menu-section-title">{{ name }}</h3>
+                            <ul class="menu-items">
+                                {{#each dishes }}
+                                    <li>
+                                        <h4>{{ this.dish_name }}</h4>
+                                        <span>£{{ this.dish_price }}</span>
+                                        <span>{{ this.dish_desc }}</span>
+                                        {{#each this.dish_attributes}}
+                                            <i class="{{ this.att }}"></i>
+                                        {{/each}}
+                                    </li>
+                                {{/each }}
+                            </ul>
+                        </div>
+                    {{/each}}
+                    Loop section tag end - HTML Menus -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional section tag end - HTML Menus -->
+
+    
+    <!-- Optional section tag start - Downloadable Menus -->
+    <section class="content-section menu-pdf" id="pdfMenus">
+        <h2 class="section-title">Downloadable Menus</h2>
+        <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+        <div class="content-block menu-downloads">
+            <!-- Loop section tag start - Downloadable Menus
+
+            {{#each menus.pdfs }}
+            <div class="menu-card-container">
+                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                    <h3>{{ name }}</h3>
+                    <span>Published: {{ date }}</span>
+                </a>
+            </div>
+            {{/each }}
+            Loop section tag end - Downloadable Menus -->
+        </div>
+    </section>
+    <!-- Optional section tag end - Downloadable Menus -->
+
+
+    <!-- Optional section tag start - Bookings -->
+    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
+        <h2 class="section-title">Reservations</h2>
+        <!-- Optional section tag start - Info -->
+        <p>{{ reservations.info }}</p>
+        <!-- Optional section tag end - Info -->
+        <div class="content-block">
+            <!-- Optional section tag start - Groups -->
+            <aside>
+                <h2 class="sub-section-title">Group bookings</h2>
+                <p>{{ reservations.groups }}</p>
+            </aside>
+            <!-- Optional section tag end - Groups -->
+            <!-- Optional section tag start - Private -->
+            <aside>
+                <h2 class="sub-section-title">Private Dining</h2>
+                <p>{{ reservations.private  }}</p>
+            </aside>
+            <!-- Optional section tag end - Private -->
+        </div>
+    </section>
+    <!-- Optional section tag end - Bookings -->
+
+    <!-- Optional section tag start - Contacts -->
+    <section id="contacts" class="content-section contact-section">
+        <h2 class="section-title">Contacts</h2>
+        <div class="content-block">
+            <!-- address -->
+            <aside>
+                <dl>
+                    <dt>Address</dt>
+                    <dd>{{ addressStreet }}</dd>
+                    <dd>{{ addressLocality }} {{ postalCode }}</dd>
+                    <dt>Telephone</dt>
+                    <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+                </dl>
+            </aside>
+            <!-- Optional section tag start - Links -->
+            <aside>
+                <dl>
+                    <dt>Links</dt>
+                    <dd>
+                        <div class="social-links">
+                        <!-- Loop section tag start - Social
+
+                        {{#each social.networks }}
+                        <div>
+                            <a class="social-link" href="{{ this.url }}" aria-label="{{ this.alt }}">
+                                <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
+                                .name }} logo" width="28" height="28">
+                            </a>
+                            <span>{{ this.name }}</span>
+                        </div>
+                        {{/each}}
+                        Loop section tag end - Social -->
+                        </div>
+                    </dd>
+                </dl>
+            </aside>
+            <!-- Optional section tag end - Links -->
+            <!-- Optional section tag start - Transport -->
+            <aside>
+                <dl>
+                    <!-- Optional section tag start - Public -->
+                    <dt>Public Transport</dt>
+                    <dd>{{ transport }}</dd>
+                    <!-- Optional section tag end - Public -->
+                    <!-- Optional section tag start - Parking -->
+                    <dt>Parking</dt>
+                    <dd>{{ parking }}</dd>
+                    <!-- Optional section tag end - Parking -->
+                </dl>
+            </aside>
+            <!-- Optional section tag end - Transport -->
+        </div>
+    </section>
+    <!-- Optional section tag end - Contacts -->
+
+    <!-- Optional section tag start - Map -->
+    <section class="map-section" aria-label="map">
+        <div class="content-block"
+             id="location"
+             data-bkg-id="61c46fa7ccf9d0cba39b6387"
+             data-bkg-key="61a45e24757d22026a87f369"
+             data-lat="{{ geocode.lat }}"
+             data-lng="{{ geocode.lng }}"
+             data-label="{{ name }}">
+            <div id="map" data-intersection="300"></div>
+        </div>
+    </section>
+    <!-- Optional section tag end - Map -->
+
+</main>
+
+{{> partials/footer-apptiser }}

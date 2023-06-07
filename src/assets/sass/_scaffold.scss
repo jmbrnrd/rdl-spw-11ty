@@ -6,8 +6,8 @@ main { background-color: $color-body-bgd; }
 
 footer {
   $link-height: 3rem;
-  background-color: $color-black;
-  padding: 1rem 1rem 2rem;
+  background-color: $color-primary-dark;
+  padding: 2rem 1rem;
   color: $color-grey-light;
   font-size: 1.2rem;
   line-height: 1.4;
@@ -56,11 +56,9 @@ footer {
     }
   }
 
-
-
   .logo {
     display: inline;
-    height: 1.75rem; //$link-height;
+    height: 3rem; //$link-height;
     width: auto;
     opacity: .7;
     transition: all .3s ease-in-out;
@@ -70,7 +68,10 @@ footer {
       opacity: 1;
     }
   }
-
+  a {
+    text-decoration: underline;
+    color: $color-body-text-accent;
+  }
 }
 
 .section-hero {
