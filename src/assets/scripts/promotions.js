@@ -128,10 +128,11 @@ export default function () {
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
-              `<span class="cal-date">` +
-                `<span class="cal-date-month">${dateObj.toLocaleString('en-GB', { month: 'short' })}</span>` +
-                `<span class="cal-date-day">${dateObj.getDate()}</span>` +
-              `</span>` +
+              `<span class="cat-icon"></span>` +
+              // `<span class="cal-date">` +
+              //   `<span class="cal-date-month">${dateObj.toLocaleString('en-GB', { month: 'short' })}</span>` +
+              //   `<span class="cal-date-day">${dateObj.getDate()}</span>` +
+              // `</span>` +
               `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`
