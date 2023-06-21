@@ -3,6 +3,7 @@ export default function () {
 
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
+    const currentDateObj = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
@@ -57,6 +58,8 @@ export default function () {
      */
     function createOffersButton(offers) {
 
+        console.log(offers);
+
         // abort if no offers returned
         if (offers.length < 1) { return false; }
 
@@ -75,9 +78,7 @@ export default function () {
 
         // add content
         messageHeader.innerHTML =
-            // `<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="-24 0 24 24">` +
-            //     `<path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"/>` +
-            // `</svg>` +
+            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"></path></svg>` +
             `<h2>Events & Offers</h2>`;
 
         messageFooter.innerHTML = `CLOSE`;
@@ -119,7 +120,11 @@ export default function () {
         list.className = 'offer-list';
         let listItem;
         messages.forEach((item) => {
+            // if it's out of date
+          if (currentDateObj > new Date(item['offer_to'])) { return; }
+
           const dateObj = new Date(item['offer_from']);
+          console.log(currentDateObj < new Date(item['offer_to']));
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +

@@ -15,7 +15,7 @@ export default function () {
   const modal = document.querySelector('.claim-form');
   const modalMessage = document.querySelector('.booking-request-thanks');
   const devServer = 'http://localhost:4000';
-  const prodServer = 'http://restaurantcollective.io';
+  const prodServer = 'https://restaurantcollective.io';
   const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
 
   // open
