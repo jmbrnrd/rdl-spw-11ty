@@ -79,12 +79,13 @@ export default function () {
         // add content
         messageHeader.innerHTML =
             `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"></path></svg>` +
-            `<h2>Events & Offers</h2>`;
+            `<h2>Events & Offers</h2>` +
+            `<svg xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 -960 960 960"><path fill="#fff" d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
 
         messageFooter.innerHTML = `CLOSE`;
 
         // add to DOM
-        messageBody.appendChild(messageFooter);
+        // messageBody.appendChild(messageFooter);
         messageContainer.append(messageHeader, messageBody);
         fragment.append(messageContainer);
         document.body.appendChild(fragment);
@@ -98,6 +99,7 @@ export default function () {
         messageContainer.addEventListener('click', () => {
             dspOffers(messageBody, offers);
             messageBody.classList.toggle('active');
+            messageHeader.classList.toggle('open');
         });
 
         // init button
@@ -112,8 +114,6 @@ export default function () {
      */
     function dspOffers(container, promotions) {
 
-        const isCurrentPromotions = false;
-
         // abort if already loaded
         if (messagesLoaded) { return false; }
 
@@ -124,12 +124,10 @@ export default function () {
         let listItem;
         promotions.forEach((item) => {
 
-          const dateObj = new Date(item['offer_from']);
-
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
-                  `<span class="category ${item['offer_category'] ?? ``}"></span>` +
+                  `<span class="category ${item['offer_category'] || ''}"></span>` +
                   `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`
