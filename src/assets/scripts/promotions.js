@@ -127,7 +127,7 @@ export default function () {
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
-                  `<span class="category ${item['offer_category'] || ''}"></span>` +
+                  `<span class="category ${item['offer_category'] || 'event'}"></span>` +
                   `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`

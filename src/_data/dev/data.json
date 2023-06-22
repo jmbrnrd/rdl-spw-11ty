@@ -31,11 +31,7 @@
                     "url": "mailto:info@example-restaurant.com",
                     "alt": "Contact us via email"
                 },
-                {
-                    "name": "website",
-                    "url": "https://www.example-restaurant.com",
-                    "alt": "Visit our website"
-                },
+
                 {
                     "name": "facebook",
                     "url": "https://www.facebook.com/restaurantcollective/",
