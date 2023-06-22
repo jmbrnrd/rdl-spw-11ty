@@ -5,39 +5,6 @@ $msg-header-height: 72px;
 $msg-gutter: 48px;
 $icon-fill-opacity: .5;
 
-$icon-event:  'data:image/svg+xml;utf8,' +
-              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
-                '<path fill="none" d="M0 0h24v24H0V0z"/>' +
-                '<path fill="#{$icon-fill-color}" d="M5 8h14V6H5z" opacity="#{$icon-fill-opacity}"/>' +
-                '<path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>' +
-              '</svg>';
-$icon-music:  'data:image/svg+xml;utf8,' +
-              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
-                '<path fill="none" d="M0 0h24v24H0z"/>' +
-                '<path fill="#{$icon-fill-color}" d="M14 14.5h.25V19h-4.5v-4.5H10c.55 0 1-.45 1-1V5h2v8.5c0 .55.45 1 1 1zM5 5h2v8.5c0 .55.45 1 1 1h.25V19H5V5zm14 14h-3.25v-4.5H16c.55 0 1-.45 1-1V5h2v14z" opacity="#{$icon-fill-opacity}"/>' +
-                '<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 11.5h.25V19h-4.5v-4.5H10c.55 0 1-.45 1-1V5h2v8.5c0 .55.45 1 1 1zM5 5h2v8.5c0 .55.45 1 1 1h.25V19H5V5zm14 14h-3.25v-4.5H16c.55 0 1-.45 1-1V5h2v14z"/>' +
-              '</svg>';
-$icon-offer:  'data:image/svg+xml;utf8,' +
-              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
-                '<path fill="none" d="M0 0h24v24H0V0z"/>' +
-                '<path fill="#{$icon-fill-color}" d="M19.47 9.16a8.027 8.027 0 0 0-7.01-5.14l2 4.71 5.01.43zm-7.93-5.14c-3.22.18-5.92 2.27-7.02 5.15l5.02-.43 2-4.72zm-7.31 6.12C4.08 10.74 4 11.36 4 12c0 2.48 1.14 4.7 2.91 6.17l1.11-4.75-3.79-3.28zm15.54-.01-3.79 3.28 1.1 4.76A7.99 7.99 0 0 0 20 12c0-.64-.09-1.27-.23-1.87zM7.84 18.82c1.21.74 2.63 1.18 4.15 1.18 1.53 0 2.95-.44 4.17-1.18L12 16.31l-4.16 2.51z" opacity="#{$icon-fill-opacity}"/>' +
-                '<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm7.48 7.16-5.01-.43-2-4.71c3.21.19 5.91 2.27 7.01 5.14zM12 8.06l1.09 2.56 2.78.24-2.11 1.83.63 2.73L12 13.98l-2.39 1.44.63-2.72-2.11-1.83 2.78-.24L12 8.06zm-.46-4.04-2 4.72-5.02.43c1.1-2.88 3.8-4.97 7.02-5.15zM4 12c0-.64.08-1.26.23-1.86l3.79 3.28-1.11 4.75A8.014 8.014 0 0 1 4 12zm7.99 8c-1.52 0-2.94-.44-4.15-1.18L12 16.31l4.16 2.51A8.008 8.008 0 0 1 11.99 20zm5.1-1.83-1.1-4.76 3.79-3.28c.13.6.22 1.23.22 1.87 0 2.48-1.14 4.7-2.91 6.17z"/>' +
-              '</svg>';
-$icon-promo:  'data:image/svg+xml;utf8,' +
-              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/>' +
-              '<path d="M18 11v2h4v-2h-4zM16 17.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm5.03 1.71L11 9.53v4.94l-1.97-1.18-.48-.29H4v-2h4.55l.48-.29zM15.5 12c0-1.33-.58-2.53-1.5-3.35v6.69c.92-.81 1.5-2.01 1.5-3.34z"/>' +
-              '<path fill="#{$icon-fill-color}" d="M9.03 10.71 11 9.53v4.94l-1.97-1.18-.48-.29H4v-2h4.55l.48-.29z" opacity="#{$icon-fill-opacity}"/>' +
-              '</svg>';
-$icon-discount: 'data:image/svg+xml;utf8,' +
-                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
-                  '<path fill="none" d="M0 0h24v24H0z"/>' +
-                  '<path fill="#{$icon-fill-color}" d="M19 9.79 11.21 2H5v6.21L12.79 16 19 9.79zM7.25 5.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" opacity="#{$icon-fill-opacity}"/>' +
-                  '<path d="M12.79 21 3 11.21v2c0 .53.21 1.04.59 1.41l7.79 7.79c.78.78 2.05.78 2.83 0l6.21-6.21c.78-.78.78-2.05 0-2.83L12.79 21z"/>' +
-                  '<path d="M11.38 17.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l6.21-6.21c.78-.78.78-2.05 0-2.83L12.62.58C12.25.21 11.74 0 11.21 0H5C3.9 0 3 .9 3 2v6.21c0 .53.21 1.04.59 1.41l7.79 7.79zM5 2h6.21L19 9.79 12.79 16 5 8.21V2z"/>' +
-                  '<circle cx="7.25" cy="4.25" r="1.25"/>' +
-                '</svg>';
-
-
 .modal-messages {
   z-index: 500;
   position: fixed;
@@ -111,11 +78,10 @@ $icon-discount: 'data:image/svg+xml;utf8,' +
       flex-direction: column;
       padding-top: .5rem;
     }
-
     li {
       border-bottom: 1px solid #eee;
       &:last-child { margin-bottom: 3rem; }
-      padding-block: 1.6rem;
+      padding-block: 1.25rem;
       header {
         display: flex;
         justify-content: flex-start;
@@ -147,34 +113,48 @@ $icon-discount: 'data:image/svg+xml;utf8,' +
       }
     }
   }
-  .cal-date {
-    display: inline-block;
-    &-month {
-      display: block;
-      background-color: $color-primary-dark;
-      border-radius: 6px 6px 0 0;
-      text-transform: uppercase;
-      text-align: center;
-      color: white;
-      padding: .25rem;
-      font-size: 9px;
-    }
-    &-day {
-      display: block;
-      font-size: 2rem;
-      padding: .25rem .75rem .375rem;
-      text-align: center;
-      background-color: $color-grey-light;
-      border-radius: 0 0 6px 6px;
-      font-weight: 500;
-      min-width: 3ch;
-    }
-  }
-  .cat-icon::after {
+  .category {
+    &::after {
       width: 36px;
       aspect-ratio: 1;
       content: '';
-      background:  url($icon-event);
       display: block;
+      background: url('data:image/svg+xml;utf8,' +
+                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+                          '<path fill="none" d="M0 0h24v24H0V0z"/>' +
+                          '<path fill="green" d="M5 8h14V6H5z" opacity="#{$icon-fill-opacity}"/>' +
+                          '<path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>' +
+                        '</svg>');
+    }
+    &.music::after {
+      background:  url('data:image/svg+xml;utf8,' +
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+                '<path fill="none" d="M0 0h24v24H0z"/>' +
+                '<path fill="white" d="M14 14.5h.25V19h-4.5v-4.5H10c.55 0 1-.45 1-1V5h2v8.5c0 .55.45 1 1 1zM5 5h2v8.5c0 .55.45 1 1 1h.25V19H5V5zm14 14h-3.25v-4.5H16c.55 0 1-.45 1-1V5h2v14z" opacity="#{$icon-fill-opacity}"/>' +
+                '<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 11.5h.25V19h-4.5v-4.5H10c.55 0 1-.45 1-1V5h2v8.5c0 .55.45 1 1 1zM5 5h2v8.5c0 .55.45 1 1 1h.25V19H5V5zm14 14h-3.25v-4.5H16c.55 0 1-.45 1-1V5h2v14z"/>' +
+              '</svg>');
+    }
+    &.offer::after {
+      background: url('data:image/svg+xml;utf8,' +
+              '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+                '<path fill="none" d="M0 0h24v24H0V0z"/>' +
+                '<path fill="yellow" d="M19.47 9.16a8.027 8.027 0 0 0-7.01-5.14l2 4.71 5.01.43zm-7.93-5.14c-3.22.18-5.92 2.27-7.02 5.15l5.02-.43 2-4.72zm-7.31 6.12C4.08 10.74 4 11.36 4 12c0 2.48 1.14 4.7 2.91 6.17l1.11-4.75-3.79-3.28zm15.54-.01-3.79 3.28 1.1 4.76A7.99 7.99 0 0 0 20 12c0-.64-.09-1.27-.23-1.87zM7.84 18.82c1.21.74 2.63 1.18 4.15 1.18 1.53 0 2.95-.44 4.17-1.18L12 16.31l-4.16 2.51z" />' +
+                '<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm7.48 7.16-5.01-.43-2-4.71c3.21.19 5.91 2.27 7.01 5.14zM12 8.06l1.09 2.56 2.78.24-2.11 1.83.63 2.73L12 13.98l-2.39 1.44.63-2.72-2.11-1.83 2.78-.24L12 8.06zm-.46-4.04-2 4.72-5.02.43c1.1-2.88 3.8-4.97 7.02-5.15zM4 12c0-.64.08-1.26.23-1.86l3.79 3.28-1.11 4.75A8.014 8.014 0 0 1 4 12zm7.99 8c-1.52 0-2.94-.44-4.15-1.18L12 16.31l4.16 2.51A8.008 8.008 0 0 1 11.99 20zm5.1-1.83-1.1-4.76 3.79-3.28c.13.6.22 1.23.22 1.87 0 2.48-1.14 4.7-2.91 6.17z"/>' +
+              '</svg>');
+    }
+    &.discount::after {
+      background: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+                  '<path fill="none" d="M0 0h24v24H0z"/>' +
+                  '<path fill="red" d="M19 9.79 11.21 2H5v6.21L12.79 16 19 9.79zM7.25 5.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" opacity="#{$icon-fill-opacity}"/>' +
+                  '<path d="M12.79 21 3 11.21v2c0 .53.21 1.04.59 1.41l7.79 7.79c.78.78 2.05.78 2.83 0l6.21-6.21c.78-.78.78-2.05 0-2.83L12.79 21z"/>' +
+                  '<path d="M11.38 17.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l6.21-6.21c.78-.78.78-2.05 0-2.83L12.62.58C12.25.21 11.74 0 11.21 0H5C3.9 0 3 .9 3 2v6.21c0 .53.21 1.04.59 1.41l7.79 7.79zM5 2h6.21L19 9.79 12.79 16 5 8.21V2z"/>' +
+                  '<circle cx="7.25" cy="4.25" r="1.25"/>' +
+                '</svg>');
+    }
   }
+}
+.svgTone {
+  fill: green;
+  opacity: .5;
 }

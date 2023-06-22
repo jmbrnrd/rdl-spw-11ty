@@ -3,7 +3,7 @@ export default function () {
 
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
-    const currentDateObj = new Date();
+    const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
@@ -56,11 +56,11 @@ export default function () {
      * @param offers - array returned from getOffers()
      * @returns {boolean} guard clause
      */
-    function createOffersButton(offers) {
+    function createOffersButton(offerData)  {
 
-        console.log(offers);
+        const offers = getValidPromos(offerData);
 
-        // abort if no offers returned
+        // abort if no valid promotions are returned
         if (offers.length < 1) { return false; }
 
         // build DOM elements
@@ -107,10 +107,13 @@ export default function () {
     /**
      * Display the list of offers/messages
      * @param container - contain DOM element for our messages
-     * @param messages - loaded offers/messages array
+     * @param promotions - loaded offers/messages array
      * @returns {boolean}
      */
-    function dspOffers(container, messages) {
+    function dspOffers(container, promotions) {
+
+        const isCurrentPromotions = false;
+
         // abort if already loaded
         if (messagesLoaded) { return false; }
 
@@ -119,21 +122,15 @@ export default function () {
         const list = document.createElement('ul');
         list.className = 'offer-list';
         let listItem;
-        messages.forEach((item) => {
-            // if it's out of date
-          if (currentDateObj > new Date(item['offer_to'])) { return; }
+        promotions.forEach((item) => {
 
           const dateObj = new Date(item['offer_from']);
-          console.log(currentDateObj < new Date(item['offer_to']));
+
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
-              `<span class="cat-icon"></span>` +
-              // `<span class="cal-date">` +
-              //   `<span class="cal-date-month">${dateObj.toLocaleString('en-GB', { month: 'short' })}</span>` +
-              //   `<span class="cal-date-day">${dateObj.getDate()}</span>` +
-              // `</span>` +
-              `<h3>${item['offer_strapline']}</h3>` +
+                  `<span class="category ${item['offer_category'] ?? ``}"></span>` +
+                  `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`
           list.appendChild(listItem);
@@ -143,5 +140,22 @@ export default function () {
         listFragment.appendChild(list);
         container.prepend(listFragment);
         messagesLoaded = true;
+    }
+
+    /**
+     *
+     * @param promotions array of events/promotions
+     * @returns {*[]} an array of valid promotions - i.e. in date range
+     */
+    function getValidPromos(promotions) {
+        let validPromotions = [];
+        promotions.forEach( promo => {
+            // abort if beyond end date
+            if (currentDate > new Date(promo['offer_to'])) { return; }
+            // or before market from data
+            if (currentDate < new Date(promo['offer_marketed_from'])) { return; }
+            validPromotions.push(promo);
+        })
+        return validPromotions;
     }
 }
