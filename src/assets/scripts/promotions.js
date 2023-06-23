@@ -58,6 +58,8 @@ export default function () {
      */
     function createOffersButton(offerData)  {
 
+        console.log(offerData);
+
         const offers = getValidPromos(offerData);
 
         // abort if no valid promotions are returned
@@ -125,16 +127,16 @@ export default function () {
         let listItem;
         let listItemLink;
         promotions.forEach((item) => {
-           // if (!!item['offer_link']) {
+           if (!!item['offer_link']) {
                 listItemLink = document.createElement('a');
                 listItemLink.innerHTML = 'Read More';
-                listItemLink.setAttribute('href', '#reservations');
+                listItemLink.setAttribute('href', item['offer_link']);
                 listItemLink.setAttribute('aria-label', 'View event details')
-            //}
+            }
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
-                  `<span class="category ${item['offer_category'] || 'discount'}"></span>` +
+                  `<span class="category ${item['offer_category'] || 'event'}"></span>` +
                   `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`;
