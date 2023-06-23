@@ -37,7 +37,7 @@ $icon-fill-opacity: .5;
     grid-template-columns: 30px 1fr 30px;
     align-items: center;
     gap: 1rem;
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 2rem;
     background-color: $color-cta-bgd;
     transition: background-color .3s ease-out;
     &:hover {
@@ -90,9 +90,11 @@ $icon-fill-opacity: .5;
     }
     li {
       border-bottom: 1px solid #eee;
-      &:last-child { margin-bottom: 3rem; }
+      &:last-child {
+        margin-bottom: 1rem;
+        border-bottom: none;
+      }
       padding-block: 1.25rem;
-      &:last-child { border-bottom: none; }
       header {
         display: flex;
         justify-content: flex-start;
@@ -121,6 +123,11 @@ $icon-fill-opacity: .5;
         justify-content: flex-end;
         font-size: 1.6rem;
         font-weight: $font-weight-bold;
+        margin-top: .5rem;
+        color: $color-body-text-accent;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

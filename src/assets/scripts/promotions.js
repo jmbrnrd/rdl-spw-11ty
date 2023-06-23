@@ -69,6 +69,7 @@ export default function () {
         const messageHeader = document.createElement('div');
         const messageBody = document.createElement('div');
         const messageFooter = document.createElement('div');
+        const messageLink = document.createElement('a');
 
         // apply classes
         messageContainer.className = 'modal-messages';
@@ -122,15 +123,22 @@ export default function () {
         const list = document.createElement('ul');
         list.className = 'offer-list';
         let listItem;
+        let listItemLink;
         promotions.forEach((item) => {
-
+           // if (!!item['offer_link']) {
+                listItemLink = document.createElement('a');
+                listItemLink.innerHTML = 'Read More';
+                listItemLink.setAttribute('href', '#reservations');
+                listItemLink.setAttribute('aria-label', 'View event details')
+            //}
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
-                  `<span class="category ${item['offer_category'] || 'event'}"></span>` +
+                  `<span class="category ${item['offer_category'] || 'discount'}"></span>` +
                   `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
-              `<p>${item['offer_text']}</p>`
+              `<p>${item['offer_text']}</p>`;
+          listItem.appendChild(listItemLink);
           list.appendChild(listItem);
         });
 
