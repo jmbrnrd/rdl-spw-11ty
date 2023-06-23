@@ -3,6 +3,7 @@ export default function () {
 
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
+    const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
@@ -42,14 +43,24 @@ export default function () {
             .catch(err => console.log(err));
     }
 
+    function getMonth(idx) {
+        const locale = "en-GB";
+        const objDate = new Date();
+        objDate.setDate(1);
+        objDate.setMonth(idx);
+        return objDate.toLocaleString(locale, {month: "short"});
+    }
+
     /**
      * Build the DOM elements
      * @param offers - array returned from getOffers()
      * @returns {boolean} guard clause
      */
-    function createOffersButton(offers) {
+    function createOffersButton(offerData)  {
 
-        // abort if no offers returned
+        const offers = getValidPromos(offerData);
+
+        // abort if no valid promotions are returned
         if (offers.length < 1) { return false; }
 
         // build DOM elements
@@ -58,6 +69,7 @@ export default function () {
         const messageHeader = document.createElement('div');
         const messageBody = document.createElement('div');
         const messageFooter = document.createElement('div');
+        const messageLink = document.createElement('a');
 
         // apply classes
         messageContainer.className = 'modal-messages';
@@ -67,13 +79,14 @@ export default function () {
 
         // add content
         messageHeader.innerHTML =
-            `<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"/></svg>` +
-            `<h2>View Our Latest Offers</h2>`;
+            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"></path></svg>` +
+            `<h2>Events & Offers</h2>` +
+            `<svg xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 -960 960 960"><path fill="#fff" d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
 
         messageFooter.innerHTML = `CLOSE`;
 
         // add to DOM
-        messageBody.appendChild(messageFooter);
+        // messageBody.appendChild(messageFooter);
         messageContainer.append(messageHeader, messageBody);
         fragment.append(messageContainer);
         document.body.appendChild(fragment);
@@ -87,6 +100,7 @@ export default function () {
         messageContainer.addEventListener('click', () => {
             dspOffers(messageBody, offers);
             messageBody.classList.toggle('active');
+            messageHeader.classList.toggle('open');
         });
 
         // init button
@@ -96,10 +110,11 @@ export default function () {
     /**
      * Display the list of offers/messages
      * @param container - contain DOM element for our messages
-     * @param messages - loaded offers/messages array
+     * @param promotions - loaded offers/messages array
      * @returns {boolean}
      */
-    function dspOffers(container, messages) {
+    function dspOffers(container, promotions) {
+
         // abort if already loaded
         if (messagesLoaded) { return false; }
 
@@ -108,13 +123,22 @@ export default function () {
         const list = document.createElement('ul');
         list.className = 'offer-list';
         let listItem;
-        messages.forEach((item) => {
+        let listItemLink;
+        promotions.forEach((item) => {
+           // if (!!item['offer_link']) {
+                listItemLink = document.createElement('a');
+                listItemLink.innerHTML = 'Read More';
+                listItemLink.setAttribute('href', '#reservations');
+                listItemLink.setAttribute('aria-label', 'View event details')
+            //}
           listItem = document.createElement('li');
           listItem.innerHTML =
-              `<img src="https://res.cloudinary.com/rdl/image/upload/v1653385892/directory_assets/camc/logo.svg" alt="logo" />` +
-              `<h3>${item['offer_strapline']}</h3>` +
-              `<p>${item['offer_text']}</p>` +
-              `<a href="https://www.caravanclub.co.uk/membership/member-offers/roadchef/">View Details</a>`;
+              `<header>` +
+                  `<span class="category ${item['offer_category'] || 'discount'}"></span>` +
+                  `<h3>${item['offer_strapline']}</h3>` +
+              `</header>` +
+              `<p>${item['offer_text']}</p>`;
+          listItem.appendChild(listItemLink);
           list.appendChild(listItem);
         });
 
@@ -122,5 +146,22 @@ export default function () {
         listFragment.appendChild(list);
         container.prepend(listFragment);
         messagesLoaded = true;
+    }
+
+    /**
+     *
+     * @param promotions array of events/promotions
+     * @returns {*[]} an array of valid promotions - i.e. in date range
+     */
+    function getValidPromos(promotions) {
+        let validPromotions = [];
+        promotions.forEach( promo => {
+            // abort if beyond end date
+            if (currentDate > new Date(promo['offer_to'])) { return; }
+            // or before market from data
+            if (currentDate < new Date(promo['offer_marketed_from'])) { return; }
+            validPromotions.push(promo);
+        })
+        return validPromotions;
     }
 }

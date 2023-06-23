@@ -3,7 +3,7 @@ title: "Apptiser Standard"
 language: "en"
 layout: "layouts/apptiser.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser.html"
+permalink: "/templates/apptiser-standard.html"
 brand:
     name: "Apptiser"
     prefix: "apt"
@@ -13,7 +13,7 @@ brand:
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ lang.nav.label.navMenuMobile }}">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ lang.nav.label.navMenuMobile }}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -22,7 +22,7 @@ brand:
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" title="{{ lang.nav.label.backToTop }}">
+    <a href="#" class="brand" aria-label="{{ lang.nav.label.backToTop }}">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -135,7 +135,7 @@ brand:
                             <div>
                                 <a class="social-link" href="{{ this.url }}"
                                    target="_blank"
-                                   title="{{ this.alt }}">
+                                   aria-label="{{ this.alt }}">
                                     <img src="/assets/images/icon-{{ this.name }}.svg"
                                          alt="{{ this.name }} logo"
                                          width="28"

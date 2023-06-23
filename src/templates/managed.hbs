@@ -4,17 +4,17 @@ language: "en"
 layout: "layouts/network.hbs"
 permalink: "/templates/rdl-managed.html"
 brand:
-    name: "RDL Network"
-    prefix: "rdl"
-    url: "https://rdl.network/"
-    theme: "rdl"
+    name: "apptiser"
+    prefix: "app"
+    url: "https://apptiser.io/"
+    theme: "apptiser"
 ---
 
 <section id="hero" class="section-hero golden-ratio">
     <div class="brand-container fade-in">
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
-        <a href="#about" class="scroll-down" title="Scroll page top main content"></a>
+        <a href="#about" class="scroll-down" aria-label="Scroll page top main content"></a>
     </div>
     {{> partials/hero-image }}
 </section>
