@@ -1,6 +1,8 @@
 
 export default function () {
 
+    console.log('promotion.js');
+
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
     const currentDate = new Date();

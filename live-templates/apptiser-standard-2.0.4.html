@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" data-id="{{ number }}" xmlns="http://www.w3.org/1999/html">
 
-<!-- 1.0.2 -->
+<!-- 2.0.4 -->
 
 <head>
 
@@ -25,7 +25,7 @@
             "telephone": "{{ phone }}",
             "servesCuisine": "{{ cuisine }}",
             "acceptsReservations": "true",
-            "image": "https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ image.default }}",
+            "image": "https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{number}}/{{image.default}}",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "{{ addressStreet }}",
@@ -72,8 +72,9 @@
 
     <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.0.1" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.0.2" />
-	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.0.1" defer></script>
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.0.4" />
+
+    <script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.0.4.1" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUOxHaeFFu1_c0sEpjRCNOAKnl6r8YMvY&callback=initMap&language=en"></script>
