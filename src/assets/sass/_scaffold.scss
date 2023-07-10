@@ -12,25 +12,17 @@ footer {
   font-size: 1.2rem;
   line-height: 1.4;
   .footer-container {
-    max-width: $layout-max-width;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    justify-content: center;
-    align-items: center;
+    //max-width: $layout-max-width;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    grid-row-gap: 2rem;
     margin: auto;
     &-col3 {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
+      > div { text-align: center; }
     }
     @include mq($mq-medium) {
-      flex-direction: row;
+      grid-template-columns: 1fr 2fr 1fr;
     }
     > a {
       display: flex;

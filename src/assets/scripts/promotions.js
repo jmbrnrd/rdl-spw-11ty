@@ -55,7 +55,7 @@ export default function () {
 
     /**
      * Build the DOM elements
-     * @param offers - array returned from getOffers()
+     * @param offerData - array returned from getOffers()
      * @returns {boolean} guard clause
      */
     function createOffersButton(offerData)  {
@@ -129,12 +129,6 @@ export default function () {
         let listItem;
         let listItemLink;
         promotions.forEach((item) => {
-           if (!!item['offer_link']) {
-                listItemLink = document.createElement('a');
-                listItemLink.innerHTML = 'Read More';
-                listItemLink.setAttribute('href', item['offer_link']);
-                listItemLink.setAttribute('aria-label', 'View event details')
-            }
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
@@ -142,7 +136,14 @@ export default function () {
                   `<h3>${item['offer_strapline']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`;
-          listItem.appendChild(listItemLink);
+          // Is there a link to additional content?
+            if (!!item['offer_link']) {
+                listItemLink = document.createElement('a');
+                listItemLink.innerHTML = 'Read More';
+                listItemLink.setAttribute('href', item['offer_link']);
+                listItemLink.setAttribute('aria-label', 'View event details');
+                listItem.appendChild(listItemLink);
+            }
           list.appendChild(listItem);
         });
 
