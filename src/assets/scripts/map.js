@@ -43,7 +43,8 @@ export default function () {
                 //   fontSize: '18px'
                 // },
                 map,
-                animation: google.maps.Animation.DROP
+                animation: google.maps.Animation.DROP,
+                ariaLabel: 'Restaurant location marker'
             });
             // info window
             const infowindow = new google.maps.InfoWindow({
