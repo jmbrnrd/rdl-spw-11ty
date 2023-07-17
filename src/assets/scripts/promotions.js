@@ -81,7 +81,6 @@ export default function () {
         messageFooter.innerHTML = `CLOSE`;
 
         // add to DOM
-        // messageBody.appendChild(messageFooter);
         messageContainer.append(messageHeader, messageBody);
         fragment.append(messageContainer);
         document.body.appendChild(fragment);
