@@ -3,11 +3,12 @@
     <!-- {{ data.image.gallery }} -->
     {{#each data.image.gallery }}
         <a class="glightbox"
-           href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}"
+           href="{{ ../config.image.url }}{{ ../config.image.transform.gallery-display }}{{ ../config.image.folder
+           }}{{ ../data.number }}/{{ this }}"
            aria-label="{{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}">
             <img loading="lazy"
                  alt="{{ ../data.name }} {{ ../lang.section.gallery.alt.thumbnail }} {{ inc @index }}"
-                 src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../data.id }}/{{ this }}">
+                 src="{{ ../config.image.url }}{{ ../config.image.transform.gallery-thumb }}{{ ../config.image.folder }}{{ ../data.number }}/{{ this }}">
         </a>
     {{/each}}
 </div>

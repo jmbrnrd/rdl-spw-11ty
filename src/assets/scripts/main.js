@@ -6,14 +6,6 @@ import gallery from './gallery';
 import promotions from './promotions'
 
 
-// Suppress Console.logging
-if (process.env.NODE_ENV === "production") {
-    console.log = () => {};
-    console.debug = () => {};
-    console.info = () => {};
-    console.warn = () => {};
-}
-console.log(`Version: ${process.env.NODE_ENV}`);
 
 bookings();
 promotions();

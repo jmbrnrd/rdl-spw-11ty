@@ -1,6 +1,8 @@
 
 export default function () {
 
+    console.log('promotion.js');
+
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
     const currentDate = new Date();
@@ -43,17 +45,9 @@ export default function () {
             .catch(err => console.log(err));
     }
 
-    function getMonth(idx) {
-        const locale = "en-GB";
-        const objDate = new Date();
-        objDate.setDate(1);
-        objDate.setMonth(idx);
-        return objDate.toLocaleString(locale, {month: "short"});
-    }
-
     /**
      * Build the DOM elements
-     * @param offers - array returned from getOffers()
+     * @param offerData - array returned from getOffers()
      * @returns {boolean} guard clause
      */
     function createOffersButton(offerData)  {
@@ -71,7 +65,6 @@ export default function () {
         const messageHeader = document.createElement('div');
         const messageBody = document.createElement('div');
         const messageFooter = document.createElement('div');
-        const messageLink = document.createElement('a');
 
         // apply classes
         messageContainer.className = 'modal-messages';
@@ -82,13 +75,12 @@ export default function () {
         // add content
         messageHeader.innerHTML =
             `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"></path></svg>` +
-            `<h2>Events & Offers</h2>` +
+            `<h2>View Promotions</h2>` +
             `<svg xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 -960 960 960"><path fill="#fff" d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
 
         messageFooter.innerHTML = `CLOSE`;
 
         // add to DOM
-        // messageBody.appendChild(messageFooter);
         messageContainer.append(messageHeader, messageBody);
         fragment.append(messageContainer);
         document.body.appendChild(fragment);
@@ -127,20 +119,21 @@ export default function () {
         let listItem;
         let listItemLink;
         promotions.forEach((item) => {
-           if (!!item['offer_link']) {
-                listItemLink = document.createElement('a');
-                listItemLink.innerHTML = 'Read More';
-                listItemLink.setAttribute('href', item['offer_link']);
-                listItemLink.setAttribute('aria-label', 'View event details')
-            }
           listItem = document.createElement('li');
           listItem.innerHTML =
               `<header>` +
                   `<span class="category ${item['offer_category'] || 'event'}"></span>` +
-                  `<h3>${item['offer_strapline']}</h3>` +
+                  `<h3>${item['offer_tag']}</h3>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`;
-          listItem.appendChild(listItemLink);
+          // Is there a link to additional content?
+            if (!!item['offer_link']) {
+                listItemLink = document.createElement('a');
+                listItemLink.innerHTML = 'Read More';
+                listItemLink.setAttribute('href', item['offer_link']);
+                listItemLink.setAttribute('aria-label', 'View event details');
+                listItem.appendChild(listItemLink);
+            }
           list.appendChild(listItem);
         });
 

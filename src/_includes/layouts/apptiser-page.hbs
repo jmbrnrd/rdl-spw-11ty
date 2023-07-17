@@ -1,11 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="{{ language }}" data-id="{{ number }}" xmlns="http://www.w3.org/1999/html">
-
-<!-- {{ pkg.version }} -->
-
-<!DOCTYPE html>
-<html lang="{{ language }}">
+<html lang="{{ language }}" data-id="{{ data.number }}" xmlns="http://www.w3.org/1999/html">
 
 <!-- {{ pkg.version }} -->
 
@@ -26,11 +21,11 @@
 
     {{> partials/fonts }}
 
-    <link rel="stylesheet" href="/assets/styles/themes/{{ brand.theme }}.css" />
+    <link rel="stylesheet" href="/assets/styles/themes/{{ brand.theme }}.css?v={{ pkg.version }}" />
 
-	<link rel="stylesheet" href="/assets/styles/listing.css" />
+	<link rel="stylesheet" href="/assets/styles/listing.css?v={{ pkg.version }}" />
 
-	<script type="module" src="/assets/scripts/listing.js" defer></script>
+	<script type="module" src="/assets/scripts/listing.js?v={{ pkg.version }}" defer></script>
 
     {{> partials/google-apis }}
 

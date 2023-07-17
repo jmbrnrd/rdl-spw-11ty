@@ -2,7 +2,7 @@
 title: "Apptiser Page - Curated"
 language: "en"
 layout: "layouts/apptiser-page.hbs"
-permalink: "/templates/apptiser-curated.html"
+permalink: "/templates/apptiser-curated-{{ pkg.version }}.html"
 brand:
     name: "apptiser"
     prefix: "app"
@@ -24,7 +24,7 @@ brand:
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
             <div class="description" aria-label="description">
-                <p>{{ description.full }}</p>
+                <p>{{ data.description.full }}</p>
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">
                     {{#each data.features }}

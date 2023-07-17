@@ -43,6 +43,7 @@ export default function () {
 
   // Send request
   function sendContactRequest(form) {
+    console.log(form);
     fetch(`${api}/public/sendcontactemail`, {
       method: 'POST',
       headers: {'Content-type': 'application/json'},

@@ -9,7 +9,8 @@
         "telephone": "{{ data.phone }}",
         "servesCuisine": "{{ data.cuisine }}",
         "acceptsReservations": "true",
-        "image": "{{ config.image.url }}{{ config.image.transform.default }}{{ config.image.folder }}{{ data.image.default }}",
+        "image": "{{ config.image.url }}{{ config.image.transform.default }}{{ config.image.folder }}{{ data.number
+}}{{ data.image.default }}",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "{{ data.addressStreet }}",
