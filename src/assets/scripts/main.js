@@ -4,6 +4,7 @@ import formatting from "./formatting";
 import nav from './nav';
 import gallery from './gallery';
 import promotions from './promotions'
+import bookingRequest from './booking-request';
 
 
 
@@ -13,6 +14,7 @@ nav();
 formatting();
 map();
 gallery();
+bookingRequest();
 
 
 

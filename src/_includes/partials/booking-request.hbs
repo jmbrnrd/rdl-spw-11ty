@@ -1,0 +1,103 @@
+<!-- Email booking request -->
+<div id="bkgRequest">
+
+    <div class="booking-widget">
+
+        <form id="bkgRequestForm">
+
+            <input type="hidden" name="provider" value="email">
+            <input type="hidden" name="rid" value="61c46fa7ccf9d0cba39b6387">
+
+            <!-- covers -->
+            <label for="bkgSize">Size?</label>
+            <input  type="number"
+                    id="bkgSize"
+                    max="6"
+                    min="1"
+                    class="bkg-size"
+                    name="c"
+                    value="2">
+            <!-- time -->
+            <label for="bkgTime">Time?</label>
+            <input  type="time"
+                    id="bkgTime"
+                    class="bkg-time"
+                    name="t"
+                    value="18:00">
+
+            <!-- date -->
+            <label for="bkgDate">Date?</label>
+            <input  type="text"
+                    id="bkgDate"
+                    class="bkg-date"
+                    name="d"
+                    data-adv-days="30">
+
+            <button type="submit"
+                    class="btnBook">
+                FIND A TABLE
+            </button>
+
+        </form>
+    </div>
+</div>
+
+<div id="modal" class="modal-overlay">
+    <div class="modal-window">
+        <div id="modalRequest" class="booking-request-form">
+            <form id="emailRequest">
+                <input type="hidden" name="restaurant_name" value="Jim's Place">
+                <input type="hidden" name="restaurant_email" value="jmbarnard@gmail.com">
+                <input type="hidden" name="language" value="en">
+                <input type="hidden" name="sender" value="rc">
+                <!-- Date -->
+                <div class="modal-date">
+                    <h1>Booking Enquiry</h1>
+                    <ul>
+                        <li>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xOSAzaC0xVjFoLTJ2Mkg4VjFINnYySDVjLTEuMTEgMC0yIC45LTIgMnYxNGMwIDEuMS44OSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMlY1YzAtMS4xLS45LTItMi0yem0tNyAzYzEuNjYgMCAzIDEuMzQgMyAzcy0xLjM0IDMtMyAzLTMtMS4zNC0zLTMgMS4zNC0zIDMtM3ptNiAxMkg2di0xYzAtMiA0LTMuMSA2LTMuMXM2IDEuMSA2IDMuMXYxeiIvPjwvc3ZnPg=="
+                                 alt="Party Size">
+                            <span id="partySize"
+                                  data-persons="people"
+                                  data-person="person">
+              </span>
+                        </li>
+                        <li>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjQ4cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjQ4cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIvPjwvZz48Zz48Zz48Zz48cGF0aCBkPSJNMTIsMkM2LjUsMiwyLDYuNSwyLDEyczQuNSwxMCwxMCwxMHMxMC00LjUsMTAtMTBTMTcuNSwyLDEyLDJ6IE0xNi4yLDE2LjJMMTEsMTNWN2gxLjV2NS4ybDQuNSwyLjdMMTYuMiwxNi4yeiIvPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+                                 alt="Table Time">
+                            <span id="timeSlot">8pm</span>
+                        </li>
+                        <li>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xOSAzaC0xVjFoLTJ2Mkg4VjFINnYySDVjLTEuMTEgMC0xLjk5LjktMS45OSAyTDMgMTljMCAxLjEuODkgMiAyIDJoMTRjMS4xIDAgMi0uOSAyLTJWNWMwLTEuMS0uOS0yLTItMnptMCAxNkg1VjhoMTR2MTF6TTcgMTBoNXY1SDd6Ii8+PC9zdmc+"
+                                 alt="Date">
+                            <span id="dayDate">Sat, 29 June 2019</span>
+                        </li>
+                    </ul>
+                    <p>Please enter your contact details below:</p>
+                </div>
+                <!-- Name -->
+                <div class="text-field">
+                    <input id="full_name" type="text" name="full_name" placeholder=" " autofocus required>
+                    <label for="full_name">Your full name</label>
+                </div>
+                <!-- Email -->
+                <div class="text-field">
+                    <input id="email" type="email" name="email" placeholder=" " required>
+                    <label for="email">Your Email Address</label>
+                </div>
+                <p>Booking requests are subject to availability and are not confirmed until you have been
+                   contacted by the restaurant.</p>
+                <!-- Actions -->
+                <div class="modal-actions">
+                    <button id="btnCancel" type="button" class="btn-cancel">CANCEL</button>
+                    <button type="submit" class="btn-submit">SEND REQUEST</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
