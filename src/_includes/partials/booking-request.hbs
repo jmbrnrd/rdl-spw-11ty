@@ -1,6 +1,25 @@
 <!-- Email booking request -->
 <div id="bkgRequest">
 
+    <div class="booking-request-container">
+        <form class="form-booking-request">
+            <div class="select-sub-covers">
+                <select name="time">
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                </select>
+                <div class="select-sub">
+                    <div class="selected-value">
+                        00:00
+                    </div>
+                </div>
+            </div>
+            <div>Time</div>
+            <div>Date</div>
+            <button>Submit</button>
+        </form>
+    </div>
+
     <div class="booking-widget">
 
         <form id="bkgRequestForm">
@@ -46,8 +65,8 @@
     <div class="modal-window">
         <div id="modalRequest" class="booking-request-form">
             <form id="emailRequest">
-                <input type="hidden" name="restaurant_name" value="Jim's Place">
-                <input type="hidden" name="restaurant_email" value="jmbarnard@gmail.com">
+                <input type="hidden" name="restaurant_name" value="{{ name }}">
+                <input type="hidden" name="restaurant_email" value="{{ email }}">
                 <input type="hidden" name="language" value="en">
                 <input type="hidden" name="sender" value="rc">
                 <!-- Date -->
