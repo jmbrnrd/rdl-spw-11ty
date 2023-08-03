@@ -14,17 +14,11 @@ export default function (){
 
   const modalContainer = document.getElementById('modal');
   const modal = document.querySelector('.booking-request-form');
-  const emailRequest = document.getElementById('emailRequest');
-  const modalMessage = document.querySelector('.booking-request-thanks');
-
-
-
-
+  const emailRequestForm = document.getElementById('form-email-request');
+  const modalThankYou = document.querySelector('.booking-request-thanks');
 
   console.log(bkgRequestForm);
-
-
-
+  console.log(bkgRequestForm.value);
 
   const showModalContainer = () => {
     modalContainer.style.display = 'flex';
@@ -44,19 +38,16 @@ export default function (){
       month: 'long',
       day: 'numeric'
     };
+
     // Reference the input elements
     const partySize = document.getElementById('partySize');
     const timeSlot = document.getElementById('timeSlot');
     const dayDate = document.getElementById('dayDate');
 
-    // Set the party size suffix
-    let pax = partySize.dataset.persons;
-    if (Number(bkgParams.bkgSize) === 1) pax = partySize.dataset.person;
     // summary strings
-    partySize.innerHTML = `${bkgParams.bkgSize} ${pax}`;
+    partySize.innerHTML = bkgParams.bkgSize;
     timeSlot.innerHTML = bkgParams.bkgTime;
-    dayDate.innerHTML = new Date(bkgParams.bkgDate).toLocaleDateString(htmlLang, options);
-
+    dayDate.innerHTML = bkgParams.bkgDate;
     showModalContainer();
     modal.style.display = 'flex';
     modal.classList.add('fade-in-fast');
@@ -70,25 +61,36 @@ export default function (){
   // Show user email request summary
   const dspModalMessage = () => {
     modal.style.display = 'none';
-    modalMessage.style.display = 'flex';
-    modalMessage.classList.add('fade-in-fast');
+    modalThankYou.style.display = 'flex';
+    modalThankYou.classList.add('fade-in-fast');
     // confirm sent
     setTimeout(() => {
-      modalMessage.classList.remove('fade-in-fast');
+      modalThankYou.classList.remove('fade-in-fast');
       modalContainer.style.display = 'none';
-      modalMessage.style.display = 'none';
-      emailRequest.style.display = 'block';
+      modalThankYou.style.display = 'none';
+      emailRequestForm.style.display = 'block';
     }, 2000);
   };
 
   // Send email request if it exists
-  if (!!emailRequest) {
-    emailRequest.addEventListener('submit', (e) => {
+  if (!!emailRequestForm) {
+    emailRequestForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      emailRequest.style.display = 'none';
+      emailRequestForm.style.display = 'none';
       sendBkgRequest(e.target);
     });
+    bkgRequestForm.elements['covers'].addEventListener('change', (e) => {
+      const elem = e.target;
+      document.getElementById('txtCovers').innerHTML = elem?.value;
+      // console.log(elem?.value)
+    })
+    bkgRequestForm.elements['time'].addEventListener('change', (e) => {
+      const elem = e.target;
+      document.getElementById('txtTime').innerHTML = elem?.value;
+      // console.log(elem?.value)
+    })
   }
+
 
   /**
    * Send email request
@@ -138,27 +140,16 @@ export default function (){
   if (!!bkgRequestForm) {
     bkgRequestForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      let bkgWindow, bkgProvider, bkgProviderUrl, rid;
-      let bkgWindowFeatures = 'location=yes,scrollbars=auto,status=no';
-      bkgProvider = bkgRequestForm.elements['provider'].value;
-      rid = bkgRequestForm.elements['rid'].value;
-      bkgParams.bkgDate = bkgRequestForm.elements['d'].value;
-      // console.log('dayDate', new Date(bkgParams.bkgDate));
-      bkgParams.bkgSize = bkgRequestForm.elements['c'].value;
-      bkgParams.bkgTime = bkgRequestForm.elements['t'].value;
+
+      bkgParams.bkgDate = bkgRequestForm.elements['date'].value;
+      bkgParams.bkgSize = bkgRequestForm.elements['covers'].value;
+      bkgParams.bkgTime = bkgRequestForm.elements['time'].value;
 
       // In case we need to convert the format for some providers
-      bkgParams.bkgDateObj = new Date(bkgParams.bkgDate);
-
-      // Date formats
-      const isoDateString = new Date(bkgParams.bkgDateObj.getTime() - (bkgParams.bkgDateObj.getTimezoneOffset() * 60000 ))
-        .toISOString(); // ISO Date/time string
-      const ymdDateString = isoDateString.split('T')[0]; // YYYY-MM-DD
+      // bkgParams.bkgDateObj = new Date(bkgParams.bkgDate);
 
       // Booking providers are set in the CMS
       openEmailRequest();
-
-
     });
   }
 
@@ -167,13 +158,16 @@ export default function (){
     console.log('Window loaded!');
 
     // Guard clause
-    if(!document.getElementById('bkgDate')) {
+    if(!document.getElementById('selectDate')) {
       console.log('No booking widget found');
       return false;
     }
 
     // Date input field
-    const bkgDate = document.getElementById('bkgDate');
+    const bkgDate = document.getElementById('selectDate');
+    const bkgDateInput = document.getElementById('bkgDateInput');
+    const dateNow = new Date().toLocaleDateString();
+    bkgDateInput.value = new Date().toDateString();
 
     // Adv. bookings - 30 day default fall back
     const bkgAdvDays = Number(bkgDate.getAttribute('data-adv-days') || 30);
@@ -182,21 +176,19 @@ export default function (){
     // doesn't support the Html5 default picker
 
     const fp = flatpickr(bkgDate, {
-      dateFormat: 'Y-m-d',
+      dateFormat: 'D d M Y',
       defaultDate: 'today',
       minDate: 'today',
       maxDate: new Date().fp_incr(bkgAdvDays),
       //altInput: true,
       monthSelectorType: 'static',
-      locale: htmlLang
+      locale: htmlLang,
+      onChange: (selectedDates, dateStr, instance) => {
+        console.log(dateStr);
+        bkgDateInput.value = dateStr;
+      }
     });
-
-
-    console.log(fp);
-
-
   });
-
 };
 
 

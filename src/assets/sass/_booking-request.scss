@@ -2,110 +2,102 @@
 @use 'mixins' as *;
 @use 'flatpickr' as *;
 
-.booking-widget {
-  margin-top: 2.4rem;
-  label {
-    position: absolute;
-    left: -5000px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    background: #fff;
-    border-radius: 10px;
-    border: 4px solid $color-primary-light ;
-    input {
-      width: 95%;
-      outline: 0;
-      border:0;
-      font-size: 2.4rem;
-      line-height: 2;
-      //font-weight: $font-weight-bold;
-      padding: 0 0 0 4.8rem;
-      //color: $color-txt-body;
-      background-color: transparent;
-      background-repeat: no-repeat;
-      background-size: 2.8rem;
-      background-position: 1rem center;
-      &[type=number] {
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xOSAzaC0xVjFoLTJ2Mkg4VjFINnYySDVjLTEuMTEgMC0yIC45LTIgMnYxNGMwIDEuMS44OSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMlY1YzAtMS4xLS45LTItMi0yem0tNyAzYzEuNjYgMCAzIDEuMzQgMyAzcy0xLjM0IDMtMyAzLTMtMS4zNC0zLTMgMS4zNC0zIDMtM3ptNiAxMkg2di0xYzAtMiA0LTMuMSA2LTMuMXM2IDEuMSA2IDMuMXYxeiIvPjwvc3ZnPg==);
-        width: 50%;
-      }
-      &[type=time] {
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjQ4cHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjQ4cHgiIGZpbGw9IiMwMDAwMDAiPjxnPjxyZWN0IGZpbGw9Im5vbmUiIGhlaWdodD0iMjQiIHdpZHRoPSIyNCIvPjwvZz48Zz48Zz48Zz48cGF0aCBkPSJNMTIsMkM2LjUsMiwyLDYuNSwyLDEyczQuNSwxMCwxMCwxMHMxMC00LjUsMTAtMTBTMTcuNSwyLDEyLDJ6IE0xNi4yLDE2LjJMMTEsMTNWN2gxLjV2NS4ybDQuNSwyLjdMMTYuMiwxNi4yeiIvPjwvZz48L2c+PC9nPjwvc3ZnPg==);
-        &::-webkit-calendar-picker-indicator { display: none; }
-        width: 75%;
-      }
-      &[type=text] {
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDhweCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNDhweCIgZmlsbD0iIzAwMDAwMCI+PHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xOSAzaC0xVjFoLTJ2Mkg4VjFINnYySDVjLTEuMTEgMC0xLjk5LjktMS45OSAyTDMgMTljMCAxLjEuODkgMiAyIDJoMTRjMS4xIDAgMi0uOSAyLTJWNWMwLTEuMS0uOS0yLTItMnptMCAxNkg1VjhoMTR2MTF6TTcgMTBoNXY1SDd6Ii8+PC9zdmc+);
-      }
-    }
-    .btnBook {
-      display: block;
-      background: $color-cta-bgd ;
-      border: 0;
-      padding: 1.5rem 2rem;
-      border-radius: 0 0 6px 6px;
-      text-align: center;
-      color: #fff;
-      white-space: nowrap;
-      cursor: pointer;
-      transition: background-color 200ms ease-out;
-      &:hover { background-color: $color-cta-bgd; }
-    }
-    button {
-      flex: 1;
-      background: $color-cta-bgd;
-      border: 0;
-      padding: 1.5rem 2rem;
-      border-radius: 0 0 6px 6px;
-      color: #fff;
-      white-space: nowrap;
-      cursor: pointer;
-      transition: background-color 200ms ease-out;
-      &:hover { background-color: $color-cta-bgd; }
-    }
-  }
-  @include mq($mq-medium) {
-    form {
-      flex-direction: row;
-      input {
-        width: 100%;
-      }
-      .btnBook {
-        padding: 1.5rem 2rem;
-        border-radius: 0 6px 6px 0;
-        text-align: left;
-      }
-      button {
-        padding: 1.5rem 2rem;
-        border-radius: 0 6px 6px 0;
-      }
-    }
-  }
-}
 .booking-request-container {
-  background-color: #eee;
+  background-color: white;
   .form-booking-request {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 200px;
-    select {
-      width: 100%;
-      opacity: 0;
-    }
-    .selected-sub-covers {
+    grid-template-columns: 2fr 2fr 3fr 240px;
+    gap: 3px;
+
+    .selector {
       position: relative;
+      height: 6rem;
+      background-color: #eee;
+      font-weight: 500;
+      &:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+      > select {
+        width: 100%;
+        opacity: 0;
+        height: 100%;
+      }
+      &-substitute {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .icon {
+          display: flex;
+          width: 30px;
+          height: 100%;
+          margin: 1rem;
+          .line {
+            fill: $color-primary;
+          }
+          .two-tone {
+            fill: $color-primary;
+          }
+        }
+        .selected-value {
+          flex: 1;
+        }
+        .select-input {
+          display: inline-block;
+          flex: 1;
+          width: 100%;
+          font-weight: 500;
+        }
+      }
+    }
+    button {
+      background-color: $color-cta-bgd;
+      border-radius: 0 8px 8px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      //margin-left: 2px;
     }
   }
 }
-.select-sub {
-  position: absolute;
-  inset: 0;
-  .selected-value {
-    font-weight: bold;
+
+.modal-window {
+  height: auto;
+  padding: 2rem;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  button {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    &.btn-submit {
+      border-radius: 8px;
+      background-color: $color-cta-bgd;
+      font-size: 1.6rem;
+      font-weight: $font-weight-bold;
+    }
   }
 }
+.bkg-summary {
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    .icon {
+      width: 40px;
+    }
+  }
+}
+
+
 
 
 
