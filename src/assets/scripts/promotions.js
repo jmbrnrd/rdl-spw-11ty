@@ -57,7 +57,10 @@ export default function () {
         const offers = getValidPromos(offerData);
 
         // abort if no valid promotions are returned
-        if (offers.length < 1) { return false; }
+        if (offers.length < 1) {
+            console.log('No offers available');
+            return false;
+        }
 
         // build DOM elements
         const fragment = document.createDocumentFragment();
