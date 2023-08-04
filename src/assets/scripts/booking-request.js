@@ -8,23 +8,21 @@ export default function (){
    * Email booking requests
    */
   const htmlLang = document.getElementsByTagName('html')[0].getAttribute('lang') || 'en';
-  const bkgRequestForm = document.getElementById('bkgRequestForm');
+  const bkgRequestWidget = document.getElementById('bkgRequestForm');
   let bkgParams = {};
 
 
   const modalContainer = document.getElementById('modal');
-  const modal = document.querySelector('.booking-request-form');
+  const modelWindow = document.querySelector('.modal-window');
   const emailRequestForm = document.getElementById('form-email-request');
   const modalThankYou = document.querySelector('.booking-request-thanks');
-
-  console.log(bkgRequestForm);
-  console.log(bkgRequestForm.value);
 
   const showModalContainer = () => {
     modalContainer.style.display = 'flex';
     modalContainer.style.opacity = '1';
+    modelWindow.style.display = 'flex';
+    modelWindow.classList.add('fade-in-fast');
   };
-
   const hideModal = () => {
     modalContainer.style.opacity = '0';
     modalContainer.style.display = 'none';
@@ -49,8 +47,7 @@ export default function (){
     timeSlot.innerHTML = bkgParams.bkgTime;
     dayDate.innerHTML = bkgParams.bkgDate;
     showModalContainer();
-    modal.style.display = 'flex';
-    modal.classList.add('fade-in-fast');
+
   };
 
   const cancelEmailRequest = () => {
@@ -60,7 +57,7 @@ export default function (){
 
   // Show user email request summary
   const dspModalMessage = () => {
-    modal.style.display = 'none';
+    modelWindow.style.display = 'none';
     modalThankYou.style.display = 'flex';
     modalThankYou.classList.add('fade-in-fast');
     // confirm sent
@@ -72,23 +69,14 @@ export default function (){
     }, 2000);
   };
 
-  // Send email request if it exists
+  // Add event listeners to widget controls
+  // and update display fields
   if (!!emailRequestForm) {
     emailRequestForm.addEventListener('submit', (e) => {
       e.preventDefault();
       emailRequestForm.style.display = 'none';
       sendBkgRequest(e.target);
     });
-    bkgRequestForm.elements['covers'].addEventListener('change', (e) => {
-      const elem = e.target;
-      document.getElementById('txtCovers').innerHTML = elem?.value;
-      // console.log(elem?.value)
-    })
-    bkgRequestForm.elements['time'].addEventListener('change', (e) => {
-      const elem = e.target;
-      document.getElementById('txtTime').innerHTML = elem?.value;
-      // console.log(elem?.value)
-    })
   }
 
 
@@ -137,13 +125,13 @@ export default function (){
     document.getElementById('btnCancel').addEventListener('click', cancelEmailRequest);
   }
 
-  if (!!bkgRequestForm) {
-    bkgRequestForm.addEventListener('submit', (e) => {
+  if (!!bkgRequestWidget) {
+    bkgRequestWidget.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      bkgParams.bkgDate = bkgRequestForm.elements['date'].value;
-      bkgParams.bkgSize = bkgRequestForm.elements['covers'].value;
-      bkgParams.bkgTime = bkgRequestForm.elements['time'].value;
+      bkgParams.bkgDate = bkgRequestWidget.elements['date'].value;
+      bkgParams.bkgSize = bkgRequestWidget.elements['covers'].value;
+      bkgParams.bkgTime = bkgRequestWidget.elements['time'].value;
 
       // In case we need to convert the format for some providers
       // bkgParams.bkgDateObj = new Date(bkgParams.bkgDate);
@@ -151,6 +139,16 @@ export default function (){
       // Booking providers are set in the CMS
       openEmailRequest();
     });
+    bkgRequestWidget.elements['covers'].addEventListener('change', (e) => {
+      const elem = e.target;
+      document.getElementById('txtCovers').innerHTML = elem?.value;
+      // console.log(elem?.value)
+    })
+    bkgRequestWidget.elements['time'].addEventListener('change', (e) => {
+      const elem = e.target;
+      document.getElementById('txtTime').innerHTML = elem?.value;
+      // console.log(elem?.value)
+    })
   }
 
   window.addEventListener('load', function () {
@@ -158,7 +156,7 @@ export default function (){
     console.log('Window loaded!');
 
     // Guard clause
-    if(!document.getElementById('selectDate')) {
+    if(!bkgRequestWidget) {
       console.log('No booking widget found');
       return false;
     }
@@ -166,7 +164,7 @@ export default function (){
     // Date input field
     const bkgDate = document.getElementById('selectDate');
     const bkgDateInput = document.getElementById('bkgDateInput');
-    const dateNow = new Date().toLocaleDateString();
+
     bkgDateInput.value = new Date().toDateString();
 
     // Adv. bookings - 30 day default fall back
