@@ -14,8 +14,10 @@ export default function (){
 
   const modalContainer = document.getElementById('modal');
   const modelWindow = document.querySelector('.modal-window');
-  const emailRequestForm = document.getElementById('form-email-request');
+  const emailRequestForm = document.getElementById('emailRequest');
   const modalThankYou = document.querySelector('.booking-request-thanks');
+  const btnSubmit = document.getElementById('btnSubmit');
+  const btnCancel = document.getElementById('btnCancel');
 
   const showModalContainer = () => {
     modalContainer.style.display = 'flex';
@@ -29,13 +31,6 @@ export default function (){
   };
 
   const openEmailRequest = () => {
-
-    const options = {
-      weekday: 'short',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    };
 
     // Reference the input elements
     const partySize = document.getElementById('partySize');
@@ -66,6 +61,7 @@ export default function (){
       modalContainer.style.display = 'none';
       modalThankYou.style.display = 'none';
       emailRequestForm.style.display = 'block';
+      formReset();
     }, 2000);
   };
 
@@ -74,7 +70,6 @@ export default function (){
   if (!!emailRequestForm) {
     emailRequestForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      emailRequestForm.style.display = 'none';
       sendBkgRequest(e.target);
     });
   }
@@ -85,6 +80,14 @@ export default function (){
    * @param form key value pairs
    */
   function sendBkgRequest(form) {
+
+    btnCancel.style.display = 'none'
+    btnSubmit.innerHTML = "Sending Request..."
+    // btnSubmit.style.backgroundColor = "#eee";
+    btnSubmit.disabled = true;
+
+
+
     fetch('https://api.restaurantcollective.io/public/sendbookingemail', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -114,6 +117,12 @@ export default function (){
       .catch(error => {
         console.log(`Error: ${error}`);
       });
+  }
+
+  const formReset = () => {
+    btnCancel.style.display = 'block'
+    btnSubmit.innerHTML = "Booking Request"
+    btnSubmit.disabled = false;
   }
 
   /**
@@ -173,7 +182,7 @@ export default function (){
     // Use 3rd party datepicker as Safari
     // doesn't support the Html5 default picker
 
-    const fp = flatpickr(bkgDate, {
+    flatpickr(bkgDate, {
       dateFormat: 'D d M Y',
       defaultDate: 'today',
       minDate: 'today',

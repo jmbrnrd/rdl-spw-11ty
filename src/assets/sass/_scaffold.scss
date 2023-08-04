@@ -267,7 +267,7 @@ dd {
       transition: all .3s ease-in-out;
       &:hover, &:focus-visible {
         background-color: $color-cta-bgd-dark;
-        box-shadow: $shadow;
+        //box-shadow: $shadow;
       }
     }
     img { height: 100%; }
