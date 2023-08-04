@@ -2,8 +2,6 @@ import flatpickr from 'flatpickr';
 
 export default function (){
 
-  console.log('Booking request is loaded');
-
   /**
    * Email booking requests
    */
@@ -29,24 +27,14 @@ export default function (){
     modalContainer.style.opacity = '0';
     modalContainer.style.display = 'none';
   };
-
   const openEmailRequest = () => {
-
-    // Reference the input elements
-    const partySize = document.getElementById('partySize');
-    const timeSlot = document.getElementById('timeSlot');
-    const dayDate = document.getElementById('dayDate');
-
-    // summary strings
-    partySize.innerHTML = bkgParams.bkgSize;
-    timeSlot.innerHTML = bkgParams.bkgTime;
-    dayDate.innerHTML = bkgParams.bkgDate;
+    // Assign summary values
+    document.getElementById('partySize').innerHTML = bkgParams.bkgSize;
+    document.getElementById('timeSlot').innerHTML = bkgParams.bkgTime;
+    document.getElementById('dayDate').innerHTML = bkgParams.bkgDate;
     showModalContainer();
-
   };
-
   const cancelEmailRequest = () => {
-    //console.log('Cancel email request');
     hideModal();
   };
 
@@ -55,7 +43,7 @@ export default function (){
     modelWindow.style.display = 'none';
     modalThankYou.style.display = 'flex';
     modalThankYou.classList.add('fade-in-fast');
-    // confirm sent
+    // Confirm to user
     setTimeout(() => {
       modalThankYou.classList.remove('fade-in-fast');
       modalContainer.style.display = 'none';
@@ -83,10 +71,7 @@ export default function (){
 
     btnCancel.style.display = 'none'
     btnSubmit.innerHTML = "Sending Request..."
-    // btnSubmit.style.backgroundColor = "#eee";
     btnSubmit.disabled = true;
-
-
 
     fetch('https://api.restaurantcollective.io/public/sendbookingemail', {
       method: 'POST',
@@ -105,13 +90,13 @@ export default function (){
       })
     })
       .then(response => {
-        // check for error response
+        // Guard clause
         if (!response.ok) {
           // get error message from body or default to response status
           const error = (response.message) || response.status;
           return Promise.reject(error);
         }
-        // display success
+        // Display success message
         dspModalMessage();
       })
       .catch(error => {
@@ -177,21 +162,18 @@ export default function (){
     bkgDateInput.value = new Date().toDateString();
 
     // Adv. bookings - 30 day default fall back
-    const bkgAdvDays = Number(bkgDate.getAttribute('data-adv-days') || 30);
+    const bkgAdvDays = Number(bkgRequestWidget.dataset.advbkgdays || 30);
 
     // Use 3rd party datepicker as Safari
     // doesn't support the Html5 default picker
-
     flatpickr(bkgDate, {
       dateFormat: 'D d M Y',
       defaultDate: 'today',
       minDate: 'today',
       maxDate: new Date().fp_incr(bkgAdvDays),
-      //altInput: true,
       monthSelectorType: 'static',
       locale: htmlLang,
       onChange: (selectedDates, dateStr, instance) => {
-        console.log(dateStr);
         bkgDateInput.value = dateStr;
       }
     });

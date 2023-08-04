@@ -9,7 +9,7 @@
     grid-template-columns: 1fr;
     gap: 3px;
 
-    @include mq($mq-medium ) {
+    @include mq($mq-wide ) {
       grid-template-columns: 2fr 2fr 3fr 240px;
     };
 
@@ -87,10 +87,10 @@
 }
 
 .modal-window {
-  height:100vh;
+  height: auto;
   padding: 3rem;
   @include mq($mq-medium) {
-    height: auto;
+    min-height: auto;
   }
 }
 .modal-actions {
@@ -137,7 +137,6 @@
   .text-field {
     position: relative;
     margin: 2rem auto;
-    //width: 320px;
     &:first-child { margin-top: 0; }
   }
   input {
@@ -193,9 +192,9 @@
   }
 }
 
-  .two-tone {
-    fill: $color-cta-bgd;
-  }
+.two-tone {
+  fill: $color-cta-bgd;
+}
 
 
 
