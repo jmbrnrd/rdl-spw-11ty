@@ -1,0 +1,206 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+@use 'flatpickr' as *;
+
+.booking-request-container {
+  background-color: white;
+  .form-booking-request {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3px;
+
+    @include mq($mq-wide ) {
+      grid-template-columns: 2fr 2fr 3fr 240px;
+    };
+
+    .selector {
+      position: relative;
+      height: 6rem;
+      background-color: #eee;
+      font-weight: 500;
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+        @include mq($mq-medium ) {
+          border-radius: 8px 0 0 8px;
+        };
+      }
+      > select {
+        width: 100%;
+        opacity: 0;
+        height: 100%;
+        cursor: pointer;
+      }
+      &-substitute {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .icon {
+          display: flex;
+          width: 30px;
+          height: 100%;
+          margin: 1rem;
+          .line {
+            fill: $color-primary;
+          }
+          .two-tone {
+            fill: $color-primary;
+          }
+        }
+        .selected-value {
+          flex: 1;
+        }
+        .select-input {
+          display: inline-block;
+          flex: 1;
+          width: 100%;
+          font-weight: 500;
+
+        }
+      }
+    }
+    button {
+      background-color: $color-cta-bgd;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      transition-duration: 300ms;
+      transition-property: background-color, color;
+      transition-timing-function: ease-out;
+      height: 6rem;
+      &:hover, &:focus-visible {
+        color: white;
+        background-color: $color-cta-bgd-dark;
+      }
+      @include mq($mq-medium ) {
+        border-radius: 0 8px 8px 0;
+      };
+    }
+  }
+}
+
+.modal-window {
+  height: auto;
+  padding: 3rem;
+  @include mq($mq-medium) {
+    min-height: auto;
+  }
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  button {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    &.btn-submit {
+      border-radius: 8px;
+      background-color: $color-cta-bgd;
+
+    }
+  }
+}
+.booking-summary {
+  ul li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:2rem;
+    margin-block: 1rem;
+    font-weight: $font-weight-bold;
+
+    .icon {
+      height: 30px;
+      aspect-ratio: 1;
+    }
+  }
+
+}
+
+.form-email-request {
+  h2 {
+    margin-top: 2rem;
+    font-weight: $font-weight-bold;
+    text-transform: none;
+    color: $color-body-text;
+  }
+  .text-field {
+    position: relative;
+    margin: 2rem auto;
+    &:first-child { margin-top: 0; }
+  }
+  input {
+    font-size: 2rem;
+    line-height: 1;
+    padding: 1rem 0 0.5rem;
+    width: 100%;
+    outline: none;
+    border: 0;
+    border-bottom: 3px solid #999;
+    &:focus { border-bottom-color: $color-primary; }
+  }
+  label {
+    font-size: 1.6rem;
+    position: absolute;
+    color: #666;
+    left: 0;
+    top: 13px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+  form:focus,
+  input:focus,
+  input:valid {
+    ~ label {
+      top: -10px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+  }
+  input:not(:placeholder-shown) {
+    ~ label {
+      top: -10px;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    &:invalid ~ label{
+      color: red;
+    }
+  }
+}
+.booking-request-thanks {
+  display: none;
+  align-items: center;
+  padding: 24px;
+  font-weight: $font-weight-bold;
+  background: white;
+  border-radius: 10px;
+  opacity: 0;
+  img {
+    display: inline-block;
+    margin-right: 8px;
+  }
+}
+
+.two-tone {
+  fill: $color-cta-bgd;
+}
+
+
+
+
+
+
+
+
+

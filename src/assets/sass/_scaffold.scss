@@ -7,22 +7,22 @@ main { background-color: $color-body-bgd; }
 footer {
   $link-height: 3rem;
   background-color: $color-primary-dark;
-  padding: 2rem 1rem;
+  padding: 1rem;
   color: $color-grey-light;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.2;
   .footer-container {
     //max-width: $layout-max-width;
-    display: grid;
-    grid-template-columns: 1fr;
-    place-content: center;
-    grid-row-gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     margin: auto;
     &-col3 {
       > div { text-align: center; }
     }
     @include mq($mq-medium) {
-      grid-template-columns: 1fr 2fr 1fr;
+     // grid-template-columns: 1fr 2fr 1fr;
     }
     > a {
       display: flex;
@@ -50,7 +50,7 @@ footer {
 
   .logo {
     display: inline;
-    height: 2.2rem; //$link-height;
+    height: 1.6rem; //$link-height;
     width: auto;
     opacity: .7;
     transition: all .3s ease-in-out;
@@ -267,7 +267,7 @@ dd {
       transition: all .3s ease-in-out;
       &:hover, &:focus-visible {
         background-color: $color-cta-bgd-dark;
-        box-shadow: $shadow;
+        //box-shadow: $shadow;
       }
     }
     img { height: 100%; }

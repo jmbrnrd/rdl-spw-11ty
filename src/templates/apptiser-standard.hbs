@@ -1,7 +1,7 @@
 ---
 title: "Apptiser Standard"
 language: "en"
-layout: "layouts/apptiser.hbs"
+layout: "layouts/apptiser-standard.hbs"
 gtag: "G-4FPKM2SVKM"
 permalink: "/templates/apptiser-standard-{{ pkg.version }}.html"
 brand:
@@ -89,6 +89,8 @@ brand:
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">{{ lang.section.reservations.title }}</h2>
         <p>{{ data.reservations.info }}</p>
+
+        {{> partials/booking-request }}
 
         <!-- group & private bookings -->
         <div class="content-block">

@@ -1,9 +1,3 @@
-@use 'vars' as *;
-
-/*
- * Animations
- * ------------------------------------------------
- */
 @keyframes bounce {
   0%,
   100%,
@@ -37,27 +31,4 @@
 .fade-in-fast {
   animation-delay: 0ms;
   animation-duration: 300ms;
-}
-
-.scale-in-center {
-  animation: scale-in-center;
-  animation-duration: .5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-}
-@keyframes scale-in-center {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-    width: $btn-size;
-  }
-  100% {
-    transform-origin: center;
-    width: $rdl-width;
-    opacity: 1;
-  }
 }
