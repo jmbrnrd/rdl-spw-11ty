@@ -41,13 +41,14 @@
         .icon {
           display: flex;
           width: 30px;
-          height: 100%;
+          height: auto;
           margin: 1rem;
+          align-items: center;
           .line {
             fill: $color-primary;
           }
           .two-tone {
-            fill: $color-primary;
+            fill: $color-cta-bgd;
           }
         }
         .selected-value {
@@ -75,6 +76,7 @@
       transition-property: background-color, color;
       transition-timing-function: ease-out;
       height: 6rem;
+      color: $color-cta-label-light;
       &:hover, &:focus-visible {
         color: white;
         background-color: $color-cta-bgd-dark;
@@ -106,6 +108,9 @@
     &.btn-submit {
       border-radius: 8px;
       background-color: $color-cta-bgd;
+      color: $color-cta-label-light;
+
+
 
     }
   }
