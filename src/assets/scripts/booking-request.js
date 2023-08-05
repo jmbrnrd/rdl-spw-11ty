@@ -172,6 +172,7 @@ export default function (){
       minDate: 'today',
       maxDate: new Date().fp_incr(bkgAdvDays),
       monthSelectorType: 'static',
+      disableMobile: "true",
       locale: htmlLang,
       onChange: (selectedDates, dateStr, instance) => {
         bkgDateInput.value = dateStr;
