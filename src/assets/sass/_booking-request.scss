@@ -47,9 +47,7 @@
           .line {
             fill: $color-primary;
           }
-          .two-tone {
-            fill: $color-cta-bgd;
-          }
+
         }
         .selected-value {
           flex: 1;
@@ -89,10 +87,10 @@
 }
 
 .modal-window {
-  height: auto;
+  height: 100vh;
   padding: 3rem;
   @include mq($mq-medium) {
-    min-height: auto;
+    height: auto;
   }
 }
 .modal-actions {
@@ -109,9 +107,6 @@
       border-radius: 8px;
       background-color: $color-cta-bgd;
       color: $color-cta-label-light;
-
-
-
     }
   }
 }
@@ -197,14 +192,17 @@
   }
 }
 
-.two-tone {
-  fill: $color-cta-bgd;
+// Adjust styling to match non-mobile
+.flatpickr-mobile {
+  font-weight: $font-weight-bold;
+  padding: 0 14px 0 50px;
 }
 
-
-
-
-
+.icon {
+  .two-tone {
+    fill: $color-cta-bgd;
+  }
+}
 
 
 
