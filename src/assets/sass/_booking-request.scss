@@ -87,10 +87,11 @@
 }
 
 .modal-window {
-  height: 100vh;
+  height: 100%;
   padding: 3rem;
   @include mq($mq-medium) {
     height: auto;
+    max-height: 100vh;
   }
 }
 .modal-actions {
@@ -195,7 +196,7 @@
 // Adjust styling to match non-mobile
 .flatpickr-mobile {
   font-weight: $font-weight-bold;
-  padding: 0 14px 0 50px;
+  //padding: 0 14px 0 50px;
 }
 
 .icon {
