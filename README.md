@@ -2,7 +2,7 @@
 
 # 11ty Template
 
-Whenever a Github commit is made to the master branch, it will trigger a build on Netlify and deploy to https://spwdev.netlify.app
+Whenever a Github commit is made to the master branch, it will trigger a build on Netlify and deploy to https://apptiser.netlify.app
 
 ## Development Scripts
 
