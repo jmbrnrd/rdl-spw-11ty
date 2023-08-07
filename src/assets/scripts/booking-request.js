@@ -28,7 +28,7 @@ export default function (){
   const hideModal = () => {
     modalContainer.style.opacity = '0';
     modalContainer.style.display = 'none';
-    body.classList.remove('stopScroll');
+    body.classList.remove('stopScroll');flatpi
   };
   const openEmailRequest = () => {
     // Assign summary values
