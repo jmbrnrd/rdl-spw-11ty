@@ -70,6 +70,7 @@ a[data-mzid] {
   padding-block: 5rem 2rem;
   background-color: $color-white;
   width: 100vw;
+  // overwrite with svh in case not supported
   height: 100vh;
   height: 100svh;
   box-shadow:
@@ -84,7 +85,7 @@ a[data-mzid] {
     border: none;
   }
 
-  @include mq($mq-narrow) {
+  @include mq($mq-medium) {
     border-radius: 16px;
     width: Min(38vw, 600px);
     height: Min(80vh, 750px);
