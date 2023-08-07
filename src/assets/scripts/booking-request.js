@@ -172,11 +172,20 @@ export default function (){
       minDate: 'today',
       maxDate: new Date().fp_incr(bkgAdvDays),
       monthSelectorType: 'static',
+      disableMobile: "false",
       locale: htmlLang,
       onChange: (selectedDates, dateStr, instance) => {
         bkgDateInput.value = dateStr;
       }
     });
+    // Hide if flatpickr activates the mobile UI
+    // which uses a native date picker
+    if(!!document.querySelector('.flatpickr-mobile')) {
+      const elems = document.querySelectorAll('.hide-on-mobile');
+      elems.forEach( el => {
+        el.style.opacity = '0';
+      })
+    }
   });
 };
 

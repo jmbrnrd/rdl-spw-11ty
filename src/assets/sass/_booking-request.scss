@@ -41,14 +41,13 @@
         .icon {
           display: flex;
           width: 30px;
-          height: 100%;
+          height: auto;
           margin: 1rem;
+          align-items: center;
           .line {
             fill: $color-primary;
           }
-          .two-tone {
-            fill: $color-primary;
-          }
+
         }
         .selected-value {
           flex: 1;
@@ -75,6 +74,7 @@
       transition-property: background-color, color;
       transition-timing-function: ease-out;
       height: 6rem;
+      color: $color-cta-label-light;
       &:hover, &:focus-visible {
         color: white;
         background-color: $color-cta-bgd-dark;
@@ -88,15 +88,12 @@
 
 .modal-window {
   position: absolute;
-  //inset: 0 0 0 0;
-  width: 100vw;
-  height: 100svh;
-  padding: 3rem;
+  inset: 0;
+
   @include mq($mq-medium) {
-    min-height: auto;
+    position: relative;
     height: auto;
-    max-width: 600px;
-    inset: auto;
+    max-height: 100vh;
   }
 }
 .modal-actions {
@@ -112,7 +109,7 @@
     &.btn-submit {
       border-radius: 8px;
       background-color: $color-cta-bgd;
-
+      color: $color-cta-label-light;
     }
   }
 }
@@ -198,14 +195,17 @@
   }
 }
 
-.two-tone {
-  fill: $color-cta-bgd;
+// Adjust styling to match non-mobile
+.flatpickr-mobile {
+  font-weight: $font-weight-bold;
+  //padding: 0 14px 0 50px;
 }
 
-
-
-
-
+.icon {
+  .two-tone {
+    fill: $color-cta-bgd;
+  }
+}
 
 
 
