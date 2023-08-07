@@ -22,6 +22,7 @@ export default function (){
     modalContainer.style.opacity = '1';
     modelWindow.style.display = 'flex';
     modelWindow.classList.add('fade-in-fast');
+    document.querySelector('body').classList.add('stopScroll');
   };
   const hideModal = () => {
     modalContainer.style.opacity = '0';

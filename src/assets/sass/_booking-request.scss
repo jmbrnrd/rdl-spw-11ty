@@ -87,13 +87,11 @@
 }
 
 .modal-window {
-  position: absolute;
-  inset: 0;
-
+  padding: 3rem;
+  max-height: 100svh;
+  overflow-y: auto;
   @include mq($mq-medium) {
-    position: relative;
     height: auto;
-    max-height: 100vh;
   }
 }
 .modal-actions {
