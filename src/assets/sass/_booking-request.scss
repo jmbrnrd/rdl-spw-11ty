@@ -88,7 +88,7 @@
 
 .modal-window {
   padding: 3rem;
-  max-height: 100svh;
+  max-height: 100vh;
   overflow-y: auto;
   @include mq($mq-medium) {
     height: auto;
