@@ -5,6 +5,7 @@ export default function (){
   /**
    * Email booking requests
    */
+  const body = document.querySelector('body');
   const htmlLang = document.getElementsByTagName('html')[0].getAttribute('lang') || 'en';
   const bkgRequestWidget = document.getElementById('bkgRequestForm');
   let bkgParams = {};
@@ -22,11 +23,12 @@ export default function (){
     modalContainer.style.opacity = '1';
     modelWindow.style.display = 'flex';
     modelWindow.classList.add('fade-in-fast');
-    document.querySelector('body').classList.add('stopScroll');
+    body.classList.add('stopScroll');
   };
   const hideModal = () => {
     modalContainer.style.opacity = '0';
     modalContainer.style.display = 'none';
+    body.classList.remove('stopScroll');
   };
   const openEmailRequest = () => {
     // Assign summary values
