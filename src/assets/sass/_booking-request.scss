@@ -3,6 +3,7 @@
 @use 'flatpickr' as *;
 
 .booking-request-container {
+  width: 100%;
   background-color: white;
   .form-booking-request {
     display: grid;
