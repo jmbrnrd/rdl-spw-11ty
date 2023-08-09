@@ -117,6 +117,7 @@ export default function (){
     btnCancel.style.display = 'block'
     btnSubmit.innerHTML = "Booking Request"
     btnSubmit.disabled = false;
+    hideModal();
   }
 
   // Initialise booking widget
