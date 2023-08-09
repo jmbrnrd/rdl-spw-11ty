@@ -19,7 +19,7 @@
                 </ul>
 
                 {{#each data.menus.sections }}
-                    <div id="menu_section_1" class="menu-section">
+                    <div id="menu_section_{{@index}}" class="menu-section">
                         <h3 class="menu-section-title">{{ name }}</h3>
                         <ul class="menu-items">
                             {{#each dishes }}

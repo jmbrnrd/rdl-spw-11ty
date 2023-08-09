@@ -12,8 +12,8 @@ footer {
   font-size: 1.2rem;
   line-height: 1.2;
   .footer-container {
-    //max-width: $layout-max-width;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -22,7 +22,9 @@ footer {
       > div { text-align: center; }
     }
     @include mq($mq-medium) {
-     // grid-template-columns: 1fr 2fr 1fr;
+      &-col3 {
+        flex-direction: row;
+      }
     }
     > a {
       display: flex;
