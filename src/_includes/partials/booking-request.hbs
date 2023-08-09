@@ -1,6 +1,6 @@
 <!-- Email booking widget -->
 <div class="booking-request-container">
-    <form class="form-booking-request" id="bkgRequestForm" data-advBkgDays="60">
+    <form class="form-booking-request" id="bkgRequestForm" data-daysinadvance="{{ data.reservations.daysInAdvance }}" data-maxcovers="{{ data.reservations.maxCovers }}">
         <div class="selector">
             <div class="selector-substitute">
                 <div class="icon">
@@ -19,16 +19,7 @@
                     </svg>
                 </div>
             </div>
-            <select name="covers" aria-label="Booking party size">
-                <option>1 person</option>
-                <option selected>2 people</option>
-                <option>3 people</option>
-                <option>4 people</option>
-                <option>5 people</option>
-                <option>6 people</option>
-                <option>7 people</option>
-                <option>8 people</option>
-            </select>
+            <select id="selectCovers" name="covers" aria-label="Booking party size"></select>
         </div>
         <div class="selector">
             <div class="selector-substitute">
@@ -108,11 +99,12 @@
         <button>Booking Request</button>
     </form>
 </div>
+
 <!-- modal -->
 <div id="modal" class="modal-overlay">
     <div class="modal-window email">
         <div id="emailRequest" class="form-email-request">
-            <form id="emailRequest">
+            <form id="emailRequestForm">
                 <input type="hidden" name="restaurant_name" value="{{ data.name }}">
                 <input type="hidden" name="restaurant_email" value="{{ data.email }}">
                 <input type="hidden" name="language" value="en">
