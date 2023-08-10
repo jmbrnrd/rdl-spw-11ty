@@ -44,7 +44,10 @@ export default function (){
     document.getElementById('partySize').innerHTML = bkgParams.bkgSize;
     document.getElementById('timeSlot').innerHTML = bkgParams.bkgTime;
     document.getElementById('dayDate').innerHTML = bkgParams.bkgDate;
+
     showModalContainer();
+
+    document.getElementById('full_name').focus();
   };
   const cancelEmailRequest = () => { hideModal(); };
 
