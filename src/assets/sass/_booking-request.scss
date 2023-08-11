@@ -65,7 +65,6 @@
       justify-content: center;
       align-items: center;
       text-transform: uppercase;
-      font-weight: 500;
       cursor: pointer;
       transition-duration: 300ms;
       transition-property: background-color, color;
@@ -98,7 +97,6 @@
   button {
     padding: 1rem 1.5rem;
     cursor: pointer;
-    font-weight: $font-weight-bold;
     font-size: 1.6rem;
     text-transform: uppercase;
     transition-property: color, background-color;
