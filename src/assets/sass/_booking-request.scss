@@ -151,7 +151,11 @@
     outline: none;
     border: 0;
     border-bottom: 3px solid #999;
+    &[name='full_name'] {
+      text-transform: capitalize;
+    }
     &:focus { border-bottom-color: $color-primary; }
+
   }
   label {
     font-size: 1.6rem;
