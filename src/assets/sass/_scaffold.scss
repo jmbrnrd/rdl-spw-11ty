@@ -21,11 +21,7 @@ footer {
     &-col3 {
       > div { text-align: center; }
     }
-    @include mq($mq-medium) {
-      &-col3 {
-        flex-direction: row;
-      }
-    }
+    @include mq($mq-medium) { flex-direction: row; }
     > a {
       display: flex;
       height: $link-height;
@@ -310,4 +306,23 @@ dd {
     .icon { fill: #04A5C2; }
     .label { fill: #7ED321; }
   }
+}
+.debug {
+  position: fixed;
+  inset: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: $modal-box-shadow;
+    width: min(600px, 80%);
+  }
+
 }
