@@ -21,7 +21,7 @@ export default function () {
 
         // Add content
         aboutDialogContent.innerHTML =
-                    `<h2>Information:</h2>` +
+                    `<h2>RDL:</h2>` +
                     `<span>Restaurant ID:</span> <span>${data.id}</span>` +
                     `<span>Template: Version:</span><span>${data.templateVersion}</span>` +
                     `<span>User Agent:</span><span>${navigator.userAgent}</span>`;
