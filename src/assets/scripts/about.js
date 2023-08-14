@@ -5,31 +5,42 @@ export default function () {
     /**
      * Display debug data/browser
      */
-    const showDebug = () => {
-        // Is it already exists, abort.
-        if (!!document.querySelector('.debug')) { return; }
-        // Get debug info
+    const createAboutDialog = () => {
+
+        // If dialog already exists, abort.
+        if (!!document.querySelector('.about')) { return; }
+
+        // Get data attributes
         const data = document.querySelector('html').dataset;
-        // Create elements
+
+        // Create DOM elements
         const fragment = document.createDocumentFragment();
-        const debug = document.createElement('div');
-        debug.classList.add('debug');
-        debug.innerHTML =
-                `<div>` +
+        const aboutDialog = document.createElement('div');
+        const aboutDialogContent = document.createElement('div');
+        aboutDialog.classList.add('about');
+
+        // Add content
+        aboutDialogContent.innerHTML =
+                    `<h2>Information:</h2>` +
                     `<span>Restaurant ID:</span> <span>${data.id}</span>` +
-                    `<span>Template: Version</span><span>${data.templateVersion}</span>` +
-                    `<span>User Agent:</span><span>${navigator.userAgent}</span>` +
-            `</div>`;
-        // Add to the DOM
-        fragment.appendChild(debug);
+                    `<span>Template: Version:</span><span>${data.templateVersion}</span>` +
+                    `<span>User Agent:</span><span>${navigator.userAgent}</span>`;
+
+        // Add to DOM
+        fragment.appendChild(aboutDialog);
+        aboutDialog.appendChild(aboutDialogContent);
         document.body.appendChild(fragment);
+        aboutDialogContent.classList.add('fade-in-fast');
+
     }
-    const hideDebug = () => {
-        if (!!document.querySelector('.debug')) {
-            document.querySelector('.debug').remove();
+
+    const removeAboutDialog = () => {
+        if (!!document.querySelector('.about')) {
+            document.querySelector('.about').remove();
         }
     }
 
+    // Listen for key combo
     document.addEventListener('keydown',
 
         (event)=> {
@@ -38,15 +49,16 @@ export default function () {
             let isMetaKey =  event.metaKey;
             let isShiftKey = event.shiftKey;
 
+            // CMD + Shift + 0 to open
             if ( isMetaKey && isShiftKey && isKey ) {
                 event.preventDefault();
-                showDebug();
+                createAboutDialog();
                 return
             }
-
+            // Esc to close
             if (isEsc) {
                 event.preventDefault();
-                hideDebug();
+                removeAboutDialog();
             }
         });
 
