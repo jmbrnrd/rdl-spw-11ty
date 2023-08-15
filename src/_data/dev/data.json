@@ -199,7 +199,7 @@
             "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
         },
         "config": {
-            "theme": "rdl",
+            "theme": "fullers",
             "managedBy": ""
         },
         "mozrest": {

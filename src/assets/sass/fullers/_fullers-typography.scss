@@ -1,0 +1,78 @@
+@use '../vars' as *;
+
+/* Set base font size to 62.5% (10px) to simplify the use of REM i.e. 1.6rem = 16px etc. */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: $font-family-default;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+body,
+input {
+  font: normal $font-weight-normal 2rem / 1.4 $font-family-default;
+  color: $color-body-text;
+}
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  font-weight: $font-weight-bold;
+  padding: 1rem 0 0.5rem;
+}
+h1, h2, h3 {
+  color: $color-primary-dark;
+  text-transform: uppercase;
+}
+h4 {
+  font-size: .75rem;
+  font-weight: $font-weight-bold;
+  letter-spacing: .1em;
+  color: $color-body-text-accent;
+  text-transform: uppercase;
+}
+p { margin: 0 0 1.6rem; }
+strong { font-weight: $font-weight-bold; }
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s ease-out;
+  font-weight: $font-weight-normal;
+}
+dl {
+  dt {
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    letter-spacing: .1rem;
+    color: $color-body-text-accent;
+    text-transform: uppercase;
+    ~ dt { margin-top: 1.6em; }
+  }
+  dd {}
+}
+p > a:not([class]),
+dd > a:not([class]), {
+  position: relative;
+  color: currentColor;
+  text-decoration: none;
+  &:after{
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    display: block;
+    margin-top: 0;
+    right: 0;
+    background: $color-body-text-accent;
+    transition: width .2s ease;
+  }
+  &:hover:after{
+    width: 100%;
+    left: 0;
+    background: $color-body-text-accent;
+  }
+}
+
