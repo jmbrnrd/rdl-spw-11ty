@@ -1,9 +1,6 @@
 @use '../vars' as *;
 @use '../mixins' as *;
 
-
-
-
 /*
  * Navigation
  * ------------------------------------------------
@@ -88,7 +85,7 @@ nav {
     a.brand {
       flex: 1;
       h1 {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-bottom: 0;
       }
     }

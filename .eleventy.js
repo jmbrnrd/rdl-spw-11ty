@@ -9,6 +9,7 @@ module.exports = function (config) {
   config.addWatchTarget('./src/assets/scripts/');
   config.addPassthroughCopy("./src/assets/images/");
   config.addPassthroughCopy("./src/assets/manifest.json");
+  config.addPassthroughCopy("./src/assets/scripts/content.json");
   return {
     dir: {
       input: "src",

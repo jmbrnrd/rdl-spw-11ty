@@ -34,10 +34,12 @@
   animation-fill-mode:forwards;
   animation-duration:500ms;
 }
+
 .fade-in-fast {
   animation-delay: 0ms;
   animation-duration: 300ms;
 }
+
 .scale-in-center {
   animation:scale-in-center;
   animation-duration:.5s;
