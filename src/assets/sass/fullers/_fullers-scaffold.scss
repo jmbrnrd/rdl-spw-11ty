@@ -3,7 +3,7 @@
 @use "sass:math";
 
 body {
-  background-color: $color-primary;
+  background-color: $color-primary-dark;
 }
 main {
   background-color: $color-body-bgd;
@@ -11,27 +11,46 @@ main {
 }
 
 footer {
-  $link-height: 3rem;
+  width: 100%;
   background-color: $color-primary-dark;
-  padding: 1rem;
-  color: $color-grey-light;
-  font-size: 1.2rem;
+  padding: 2rem;
+  color: white;
   line-height: 1.2;
+  height: auto;
   .footer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: auto;
-    &-col3 {
-      > div { text-align: center; }
+    display: grid;
+    place-content: center center;
+    .brand-container {
+      display: grid;
+      place-content: space-around center;
+      padding-bottom: 2rem;
+      img {
+        height: 150px;
+        object-fit: cover;
+      }
+      span { text-align: center;}
+      a {
+        display: inline;
+        text-align: center;
+        color: #87704c;
+      }
     }
-    @include mq($mq-medium) { flex-direction: row; }
-    > a {
-      display: flex;
-      height: $link-height;
-      align-items: center;
+
+
+
+
+
+  }
+  .footer-links-container {
+    display: flex;
+    padding: 2rem 0 0;
+    font-size: 1.2rem;
+    color: #87704c;
+    border-top: 1px solid #000;
+    @include mq($mq-medium) { font-size: 1.6rem; }
+    a {
+      color: inherit;
+      margin-left: 2rem;
     }
   }
 
@@ -71,7 +90,7 @@ footer {
 }
 
 .section-hero {
-  height: 100vh;
+  height: 62vh;
   display: grid;
   place-items: center;
   > * {
@@ -173,7 +192,7 @@ footer {
   margin: 0 auto;
   padding: 1rem 32px 2rem;
   @include mq($mq-medium) {
-    padding-top: 8rem;
+    padding-top: 4rem;
   }
   .section-title {
     font-size: 3.25rem;
