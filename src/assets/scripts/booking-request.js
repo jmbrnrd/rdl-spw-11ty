@@ -47,7 +47,10 @@ export default function (){
 
     showModalContainer();
 
-    document.getElementById('full_name').focus();
+    setTimeout(() => {
+      document.getElementById('full_name').focus();
+    },200);
+
   };
   const cancelEmailRequest = () => { hideModal(); };
 

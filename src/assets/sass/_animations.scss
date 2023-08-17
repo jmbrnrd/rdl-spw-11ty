@@ -11,6 +11,14 @@
 }
 @keyframes fadeIn {
   0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
     transform: translateY(25px);
     opacity:0;
   }
@@ -21,11 +29,12 @@
 }
 
 .fade-in,
+.fade-in-up,
 .fade-in-fast {
   position: relative;
   display: block;
   opacity:0;
-  animation-name: fadeIn;
+  animation-name: fadeInUp;
   animation-delay: 500ms;
   animation-timing-function: ease-out;
   animation-fill-mode:forwards;
@@ -33,6 +42,7 @@
 }
 
 .fade-in-fast {
+  animation-name: fadeIn;
   animation-delay: 0ms;
   animation-duration: 300ms;
 }

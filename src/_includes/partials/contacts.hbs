@@ -1,0 +1,56 @@
+<section id="contacts" class="content-section contact-section">
+    <h2 class="section-title">{{ lang.section.contacts.title }}</h2>
+    <div class="content-block">
+
+        <aside>
+            <dl>
+                <dt>{{ lang.section.contacts.address }}</dt>
+                <dd>{{ data.addressStreet }}</dd>
+                <dd>{{ data.addressLocality }} {{ data.postalCode }}</dd>
+                <dt>{{ lang.section.contacts.tel }}</dt>
+                <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
+            </dl>
+        </aside>
+
+        <!-- Optional section tag start - Links -->
+        <aside>
+            <dl>
+                <dt>{{ lang.section.contacts.links }}</dt>
+                <dd>
+                    <div class="social-links">
+                        {{#each data.social.networks }}
+                            <div>
+                                <a class="social-link" href="{{ this.url }}"
+                                   target="_blank"
+                                   aria-label="{{ this.alt }}">
+                                    <img src="/assets/images/icon-{{ this.name }}.svg"
+                                         alt="{{ this.name }} logo"
+                                         width="28"
+                                         height="28">
+                                </a>
+                                <span>{{ this.name }}</span>
+                            </div>
+                        {{/each}}
+                    </div>
+                </dd>
+            </dl>
+        </aside>
+        <!-- Optional section tag end - Links -->
+
+        <!-- Optional section tag start - Transport -->
+        <aside>
+            <dl>
+                <!-- Optional section tag start - Public -->
+                <dt>{{ lang.section.contacts.transport }}</dt>
+                <dd>{{ data.transport }}</dd>
+                <!-- Optional section tag end - Public -->
+
+                <!-- Optional section tag start - Parking -->
+                <dt>{{ lang.section.contacts.parking }}</dt>
+                <dd>{{ data.parking }}</dd>
+                <!-- Optional section tag end - Parking -->
+            </dl>
+        </aside>
+        <!-- Optional section tag end - Transport -->
+    </div>
+</section>

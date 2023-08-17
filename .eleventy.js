@@ -7,9 +7,9 @@ module.exports = function (config) {
   config.addWatchTarget("./src/assets/sass/");
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
   config.addWatchTarget('./src/assets/scripts/');
+  config.addPassthroughCopy("./src/assets/brands/");
   config.addPassthroughCopy("./src/assets/images/");
   config.addPassthroughCopy("./src/assets/manifest.json");
-  config.addPassthroughCopy("./src/assets/scripts/content.json");
   return {
     dir: {
       input: "src",
