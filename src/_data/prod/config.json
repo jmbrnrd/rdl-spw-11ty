@@ -5,10 +5,10 @@
     "folder":"/restaurants/",
     "transform": {
       "default": "w_800,c_limit,q_auto,dpr_auto,f_auto",
-      "hero-s": "w_300,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121",
-      "hero-m": "w_600,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121",
-      "hero-l": "w_1200,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121",
-      "hero-xl": "w_1920,e_blur:600,f_auto,q_auto,dpr_auto/e_colorize:30,co_rgb:212121",
+      "hero-s": "w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121",
+      "hero-m": "w_600,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121",
+      "hero-l": "w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121",
+      "hero-xl": "w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121",
       "gallery-thumb":"w_600,h_400,c_fill,q_auto,dpr_auto,f_auto",
       "gallery-display":"w_1920,c_limit,q_auto,dpr_auto,f_auto"
     }
