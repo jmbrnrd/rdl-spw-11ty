@@ -6,6 +6,7 @@ $font-family-display          : 'Suez One', sans-serif;
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
   font-family: $font-family-default;
 }
 

@@ -34,7 +34,7 @@
     "paragraph": "{{ description.paragraph }}",
     "full": "{{ description.full }}"
   },
-  "features": "{{ features }}",
+  "features": "['FEATURES LOOP']",
   "transport": "{{ transport }}",
   "parking": "{{ parking }}",
   "menus": {

@@ -39,6 +39,6 @@ export default function() {
         entries.forEach(entry => {
             entry.isIntersecting ? navBar.classList.remove('nav-show') : navBar.classList.add('nav-show');
         });
-    }, {rootMargin: '-70px'});
+    }, {rootMargin: '-180px'});
     observer.observe(document.getElementById('hero'));
 }
