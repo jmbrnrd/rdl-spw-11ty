@@ -6,10 +6,7 @@ import gallery from './gallery';
 import promotions from './promotions'
 import bookingRequest from './booking-request';
 import about from "./about";
-import data from "./data";
 
-
-data();
 bookings();
 promotions();
 nav();
