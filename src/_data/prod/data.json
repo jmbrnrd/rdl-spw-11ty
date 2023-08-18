@@ -22,25 +22,25 @@
   "sameAs": "{{ social.sameAs }}",
   "social": {
     "sameAs": "{{ social.sameAs }}",
-    "networks": "{{ social.networks }}"
+    "networks": "---------------[[ INSERT SOCIAL LOOP ]]---------------"
   },
   "image": {
     "default": "{{ image.default }}",
     "opengraph": "{{ image.default }}",
-    "gallery": "{{ image.gallery }}"
+    "gallery": "---------------[[ INSERT IMAGE GALLERY LOOP ]]---------------"
   },
   "description": {
     "sentence": "{{ description.sentence }}",
     "paragraph": "{{ description.paragraph }}",
     "full": "{{ description.full }}"
   },
-  "features": "['FEATURES LOOP']",
+  "features": "[[ INSERT FEATURES LOOP ]]",
   "transport": "{{ transport }}",
   "parking": "{{ parking }}",
   "menus": {
     "overview": "{{ menus.overview }}",
-    "sections": "{{ menus.sections }}",
-    "pdfs": "{{ menus.pdfs }}"
+    "sections": "---------------[[ INSERT MENU SECTION LOOP ]]---------------",
+    "pdfs": "--------------[[ INSERT PDF MENU LOOP ]]---------------"
   },
   "reservations": {
     "info": "{{ reservations.info }}",

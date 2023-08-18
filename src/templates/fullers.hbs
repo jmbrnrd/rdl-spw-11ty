@@ -24,7 +24,7 @@ brand:
 <nav id="navBar" aria-label="primary">
     <a href="#" class="brand" aria-label="{{ lang.nav.label.backToTop }}">
         <img src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo" class="logo-mobile">
-        <img src="https://res.cloudinary.com/rdl/image/upload/f_auto/v1692252102/fullers/logo-nav.png" class="logo">
+        <img src="https://res.cloudinary.com/rdl/image/upload/f_auto/v1692252102/fullers/logo-nav.png" alt="Fuller's logo" class="logo">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -54,6 +54,7 @@ brand:
                 <p>{{ data.description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
+                    <!-- {{ data.features }} -->
                     {{#each data.features }}
                     <li>{{ this }}</li>
                     {{/each}}
