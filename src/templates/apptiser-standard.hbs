@@ -5,7 +5,7 @@ layout: "layouts/apptiser-standard.hbs"
 gtag: "G-4FPKM2SVKM"
 permalink: "/templates/apptiser-standard-{{ pkg.version }}.html"
 brand:
-    name: "Apptiser"
+    name: "apptiser"
     prefix: "apt"
     url: "https://apptiser.io/"
     theme: "apptiser"
@@ -34,7 +34,7 @@ brand:
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
         <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }}</h3>
+        <h3 class="subtitle">{{ data.subtitle }} {{ lookup (lookup lang brand.name) 'label' }}</h3>
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}
         </ul>

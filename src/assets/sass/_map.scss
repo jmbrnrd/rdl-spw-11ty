@@ -28,19 +28,8 @@
 .map-section {
   position: relative;
 }
-a.btn {
-  all: unset;
-  cursor: pointer;
-  background: $color-cta-bgd;
-  padding: 2rem 2.5rem;
-  color: white;
-  border-radius: $radius-sml;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1.2rem;
-  &-map-directions {
+a.btn-map-directions {
     position: absolute;
-    inset: 3rem auto auto 3rem;
-
+    inset: 10px 60px auto auto;
   }
-}
+
