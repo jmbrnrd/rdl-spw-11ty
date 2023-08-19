@@ -1,8 +1,8 @@
 
 <!-- Optional section tag start - Downloadable Menus -->
 <section class="content-section menu-pdf" id="pdfMenus" aria-label="menu downloads">
-    <h2 class="section-title">{{ lang.section.menuDownloads.title }}</h2>
-    <p>{{ lang.section.menuDownloads.info }}</p>
+    <h2 class="section-title">{{ section.menuDownloads.title }}</h2>
+    <p>{{ section.menuDownloads.info }}</p>
     <div class="content-block menu-downloads">
         <!-- {{ data.menus.pdfs }} -->
         {{#each data.menus.pdfs }}
@@ -10,7 +10,7 @@
                 <a class="menu-card"
                    download="{{ name }}-{{ date }}"
                    href="{{ path }}"
-                   aria-label="{{ ../lang.section.menuDownloads.alt }} {{ ../data.name }} {{ name }}">
+                   aria-label="{{ ../section.menuDownloads.alt }} {{ ../data.name }} {{ name }}">
                     <h3>{{ name }}</h3>
                     <span>Published: {{ date }}</span>
                 </a>

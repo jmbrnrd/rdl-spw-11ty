@@ -1,14 +1,14 @@
 ---
-title: "Apptiser Premium"
+title: "RI SPW"
 language: "en"
-layout: "layouts/apptiser-premium.hbs"
-gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser-premium-{{ pkg.version }}.html"
+layout: "layouts/member.hbs"
+gtag: "G-RX7PGJKJGS"
+permalink: "/templates/ri-member-{{ pkg.version }}.html"
 brand:
-    name: "Apptiser"
-    prefix: "app"
-    url: "https://apptiser.io/"
-    theme: "apptiser"
+    name: "Restaurateurs Independants"
+    prefix: "ri"
+    url: "https://restaurateursindependants.fr/"
+    theme: "collective"
 ---
 
 <!-- mobile nav -->
@@ -56,12 +56,14 @@ brand:
 </section>
 
 <main id="home">
+
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-            <div class="description" aria-label="description">
+            <div class="description desc-full" aria-label="description">
                 <p>{{ data.description.full }}</p>
                 <!-- Feature keywords-->
+                <!-- TODO -->
                 <ul class="additional-features" aria-label="features">
                     {{#each data.features }}
                     <li>{{ this }}</li>
@@ -99,18 +101,14 @@ brand:
 
     {{> partials/menus }}
 
-    {{#if data.menus.pdfs.length }}
-        {{> partials/menu-downloads }}
-    {{/if}}
+    {{> partials/menu-downloads }}
 
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
-        <p>{{ data.reservations.info }}</p>
-        <p>
-            <a href="#reservations" data-mzid="{{ data.mozrest.id }}" data-mzkey="{{ data.mozrest.key }}">BOOK ONLINE</a> at
-            anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
-        </p>
+        <p>You can <a href="#reservations" data-mzid="{{ data.mzId }}" data-mzkey="{{ data.mzKey }}">BOOK ONLINE</a> at
+            anytime, or call us during restaurant opening hours on <a
+                    href="tel:+33492005090">+33 (0) 4 92 00 50 90</a>.</p>
         <!-- booking extras -->
         <div class="content-block">
             <aside>
@@ -125,7 +123,7 @@ brand:
     </section>
 
     <!-- contacts -->
-    <section id="contacts" class="content-section contact-section">
+    <section id="contacts" class="content-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
             <!-- address -->
@@ -144,14 +142,14 @@ brand:
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                        {{#each data.social.networks }}
-                            <div>
-                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                    <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo" width="28" height="28">
-                                </a>
-                                <span>{{ this.name }}</span>
-                            </div>
-                        {{/each}}
+                            {{#each data.social.networks }}
+                                <div>
+                                    <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                        <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
+                                    </a>
+                                    <span>{{ this.name }}</span>
+                                </div>
+                            {{/each}}
                         </div>
                     </dd>
                 </dl>
@@ -171,6 +169,9 @@ brand:
     {{> partials/map }}
 
 </main>
+
+{{> partials/footer-collective }}
+
 
 
 

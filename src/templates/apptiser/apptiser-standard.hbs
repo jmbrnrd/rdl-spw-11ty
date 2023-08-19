@@ -13,7 +13,7 @@ brand:
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ lang.nav.label.navMenuMobile }}">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ nav.label.navMenuMobile }}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -22,7 +22,7 @@ brand:
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" aria-label="{{ lang.nav.label.backToTop }}">
+    <a href="#" class="brand" aria-label="{{ nav.label.backToTop }}">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -60,17 +60,17 @@ brand:
             <!-- opening times -->
             <aside class="opening-times">
                 <dl>
-                    <dt>{{ lang.section.about.tel }}</dt>
+                    <dt>{{ section.about.tel }}</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                    <dt>{{ lang.section.about.address }}</dt>
+                    <dt>{{ section.about.address }}</dt>
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }}</dd>
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>{{ lang.section.about.openingTimes }}</dt>
+                    <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
 
                     <!-- Optional section tag start - Opening Notes -->
-                    <dt>{{ lang.section.about.openingNotes }}</dt>
+                    <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
                 </dl>
@@ -87,7 +87,7 @@ brand:
 
     <!-- RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
-        <h2 class="section-title">{{ lang.section.reservations.title }}</h2>
+        <h2 class="section-title">{{ section.reservations.title }}</h2>
         <p>{{ data.reservations.info }}</p>
 
         {{> partials/booking-request }}
@@ -97,14 +97,14 @@ brand:
 
             <!-- Optional section tag start - Bookings Group -->
             <aside>
-                <h2 class="sub-section-title">{{ lang.section.reservations.groups }}</h2>
+                <h2 class="sub-section-title">{{ section.reservations.groups }}</h2>
                 <p>{{ data.reservations.groups }}</p>
             </aside>
             <!-- Optional section tag end - Bookings Group -->
 
             <!-- Optional section tag start - Bookings Private -->
             <aside>
-                <h2 class="sub-section-title">{{ lang.section.reservations.private }}</h2>
+                <h2 class="sub-section-title">{{ section.reservations.private }}</h2>
                 <p>{{ data.reservations.private }}</p>
             </aside>
             <!-- Optional section tag end - Bookings Private -->

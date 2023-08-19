@@ -4,7 +4,7 @@
   },
   "nav": {
     "label": {
-      "about": "About",
+      "about": "About It",
       "backToTop": "Return to start of page",
       "contacts": "Contacts",
       "location": "Location",
@@ -16,8 +16,8 @@
   "section": {
     "about": {
       "address": "Address",
-      "openingNotes": "Notes",
-      "openingTimes": "Opening times",
+      "openingNotes": "Food Service",
+      "openingTimes": "Opening Times",
       "tel": "Telephone"
     },
     "contacts": {
@@ -54,11 +54,11 @@
         "veggie": "Suitable for vegetarians"
       },
       "label": {
-        "gluten": "Gluten-free",
+        "gluten": "Gluten-free available",
         "vegan": "Vegan",
         "veggie": "Vegetarian"
       },
-      "title": "Menus"
+      "title": "Our Menus"
     },
     "reservations": {
       "groups": "Group bookings",
@@ -67,3 +67,4 @@
     }
   }
 }
+

@@ -1,19 +1,19 @@
 ---
-title: "RC Member SPW"
+title: "Apptiser Premium"
 language: "en"
-layout: "layouts/member.hbs"
-gtag: "G-RX7PGJKJGS"
-permalink: "/templates/member-{{ pkg.version }}.html"
+layout: "layouts/apptiser-premium.hbs"
+gtag: "G-4FPKM2SVKM"
+permalink: "/templates/apptiser-premium-{{ pkg.version }}.html"
 brand:
-    name: "Restaurant Collective"
-    prefix: "rc"
-    url: "https://restaurantcollective.org.uk/"
-    theme: "collective"
+    name: "Apptiser"
+    prefix: "app"
+    url: "https://apptiser.io/"
+    theme: "apptiser"
 ---
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ data.name }} navigation menu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ nav.label.navMenuMobile }}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -22,17 +22,11 @@ brand:
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" title="Back to top">
+    <a href="#" class="brand" aria-label="{{ nav.label.backToTop }}">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
-        <li><a href="#about" title="About ">About</a></li>
-        <!-- Optional section tag start - Menus NavBar -->
-        <li><a href="#menus" title="Menus ">Menus</a></li>
-        <!-- Optional section tag end - Menus NavBar -->
-        <li><a href="#reservations" title="Reservations">Reservation</a></li>
-        <li><a href="#contacts" title="Contact ">Contacts</a></li>
-        <li><a href="#location" title="Find ">Location</a></li>
+        {{> partials/nav-options }}
     </ul>
 </nav>
 
@@ -42,7 +36,7 @@ brand:
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
-            <li><a href="#about" title="About ">About</a></li>
+            <li><a href="#about" title="About ">{{ nav.label.about }}</a></li>
             <!-- Optional section tag start - Menus Hero -->
             <li><a href="#menus" title="Menus ">Menus</a></li>
             <!-- Optional section tag end - Menus Hero -->
@@ -56,14 +50,12 @@ brand:
 </section>
 
 <main id="home">
-
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-            <div class="description desc-full" aria-label="description">
+            <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
                 <!-- Feature keywords-->
-                <!-- TODO -->
                 <ul class="additional-features" aria-label="features">
                     {{#each data.features }}
                     <li>{{ this }}</li>
@@ -101,14 +93,18 @@ brand:
 
     {{> partials/menus }}
 
-    {{> partials/menu-downloads }}
+    {{#if data.menus.pdfs.length }}
+        {{> partials/menu-downloads }}
+    {{/if}}
 
     <!-- bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
-        <p>You can <a href="#reservations" data-mzid="{{ data.mzId }}" data-mzkey="{{ data.mzKey }}">BOOK ONLINE</a> at
-            anytime, or call us during restaurant opening hours on <a
-                    href="tel:+33492005090">+33 (0) 4 92 00 50 90</a>.</p>
+        <p>{{ data.reservations.info }}</p>
+        <p>
+            <a href="#reservations" data-mzid="{{ data.mozrest.id }}" data-mzkey="{{ data.mozrest.key }}">BOOK ONLINE</a> at
+            anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
+        </p>
         <!-- booking extras -->
         <div class="content-block">
             <aside>
@@ -123,7 +119,7 @@ brand:
     </section>
 
     <!-- contacts -->
-    <section id="contacts" class="content-section">
+    <section id="contacts" class="content-section contact-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
             <!-- address -->
@@ -142,14 +138,14 @@ brand:
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                            {{#each data.social.networks }}
-                                <div>
-                                    <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                        <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo">
-                                    </a>
-                                    <span>{{ this.name }}</span>
-                                </div>
-                            {{/each}}
+                        {{#each data.social.networks }}
+                            <div>
+                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                    <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo" width="28" height="28">
+                                </a>
+                                <span>{{ this.name }}</span>
+                            </div>
+                        {{/each}}
                         </div>
                     </dd>
                 </dl>
@@ -169,9 +165,6 @@ brand:
     {{> partials/map }}
 
 </main>
-
-{{> partials/footer-collective }}
-
 
 
 
