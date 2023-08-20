@@ -8,11 +8,13 @@
          data-lat="{{ data.geocode.lat }}"
          data-lng="{{ data.geocode.lng }}"
          data-label="{{ data.name }}">
-        <div id="map" data-intersection="300"></div>
+        <div id="map" data-intersection="300">
+
+        </div>
     </div>
     <a class="btn btn-map-directions"
        target="_blank"
        href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">
-    Get Directions
+        {{ button.directions }}
     </a>
 </section>
