@@ -17,6 +17,7 @@ footer {
   color: white;
   line-height: 1.2;
   height: auto;
+  border-top: 2px solid black;
   .footer-container {
     display: grid;
     place-content: center center;
@@ -197,20 +198,24 @@ footer {
   .section-title {
     font-size: 3.25rem;
     font-weight: $font-weight-bold;
-    text-align: center;
+    text-align: left;
     font-family: 'suez one', sans-serif;
     color: $color-primary;
     margin-bottom: 3rem;
 
-    // Fuller's decorative
-    &::after {
-      margin-left: 2rem;
-      content: url('data:image/svg+xml;utf8,<svg width="167.501" height="22.627" viewBox="0 0 44.318 5.987" xmlns="http://www.w3.org/2000/svg"><g opacity=".5" stroke="currentColor" stroke-width="2" data-name="Florish Left"><g fill="none" data-name="Shape"><path stroke="none" d="M2.993 5.987 0 2.993 2.993 0l2.993 2.993z"/><path d="M2.993 5.612.373 2.993l2.62-2.62 2.62 2.62z" stroke-width=".52916"/></g><path fill="currentColor" data-name="Line 7" d="M44.318 2.944H5.378" stroke-width=".52916"/></g></svg>');
+    @include mq($mq-medium) {
+      text-align: center;
+      // Fuller's decorative
+      &::after {
+        margin-left: 2rem;
+        content: url('data:image/svg+xml;utf8,<svg width="167.501" height="22.627" viewBox="0 0 44.318 5.987" xmlns="http://www.w3.org/2000/svg"><g opacity=".5" stroke="currentColor" stroke-width="2" data-name="Florish Left"><g fill="none" data-name="Shape"><path stroke="none" d="M2.993 5.987 0 2.993 2.993 0l2.993 2.993z"/><path d="M2.993 5.612.373 2.993l2.62-2.62 2.62 2.62z" stroke-width=".52916"/></g><path fill="currentColor" data-name="Line 7" d="M44.318 2.944H5.378" stroke-width=".52916"/></g></svg>');
+      }
+      &::before {
+        margin-right: 2rem;
+        content: url('data:image/svg+xml;utf8,<svg width="167.501" height="22.627" viewBox="0 0 44.318 5.987" xmlns="http://www.w3.org/2000/svg"><g opacity=".5" stroke="currentColor" stroke-width="2" data-name="Florish Left"><g fill="none" data-name="Shape"><path stroke="none" d="m41.325 0 2.993 2.994-2.993 2.993-2.993-2.993z"/><path d="m41.325.375 2.62 2.619-2.62 2.619-2.62-2.62z" stroke-width=".52916"/></g><path fill="currentColor" data-name="Line 7" d="M0 3.043h38.94" stroke-width=".52916"/></g></svg>');
+      }
     }
-    &::before {
-      margin-right: 2rem;
-      content: url('data:image/svg+xml;utf8,<svg width="167.501" height="22.627" viewBox="0 0 44.318 5.987" xmlns="http://www.w3.org/2000/svg"><g opacity=".5" stroke="currentColor" stroke-width="2" data-name="Florish Left"><g fill="none" data-name="Shape"><path stroke="none" d="m41.325 0 2.993 2.994-2.993 2.993-2.993-2.993z"/><path d="m41.325.375 2.62 2.619-2.62 2.619-2.62-2.62z" stroke-width=".52916"/></g><path fill="currentColor" data-name="Line 7" d="M0 3.043h38.94" stroke-width=".52916"/></g></svg>');
-    }
+
   }
 }
 

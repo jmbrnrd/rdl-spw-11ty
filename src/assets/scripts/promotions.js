@@ -2,7 +2,8 @@
 export default function () {
 
     console.log('promotion.js');
-
+    const eventWidget = document.getElementById('eventWidget');
+    const eventWidgetLabel = eventWidget.innerText;
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
     const currentDate = new Date();
@@ -79,7 +80,7 @@ export default function () {
 
         messageHeader.innerHTML =
             `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="white" d="M730-450v-60h150v60H730Zm50 290-121-90 36-48 121 90-36 48Zm-82-503-36-48 118-89 36 48-118 89ZM210-200v-160h-70q-24.75 0-42.375-17.625T80-420v-120q0-24.75 17.625-42.375T140-600h180l200-120v480L320-360h-50v160h-60Zm90-280Zm260 134v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346ZM140-540v120h196l124 74v-268l-124 74H140Z"/></svg>` +
-            `<h2>What's On</h2>` +
+            `<h2 class="promo-label">${eventWidgetLabel}</h2>` +
             `<svg xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 -960 960 960"><path fill="#fff" d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
 
         messageFooter.innerHTML = `CLOSE`;
@@ -87,7 +88,8 @@ export default function () {
         // add to DOM
         messageContainer.append(messageHeader, messageBody);
         fragment.append(messageContainer);
-        document.body.appendChild(fragment);
+        //document.body.appendChild(fragment);
+        eventWidget.replaceWith(fragment);
 
         // reveal label after button is on screen
         messageContainer.addEventListener('animationend', () => {
