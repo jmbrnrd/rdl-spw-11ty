@@ -139,12 +139,11 @@ export default function () {
         let listItemLink;
         promotions.forEach((item) => {
           listItem = document.createElement('li');
-          listItem.innerHTML =offer_strapline
+          listItem.innerHTML =
               `<header>` +
                   `<span class="category ${item['offer_category'] || 'event'}"></span>` +
-                  `<span><h3>${item['offer_tag']}</h3>` +`<div class="subtitle">${item['offer_strapline']}</div>` +
-              `</header></span>` +
-
+                  `<span><h3>${item['offer_tag']}</h3>` + `<div class="subtitle">${item['offer_strapline']}</div></span>` +
+              `</header>` +
               `<p>${item['offer_text']}</p>`;
           // Is there a link to additional content?
             if (!!item['offer_link']) {
