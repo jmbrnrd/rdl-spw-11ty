@@ -25,3 +25,11 @@
   padding: .4rem;
   text-align: center;
 }
+.map-section {
+  position: relative;
+}
+a.btn-map-directions {
+  position: absolute;
+  inset: 10px 56px auto auto;
+}
+

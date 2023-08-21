@@ -5,8 +5,7 @@ import nav from './nav';
 import gallery from './gallery';
 import promotions from './promotions'
 import bookingRequest from './booking-request';
-
-
+import about from "./about";
 
 bookings();
 promotions();
@@ -15,6 +14,9 @@ formatting();
 map();
 gallery();
 bookingRequest();
+about();
+
+
 
 
 

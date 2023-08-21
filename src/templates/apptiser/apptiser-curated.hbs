@@ -1,33 +1,29 @@
 ---
-title: "RDL Network Page - Automated"
+title: "Apptiser Page - Curated"
 language: "en"
-gtag: "G-RX7PGJKJGS"
-layout: "layouts/network.hbs"
-permalink: "/templates/auto-{{ pkg.version }}.html"
+layout: "layouts/apptiser-curated.hbs"
+permalink: "/templates/apptiser-curated-{{ pkg.version }}.html"
 brand:
-    name: "RDL Network"
-    prefix: "rdl"
-    url: "https://rdl.network/"
-    theme: "rdl"
+    name: "apptiser"
+    prefix: "app"
+    url: "https://apptiser.io/"
+    theme: "apptiser"
 ---
 
-<!-- hero -->
-<section id="hero" class="section-hero hero-stack golden-ratio">
+<section id="hero" class="section-hero golden-ratio">
     <div class="brand-container fade-in">
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
-        <a href="#about" class="scroll-down" title="Scroll page to content"></a>
+        <a href="#about" class="scroll-down" aria-label="Scroll page top main content"></a>
     </div>
-    <span class="img-credit" title="This is a generic placeholder image. It is not an image of {{ data.name }}">LIBRARY IMAGE</span>
     {{> partials/hero-image }}
 </section>
 
 <main id="home">
-
     <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-            <div class="description desc-full" aria-label="description">
+            <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
                 <!-- Feature keywords-->
                 <ul class="additional-features" aria-label="features">
@@ -35,7 +31,11 @@ brand:
                         <li>{{ this }}</li>
                     {{/each}}
                 </ul>
+
+                {{> partials/gallery }}
+
             </div>
+
             <!-- times -->
             <aside class="opening-times">
                 <dl>
@@ -54,6 +54,7 @@ brand:
                 </dl>
             </aside>
         </div>
+
     </section>
 
     {{> partials/map }}
@@ -61,5 +62,4 @@ brand:
 </main>
 
 {{> partials/footer-network }}
-
 

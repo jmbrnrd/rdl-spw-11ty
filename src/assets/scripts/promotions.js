@@ -3,6 +3,22 @@ export default function () {
 
     console.log('promotion.js');
 
+    const eventsWidget = document.getElementById('eventsWidget');
+
+    /**
+     * eventsWidget is a 'placeholder' DOM element that we're using
+     * to pass to our js the UI content (label etc.) from our
+     * eleventy templates.
+     */
+
+    // Abort if there is no eventsWidget in the DOM
+    if (!eventsWidget) {
+        console.log('No widget included.');
+        return false;
+    }
+
+    //
+    const eventWidgetLabel = eventsWidget.innerText;
     const restaurantId = document.querySelector('html').dataset.id;
     let messagesLoaded = false;
     const currentDate = new Date();
@@ -12,9 +28,10 @@ export default function () {
 
     // Wait for page load
     window.addEventListener('load', function () {
-        console.log(`Fetch offers`);
+        console.log(`Page loaded so fetch offers`);
         getOffers();
     });
+
 
     function getOffers() {
 
@@ -63,45 +80,44 @@ export default function () {
         }
 
         // build DOM elements
-        const fragment = document.createDocumentFragment();
-        const messageContainer = document.createElement('aside');
-        const messageHeader = document.createElement('div');
-        const messageBody = document.createElement('div');
-        const messageFooter = document.createElement('div');
+        const widgetFragment = document.createDocumentFragment();
+        const widgetContainer = document.createElement('aside');
+        const widgetButtonLabel = document.createElement('div');
+        const widgetContent = document.createElement('div');
 
         // apply classes
-        messageContainer.className = 'modal-messages';
-        messageHeader.className = 'msg-header';
-        messageBody.className = 'msg-body';
-        messageFooter.className = 'msg-footer';
+        widgetContainer.className = 'modal-messages';
+        widgetButtonLabel.className = 'msg-header';
+        widgetContent.className = 'msg-body';
 
         // add content
-        messageHeader.innerHTML =
-            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#fff" d="M36.5 25.5v-3H44v3ZM39 40l-6.05-4.5 1.8-2.4 6.05 4.5Zm-4.1-25.15-1.8-2.4L39 8l1.8 2.4ZM10.5 38v-8H7q-1.25 0-2.125-.875T4 27v-6q0-1.25.875-2.125T7 18h9l10-6v24l-10-6h-2.5v8ZM28 30.7V17.3q1.35 1.2 2.175 2.925Q31 21.95 31 24t-.825 3.775Q29.35 29.5 28 30.7ZM7 21v6h9.8l6.2 3.7V17.3L16.8 21Zm8 3Z"></path></svg>` +
-            `<h2>View Promotions</h2>` +
+        widgetButtonLabel.innerHTML =
+            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="white" d="M730-450v-60h150v60H730Zm50 290-121-90 36-48 121 90-36 48Zm-82-503-36-48 118-89 36 48-118 89ZM210-200v-160h-70q-24.75 0-42.375-17.625T80-420v-120q0-24.75 17.625-42.375T140-600h180l200-120v480L320-360h-50v160h-60Zm90-280Zm260 134v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346ZM140-540v120h196l124 74v-268l-124 74H140Z"/></svg>` +
+            `<h2 class="promo-label">${eventWidgetLabel}</h2>` +
             `<svg xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 -960 960 960"><path fill="#fff" d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
 
-        messageFooter.innerHTML = `CLOSE`;
 
         // add to DOM
-        messageContainer.append(messageHeader, messageBody);
-        fragment.append(messageContainer);
-        document.body.appendChild(fragment);
+        widgetContainer.append(widgetButtonLabel, widgetContent);
+        widgetFragment.append(widgetContainer);
+
+        // replace the placeholder DOM element
+        eventsWidget.replaceWith(widgetFragment);
 
         // reveal label after button is on screen
-        messageContainer.addEventListener('animationend', () => {
-            messageHeader.classList.add('reveal');
+        widgetContainer.addEventListener('animationend', () => {
+            widgetButtonLabel.classList.add('reveal');
         });
 
         // open offers/messages
-        messageContainer.addEventListener('click', () => {
-            dspOffers(messageBody, offers);
-            messageBody.classList.toggle('active');
-            messageHeader.classList.toggle('open');
+        widgetContainer.addEventListener('click', () => {
+            dspOffers(widgetContent, offers);
+            widgetContent.classList.toggle('active');
+            widgetButtonLabel.classList.toggle('open');
         });
 
         // init button
-        messageContainer.classList.add('scale-in-center');
+        widgetContainer.classList.add('scale-in-center');
     }
 
     /**
@@ -126,7 +142,7 @@ export default function () {
           listItem.innerHTML =
               `<header>` +
                   `<span class="category ${item['offer_category'] || 'event'}"></span>` +
-                  `<h3>${item['offer_tag']}</h3>` +
+                  `<span><h3>${item['offer_tag']}</h3>` + `<div class="subtitle">${item['offer_strapline']}</div></span>` +
               `</header>` +
               `<p>${item['offer_text']}</p>`;
           // Is there a link to additional content?

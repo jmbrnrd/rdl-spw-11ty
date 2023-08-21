@@ -2,22 +2,26 @@ import flatpickr from 'flatpickr';
 
 export default function (){
 
-  /**
-   * Email booking requests
-   */
+  // Abort if there's no widget
+  if(!document.getElementById('bkgRequestForm')) {
+    console.log('No booking widget found');
+    return false;
+  }
+
+  // Element references
   const body = document.querySelector('body');
-  const htmlLang = document.getElementsByTagName('html')[0].getAttribute('lang') || 'en';
+  const htmlLang = document.querySelector('html').getAttribute('lang') || 'en';
   const bkgRequestWidget = document.getElementById('bkgRequestForm');
   let bkgParams = {};
 
-
   const modalContainer = document.getElementById('modal');
   const modelWindow = document.querySelector('.modal-window');
-  const emailRequestForm = document.getElementById('emailRequest');
+  const emailRequestForm = document.getElementById('emailRequestForm');
   const modalThankYou = document.querySelector('.booking-request-thanks');
   const btnSubmit = document.getElementById('btnSubmit');
   const btnCancel = document.getElementById('btnCancel');
 
+  // Display widget
   const showModalContainer = () => {
     modalContainer.style.display = 'flex';
     modalContainer.style.opacity = '1';
@@ -25,21 +29,30 @@ export default function (){
     modelWindow.classList.add('fade-in-fast');
     body.classList.add('stopScroll');
   };
+
+  // Hide widget
   const hideModal = () => {
     modalContainer.style.opacity = '0';
     modalContainer.style.display = 'none';
-    body.classList.remove('stopScroll');flatpi
+    body.classList.remove('stopScroll');
   };
+
+  // Generate request summary
   const openEmailRequest = () => {
-    // Assign summary values
+
+    // Assign values
     document.getElementById('partySize').innerHTML = bkgParams.bkgSize;
     document.getElementById('timeSlot').innerHTML = bkgParams.bkgTime;
     document.getElementById('dayDate').innerHTML = bkgParams.bkgDate;
+
     showModalContainer();
+
+    setTimeout(() => {
+      document.getElementById('full_name').focus();
+    },200);
+
   };
-  const cancelEmailRequest = () => {
-    hideModal();
-  };
+  const cancelEmailRequest = () => { hideModal(); };
 
   // Show user email request summary
   const dspModalMessage = () => {
@@ -56,15 +69,11 @@ export default function (){
     }, 2000);
   };
 
-  // Add event listeners to widget controls
-  // and update display fields
-  if (!!emailRequestForm) {
-    emailRequestForm.addEventListener('submit', (e) => {
+  // Add event listeners to widget
+  emailRequestForm.addEventListener('submit', (e) => {
       e.preventDefault();
       sendBkgRequest(e.target);
-    });
-  }
-
+  });
 
   /**
    * Send email request
@@ -72,10 +81,12 @@ export default function (){
    */
   function sendBkgRequest(form) {
 
+    // While sending
     btnCancel.style.display = 'none'
     btnSubmit.innerHTML = "Sending Request..."
     btnSubmit.disabled = true;
 
+    // Send
     fetch('https://api.restaurantcollective.io/public/sendbookingemail', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -107,65 +118,67 @@ export default function (){
       });
   }
 
+  // After form sent
   const formReset = () => {
     btnCancel.style.display = 'block'
     btnSubmit.innerHTML = "Booking Request"
     btnSubmit.disabled = false;
+    hideModal();
   }
 
-  /**
-   * Initialise booking widget
-   */
-  // Check existence of DOM elements in case
-  // this section is not being used
-  if (!!document.getElementById('btnCancel')) {
-    document.getElementById('btnCancel').addEventListener('click', cancelEmailRequest);
-  }
+  // Initialise booking widget
+  // Cancel option
+  document.getElementById('btnCancel').addEventListener('click', cancelEmailRequest);
 
-  if (!!bkgRequestWidget) {
-    bkgRequestWidget.addEventListener('submit', (e) => {
+  // Generate request summary
+  bkgRequestWidget.addEventListener('submit', (e) => {
+
       e.preventDefault();
 
       bkgParams.bkgDate = bkgRequestWidget.elements['date'].value;
       bkgParams.bkgSize = bkgRequestWidget.elements['covers'].value;
       bkgParams.bkgTime = bkgRequestWidget.elements['time'].value;
 
-      // In case we need to convert the format for some providers
-      // bkgParams.bkgDateObj = new Date(bkgParams.bkgDate);
-
-      // Booking providers are set in the CMS
       openEmailRequest();
-    });
-    bkgRequestWidget.elements['covers'].addEventListener('change', (e) => {
-      const elem = e.target;
-      document.getElementById('txtCovers').innerHTML = elem?.value;
-      // console.log(elem?.value)
-    })
-    bkgRequestWidget.elements['time'].addEventListener('change', (e) => {
-      const elem = e.target;
-      document.getElementById('txtTime').innerHTML = elem?.value;
-      // console.log(elem?.value)
-    })
-  }
+  });
 
+  // Update the mock cover & time select fields
+  bkgRequestWidget.elements['covers'].addEventListener('change', (e) => {
+    const covers = e.target;
+    document.getElementById('txtCovers').innerHTML = covers?.value;
+  });
+  bkgRequestWidget.elements['time'].addEventListener('change', (e) => {
+    const time = e.target;
+    document.getElementById('txtTime').innerHTML = time?.value;
+  });
+
+
+  // Update DOM after window load
   window.addEventListener('load', function () {
 
     console.log('Window loaded!');
 
-    // Guard clause
-    if(!bkgRequestWidget) {
-      console.log('No booking widget found');
-      return false;
-    }
-
     // Date input field
     const bkgDate = document.getElementById('selectDate');
     const bkgDateInput = document.getElementById('bkgDateInput');
-
     bkgDateInput.value = new Date().toDateString();
 
-    // Adv. bookings - 30 day default fall back
-    const bkgAdvDays = Number(bkgRequestWidget.dataset.advbkgdays || 30);
+    // Set booking request values
+    const bkgAdvDays = Number(bkgRequestWidget.dataset.daysinadvance || 30);
+    const bkgMaxCovers = Number(bkgRequestWidget.dataset.maxcovers || 10);
+
+    // Create cover select options
+    const coversSelect = document.getElementById('selectCovers');
+    const options = document.createDocumentFragment();
+    for (let i = 1; i <= bkgMaxCovers; i++) {
+      let opt = document.createElement('option');
+      opt.innerHTML = `${i} people`;
+      if (i === 1) { opt.innerHTML = `${i} person`; }
+      if (i === 2) { opt.selected = true; }
+      options.appendChild(opt);
+    }
+    coversSelect.appendChild(options);
+
 
     // Use 3rd party datepicker as Safari
     // doesn't support the Html5 default picker

@@ -1,32 +1,57 @@
-@use "vars" as *;
-@use "mixins" as *;
+@use "../vars" as *;
+@use "../mixins" as *;
 @use "sass:math";
 
-body { background-color: $color-primary; }
-main { background-color: $color-body-bgd; }
+body {
+  background-color: $color-nav-bgd;
+}
+main {
+  background-color: $color-body-bgd;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAD1BMVEUAAAAYFxcJCAgZGRkZEBBrtvCgAAAABXRSTlMAFgUJD/CvasEAAAJkSURBVEjHZZWLkaMwEAWFfAEM6ALYyUDUEYBvyT+nHeaN3S52Py4ktVs0/tBGe/8s83r0PD6ZflhbJ6Mn0Aa0W9tQdUuoDhFZM0c13tCfiahZe3ZUxxtavhBdUEPlPHyIEkoVeZ5xiASFiryCNkSCUkWe5wGiglCNhIgLUUGpIs8zDlFBqJx/RIJQLVPAiQgoVJUnaEMElKqq8oqTCAhVsK64EgGhOgJSXImAULn+EN2gUXlecY/1N3T4VJ5X3B6b3qHRh/JccQ/L0weq1Zl5rrhdLJD26SPzPOKUtt2hZSrQ81dp5x1yXauAvZ0pyjkgPgMztvW21TWqPKBRl72bd5MoAoAqrlTDY22vSaCKK9Xhy5dEkQdUcaVyd4mUB0RIH8t+vkTNgSqu5v+tm0TkBUScVOuQiLyA6JBq/f/5XQQUcSysuUJeQopjYf04PoGIu/h1MHCgKw7R7qEiD2gwbd5HIw+oG6LYwid5QMQtFtCHagMibs2TRXUCOaIcoHKgA5HmfZL3ggYi3u3kJdQNUUKougkiLkQFodoEEReiglCdL8gRFYTKX9CBSNOoIq+ggQioj8oT1K1EQKi6CYq4EgGh2hKquHV+QsycgjxF426qu7MLOnRGd+hhPjMvoaEzGjdomX0oL6BuStvvkAK7XVDEZdpyg/YK3C5omSmqSKBR1+q8IE8RtxK+KaXyCzpeFxuI24/PyAtopEh+oNq9j8iz9m0SVR5QjWY3a+MpEdM8RaotNDNF5DlxUp0BSUSeEyeVW/srEfPOMzTew6QROzh7S7UqjRcCiGm32oMF7tJvlf0AAbVMF4h+8ZkAAAAASUVORK5CYII=");
+}
 
 footer {
-  $link-height: 3rem;
-  background-color: $color-primary-dark;
-  padding: 1rem;
-  color: $color-grey-light;
-  font-size: 1.2rem;
+  width: 100%;
+  background-color: $color-nav-bgd;
+  padding: 2rem;
+  color: white;
   line-height: 1.2;
+  height: auto;
+  border-top: 2px solid black;
   .footer-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: auto;
-    &-col3 {
-      > div { text-align: center; }
+    display: grid;
+    place-content: center center;
+    .brand-container {
+      display: grid;
+      place-content: space-around center;
+      padding-bottom: 2rem;
+      img {
+        height: 150px;
+        object-fit: cover;
+      }
+      span { text-align: center;}
+      a {
+        display: inline;
+        text-align: center;
+        color: #87704c;
+      }
     }
-    @include mq($mq-medium) { flex-direction: row; }
-    > a {
-      display: flex;
-      height: $link-height;
-      align-items: center;
+
+
+
+
+
+  }
+  .footer-links-container {
+    display: flex;
+    padding: 2rem 0 0;
+    font-size: 1.2rem;
+    color: #87704c;
+    border-top: 1px solid #000;
+    @include mq($mq-medium) { font-size: 1.6rem; }
+    a {
+      color: inherit;
+      margin-left: 2rem;
     }
   }
 
@@ -66,7 +91,7 @@ footer {
 }
 
 .section-hero {
-  height: 100vh;
+  height: 100%;
   display: grid;
   place-items: center;
   > * {
@@ -91,7 +116,7 @@ footer {
     }
   }
   .brand-container {
-    font-family: $font-family-display;
+    font-family: 'suez one', sans-serif;
     text-align: center;
     width: min(90%, 800px);
     h2 {
@@ -168,11 +193,29 @@ footer {
   margin: 0 auto;
   padding: 1rem 32px 2rem;
   @include mq($mq-medium) {
-    padding-top: 8rem;
+    padding-top: 4rem;
   }
   .section-title {
     font-size: 3.25rem;
     font-weight: $font-weight-bold;
+    text-align: left;
+    font-family: 'suez one', sans-serif;
+    color: $color-primary;
+    margin-bottom: 3rem;
+
+    @include mq($mq-medium) {
+      text-align: center;
+      // Fuller's decorative
+      &::after {
+        margin-left: 2rem;
+        content: url('data:image/svg+xml;utf8,<svg width="167.501" height="22.627" viewBox="0 0 44.318 5.987" xmlns="http://www.w3.org/2000/svg"><g opacity=".5" stroke="currentColor" stroke-width="2" data-name="Florish Left"><g fill="none" data-name="Shape"><path stroke="none" d="M2.993 5.987 0 2.993 2.993 0l2.993 2.993z"/><path d="M2.993 5.612.373 2.993l2.62-2.62 2.62 2.62z" stroke-width=".52916"/></g><path fill="currentColor" data-name="Line 7" d="M44.318 2.944H5.378" stroke-width=".52916"/></g></svg>');
+      }
+      &::before {
+        margin-right: 2rem;
+        content: url('data:image/svg+xml;utf8,<svg width="167.501" height="22.627" viewBox="0 0 44.318 5.987" xmlns="http://www.w3.org/2000/svg"><g opacity=".5" stroke="currentColor" stroke-width="2" data-name="Florish Left"><g fill="none" data-name="Shape"><path stroke="none" d="m41.325 0 2.993 2.994-2.993 2.993-2.993-2.993z"/><path d="m41.325.375 2.62 2.619-2.62 2.619-2.62-2.62z" stroke-width=".52916"/></g><path fill="currentColor" data-name="Line 7" d="M0 3.043h38.94" stroke-width=".52916"/></g></svg>');
+      }
+    }
+
   }
 }
 

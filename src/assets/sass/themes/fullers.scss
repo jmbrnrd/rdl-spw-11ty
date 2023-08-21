@@ -3,12 +3,12 @@
  * Theme name
  * MUST be the same as the filename!
  */
-$theme: 'rdl';
-
+$theme: 'apptiser';
 
 // Base palette
-$clr-primary: hsla(0, 0%, 20%, 1);
-$clr-accent:    hsla(187, 100%, 42%, 1);
+$clr-primary:   #0c2848;
+$clr-accent:    #cf0a2b;
+$clr-accent-secondary: #87704c;
 
 $clr-grey:      #333;
 $clr-warn:      hsla(344, 100%, 41%, 1);

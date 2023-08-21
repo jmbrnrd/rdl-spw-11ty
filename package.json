@@ -1,7 +1,7 @@
 {
-  "name": "11ty-sass-skeleton",
-  "version": "2.0.6",
-  "description": "RDL SPW & Apptiser Templates",
+  "name": "11ty-apptiser",
+  "version": "2.1.7",
+  "description": "Apptiser Templates",
   "main": "index.html",
   "scripts": {
     "watch:sass": "sass  --no-source-map --watch src/assets/sass:public/assets/styles",
@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/5t3ph/11ty-sass-skeleton.git"
   },
-  "author": "5t3ph",
+  "author": "RDL",
   "license": "ISC",
   "browserslist": [
     "> 0.5%",

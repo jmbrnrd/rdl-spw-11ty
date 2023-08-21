@@ -1,7 +1,7 @@
 <!-- Optional section tag start - HTML Menus -->
 <section id="menus" class="content-section" aria-label="Menus">
 
-    <h2 class="section-title">{{ lang.section.menus.title }}</h2>
+    <h2 class="section-title">{{ section.menus.title }}</h2>
     <div class="menu-html">
         <p>{{ data.menus.overview }}</p>
 
@@ -9,17 +9,18 @@
         <div class="content-sub-section" aria-label="Sample menu">
             <div class="menu-html">
                 <ul class="menu-key">
-                    <li><i class="vt" aria-label="{{ lang.section.menus.alt.veggie }} icon"></i>{{ lang.section.menus
-                    .label
-                    .veggie }}</li>
-                    <li><i class="vg" aria-label="{{ lang.section.menus.alt.vegan }} icon"></i>{{ lang.section.menus.label.veggie
+                    <li>
+                        <i class="vt" aria-hidden="true"></i>
+                        {{ section.menus.label.veggie }}
+                    </li>
+                    <li><i class="vg" aria-hidden="true"></i>{{ section.menus.label.veggie
                     }}</li>
-                    <li><i class="gf" aria-label="{{ lang.section.menus.alt.gluten }} icon"></i>{{ lang.section.menus.label.gluten
+                    <li><i class="gf" aria-hidden="true"></i>{{ section.menus.label.gluten
                     }}</li>
                 </ul>
-
+                <!-- {{ data.menus.sections }} -->
                 {{#each data.menus.sections }}
-                    <div id="menu_section_1" class="menu-section">
+                    <div id="menu_section_{{@index}}" class="menu-section">
                         <h3 class="menu-section-title">{{ name }}</h3>
                         <ul class="menu-items">
                             {{#each dishes }}

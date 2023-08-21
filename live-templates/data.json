@@ -1,0 +1,130 @@
+{
+  "config": {
+    "preview_meta_tag":"<meta name=\"robots\" content=\"noindex\">",
+    "theme":"apptiser-standard-2.1.2",
+    "managed":"SELF"
+  },
+  "spwUrl":"https://spw.restaurantcollective.org.uk/85719-apptiser/",
+  "mozrest":{
+    "id":"61c46fa7ccf9d0cba39b6387",
+    "key":"61a45e24757d22026a87f369"
+  },
+  "website_options":{
+    "showOpeningNotes":true,
+    "showImageGallery":true,
+    "showHtmlMenu":true,
+    "showDownloadMenus":true,
+    "showReservations":true,
+    "showReservationsInfo":true,
+    "showBookingWidget":true,
+    "showGroupBookings":true,
+    "showPrivateDining":true,
+    "showContacts":true,
+    "showLinks":true,
+    "showParking":true,
+    "showTransport":true,
+    "showMap":true,
+    "theme":"apptiser"
+  },
+  "brand":{
+    "prefix":"app",
+    "name":"apptiser",
+    "logo":"https://spw.restaurantcollective.org.uk/common/images/logo-rc-white.svg",
+    "web":"https://apptiser.io",
+    "language":"en"
+  },
+  "id":85719,
+  "number":"EN03085719",
+  "name":"apptiser",
+  "subtitle":"Demo Restaurant Website",
+  "addressStreet":"31 Horse Fair",
+  "addressLocality":"Banbury",
+  "addressRegion":"Oxfordshire",
+  "addressCountry":"GB",
+  "postalCode":"OX16 0AE",
+  "cuisine":"British",
+  "phone":"077340389988",
+  "email":"bruno@restaurateursindependants.fr",
+  "website":"https://www.example-restaurant.com",
+  "openingTimes":"Sun: 12:00 - 15:00</br>Mon: Closed all day</br>Tue: 12:00 - 22:00</br>Wed: 12:00 - 22:00</br>Thu: 12:00 - 22:00</br>Fri: 12:00 - 23:00</br>Sat: 12:00 - 23:00</br>",
+  "openingNotes":"Open 7 days a week",
+  "geocode":{
+    "lat":"52.060703",
+    "lng":"-1.3395623"
+  },
+  "social":{
+    "sameAs":["","",""],
+    "networks":[{
+      "name":"email",
+      "url":"mailto:bruno@restaurateursindependants.fr",
+      "alt":"Contact us via email"
+    }]
+  },
+  "description":{
+    "sentence":"You could have a website like this in less than an hour",
+    "paragraph":"Responsively designed, ready-made websites that you can update yourself 24/7 in real-time, without any technical skills whatsoever.",
+    "full":"apptiser is a ready-made, customisable website that has been designed specifically to meet the requirements of the restaurant and hospitality industry, and to present your content in the best possible light, on any device.\n\napptiser has been developed by industry specialists to meet the growing expectations of your guests and to deliver the best performance standards in speed, search engine optimisation (SEO) and accessibility best practices.\n\nMore importantly for your business, apptiser allows you to easily keep your information fresh, accurate and up-to-date, via a simple content management system that you can access 24/7, from anywhere and from any device."
+  },
+  "features":[
+    "Children Welcome",
+    "Wheelchair Access",
+    "Vegetarian Options",
+    "Parking",
+    "Reservations",
+    "Internet Booking",
+    "wifi","dog friendly"
+  ],
+  "transport":"Closest station is Chertsey.",
+  "parking":"Parking is free in the adjacent roads",
+  "image":{
+    "default":"afah5sjsbdhbmx5l8cgz.jpg",
+    "gallery":[
+      {
+        "path_large":"https://res.cloudinary.com/rdl/image/upload/w_900,c_limit,q_auto,dpr_auto,f_auto/restaurants/EN03085719/dyfjihdq1u5qc2wkoos0.jpg",
+        "path_small":"https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,dpr_auto,f_auto/restaurants/EN03085719/dyfjihdq1u5qc2wkoos0.jpg",
+        "filename":"dyfjihdq1u5qc2wkoos0.jpg",
+        "alt":"DISHES"
+      },
+      {
+        "path_large":"https://res.cloudinary.com/rdl/image/upload/w_900,c_limit,q_auto,dpr_auto,f_auto/restaurants/EN03085719/wbu193bqzneibm7sbofn.jpg",
+        "path_small":"https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,dpr_auto,f_auto/restaurants/EN03085719/wbu193bqzneibm7sbofn.jpg",
+        "filename":"wbu193bqzneibm7sbofn.jpg",
+        "alt":"DISHES"
+      },
+      {
+        "path_large":"https://res.cloudinary.com/rdl/image/upload/w_900,c_limit,q_auto,dpr_auto,f_auto/restaurants/EN03085719/afah5sjsbdhbmx5l8cgz.jpg",
+        "path_small":"https://res.cloudinary.com/rdl/image/upload/w_600,h_400,c_fill,q_auto,dpr_auto,f_auto/restaurants/EN03085719/afah5sjsbdhbmx5l8cgz.jpg",
+        "filename":"afah5sjsbdhbmx5l8cgz.jpg",
+        "alt":"DISHES"
+      }
+    ]
+  },
+  "reservations":{
+    "info":"If you would like to make a reservation then please use our booking request widget below and we will get back to you as soon as we can. Alternatively you can call us during our opening times.",
+    "groups":"The maximum table size we can accommodate is 20 people.",
+    "private":"If you would like to discuss hiring the restaurant for a private function then please telephone us during our opening times.",
+    "tgturl":"",
+    "maxcover":6,
+    "provider":"kuuleats",
+    "rest_id":"241",
+    "bkgAdvDays":180
+  },
+  "menus":{
+    "overview":"The great italian taste!",
+    "sections":[
+      {
+        "name":"ANTIPASTI - BEGINNING",
+        "dishes":[
+          {
+            "dish_name":"Capesante alla Martini",
+            "dish_desc":"Seared King Scallops served in a Martini Creamy Sauce on our home-made Crostino",
+            "dish_price":"8.50",
+            "dish_attributes":[]
+          },
+          {
+            "dish_name":"Grigliata di Ortaggi e Verdure",
+            "dish_desc":"Grilled mixed Vegetables marinated in Extra Virgin Olive Oil and Vinegar",
+            "dish_price":"6.00",
+            "dish_attributes":["vt"]
+          },{
+            "dish_name":"Paté di Fegatini","dish_desc":"Home-made Chicken Liver Paté served with Rustic Sicilian Bread and Relish.","dish_price":"6.25","dish_attributes":["vg","gf"]},{"dish_name":"Insalata Caprese GF","dish_desc":"Sliced Beef Tomato, Mozzarella and Rocket with a drizzle of Virgin Olive Oil and Oregano / or with Avocado","dish_price":"6.00","dish_attributes":["vt","vg"]},{"dish_name":"Gamberoni alla Spagnola","dish_desc":"Tiger Prawns pan-seared with Garlic, Fresh Parsley, Butter and Lemon Sauce","dish_price":"8.50","dish_attributes":[]},{"dish_name":"Mousse di Sgombro ","dish_desc":"A traditional Ligurian recipe of Smoked Mackerel Paté with Focaccia and Horseradish\n","dish_price":"5.20","dish_attributes":["vt","gf"]}]},{"name":"LE PASTE","dishes":[{"dish_name":"Spaghetti alle Vongole","dish_desc":"Fresh Clams, Garlic, little Chilli, Extra Virgin Olive Oil (with or without Tomato Sauce)","dish_price":"12.50","dish_attributes":[]},{"dish_name":"Ravioloni all'Aragosta","dish_desc":"Homemade Pasta Parcels of Lobster and Ricotta, in its Bisque Sauce and Shrimps","dish_price":"13.00","dish_attributes":[]},{"dish_name":"Linguine Montalbano","dish_desc":"Pasta with half dozen of King Prawns, Garlic, Chilli and little bit of Tomato Sauce","dish_price":"12.50","dish_attributes":[]},{"dish_name":"Malfatti Salsiccia e Rucola","dish_desc":"Homemade twist Pasta with Tomato Sauce, Luganica Sausage, Garlic, Chillies and Wild Rocket","dish_price":"10.00","dish_attributes":[]},{"dish_name":"Agnolotti d'Agnello","dish_desc":"Homemade Pasta Parcels filled with young Welsh Lamb, served in a Velvety Red Wine, fresh Rosemary and Garlic Sauce","dish_price":"13.00","dish_attributes":[]},{"dish_name":"Risotto ai Funghi Porcini","dish_desc":"Carmaroli Rice cooked in White Wine with Shallots and Porcini Mushrooms, drizzled with Truffle Oil, sprinkled with flakes of Parmigiano, topped with Wild Rocket","dish_price":"11.50","dish_attributes":["vt"]}]},{"name":"DOLCI E GELATI","dishes":[{"dish_name":"Affogato al Caffè Liquoroso","dish_desc":"A Trio of Vanilla ice cream with Espresso Coffee and a shot of Strega or Disaronno liqueur","dish_price":"5.00","dish_attributes":["vt"]},{"dish_name":"Tiramisù (Individual Glass Portion)","dish_desc":"Savoiardi Ladyfingers soaked in Amaretto-Coffee with Mascarpone Cream","dish_price":"4.50","dish_attributes":["vt"]},{"dish_name":"Tortino appiccicoso","dish_desc":"Sticky Toffee Pudding coated in warm Butterscotch sauce and served with Vanilla ice cream","dish_price":"7.50","dish_attributes":["vt"]}]}],"pdfs":[{"name":"Sarao à la Carte","date":"Friday, November 15, 2019 10:48 AM","path":"https://res.cloudinary.com/rdl/image/upload/v1573814902/restaurants/EN03085719/x3b4kefzju0vd0jukks9.pdf"}]}}

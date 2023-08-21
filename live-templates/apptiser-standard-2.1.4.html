@@ -1,8 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" data-id="{{ number }}" xmlns="http://www.w3.org/1999/html">
-
-<!-- 2.0.5 -->
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.4" xmlns="http://www.w3.org/1999/html">
 
 <head>
 
@@ -50,7 +48,7 @@
     <meta property="og:url"
           content="{{ website }}">
     <meta property="og:image"
-          content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ id }}/{{ image.default }}">
+          content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}">
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
@@ -70,11 +68,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.0.4" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.3" />
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.0.4" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.3" />
 
-    <script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.0.42" defer></script>
+    <script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.1.3" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUOxHaeFFu1_c0sEpjRCNOAKnl6r8YMvY&callback=initMap&language=en"></script>
@@ -276,9 +274,132 @@
     <!-- Optional section tag start - Bookings -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
+
         <!-- Optional section tag start - Info -->
         <p>{{ reservations.info }}</p>
         <!-- Optional section tag end - Info -->
+
+        <!-- Optional section tag start - Widget -->
+        <div class="booking-request-container">
+            <form class="form-booking-request" id="bkgRequestForm" data-daysinadvance="{{ reservations.bkgAdvDays }}" data-maxcovers="{{ reservations.maxcover }}">
+                <div class="selector">
+                    <div class="selector-substitute">
+                        <div class="icon icon-covers"></div>
+                        <div class="selected-value" id="txtCovers">2 people</div>
+                        <div class="icon icon-arrow-down"></div>
+                    </div>
+                    <select id="selectCovers" name="covers" aria-label="Booking party size"></select>
+                </div>
+                <div class="selector">
+                    <div class="selector-substitute">
+                        <div class="icon icon-time"></div>
+                        <div class="selected-value" id="txtTime">19:30</div>
+                        <div class="icon icon-arrow-down"></div>
+                    </div>
+                    <select name="time" aria-label="Booking time">
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30" selected>19:30</option>
+                        <option value="20:00">20:00</option>
+                        <option value="20:30">20:30</option>
+                        <option value="21:00">21:00</option>
+                        <option value="21:30">21:30</option>
+                        <option value="22:00">22:00</option>
+                        <option value="22:30">22:30</option>
+                        <option value="23:00">23:00</option>
+                        <option value="23:30">23:30</option>
+                    </select>
+                </div>
+                <div class="selector">
+                    <div class="selector-substitute" id="selectDate">
+                        <div class="icon icon-date"></div>
+                        <input  id="bkgDateInput"
+                                aria-label="Booking date"
+                                type="text"
+                                class="select-input hide-on-mobile"
+                                name="date"
+                                autocomplete="off"
+                                data-adv-days="30">
+                        <div class="icon icon-arrow-down hide-on-mobile"></div>
+                    </div>
+
+                </div>
+                <button>Booking Request</button>
+            </form>
+        </div>
+
+        <!-- modal -->
+        <div id="modal" class="modal-overlay">
+            <div class="modal-window email">
+                <div id="emailRequest" class="form-email-request">
+                    <form id="emailRequestForm">
+                        <input type="hidden" name="restaurant_name" value="{{ name }}">
+                        <input type="hidden" name="restaurant_email" value="{{ email }}">
+                        <input type="hidden" name="language" value="en">
+                        <input type="hidden" name="sender" value="app">
+                        <!-- Summary -->
+                        <div class="booking-summary">
+                            <h1>Booking Request</h1>
+                            <ul>
+                                <li>
+                                    <span class="icon icon-covers"></span>
+                                    <span id="partySize"></span>
+                                </li>
+                                <li>
+                                    <span class="icon icon-time"></span>
+                                    <span id="timeSlot"></span>
+                                </li>
+                                <li>
+                                    <span class="icon icon-date"></span>
+                                    <span id="dayDate"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2>Please enter your contact details below:</h2>
+                        <!-- Name -->
+                        <div class="text-field">
+                            <input id="full_name" type="text" name="full_name" placeholder=" " autofocus required tabindex="0">
+                            <label for="full_name">Your full name</label>
+                        </div>
+                        <!-- Email -->
+                        <div class="text-field">
+                            <input id="email" type="email" name="email" placeholder=" " required>
+                            <label for="email">Your Email Address</label>
+                        </div>
+                        <p><strong>Please note</strong>: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant.</p>
+                        <!-- Actions -->
+                        <div class="modal-actions">
+                            <button id="btnCancel" type="button" class="btn-cancel">CANCEL</button>
+                            <button id="btnSubmit" type="submit" class="btn-submit">SEND REQUEST</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="booking-request-thanks">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent"><span>Thanks, we'll be in touch.</span>
+            </div>
+        </div>
+        <!-- Optional section tag end - Widget -->
+
         <div class="content-block">
             <!-- Optional section tag start - Groups -->
             <aside>
