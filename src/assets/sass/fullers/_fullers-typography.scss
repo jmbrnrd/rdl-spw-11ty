@@ -87,11 +87,13 @@ a.btn, button {
   font-size: 1.6rem;
   font-weight: $font-weight-normal;
   font-family: 'suez one', sans-serif;
-  //letter-spacing: 2px;
   color: white;
   text-transform: uppercase;
   &:hover {
     background-color: $color-cta-bgd-dark;
+  }
+  &.hamburger {
+    background-color: $color-nav-bgd;
   }
 }
 .btn-cancel {
