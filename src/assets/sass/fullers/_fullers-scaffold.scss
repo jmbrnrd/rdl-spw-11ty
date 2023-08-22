@@ -91,7 +91,9 @@ footer {
 }
 
 .section-hero {
-  height: 100%;
+  // duplicated to provide fallback where svh is unsupported
+  height: 100vh;
+  height: 100svh;
   display: grid;
   place-items: center;
   > * {
@@ -130,6 +132,12 @@ footer {
       font-weight: 200;
       margin: 0 0 1rem;
       padding: 0 2rem;
+    }
+    .brand-logo {
+      display: inline-block;
+      height: 100px;
+      width: auto;
+      object-fit: contain;
     }
   }
   .desc-one-sentence {
