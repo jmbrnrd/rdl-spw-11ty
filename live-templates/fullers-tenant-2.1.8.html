@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.7" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.8" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -48,7 +48,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/brands/fullers/favicon.ico">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/brands/fullers/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/brands/fullers/manifest.json?v=2.1.7">
+    <link rel="manifest" href="https://assets.apptiser.io/brands/fullers/manifest.json?v=2.1.8">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,11 +63,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/fullers.css?v=2.1.7" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/fullers.css?v=2.1.8" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/fullers.css?v=2.1.7" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/fullers.css?v=2.1.8" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.1.7" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.1.8" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id="></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUOxHaeFFu1_c0sEpjRCNOAKnl6r8YMvY&callback=initMap&language=en"></script>
@@ -104,6 +104,7 @@
     </a>
     <ul class="nav-list-mobile" role="list">
         <li><a href="#about" aria-label="About Us {{ name }}">About Us</a></li>
+        <li class="hide-on-desktop"><a href="#hours" aria-label="Opening times {{ name }}">Opening times</a></li>
         <!-- Optional section tag start - Menus NavBar -->
         <li><a href="#menus" aria-label="{{ name }} Eat &amp; Drink">Eat &amp; Drink</a></li>
         <!-- Optional section tag end - Menus NavBar -->
@@ -114,12 +115,14 @@
 </nav>
 
 <!-- HERO -->
-<section id="hero" class="section-hero golden-ratio">
+<section id="hero" class="section-hero">
     <div class="brand-container fade-in">
+        <img class="brand-logo fade-in" src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
         <h2>{{ name }}</h2>
         <h3 class="subtitle">{{ subtitle }}</h3>
         <ul class="hero-nav fade-in">
             <li><a href="#about" aria-label="About Us {{ name }}">About Us</a></li>
+            <li class="hide-on-desktop"><a href="#hours" aria-label="Opening times {{ name }}">Opening times</a></li>
             <!-- Optional section tag start - Menus NavBar -->
             <li><a href="#menus" aria-label="{{ name }} Eat &amp; Drink">Eat &amp; Drink</a></li>
             <!-- Optional section tag end - Menus NavBar -->
@@ -158,7 +161,7 @@
                 </ul>
             </div>
             <!-- opening times -->
-            <aside class="opening-times">
+            <aside id="hours" class="opening-times">
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
@@ -231,6 +234,7 @@
                         </div>
                     {{/each}}
                     Loop section tag end - HTML Menus -->
+    
                 </div>
             </div>
         </div>
@@ -326,7 +330,7 @@
                     </div>
         
                 </div>
-                <button>Table Request</button>
+                <button>Booking Request</button>
             </form>
         </div>
         
@@ -501,6 +505,9 @@
     </div>
 
 </footer>
-<div id="eventsWidget">See What&#x27;s On?</div>
+
+<div id="eventsWidget">See What&#x27;s On</div>
+
 </body>
 </html>
+
