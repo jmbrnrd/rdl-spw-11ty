@@ -350,3 +350,9 @@ dd {
   }
 
 }
+.hide-on-desktop {
+  display: inline-block;
+  @include mq($mq-narrow) {
+    display: none !important;
+  }
+}

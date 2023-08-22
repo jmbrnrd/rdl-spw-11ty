@@ -3,35 +3,32 @@ export default function () {
 
     console.log('promotion.js');
 
-    const eventsWidget = document.getElementById('eventsWidget');
-
     /**
      * eventsWidget is a 'placeholder' DOM element that we're using
      * to pass to our js the UI content (label etc.) from our
      * eleventy templates.
      */
-
-    // Abort if there is no eventsWidget in the DOM
+    const eventsWidget = document.getElementById('eventsWidget');
+    // If there is no eventsWidget in the DOM then abort.
     if (!eventsWidget) {
         console.log('No widget included.');
         return false;
     }
 
-    //
+    // This will be our widget label
     const eventWidgetLabel = eventsWidget.innerText;
     const restaurantId = document.querySelector('html').dataset.id;
-    let messagesLoaded = false;
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
+    let messagesLoaded = false;
 
     // Wait for page load
     window.addEventListener('load', function () {
         console.log(`Page loaded so fetch offers`);
         getOffers();
     });
-
 
     function getOffers() {
 
@@ -71,6 +68,7 @@ export default function () {
 
         console.log(offerData);
 
+        // we only want offers that are in date or marketing date range
         const offers = getValidPromos(offerData);
 
         // abort if no valid promotions are returned
@@ -101,7 +99,7 @@ export default function () {
         widgetContainer.append(widgetButtonLabel, widgetContent);
         widgetFragment.append(widgetContainer);
 
-        // replace the placeholder DOM element
+        // now replace our placeholder DOM element
         eventsWidget.replaceWith(widgetFragment);
 
         // reveal label after button is on screen
