@@ -15,8 +15,10 @@ export default function () {
         return false;
     }
 
+    console.log(eventsWidget.dataset.label);
+
     // This will be our widget label
-    const eventWidgetLabel = eventsWidget.innerText;
+    const eventWidgetLabel = eventsWidget.dataset.widgetLabel;
     const restaurantId = document.querySelector('html').dataset.id;
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
@@ -98,9 +100,7 @@ export default function () {
         // add to DOM
         widgetContainer.append(widgetButtonLabel, widgetContent);
         widgetFragment.append(widgetContainer);
-
-        // now replace our placeholder DOM element
-        eventsWidget.replaceWith(widgetFragment);
+        eventsWidget.append(widgetFragment);
 
         // reveal label after button is on screen
         widgetContainer.addEventListener('animationend', () => {
