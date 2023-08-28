@@ -18,9 +18,9 @@ brand:
     <div class="brand-container fade-in">
         <img class="brand-logo fade-in" src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
         <h2>{{ data.name }}</h2>
-<!--        <h3 class="subtitle">{{ data.subtitle }}</h3>-->
+
         <ul class="hero-nav fade-in">
-            {{> partials/nav-options }}
+            {{> partials/fullers/nav-options }}
         </ul>
         <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
     </div>
@@ -28,47 +28,47 @@ brand:
 </section>
 
 <main id="home">
-
     <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
-        <div class="content-block">
+        <div class="content-panel">
             <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
-                <!-- feature tags-->
-                <ul class="additional-features" aria-label="features">
-                    <!-- {{ data.features }} -->
-                    {{#each data.features }}
-                    <li>{{ this }}</li>
-                    {{/each}}
-                </ul>
             </div>
-            <!-- opening times -->
-            <aside id="hours" class="opening-times">
-                <dl>
-                    <dt>{{ section.about.tel }}</dt>
-                    <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                    <dt>{{ section.about.address }}</dt>
-                    <dd>{{ data.addressStreet }}</dd>
-                    <dd>{{ data.addressLocality }}</dd>
-                    <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>{{ section.about.openingTimes }}</dt>
-                    <dd class="times">{{ data.openingTimes }}</dd>
-
-                    <!-- Optional section tag start - Opening Notes -->
-                    <dt>{{ section.about.openingNotes }}</dt>
-                    <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - Opening Notes -->
-                </dl>
-            </aside>
         </div>
-
-        {{> partials/gallery }}
-
     </section>
 
-    <section id="times" class="content-section">
+    <section class="content-section full-width">
+        <h2 class="section-title">{{ section.about.features }}</h2>
+        <div class="bgd-color">
+        <div class="inner">
+        <ul class="" aria-label="features">
+            <!-- {{ data.features }} -->
+            {{#each data.features }}
+                <li>{{ this }}</li>
+            {{/each}}
+        </ul>
+        {{> partials/gallery }}
+        </div>
+        </div>
+    </section>
+
+
+
+    <section id="hours" class="content-section">
         <h2 class="section-title">{{ section.about.openingTimes }}</h2>
-        <div class="content-panel">Panel</div>
+        <div class="content-panel">
+            <!-- opening times -->
+            <div id="times" class="opening-times">
+                <div>
+                    <h3>{{ section.about.openingTimes }}</h3>
+                    <span class="times">{{ data.openingTimes }}</span>
+                </div>
+                <div>
+                    <h3>{{ section.about.openingNotes }}</h3>
+                    <span class="times">{{ data.openingNotes }}</span>
+                </div>
+            </div>
+        </div>
 
     </section>
 
@@ -203,14 +203,15 @@ brand:
             </div>
             <div id="map">Loading map</div>
         </div>
-
-
     </section>
 
+
+
 </main>
+<div id="eventsWidget" class="events-sticky" data-widget-label="{{{ button.promotions }}}"></div>
 
 {{> partials/fullers/footer }}
 
-<div id="eventsWidget" data-widget-label="{{{ button.promotions }}}"></div>
+
 
 

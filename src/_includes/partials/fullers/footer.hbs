@@ -9,9 +9,25 @@
                 </a>
                 <h3>{{ data.name }}</h3>
                 <address>{{ data.addressStreet }}, {{ data.addressLocality }}, {{ data.addressRegion }}, {{ data.postalCode }}</address>
-                <span>LICENSEE: <a href="">{{ data.contact }}</a></span>
-                <span>TEL: <a href="">{{ data.telephone }}</a></span>
-                <span>EMAIL: <a href="">{{ data.email }}</a></span>
+                <span>LICENSEE: <a href="mailto:" class="inline-link">{{ data.contact }}</a></span>
+                <span>TEL: <a href="tel:{{data.phone}}"  class="inline-link">{{ data.phone }}</a></span>
+                <span>EMAIL: <a href="mailto:{{data.email}}"  class="inline-link">{{ data.email }}</a></span>
+                <div class="social-links">
+                    <!-- {{ data.social.networks }} -->
+                    {{#each data.social.networks }}
+
+                            <a class="social-link" href="{{ this.url }}"
+                               target="_blank"
+                               aria-label="{{ this.alt }}">
+                                <img src="/assets/images/icon-{{ this.name }}.svg"
+                                     alt="{{ this.name }} logo"
+                                     width="28"
+                                     height="28">
+                            </a>
+
+
+                    {{/each}}
+                </div>
             </div>
 
     </div>

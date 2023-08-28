@@ -84,7 +84,7 @@ dd > a:not([class]), {
 }
 a.btn, button {
   background: $color-cta-bgd;
-  border-radius: $radius-sml;
+  border: 2px solid $color-cta-bgd;
   padding: 1rem 1.5rem;
   cursor: pointer;
   font-size: 1.6rem;
@@ -93,15 +93,18 @@ a.btn, button {
   color: white;
   text-transform: uppercase;
   &:hover {
-    background-color: $color-cta-bgd-dark;
+    background-color: white;
+    color: $color-cta-bgd;
   }
   &.hamburger {
     background-color: $color-nav-bgd;
+    color: $color-cta-bgd;
   }
 }
 .btn-cancel {
   background-color: transparent;
   color: $color-body-text;
+  border: 0;
   &:hover {
     background-color: #eee;
   }

@@ -27,7 +27,8 @@
       "address": "Address",
       "openingNotes": "Food Times",
       "openingTimes": "Opening Times",
-      "tel": "Telephone"
+      "tel": "Telephone",
+      "features": "Pub features"
     },
     "contacts": {
       "address": "Address",
