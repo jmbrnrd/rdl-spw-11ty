@@ -73,6 +73,15 @@
       "groups": "Group bookings",
       "private": "Private dining",
       "title": "Reservations"
+    },
+    "location": {
+      "title": "Find us",
+      "getInTouch": "Get in touch",
+      "getDirections": "Get directions",
+      "map": {
+        "styleId": "f547725f57ef2ea8",
+        "showInfo": "false"
+      }
     }
   }
 }

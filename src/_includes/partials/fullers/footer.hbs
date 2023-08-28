@@ -3,17 +3,22 @@
 
     <div class="footer-container">
 
-        <div class="brand-container">
-            <a href="https://www.fullers.co.uk/" aria-label="Link to Fuller's main website">
-                <img src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
-            </a>
-            <span><a href="https://www.fullers.co.uk/pubs/pub-finder" class="inline-link" aria-label="Link to Fuller's Pub Finder website">See More Pubs</a></span>
-        </div>
+            <div class="brand-container">
+                <a href="https://www.fullers.co.uk/" aria-label="Link to Fuller's main website">
+                    <img src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
+                </a>
+                <h3>{{ data.name }}</h3>
+                <address>{{ data.addressStreet }}, {{ data.addressLocality }}, {{ data.addressRegion }}, {{ data.postalCode }}</address>
+                <span>LICENSEE: <a href="">{{ data.contact }}</a></span>
+                <span>TEL: <a href="">{{ data.telephone }}</a></span>
+                <span>EMAIL: <a href="">{{ data.email }}</a></span>
+            </div>
 
     </div>
     <div class="footer-links-container">
         <span style="flex: 1;" aria-label="Copyright information">&copy; {{ year }}</span>
         <a href="https://www.fullers.co.uk/corporate/privacy-and-cookies" class="inline-link" aria-label="Link to privacy and cookie policies">Privacy & Cookies</a>
+        <a href="https://www.fullers.co.uk/pubs/pub-finder" class="inline-link" aria-label="Link to Fuller's Pub Finder website">More Pubs</a>
         <a href="https://www.fullers.co.uk/corporate/terms-of-use" class="inline-link" aria-label="Link to the terms of use">Terms of Use</a>
     </div>
 

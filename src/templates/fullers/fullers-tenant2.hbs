@@ -18,7 +18,7 @@ brand:
     <div class="brand-container fade-in">
         <img class="brand-logo fade-in" src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
         <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }}</h3>
+<!--        <h3 class="subtitle">{{ data.subtitle }}</h3>-->
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}
         </ul>
@@ -68,16 +68,85 @@ brand:
 
     <section id="times" class="content-section">
         <h2 class="section-title">{{ section.about.openingTimes }}</h2>
+        <div class="content-panel">Panel</div>
 
     </section>
 
-    {{> partials/menus }}
+    <!-- Optional section tag start - HTML Menus -->
+    <section id="menus" class="content-section" aria-label="Menus">
 
-    {{> partials/menu-downloads }}
+        <h2 class="section-title">{{ section.menus.title }}</h2>
+
+        <div class="content-panel">
+            <div class="menu-html">
+                <p>{{ data.menus.overview }}</p>
+
+                <!-- sample Menu -->
+                <div class="content-sub-section" aria-label="Sample menu">
+                    <div class="menu-html">
+                        <ul class="menu-key">
+                            <li>
+                                <i class="vt" aria-hidden="true"></i>
+                                {{ section.menus.label.veggie }}
+                            </li>
+                            <li><i class="vg" aria-hidden="true"></i>{{ section.menus.label.veggie
+                            }}</li>
+                            <li><i class="gf" aria-hidden="true"></i>{{ section.menus.label.gluten
+                            }}</li>
+                        </ul>
+                        <!-- {{ data.menus.sections }} -->
+                        {{#each data.menus.sections }}
+                            <div id="menu_section_{{@index}}" class="menu-section">
+                                <h3 class="menu-section-title">{{ name }}</h3>
+                                <ul class="menu-items">
+                                    {{#each dishes }}
+                                        <li>
+                                            <h4>{{ name }}</h4>
+                                            <span>£{{ price }}</span>
+                                            <span>{{ description }}</span>
+                                            {{#each attributes}}
+                                                <i class="{{ this }}"></i>
+                                            {{/each}}
+                                        </li>
+                                    {{/each }}
+                                </ul>
+                            </div>
+                        {{/each}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional section tag end - HTML Menus -->
+
+    <!-- Optional section tag start - Downloadable Menus -->
+    <section class="content-section menu-pdf" id="pdfMenus" aria-label="menu downloads">
+        <h2 class="section-title">{{ section.menuDownloads.title }}</h2>
+        <div class="content-panel">
+        <p>{{ section.menuDownloads.info }}</p>
+        <div class="content-block menu-downloads">
+            <!-- {{ data.menus.pdfs }} -->
+            {{#each data.menus.pdfs }}
+                <div class="menu-card-container">
+                    <a class="menu-card"
+                       download="{{ name }}-{{ date }}"
+                       href="{{ path }}"
+                       aria-label="{{ ../section.menuDownloads.alt }} {{ ../data.name }} {{ name }}">
+                        <h3>{{ name }}</h3>
+                        <span>Published: {{ date }}</span>
+                    </a>
+                </div>
+            {{/each }}
+        </div>
+        </div>
+    </section>
+    <!-- Optional section tag end - Downloadable Menus -->
 
     <!-- RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">{{ section.reservations.title }}</h2>
+        <div class="content-panel">
         <p>{{ data.reservations.info }}</p>
 
         {{> partials/booking-request }}
@@ -100,9 +169,43 @@ brand:
             <!-- Optional section tag end - Bookings Private -->
 
         </div>
+        </div>
     </section>
 
-    {{> partials/map }}
+    <!-- location -->
+    <section id="find" class="content-section" aria-label="location map">
+        <h2 class="section-title">{{ section.location.title }}</h2>
+        <div class="map-section">
+            <div class="content-panel"
+                 id="location"
+                 data-bkg-id="{{ data.mozrest.id }}"
+                 data-bkg-key="{{ data.mozrest.key }}"
+                 data-lat="{{ data.geocode.lat }}"
+                 data-lng="{{ data.geocode.lng }}"
+                 data-label="{{ data.name }}"
+                 data-map-style-id="{{ data.location.map.styleId }}"
+                 data-map-show-info="true"
+                 data-intersection="300">
+                <h3>Find us</h3>
+                <p>{{ data.name }}, {{ data.addressStreet }}, {{ data.addressLocality }}, {{ data.addressRegion }}, {{ data.postalCode }}</p>
+                <a class="btn btn-map-directions"
+                   target="_blank"
+                   href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">
+                {{ section.location.getDirections }}
+                </a>
+                <h3>Get in Touch</h3>
+                <p>Have a question or query? Get in touch with {{ data.name }}</p>
+                <a class="btn btn-map-directions"
+                   target="_blank"
+                   href="mailto:{{ data.email }}">
+                {{ section.location.getInTouch }}
+                </a>
+            </div>
+            <div id="map">Loading map</div>
+        </div>
+
+
+    </section>
 
 </main>
 

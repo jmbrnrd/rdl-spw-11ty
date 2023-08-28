@@ -1,0 +1,71 @@
+
+// basics
+$color-black                  : hsla(0, 0%, 20%, 1);
+$color-white                  : hsla(0, 0%, 100%, 1);
+$color-grey                   : var(--clr-grey-500, hsla(0, 0%, 50%, 1));
+$color-grey-light             : var(--clr-grey-100, hsla(0, 0%, 80%, 1));
+$color-grey-dark              : var(--clr-grey-800, hsla(213, 5%, 39%, 1));
+$color-warn                   : var(--clr-warn, hsla(344, 100%, 41%, 1));
+$color-success                : var(--clr-success, hsla(147, 98%, 35%, 1));
+
+// primaries
+$color-primary                : var(--clr-primary-500, hsla(0, 0%, 20%, 1));
+$color-primary-light          : var(--clr-primary-100, hsla(0, 0%, 90%, 1));
+$color-primary-dark           : var(--clr-primary-900, hsla(0, 0%, 15%, 1));
+
+// accents
+$color-cta-bgd                : var(--clr-accent-500, hsla(187, 100%, 42%, 1));
+$color-cta-label-light        : var(--clr-accent-100, hsla(187, 100%, 90%, 1));
+$color-cta-bgd-dark           : var(--clr-accent-900, hsla(187, 100%, 37%, 1));
+
+// body
+$color-body-bgd               : $color-white;
+$color-body-text              : var(--clr-grey-700, $color-black);
+$color-body-text-accent       : var(--clr-accent-700, $color-cta-bgd);
+$color-body-header            : var(--clr-grey-900, $color-black);
+
+// navigation
+$color-nav-bgd                : var(--clr-primary-500, $color-black);
+$color-nav-menu               : var(--clr-primary-50, $color-white);
+$color-nav-label              : $color-white;
+
+// fonts
+$font-family-default          : Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-family-display          : 'suez one', sans-serif;
+$font-weight-normal           : 400;
+$font-weight-bold             : 600;
+
+$icon-fill-color              : $color-cta-bgd ;
+
+// layouts
+$layout-max-width             : 1088px;
+$mq-narrow                    : 35em; // 700px
+$mq-medium                    : 48em; // 960px
+$mq-wide                      : 59em; // 1200px
+$radius-sml                   : 5px;
+$modal-box-shadow             : rgba(0, 0, 0, 0.25) 0 54px 55px,
+rgba(0, 0, 0, 0.12) 0 -12px 30px,
+rgba(0, 0, 0, 0.12) 0 4px 6px,
+rgba(0, 0, 0, 0.17) 0 12px 13px,
+rgba(0, 0, 0, 0.09) 0 -3px 5px;
+
+// Hamburger button
+$hamburger-padding            : 8px 12px ;
+$hamburger-layer-color        : $color-nav-bgd;
+$hamburger-line-width         : 40px !default;
+$hamburger-line-height        : 4px !default;
+$hamburger-line-spacing       : 6px !default;
+$hamburger-line-color         : $color-nav-menu;
+$hamburger-line-border-radius : 2px !default;
+$hamburger-hover-trans-dur    : 0.15s !default;
+$hamburger-hover-trans-func   : linear !default;
+
+$rdl-width                    : 360px;
+$rdl-height                   : 480px;
+$rdl-radius                   : 12px;
+$btn-size                     : 64px;
+$btn-size-max                 : 75vw;
+$shadow                       : rgba(0, 0, 0, 0.3) 0px 19px 38px,
+rgba(0, 0, 0, 0.22) 0px 15px 12px;
+$width-promo-btn              : 400px;
+

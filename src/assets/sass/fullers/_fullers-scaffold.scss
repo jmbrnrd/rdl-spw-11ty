@@ -6,7 +6,7 @@ body {
   background-color: $color-nav-bgd;
 }
 main {
-  background-color: $color-body-bgd;
+  background-color: #eaeced;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAD1BMVEUAAAAYFxcJCAgZGRkZEBBrtvCgAAAABXRSTlMAFgUJD/CvasEAAAJkSURBVEjHZZWLkaMwEAWFfAEM6ALYyUDUEYBvyT+nHeaN3S52Py4ktVs0/tBGe/8s83r0PD6ZflhbJ6Mn0Aa0W9tQdUuoDhFZM0c13tCfiahZe3ZUxxtavhBdUEPlPHyIEkoVeZ5xiASFiryCNkSCUkWe5wGiglCNhIgLUUGpIs8zDlFBqJx/RIJQLVPAiQgoVJUnaEMElKqq8oqTCAhVsK64EgGhOgJSXImAULn+EN2gUXlecY/1N3T4VJ5X3B6b3qHRh/JccQ/L0weq1Zl5rrhdLJD26SPzPOKUtt2hZSrQ81dp5x1yXauAvZ0pyjkgPgMztvW21TWqPKBRl72bd5MoAoAqrlTDY22vSaCKK9Xhy5dEkQdUcaVyd4mUB0RIH8t+vkTNgSqu5v+tm0TkBUScVOuQiLyA6JBq/f/5XQQUcSysuUJeQopjYf04PoGIu/h1MHCgKw7R7qEiD2gwbd5HIw+oG6LYwid5QMQtFtCHagMibs2TRXUCOaIcoHKgA5HmfZL3ggYi3u3kJdQNUUKougkiLkQFodoEEReiglCdL8gRFYTKX9CBSNOoIq+ggQioj8oT1K1EQKi6CYq4EgGh2hKquHV+QsycgjxF426qu7MLOnRGd+hhPjMvoaEzGjdomX0oL6BuStvvkAK7XVDEZdpyg/YK3C5omSmqSKBR1+q8IE8RtxK+KaXyCzpeFxuI24/PyAtopEh+oNq9j8iz9m0SVR5QjWY3a+MpEdM8RaotNDNF5DlxUp0BSUSeEyeVW/srEfPOMzTew6QROzh7S7UqjRcCiGm32oMF7tJvlf0AAbVMF4h+8ZkAAAAASUVORK5CYII=");
 }
 
@@ -23,17 +23,30 @@ footer {
     place-content: center center;
     .brand-container {
       display: grid;
-      place-content: space-around center;
+      justify-content: center;
       padding-bottom: 2rem;
+      font-family: "Roboto Condensed", sans-serif;
       img {
-        height: 150px;
+        width: 250px;
         object-fit: cover;
+        margin-inline: auto;
       }
       span { text-align: center;}
       a {
         display: inline;
         text-align: center;
         color: #87704c;
+      }
+      address {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+      }
+      h3 {
+        font-family: $font-family-display;
+        text-transform: none;
+        text-align: center;
+        color: white;
+        margin-bottom: 1.6rem;
       }
     }
 
@@ -94,6 +107,7 @@ footer {
   // duplicated to provide fallback where svh is unsupported
   height: 100vh;
   height: 100svh;
+
   display: grid;
   place-items: center;
   > * {
@@ -199,7 +213,7 @@ footer {
 .content-section {
   max-width: $layout-max-width;
   margin: 0 auto;
-  padding: 1rem 32px 2rem;
+  padding: 1rem 0 2rem;
   @include mq($mq-medium) {
     padding-top: 4rem;
   }
@@ -231,6 +245,10 @@ footer {
   max-width: 100vw;
   padding: 0;
   margin:0;
+}
+.content-panel {
+  background-color: white;
+  padding: 5rem;
 }
 .content-block {
   display: flex;

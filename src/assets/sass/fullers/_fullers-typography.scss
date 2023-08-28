@@ -1,6 +1,9 @@
 @use '../vars' as *;
 
 $font-family-display          : 'Suez One', sans-serif;
+$font-family-default          : Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-weight-normal           : 400;
+$font-weight-bold             : 600;
 
 /* Set base font size to 62.5% (10px) to simplify the use of REM i.e. 1.6rem = 16px etc. */
 html {

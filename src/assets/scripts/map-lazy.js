@@ -10,14 +10,15 @@ export default function (){
     // Get color from html
     const clrMarker = getComputedStyle(document.documentElement)
         .getPropertyValue('--clr-accent-500') || '#000';
-    // styles set up in Maps Api Account
-    const mapId = 'f547725f57ef2ea8';
     // section element
     const elem =  document.getElementById('location');
     const center = {
         lat: Number(elem.dataset.lat),
         lng: Number(elem.dataset.lng)
     };
+    // styles set up in Maps Api Account
+    // const mapId = 'f547725f57ef2ea8';
+    const mapId = elem.dataset.mapStyleId;
     const zoom = 14;
     // Google maps loader
     const loader = new Loader({
@@ -58,17 +59,20 @@ export default function (){
                             //animation: google.maps.Animation.DROP,
                             ariaLabel: 'Restaurant location marker'
                         });
-                        // info window
-                        const infowindow = new google.maps.InfoWindow({
-                            content:  `<div class="map-infowindow">` +
-                                `<h3>${elem.dataset.label}</h3>` +
-                                `</div>`,
-                            maxWidth: 240,
-                        });
-                        marker.addListener('click', () => {
-                            infowindow.open(map, marker);
-                        });
-                        infowindow.open(map, marker);
+                        if (elem.dataset.mapShowInfo === "true") {
+                            // info window
+                            const infowindow = new google.maps.InfoWindow({
+                                content:  `<div class="map-infowindow">` +
+                                    `<h3>${elem.dataset.label}</h3>` +
+                                    `</div>`,
+                                maxWidth: 240,
+                            });
+                            marker.addListener('click', () => {
+                                infowindow.open(map, marker);
+                            });
+                            //infowindow.open(map, marker);
+                        }
+
                     });
                     console.log('Map loaded now');
                     // once loaded remove observer
