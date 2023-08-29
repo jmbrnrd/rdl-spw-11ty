@@ -1,4 +1,5 @@
 @use '../vars' as *;
+@use "../mixins" as *;
 
 $font-family-display          : 'Suez One', sans-serif;
 $font-family-default          : Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -9,8 +10,11 @@ $font-weight-bold             : 600;
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  scroll-padding-top: 8rem;
+  scroll-padding-top: 0.5rem;
   font-family: $font-family-default;
+  @include mq($mq-medium) {
+    scroll-padding-top: 6.2rem;
+  }
 }
 
 /* Set core body defaults */
@@ -82,7 +86,8 @@ dd > a:not([class]), {
     background: $color-body-text-accent;
   }
 }
-a.btn, button {
+a.btn,
+button:not(.hamburger) {
   background: $color-cta-bgd;
   border: 2px solid $color-cta-bgd;
   padding: 1rem 1.5rem;

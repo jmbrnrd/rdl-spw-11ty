@@ -9,7 +9,9 @@ main {
   position: relative;
   background-color: #eaeced;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABHBAMAAACnnkcsAAAAD1BMVEUAAAAYFxcJCAgZGRkZEBBrtvCgAAAABXRSTlMAFgUJD/CvasEAAAJkSURBVEjHZZWLkaMwEAWFfAEM6ALYyUDUEYBvyT+nHeaN3S52Py4ktVs0/tBGe/8s83r0PD6ZflhbJ6Mn0Aa0W9tQdUuoDhFZM0c13tCfiahZe3ZUxxtavhBdUEPlPHyIEkoVeZ5xiASFiryCNkSCUkWe5wGiglCNhIgLUUGpIs8zDlFBqJx/RIJQLVPAiQgoVJUnaEMElKqq8oqTCAhVsK64EgGhOgJSXImAULn+EN2gUXlecY/1N3T4VJ5X3B6b3qHRh/JccQ/L0weq1Zl5rrhdLJD26SPzPOKUtt2hZSrQ81dp5x1yXauAvZ0pyjkgPgMztvW21TWqPKBRl72bd5MoAoAqrlTDY22vSaCKK9Xhy5dEkQdUcaVyd4mUB0RIH8t+vkTNgSqu5v+tm0TkBUScVOuQiLyA6JBq/f/5XQQUcSysuUJeQopjYf04PoGIu/h1MHCgKw7R7qEiD2gwbd5HIw+oG6LYwid5QMQtFtCHagMibs2TRXUCOaIcoHKgA5HmfZL3ggYi3u3kJdQNUUKougkiLkQFodoEEReiglCdL8gRFYTKX9CBSNOoIq+ggQioj8oT1K1EQKi6CYq4EgGh2hKquHV+QsycgjxF426qu7MLOnRGd+hhPjMvoaEzGjdomX0oL6BuStvvkAK7XVDEZdpyg/YK3C5omSmqSKBR1+q8IE8RtxK+KaXyCzpeFxuI24/PyAtopEh+oNq9j8iz9m0SVR5QjWY3a+MpEdM8RaotNDNF5DlxUp0BSUSeEyeVW/srEfPOMzTew6QROzh7S7UqjRcCiGm32oMF7tJvlf0AAbVMF4h+8ZkAAAAASUVORK5CYII=");
-  padding-bottom: 6.2rem;
+  @include mq($mq-medium) {
+    padding-bottom: 6.2rem;
+  }
 }
 
 footer {
@@ -259,15 +261,18 @@ footer {
     padding-top: 4rem;
   }
   .section-title {
-    font-size: 3.25rem;
-    font-weight: $font-weight-bold;
+    font-size: 2.4rem;
+    //font-weight: $font-weight-bold;
     text-align: left;
     font-family: 'suez one', sans-serif;
     color: $color-primary;
+    margin-inline: 3rem;
     margin-bottom: 3rem;
 
     @include mq($mq-medium) {
+      font-size: 3.2rem;
       text-align: center;
+      margin-inline: 0;
       // Fuller's decorative
       &::after {
         margin-left: 2rem;
@@ -289,8 +294,14 @@ footer {
       color: white;
       ul {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1rem;
+        @include mq($mq-medium) {
+          grid-template-columns: 1fr 1fr;
+        }
+        @include mq($mq-wide) {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
         li {
           &::before {
             color: rgb(207, 10, 43);
@@ -320,7 +331,12 @@ footer {
 }
 .content-panel {
   background-color: white;
-  padding: 6.2rem;
+  padding: 2.4rem;
+  margin: 2rem;
+  @include mq($mq-wide) {
+    padding: 6.2rem;
+    margin: 0;
+  }
 }
 .content-block {
   display: flex;
@@ -360,10 +376,13 @@ footer {
 }
 .opening-times {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-content: center;
   gap: 10vw;
   margin-top: 2rem;
+  @include mq($mq-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
   h3 {
     font-family: $font-family-display;
     text-align: center;
