@@ -55,7 +55,7 @@
     "menuDownloads": {
       "alt": "Open",
       "info": "Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.",
-      "title": "Downloadable Menus"
+      "title": "View Our Menus"
     },
     "menus": {
       "alt": {
@@ -68,7 +68,7 @@
         "vegan": "Vegan",
         "veggie": "Vegetarian"
       },
-      "title": "Our Menus"
+      "title": "Eat & Drink"
     },
     "reservations": {
       "groups": "Group bookings",

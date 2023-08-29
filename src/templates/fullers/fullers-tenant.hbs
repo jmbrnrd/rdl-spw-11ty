@@ -3,12 +3,7 @@ title: "Fullers Tenant's Template"
 language: "en"
 layout: "layouts/fullers.hbs"
 gtag: ""
-permalink: "/templates/fullers-tenant-{{ pkg.version }}.html"
-brand:
-    name: "fullers"
-    prefix: "full"
-    url: "https://apptiser.io/"
-    theme: "fullers"
+permalink: "/templates/fullers-{{ pkg.version }}.html"
 ---
 
 <!-- mobile nav -->
@@ -122,7 +117,7 @@ brand:
 
 </main>
 
-{{> partials/fullers/footer-fullers }}
+{{> partials/fullers/footer }}
 
 <div id="eventsWidget" data-widget-label="{{{ button.promotions }}}"></div>
 

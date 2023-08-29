@@ -3,7 +3,7 @@ title: "Fullers Tenant's Template"
 language: "en"
 layout: "layouts/fullers.hbs"
 gtag: ""
-permalink: "/templates/fullers-tenant2-{{ pkg.version }}.html"
+permalink: "/templates/fullers-tenant-{{ pkg.version }}.html"
 brand:
     name: "fullers"
     prefix: "full"
@@ -190,10 +190,7 @@ brand:
                 <p>{{ data.name }}, {{ data.addressStreet }}, {{ data.addressLocality }}, {{ data.addressRegion }}, {{ data.postalCode }}</p>
                 <a class="btn btn-map-directions"
                    target="_blank"
-                   href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">
-                {{ section.location.getDirections }}
-                </a>
-                <h3>Get in Touch</h3>
+                   href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">{{ section.location.getDirections }}</a>
                 <p>Have a question or query? Get in touch with {{ data.name }}</p>
                 <a class="btn btn-map-directions"
                    target="_blank"
@@ -201,12 +198,9 @@ brand:
                 {{ section.location.getInTouch }}
                 </a>
             </div>
-            <div id="map">Loading map</div>
+            <div id="map">Loading map...</div>
         </div>
     </section>
-
-
-
 </main>
 <div id="eventsWidget" class="events-sticky" data-widget-label="{{{ button.promotions }}}"></div>
 
