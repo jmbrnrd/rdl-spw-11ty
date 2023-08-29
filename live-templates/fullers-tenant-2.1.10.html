@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.9" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.10" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -48,7 +48,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/brands/fullers/favicon.ico">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/brands/fullers/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/brands/fullers/manifest.json?v=2.1.9">
+    <link rel="manifest" href="https://assets.apptiser.io/brands/fullers/manifest.json?v=2.1.10">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,11 +66,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/fullers.css?v=2.1.9" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/fullers.css?v=2.1.10" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/fullers.css?v=2.1.9" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/fullers.css?v=2.1.10" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.9" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.10" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id="></script>
     <script>
@@ -163,7 +163,7 @@
         <div class="bgd-color">
         <div class="inner">
         <ul class="" aria-label="features">
-            !-- Loop section tag start - Features
+            <!-- Loop section tag start - Features
             {{#each features}}
             <li>{{ this }}</li>
             {{/each}}
@@ -465,7 +465,7 @@
                 </a>
                 <h3>{{ name }}</h3>
                 <address>{{ addressStreet }}, {{ addressLocality }}, {{ addressRegion }}, {{ postalCode }}</address>
-                <span>LICENSEE: <a href="mailto:" class="inline-link"></a></span>
+                <span>LICENSEE: <a href="mailto:" class="inline-link"></a>{{ licensee }}</span>
                 <span>TEL: <a href="tel:{{ phone }}"  class="inline-link">{{ phone }}</a></span>
                 <span>EMAIL: <a href="mailto:{{ email }}"  class="inline-link">{{ email }}</a></span>
                 <!-- Optional section tag start - Links -->
@@ -474,10 +474,8 @@
                     {{#each social.networks }}
                     <div>
                         <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                            <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
-                            .name }} logo" width="28" height="28">
+                            <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo" width="28" height="28">
                         </a>
-                        <span>{{ this.name }}</span>
                     </div>
                     {{/each}}
                     Loop section tag end - Social -->

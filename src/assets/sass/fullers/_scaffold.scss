@@ -378,7 +378,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
-  gap: 10vw;
+  gap: 5vw;
   margin-top: 2rem;
   @include mq($mq-medium) {
     grid-template-columns: 1fr 1fr;
