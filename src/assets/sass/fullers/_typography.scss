@@ -86,6 +86,7 @@ dd > a:not([class]), {
     background: $color-body-text-accent;
   }
 }
+.btn,
 a.btn,
 button:not(.hamburger) {
   background: $color-cta-bgd;
@@ -107,11 +108,11 @@ button:not(.hamburger) {
   }
 }
 .btn-cancel {
-  background-color: transparent;
-  color: $color-body-text;
-  border: 0;
+  background-color: transparent !important;
+  color: $color-body-text !important;
+  border: none !important;
   &:hover {
-    background-color: #eee;
+    background-color: #eee !important;
   }
 }
 

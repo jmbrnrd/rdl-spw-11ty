@@ -1,8 +1,8 @@
 {
   "button": {
-    "send": "Send",
-    "cancel": "Cancel",
-    "bkgRequest": "Booking Request",
+    "send": "Envoyer",
+    "cancel": "Annuler",
+    "bkgRequest": "Table disponsible",
     "book": "Book Now",
     "directions": "Get Directions"
   },
@@ -11,11 +11,11 @@
   },
   "nav": {
     "label": {
-      "about": "About",
-      "hours": "Opening times",
+      "about": "Description",
+      "hours": "Horaires",
       "backToTop": "Return to start of page",
-      "contacts": "Contacts",
-      "location": "Location",
+      "contacts": "Coordonnees",
+      "location": "Localisation",
       "menuMobile": "Mobile navigation menu",
       "menus": "Menus",
       "reservations": "Reservations"
@@ -23,13 +23,16 @@
   },
   "section": {
     "about": {
-      "address": "Address",
-      "openingNotes": "Please note",
-      "openingTimes": "Opening Times",
-      "tel": "Telephone"
+      "title": "Description",
+      "address": "Adresse",
+      "openingNotes": "Notez s'il vous plaît",
+      "openingTimes": "Horaires",
+      "tel": "Téléphone",
+      "features": "Features",
+      "description": "Description"
     },
     "contacts": {
-      "address": "Address",
+      "address": "Adresse",
       "alt": {
         "email": "Email address"
       },
@@ -52,16 +55,14 @@
     },
     "menuDownloads": {
       "alt": "Open",
-      "info": "Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.",
-      "title": "Downloadable Menus",
-      "aria": "Menu downloads"
+      "info": "Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.",
+      "title": "Menus téléchargeables"
     },
     "menus": {
       "alt": {
-        "gluten": "This dish is gluten-free",
-        "vegan": "Suitable for vegans",
-        "veggie": "Suitable for vegetarians",
-        "aria": "Sample menu"
+        "gluten": "Sans gluten",
+        "vegan": "Végétalien",
+        "veggie": "Végétarien"
       },
       "label": {
         "gluten": "Gluten-free",
@@ -71,10 +72,9 @@
       "title": "Our Menus"
     },
     "reservations": {
-      "groups": "Group bookings",
-      "private": "Private dining",
-      "title": "Reservations",
-      "aria": "Booking widget"
+      "groups": "Réservation de groupe",
+      "private": "Dîner privé",
+      "title": "Reservations"
     }
   }
 }

@@ -1,11 +1,11 @@
 ---
 title: "RI SPW"
-language: "en"
+language: "fr"
 layout: "layouts/member.hbs"
 gtag: "G-RX7PGJKJGS"
 permalink: "/templates/ri-member-{{ pkg.version }}.html"
 brand:
-    name: "Restaurateurs Independants"
+    name: "Restaurateurs Indépendants"
     prefix: "ri"
     url: "https://restaurateursindependants.fr/"
     theme: "collective"
@@ -26,13 +26,7 @@ brand:
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
-        <li><a href="#about" title="About ">About</a></li>
-        <!-- Optional section tag start - Menus NavBar -->
-        <li><a href="#menus" title="Menus ">Menus</a></li>
-        <!-- Optional section tag end - Menus NavBar -->
-        <li><a href="#reservations" title="Reservations">Reservation</a></li>
-        <li><a href="#contacts" title="Contact ">Contacts</a></li>
-        <li><a href="#location" title="Find ">Location</a></li>
+        {{> partials/nav-options }}
     </ul>
 </nav>
 
@@ -42,13 +36,7 @@ brand:
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
-            <li><a href="#about" title="About ">About</a></li>
-            <!-- Optional section tag start - Menus Hero -->
-            <li><a href="#menus" title="Menus ">Menus</a></li>
-            <!-- Optional section tag end - Menus Hero -->
-            <li><a href="#reservations" title="Reservations">Reservations</a></li>
-            <li><a href="#contacts" title="Contact">Contacts</a></li>
-            <li><a href="#location" title="Find">Location</a></li>
+            {{> partials/nav-options }}
         </ul>
         <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
     </div>
@@ -58,7 +46,7 @@ brand:
 <main id="home">
 
     <!-- about -->
-    <section id="about" class="content-section" aria-label="introduction">
+    <section id="about" class="content-section" aria-label="{{ section.about.title }}">
         <div class="content-block">
             <div class="description desc-full" aria-label="description">
                 <p>{{ data.description.full }}</p>
@@ -84,7 +72,7 @@ brand:
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }}</dd>
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>Opening Times</dt>
+                    <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
 
                     <!-- Optional section tag start - Opening Notes -->
@@ -170,7 +158,7 @@ brand:
 
 </main>
 
-{{> partials/footer-collective }}
+{{> partials/footer-generated-by }}
 
 
 

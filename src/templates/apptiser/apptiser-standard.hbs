@@ -34,17 +34,16 @@ brand:
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
         <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }} {{ lookup (lookup lang brand.name) 'label' }}</h3>
+        <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}
         </ul>
-        <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
+        <span class="desc-one-sentence fade-in">{{ data.description.sentence }}</span>
     </div>
     {{> partials/hero-image }}
 </section>
 
 <main id="home">
-
     <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
@@ -68,7 +67,6 @@ brand:
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
-
                     <!-- Optional section tag start - Opening Notes -->
                     <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
@@ -86,7 +84,7 @@ brand:
     {{> partials/menu-downloads }}
 
     <!-- RESERVATIONS -->
-    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
+    <section id="reservations" class="content-section booking-section" aria-label="{{ section.reservations.aria }}">
         <h2 class="section-title">{{ section.reservations.title }}</h2>
         <p>{{ data.reservations.info }}</p>
 
@@ -118,6 +116,6 @@ brand:
 
 </main>
 
-{{> partials/footer-apptiser }}
+{{> partials/footer-standard }}
 
 

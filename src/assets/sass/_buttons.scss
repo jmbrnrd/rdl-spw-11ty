@@ -1,0 +1,34 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+.btn,
+a.btn,
+button:not(.hamburger) {
+  background: $color-cta-bgd;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-default;
+  letter-spacing: 1px;
+  color: hsl(0, 0%, 100%, .75);
+  text-transform: uppercase;
+  transition: background-color .3s ease-out;
+  &:hover {
+    background-color:$color-cta-bgd-dark;
+    color: white;
+  }
+  &.hamburger {
+    background-color: $color-nav-bgd;
+    color: $color-cta-bgd;
+  }
+}
+.btn-cancel {
+  background-color: transparent !important;
+  color: $color-body-text !important;
+  border: none;
+  &:hover {
+    background-color: #eee !important;
+  }
+}

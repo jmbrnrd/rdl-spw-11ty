@@ -1,4 +1,4 @@
-import map from "./map";
+import map from "./map-lazy";
 import formatting from "./formatting";
 import claim from './claim';
 import gallery from './gallery';

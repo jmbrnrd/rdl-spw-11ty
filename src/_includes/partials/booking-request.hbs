@@ -1,6 +1,10 @@
 <!-- Optional section tag start - Widget -->
 <div class="booking-request-container">
-    <form class="form-booking-request" id="bkgRequestForm" data-daysinadvance="{{ data.reservations.bkgAdvDays }}" data-maxcovers="{{ data.reservations.maxcover }}">
+    <form class="form-booking-request"
+          id="bkgRequestForm"
+          aria-label="Booking request form"
+          data-daysinadvance="{{ data.reservations.bkgAdvDays }}"
+          data-maxcovers="{{ data.reservations.maxcover }}">
         <div class="selector">
             <div class="selector-substitute">
                 <div class="icon icon-covers"></div>
@@ -62,7 +66,7 @@
             </div>
 
         </div>
-        <button>{{ button.bkgRequest }}</button>
+        <button class="btn" aria-label="Make a booking request">{{ button.bkgRequest }}</button>
     </form>
 </div>
 
@@ -108,7 +112,7 @@
                 <!-- Actions -->
                 <div class="modal-actions">
                     <button id="btnCancel" type="button" class="btn-cancel">CANCEL</button>
-                    <button id="btnSubmit" type="submit" class="btn-submit">SEND REQUEST</button>
+                    <button id="btnSubmit" type="submit" class="btn">SEND REQUEST</button>
                 </div>
             </form>
         </div>

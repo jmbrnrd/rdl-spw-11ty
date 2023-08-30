@@ -33,13 +33,15 @@
     "contacts": {
       "address": "Address",
       "alt": {
-        "email": "Email address"
+        "email": "Email address",
+        "licensee": "Contact email"
       },
       "links": "Links",
       "parking": "Parking",
       "tel": "Telephone",
       "title": "Contacts",
-      "transport": "Public Transport"
+      "transport": "Public Transport",
+      "licensee": "Licensee"
     },
     "gallery": {
       "alt": {
