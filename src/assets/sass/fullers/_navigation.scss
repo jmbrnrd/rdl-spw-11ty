@@ -1,4 +1,4 @@
-@use '../vars' as *;
+@use 'vars' as *;
 @use '../mixins' as *;
 
 /*
@@ -41,7 +41,7 @@ nav {
     align-items: center;
     .logo-mobile {
       display: inline-block;
-      height: 100px;
+      height: 62px;
       width: auto;
     }
     .logo {
