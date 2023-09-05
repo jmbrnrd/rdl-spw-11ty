@@ -27,32 +27,30 @@ brand:
 </section>
 
 <main id="home">
-    <!-- ABOUT -->
-    <section id="about" class="content-section" aria-label="introduction">
+    <!-- About -->
+    <section id="about" class="content-section" aria-label="Pub description">
         <div class="content-panel">
             <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
             </div>
         </div>
     </section>
-
+    <!-- Pub features -->
     <section class="content-section full-width">
         <h2 class="section-title">{{ section.about.features }}</h2>
         <div class="bgd-color">
-        <div class="inner">
-        <ul class="" aria-label="features">
-            <!-- {{ data.features }} -->
-            {{#each data.features }}
-                <li>{{ this }}</li>
-            {{/each}}
-        </ul>
-        {{> partials/gallery }}
-        </div>
+            <div class="inner">
+                <ul class="" aria-label="Pub features">
+                    <!-- {{ data.features }} -->
+                    {{#each data.features }}
+                        <li>{{ this }}</li>
+                    {{/each}}
+                </ul>
+                {{> partials/gallery }}
+            </div>
         </div>
     </section>
-
-
-
+    <!-- Opening times -->
     <section id="hours" class="content-section">
         <h2 class="section-title">{{ section.about.openingTimes }}</h2>
         <div class="content-panel">
@@ -68,18 +66,14 @@ brand:
                 </div>
             </div>
         </div>
-
     </section>
-
+    <!-- Menus -->
     <!-- Optional section tag start - HTML Menus -->
     <section id="menus" class="content-section" aria-label="Menus">
-
         <h2 class="section-title">{{ section.menus.title }}</h2>
-
         <div class="content-panel">
             <div class="menu-html">
                 <p>{{ data.menus.overview }}</p>
-
                 <!-- sample Menu -->
                 <div class="content-sub-section" aria-label="Sample menu">
                     <div class="menu-html">
@@ -88,10 +82,13 @@ brand:
                                 <i class="vt" aria-hidden="true"></i>
                                 {{ section.menus.label.veggie }}
                             </li>
-                            <li><i class="vg" aria-hidden="true"></i>{{ section.menus.label.veggie
-                            }}</li>
-                            <li><i class="gf" aria-hidden="true"></i>{{ section.menus.label.gluten
-                            }}</li>
+                            <li>
+                                <i class="vg" aria-hidden="true"></i>
+                                {{ section.menus.label.veggie }}</li>
+                            <li>
+                                <i class="gf" aria-hidden="true"></i>
+                                {{ section.menus.label.gluten }}
+                            </li>
                         </ul>
                         <!-- {{ data.menus.sections }} -->
                         {{#each data.menus.sections }}
@@ -99,19 +96,18 @@ brand:
                                 <h3 class="menu-section-title">{{ name }}</h3>
                                 <ul class="menu-items">
                                     {{#each dishes }}
-                                        <li>
-                                            <h4>{{ name }}</h4>
-                                            <span>£{{ price }}</span>
-                                            <span>{{ description }}</span>
-                                            {{#each attributes}}
-                                                <i class="{{ this }}"></i>
-                                            {{/each}}
-                                        </li>
+                                    <li>
+                                        <h4>{{ name }}</h4>
+                                        <span>£{{ price }}</span>
+                                        <span>{{ description }}</span>
+                                        {{#each attributes}}
+                                            <i class="{{ this }}"></i>
+                                        {{/each}}
+                                    </li>
                                     {{/each }}
                                 </ul>
                             </div>
                         {{/each}}
-
                     </div>
                 </div>
             </div>
@@ -143,7 +139,7 @@ brand:
     <!-- Optional section tag end - Downloadable Menus -->
 
     <!-- RESERVATIONS -->
-    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
+    <section id="reservations" class="content-section booking-section" aria-label="Booking widget">
         <h2 class="section-title">{{ section.reservations.title }}</h2>
         <div class="content-panel">
             <p>{{ data.reservations.info }}</p>
@@ -165,28 +161,29 @@ brand:
                  data-lng="{{ data.geocode.lng }}"
                  data-label="{{ data.name }}"
                  data-map-style-id="{{ data.location.map.styleId }}"
-                 data-map-show-info="true"
+                 data-map-show-info="false"
                  data-intersection="300">
                 <h3>Find us</h3>
                 <p>{{ data.name }}, {{ data.addressStreet }}, {{ data.addressLocality }}, {{ data.addressRegion }}, {{ data.postalCode }}</p>
                 <a class="btn btn-map-directions"
                    target="_blank"
-                   href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">{{ section.location.getDirections }}</a>
+                   href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">
+                    {{ section.location.getDirections }}
+                </a>
                 <p>Have a question or query? Get in touch with {{ data.name }}</p>
                 <a class="btn btn-map-directions"
                    target="_blank"
                    href="mailto:{{ data.email }}">
-                {{ section.location.getInTouch }}
+                    {{ section.location.getInTouch }}
                 </a>
             </div>
             <div id="map">Loading map...</div>
         </div>
     </section>
 </main>
-<div id="eventsWidget" class="events-sticky" data-widget-label="{{{ button.promotions }}}"></div>
 
 {{> partials/fullers/footer }}
 
-
+<div id="eventsWidget" class="events-sticky" data-widget-label="{{{ button.promotions }}}"></div>
 
 
