@@ -34,7 +34,7 @@
     "paragraph": "{{ description.paragraph }}",
     "full": "{{ description.full }}"
   },
-  "features": "[[ INSERT FEATURES LOOP ]]",
+  "features": "-----------------[[ INSERT FEATURES LOOP ]]--------------------",
   "transport": "{{ transport }}",
   "parking": "{{ parking }}",
   "menus": {
