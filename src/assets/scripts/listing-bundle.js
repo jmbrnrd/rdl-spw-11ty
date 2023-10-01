@@ -6,8 +6,9 @@ import bookingRequest from './booking-request';
 import about from "./about";
 
 formatting()
-claim();
 map();
 gallery();
 bookingRequest()
 about();
+
+claim();

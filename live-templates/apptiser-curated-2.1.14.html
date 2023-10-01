@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.12" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.14" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -48,7 +48,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.12">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.14">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,11 +64,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="/assets/styles/themes/apptiser.css?v=2.1.12" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.14" />
 
-	<link rel="stylesheet" href="/assets/styles/listing.css?v=2.1.12" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/listing.css?v=2.1.14" />
 
-	<script type="module" src="/assets/scripts/listing.js?v=2.1.12" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/listing-bundle.js?v=2.1.14" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id="></script>
     <script>
@@ -112,7 +112,16 @@
 
                 <!-- Optional section tag start - Images -->
                 <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-                    <!-- ---------------[[ INSERT IMAGE GALLERY LOOP ]]--------------- -->
+                    <!-- Loop section tag start - Images
+                    {{#each image.gallery}}
+                    <a class="glightbox"
+                        href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
+                            <img loading="lazy"
+                                src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
+                                alt="{{ ../name }} gallery image">
+                            </a>
+                    {{/each}}
+                    Loop section tag end - Images -->
                 </div>
                 <!-- Optional section tag end - Images -->
 
@@ -150,7 +159,7 @@
              data-lng="{{ geocode.lng }}"
              data-label="{{ name }}"
              data-map-show-info="true"
-             data-intersection="300">
+             data-intersection="0">
             <div id="map"></div>
         </div>
         <a class="btn btn-map-directions"

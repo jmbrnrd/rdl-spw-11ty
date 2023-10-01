@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.12" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.14" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -49,7 +49,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.12">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.14">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,11 +65,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.12" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.14" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.12" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.14" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.1.12" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.14" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -190,6 +190,7 @@
     </div>
     
     <img alt="Background image of {{ name }}"
+         loading="eager"
          src="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}"
          srcset="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  300w,
          https://res.cloudinary.com/rdl/image/upload/w_600,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  600w,
@@ -298,19 +299,19 @@
     <!-- Optional section tag start - Downloadable Menus -->
     <section class="content-section menu-pdf" id="pdfMenus" aria-label="Menu downloads">
         <h2 class="section-title">Downloadable Menus</h2>
-        <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
-        <div class="content-block menu-downloads">
-            <!-- Loop section tag start - Downloadable Menus
-            {{#each menus.pdfs }}
-            <div class="menu-card-container">
-            <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
-                <h3>{{ name }}</h3>
-                <span>Published: {{ date }}</span>
-            </a>
+            <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+            <div class="content-block menu-downloads">
+                <!-- Loop section tag start - Downloadable Menus
+                {{#each menus.pdfs }}
+                <div class="menu-card-container">
+                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                    <h3>{{ name }}</h3>
+                    <span>Published: {{ date }}</span>
+                </a>
+                </div>
+                {{/each }}
+                Loop section tag end - Downloadable Menus -->
             </div>
-            {{/each }}
-            Loop section tag end - Downloadable Menus -->
-        </div>
     </section>
     <!-- Optional section tag end - Downloadable Menus -->
 

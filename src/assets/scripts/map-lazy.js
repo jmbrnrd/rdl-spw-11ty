@@ -82,7 +82,9 @@ export default function (){
         }
 
         // Offset the load according to the content
-        const observer = new IntersectionObserver(handleIntersection, { rootMargin: `${elem.dataset.intersection ?? 100}px`});
+        console.log(!!elem.dataset.intersection);
+        const offset = !!elem.dataset.intersection ? `${elem.dataset.intersection}px` : `0px`;
+        const observer = new IntersectionObserver(handleIntersection, { rootMargin: offset });
         observer.observe(elem);
     });
 

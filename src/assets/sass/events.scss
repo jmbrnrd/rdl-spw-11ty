@@ -1,0 +1,46 @@
+@use "vars" as *;
+//*[data-events-element] {
+//  //display: none;
+//}
+.event-scroller {
+  --spacer: 1.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 32%;
+  grid-gap: var(--spacer);
+  overflow-x: auto;
+  overscroll-behavior: contain auto;
+  padding: 0;
+}
+.event-card {
+  //padding: var(--spacer);
+  background: #eee;
+  display: grid ;
+  height: 100%;
+  grid-template-rows: min-content;
+  &-content {
+    padding: var(--spacer);
+  }
+  .event-card-subtitle {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: $font-family-default;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+  }
+  > img {
+    inline-size: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+}
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+}
+.snaps-inline > * {
+  scroll-snap-align: start;
+}

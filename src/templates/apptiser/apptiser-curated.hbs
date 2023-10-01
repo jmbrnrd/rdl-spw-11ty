@@ -51,12 +51,29 @@ brand:
                     <dd>{{ data.openingNotes }}</dd>
                     <!-- Optional section tag end - Opening Notes -->
                 </dl>
+                {{ location.mapLoadOffset }}
             </aside>
         </div>
 
     </section>
 
-    {{> partials/map }}
+    <!-- location -->
+    <section id="find" class="map-section" aria-label="location map">
+        <div class="content-block"
+             id="location"
+             data-lat="{{ data.geocode.lat }}"
+             data-lng="{{ data.geocode.lng }}"
+             data-label="{{ data.name }}"
+             data-map-show-info="true"
+             data-intersection="50">
+            <div id="map"></div>
+        </div>
+        <a class="btn btn-map-directions"
+           target="_blank"
+           href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">
+        {{ button.directions }}
+        </a>
+    </section>
 
 </main>
 
