@@ -1,15 +1,11 @@
 ---
-title: "Apptiser Standard"
+title: "Fullers"
 language: "en"
-layout: "layouts/apptiser-standard.hbs"
+layout: "layouts/fullers.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser-standard-{{ pkg.version }}.html"
-brand:
-    name: "apptiser"
-    prefix: "apt"
-    url: "https://apptiser.io/"
-    theme: "apptiser"
+permalink: "/templates/fullers-{{ pkg.version }}.html"
 ---
+
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
@@ -23,6 +19,8 @@ brand:
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
     <a href="#" class="brand" aria-label="{{ nav.label.backToTop }}">
+        <img src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo" class="logo-mobile">
+        <img src="https://res.cloudinary.com/rdl/image/upload/f_auto/v1692252102/fullers/logo-nav.png" alt="Fuller's logo" class="logo">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -33,17 +31,19 @@ brand:
 <!-- HERO -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
+        <img class="brand-logo fade-in" src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}
         </ul>
-        <span class="desc-one-sentence fade-in">{{ data.description.sentence }}</span>
+        <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
     </div>
     {{> partials/hero-image }}
 </section>
 
 <main id="home">
+
     <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
@@ -68,6 +68,7 @@ brand:
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
+
                     <!-- Optional section tag start - Opening Notes -->
                     <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
@@ -85,7 +86,7 @@ brand:
     {{> partials/menu-downloads }}
 
     <!-- RESERVATIONS -->
-    <section id="reservations" class="content-section booking-section" aria-label="{{ section.reservations.aria }}">
+    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">{{ section.reservations.title }}</h2>
         <p>{{ data.reservations.info }}</p>
 
@@ -111,16 +112,14 @@ brand:
         </div>
     </section>
 
-    {{> partials/events }}
-
     {{> partials/contacts }}
 
     {{> partials/map }}
 
 </main>
 
-{{> partials/footer-standard }}
+{{> partials/fullers/footer }}
 
-<div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
+<div id="eventsWidget" data-widget-label="{{{ button.promotions }}}"></div>
 
 

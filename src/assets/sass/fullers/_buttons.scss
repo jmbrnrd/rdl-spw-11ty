@@ -1,0 +1,37 @@
+@use 'vars' as *;
+@use '../mixins' as *;
+.btn,
+a.btn,
+button:not(.hamburger) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-cta-bgd;
+  border: 2px solid $color-cta-bgd;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: $font-weight-normal;
+  font-family: 'suez one', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  transition: background-color, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  &:hover {
+    background-color: white;
+    color: $color-cta-bgd;
+  }
+  &.hamburger {
+    background-color: $color-nav-bgd;
+    color: $color-cta-bgd;
+  }
+}
+.btn-cancel {
+  background-color: transparent !important;
+  color: $color-body-text !important;
+  border: none !important;
+  &:hover {
+    background-color: #eee !important;
+  }
+}

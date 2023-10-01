@@ -1,8 +1,44 @@
-<li><a href="#about" aria-label="{{ nav.label.about }} {{ data.name }}">{{ nav.label.about }}</a></li>
+<li>
+    <a href="#about"
+       aria-label="{{ nav.label.about }} {{ data.name }}">
+        {{ nav.label.about }}
+    </a>
+</li>
+<li class="hide-on-desktop">
+    <a href="#hours"
+       aria-label="{{ nav.label.hours }} {{ data.name }}">
+        {{ nav.label.hours }}
+    </a>
+</li>
 <!-- Optional section tag start - Menus NavBar -->
-<li><a href="#menus" aria-label="{{ data.name }} {{ nav.label.menus }}">{{ nav.label.menus }}</a></li>
+<li>
+    <a href="#menus"
+       aria-label="{{ data.name }} {{ nav.label.menus }}">
+        {{ nav.label.menus }}
+    </a>
+</li>
 <!-- Optional section tag end - Menus NavBar -->
-<li><a href="#reservations" aria-label="{{ data.name }} {{ nav.label.reservations }}">{{ nav.label.reservations
-}}</a></li>
-<li><a href="#contacts" aria-label="{{ data.name }} {{ nav.label.contacts }}">{{ nav.label.contacts }}</a></li>
-<li><a href="#location" aria-label="{{ data.name }} {{ nav.label.location }}">{{ nav.label.location }}</a></li>
+<li>
+    <a href="#reservations"
+       aria-label="{{ data.name }} {{ nav.label.reservations }}">
+        {{ nav.label.reservations }}
+    </a>
+</li>
+<li data-events-element>
+    <a href="#events"
+       aria-label="{{ nav.label.events }} {{ data.name }}">
+        {{ nav.label.events }}
+    </a>
+</li>
+<li>
+    <a href="#contacts"
+       aria-label="{{ data.name }} {{ nav.label.contacts }}">
+        {{ nav.label.contacts }}
+    </a>
+</li>
+<li>
+    <a href="#find"
+       aria-label="{{ data.name }} {{ nav.label.location }}">
+        {{ nav.label.location }}
+    </a>
+</li>

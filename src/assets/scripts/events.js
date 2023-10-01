@@ -1,43 +1,31 @@
 
 export default function () {
 
-    console.log('promotion.js');
+    console.log('event.js');
 
-    /**
-     * eventsWidget is a 'placeholder' DOM element that we're using
-     * to pass to our js the UI content (label etc.) from our
-     * eleventy templates.
-     */
-    const eventsWidget = document.getElementById('eventsWidget');
-    // If there is no eventsWidget in the DOM then abort.
-    if (!eventsWidget) {
-        console.log('No widget included.');
-        return false;
-    }
-
-    console.log(eventsWidget.dataset.label);
+    const eventSection = document.getElementById('events');
 
     // This will be our widget label
-    const eventWidgetLabel = eventsWidget.dataset.widgetLabel;
+    // const eventWidgetLabel = eventsWidget.dataset.widgetLabel;
     const restaurantId = document.querySelector('html').dataset.id;
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
-    let messagesLoaded = false;
+    let eventsLoaded = false;
+    const eventElements = document.querySelectorAll('[data-events-element]');
+
 
     // Wait for page load
     window.addEventListener('load', function () {
         console.log(`Page loaded so fetch offers`);
-        getOffers();
+        getAllEvents();
     });
 
-    function getOffers() {
-
-        console.log('getOffers()');
+    function getAllEvents() {
 
         // Abort if already loaded
-        if (messagesLoaded) { return false; }
+        if (eventsLoaded) { return false; }
 
         fetch(`${api}/public/restaurantoffers`, {
             method: 'POST',
@@ -56,69 +44,62 @@ export default function () {
             })
             .then(data => {
                 // abort if array is empty
-                console.log('Data', data);
                 if (data.count < 1) { return false; }
                 // process
-                createOffersButton(data['offers']);
+                createEventSection(data['offers']);
             })
             .catch(err => console.log(err));
     }
 
+
     /**
      * Build the DOM elements
-     * @param offerData - array returned from getOffers()
+     * @param events - array of all events
      * @returns {boolean} guard clause
      */
-    function createOffersButton(offerData)  {
+    function createEventSection(events)  {
 
-        console.log(offerData);
+        console.log(events);
 
         // we only want offers that are in date or marketing date range
-        const offers = getValidPromos(offerData);
+        const activeEvents = getActiveEvents(events);
 
         // abort if no valid promotions are returned
-        if (offers.length < 1) {
-            console.log('No offers available');
+        if (activeEvents.length < 1) {
+            console.log('No active events!');
+
             return false;
         }
 
+
         // build DOM elements
-        const widgetFragment = document.createDocumentFragment();
-        const widgetContainer = document.createElement('aside');
-        const widgetButtonLabel = document.createElement('div');
-        const widgetContent = document.createElement('div');
+        const eventFragment = document.createDocumentFragment();
+        const eventScroller = document.createElement('div');
 
         // apply classes
-        widgetContainer.className = 'modal-messages';
-        widgetButtonLabel.className = 'msg-header';
-        widgetContent.className = 'msg-body';
+        eventScroller.className = 'event-scroller snaps-inline';
 
-        // add content
-        widgetButtonLabel.innerHTML =
-            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="white" d="M730-450v-60h150v60H730Zm50 290-121-90 36-48 121 90-36 48Zm-82-503-36-48 118-89 36 48-118 89ZM210-200v-160h-70q-24.75 0-42.375-17.625T80-420v-120q0-24.75 17.625-42.375T140-600h180l200-120v480L320-360h-50v160h-60Zm90-280Zm260 134v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346ZM140-540v120h196l124 74v-268l-124 74H140Z"/></svg>` +
-            `<h2 class="promo-label">${eventWidgetLabel}</h2>` +
-            `<svg xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 -960 960 960"><path fill="#fff" d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>`;
+        // build event cards
+        activeEvents.forEach(event => {
+            let eventCard = document.createElement('div');
+            let eventElementString =
+                `<div class="event-card">` +
+                `<img src="${event.offer_image}">` +
+                `<div class="event-card-content">` +
+                `<h2>${event.offer_tag}</h2>` +
+                `<span class="event-card-subtitle">${event.offer_strapline}</span>` +
+                `<p>${event.offer_text}</p>`;
 
-
-        // add to DOM
-        widgetContainer.append(widgetButtonLabel, widgetContent);
-        widgetFragment.append(widgetContainer);
-        eventsWidget.append(widgetFragment);
-
-        // reveal label after button is on screen
-        widgetContainer.addEventListener('animationend', () => {
-            widgetButtonLabel.classList.add('reveal');
+            if(event.offer_link) {
+                eventElementString += `<a href="${event.offer_link}" target="_blank">More Information</a>`;
+            }
+            eventElementString += `</div></div>`;
+            eventCard.innerHTML = eventElementString;
+            eventScroller.appendChild(eventCard);
         });
-
-        // open offers/messages
-        widgetContainer.addEventListener('click', () => {
-            dspOffers(widgetContent, offers);
-            widgetContent.classList.toggle('active');
-            widgetButtonLabel.classList.toggle('open');
-        });
-
-        // init button
-        widgetContainer.classList.add('scale-in-center');
+        eventFragment.appendChild(eventScroller);
+        eventSection.append(eventFragment);
+        console.log(eventScroller);
     }
 
     /**
@@ -130,7 +111,7 @@ export default function () {
     function dspOffers(container, promotions) {
 
         // abort if already loaded
-        if (messagesLoaded) { return false; }
+        if (eventsLoaded) { return false; }
 
         // build DOM elements
         const listFragment = document.createDocumentFragment();
@@ -162,24 +143,24 @@ export default function () {
         // add to DOM
         listFragment.appendChild(list);
         container.prepend(listFragment);
-        messagesLoaded = true;
+        eventsLoaded = true;
     }
 
     /**
      *
-     * @param promotions array of events/promotions
+     * @param events array of events/promotions
      * @returns {*[]} an array of valid promotions - i.e. in date range
      */
-    function getValidPromos(promotions) {
-        let validPromotions = [];
-        promotions.forEach( promo => {
-            console.log(currentDate);
+    function getActiveEvents(events) {
+        let activeEvents = [];
+        events.forEach( event => {
             // abort if beyond end date
-            if (currentDate > new Date(promo['offer_to']) || currentDate > new Date(promo['offer_marketed_to'])) { return; }
+            if (currentDate > new Date(event['offer_to']) || currentDate > new Date(event['offer_marketed_to'])) { return; }
             // or before market from data
-            if (currentDate < new Date(promo['offer_marketed_from'])) { return; }
-            validPromotions.push(promo);
-        })
-        return validPromotions;
+            if (currentDate < new Date(event['offer_marketed_from'])) { return; }
+            activeEvents.push(event);
+        });
+        console.log(activeEvents);
+        return activeEvents;
     }
 }

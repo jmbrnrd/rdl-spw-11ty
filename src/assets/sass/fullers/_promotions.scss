@@ -1,0 +1,181 @@
+@use "vars" as *;
+@use "../mixins" as *;
+
+$msg-header-height: 72px;
+$msg-gutter: 48px;
+$icon-fill-opacity: .5;
+$color-alt: DarkGoldenRod;
+
+.modal-messages {
+  z-index: 500;
+  position: fixed;
+  inset: auto 0 0 0;
+  translate: 0;
+  width: $btn-size;
+  max-width: 100vw;
+  height: auto;
+  border-radius: 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: all .3s ease-out;
+  transform-origin: center;
+  overflow: hidden;
+  box-shadow: $modal-box-shadow;
+
+  @include mq($mq-medium) {
+    position: fixed;
+    inset: auto $msg-gutter $msg-gutter auto;
+    translate: 0;
+    // border-radius: calc(#{$btn-size}/4);
+    max-width: $width-promo-btn;
+  }
+
+  .msg-header {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background-color: $color-cta-bgd;
+    transition: background-color .3s ease-out;
+    width: 100%;
+    max-width: 100vw;
+    @include mq($mq-medium) {
+      width: $width-promo-btn;
+    }
+
+    &:hover {
+      background-color: $color-cta-bgd-dark;
+    }
+    svg { height: 32px;}
+    h2 {
+      color: white;
+      letter-spacing: 1px;
+      font-size: 1.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity .3s ease-out;
+      text-align: center;
+    }
+    &.reveal h2 {
+      opacity: 1;
+    }
+    #close {
+      opacity: 0;
+      transition: opacity .3s ease-out;
+    }
+    &.open {
+      #close {
+        opacity: 1;
+      }
+    }
+
+  }
+  .msg-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+  .msg-body {
+    height: auto;
+    max-height: 0;
+    transition: max-height .3s ease-out;
+    padding-inline: 2rem;
+    overflow-y: scroll;
+    &.active {
+      max-height: calc(100vh - (#{ $msg-header-height } + 2 * #{ $msg-gutter })) };
+      background-color: white;
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding-top: .5rem;
+    }
+    li {
+      border-bottom: 1px solid $color-body-text-accent;
+      &:last-child {
+        margin-bottom: 1rem;
+        border-bottom: none;
+      }
+      padding-block: 1.25rem;
+      header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: .5rem;
+      }
+      img {
+        height: 56px;
+        margin-bottom: 1rem;
+      }
+      h3 {
+        font-family: $font-family-display;
+        display: inline-block;
+        font-size: 1.8rem;
+        line-height: 1.1;
+        font-weight: $font-weight-bold;
+        color: black;
+        text-transform: none;
+      }
+      p {
+        margin-block: .75rem 0;
+        font-weight: $font-weight-normal;
+        line-height: 1.4;
+      }
+      > a {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.6rem;
+        font-weight: $font-weight-bold;
+        margin-top: .5rem;
+        color: $color-body-text-accent;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .category {
+    &::after {
+      width: 36px;
+      aspect-ratio: 1;
+      display: block;
+      content: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="'+ $color-alt + '" d="M559-97q-18 18-43.5 18T472-97L97-472q-10-10-13.5-21T80-516v-304q0-26 17-43t43-17h304q12 0 24 3.5t22 13.5l373 373q19 19 19 44.5T863-401L559-97Zm-41-41 304-304-378-378H140v304l378 378ZM245-664q21 0 36.5-15.5T297-716q0-21-15.5-36.5T245-768q-21 0-36.5 15.5T193-716q0 21 15.5 36.5T245-664ZM140-820Z"/></svg>');
+    }
+    &.music::after {
+      content: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="'+ $color-alt + '" d="M180-120q-24 0-42-18t-18-42v-600q0-23 18-41.5t42-18.5h600q23 0 41.5 18.5T840-780v600q0 24-18.5 42T780-120H180Zm0-60h157v-210h-20q-12.75 0-21.375-8.625T287-420v-360H180v600Zm443 0h157v-600H673v360q0 12.75-8.625 21.375T643-390h-20v210Zm-246 0h206v-210h-20q-12.75 0-21.375-8.625T533-420v-360H427v360q0 12.75-8.625 21.375T397-390h-20v210Z"/></svg>');
+    }
+    &.offer::after {
+      content: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" ><path fill="'+ $color-alt + '" d="M481-29 346-160H160v-186L26-480l134-134v-186h186l135-134 133 134h186v186l134 134-134 134v186H614L481-29Zm0-452Zm0 368 107.917-107H740v-151l109-109-109-109v-151H589L481-849 371-740H220v151L111-480l109 109v151h150l111 107ZM363-310l117-71 117 71-31-133 104-90-137-11-53-126-53 126-137 11 104 90-31 133Z"/></svg>');
+    }
+    &.discount::after {
+      content: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="'+ $color-alt + '" d="M640-520q17 0 28.5-11.5T680-560q0-17-11.5-28.5T640-600q-17 0-28.5 11.5T600-560q0 17 11.5 28.5T640-520ZM320-620h200v-60H320v60ZM180-120q-34-114-67-227.5T80-580q0-92 64-156t156-64h200q29-38 70.5-59t89.5-21q25 0 42.5 17.5T720-820q0 6-1.5 12t-3.5 11q-4 11-7.5 22.5T702-751l91 91h87v279l-113 37-67 224H480v-80h-80v80H180Zm45-60h115v-80h200v80h115l63-210 102-35v-175h-52L640-728q1-25 6.5-48.5T658-824q-38 10-72 29.5T534-740H300q-66.286 0-113.143 46.857T140-580q0 103.158 29 201.579T225-180Zm255-322Z"/></svg>');
+    }
+    &.notification::after {
+      content: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="'+ $color-alt + '" d="M120-566q0-90 40-165t107-125l36 48q-56 42-89.5 104.5T180-566h-60Zm660 0q0-75-33.5-137.5T657-808l36-48q67 50 107 125t40 165h-60ZM160-200v-60h80v-304q0-84 49.5-150.5T420-798v-22q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v22q81 17 130.5 83.5T720-564v304h80v60H160Zm320-302Zm0 422q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM300-260h360v-304q0-75-52.5-127.5T480-744q-75 0-127.5 52.5T300-564v304Z"/></svg>');
+    }
+    &.event::after {
+      content: url('data:image/svg+xml;utf8,' +
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="'+ $color-alt + '" d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>');
+    }
+    &.dish::after {
+      content: url('data:image/svg+xml;utf8,' +
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path fill="'+ $color-alt + '" d="M285-80v-368q-52-11-88.5-52.5T160-600v-280h60v280h65v-280h60v280h65v-280h60v280q0 58-36.5 99.5T345-448v368h-60Zm415 0v-320H585v-305q0-79 48-127t127-48v800h-60Z"/></svg>');
+    }
+  }
+}
+.promo-label {
+  font-family: 'Suez One', sans-serif;
+}
+.events-sticky {
+  //position: sticky;
+  // inset: 90vh 3rem 3rem auto;
+}

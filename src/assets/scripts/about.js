@@ -32,6 +32,12 @@ export default function () {
         document.body.appendChild(fragment);
         aboutDialogContent.classList.add('fade-in-fast');
 
+        // Kill it after 10 seconds
+        setTimeout(() => {
+            removeAboutDialog();
+        }, 10000);
+
+
     }
 
     const removeAboutDialog = () => {

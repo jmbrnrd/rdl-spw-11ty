@@ -1,16 +1,17 @@
 
 @use 'reset';
-@use 'fullers/fullers-typography';
+@use 'fullers/typography';
+@use 'fullers/buttons';
 @use 'animations';
-@use 'fullers/fullers-scaffold';
-@use 'fullers/fullers-navigation';
+@use 'fullers/scaffold';
+@use 'fullers/navigation';
 @use 'hamburger';
 @use "gallery";
-@use "map";
+@use "fullers/map";
 @use "bookings";
-@use "menus";
-@use 'fullers/fullers-promotions';
-@use 'booking-request';
+@use "fullers/menus";
+@use 'fullers/promotions';
+@use 'fullers/booking-request';
 
 
 

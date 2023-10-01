@@ -1,16 +1,16 @@
 
 <!-- location -->
-<section class="map-section" aria-label="location map">
+<section id="find" class="map-section" aria-label="location map">
     <div class="content-block"
          id="location"
          data-bkg-id="{{ data.mozrest.id }}"
          data-bkg-key="{{ data.mozrest.key }}"
          data-lat="{{ data.geocode.lat }}"
          data-lng="{{ data.geocode.lng }}"
-         data-label="{{ data.name }}">
-        <div id="map" data-intersection="300">
-
-        </div>
+         data-label="{{ data.name }}"
+         data-map-show-info="true"
+         data-intersection="300">
+        <div id="map"></div>
     </div>
     <a class="btn btn-map-directions"
        target="_blank"

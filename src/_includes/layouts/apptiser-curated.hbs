@@ -16,11 +16,11 @@
 
     {{> partials/fonts }}
 
-    <link rel="stylesheet" href="/assets/styles/themes/{{ brand.theme }}.css?v={{ pkg.version }}" />
+    <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ brand.theme }}.css?v={{ pkg.version }}" />
 
-	<link rel="stylesheet" href="/assets/styles/listing.css?v={{ pkg.version }}" />
+	<link rel="stylesheet" href="{{ config.assets }}/styles/listing.css?v={{ pkg.version }}" />
 
-	<script type="module" src="/assets/scripts/listing.js?v={{ pkg.version }}" defer></script>
+	<script type="module" src="{{ config.assets }}/scripts/listing-bundle.js?v={{ pkg.version }}" defer></script>
 
     {{> partials/google-apis }}
 

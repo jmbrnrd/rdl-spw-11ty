@@ -8,7 +8,7 @@ main { background-color: $color-body-bgd; }
 footer {
   $link-height: 3rem;
   background-color: $color-primary-dark;
-  padding: 1rem;
+  padding: 3rem;
   color: $color-grey-light;
   font-size: 1.2rem;
   line-height: 1.2;
@@ -31,20 +31,20 @@ footer {
   }
 
   button {
-    background: 0;
-    border-radius: 8px;
-    border: 2px solid $color-nav-label;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    color: $color-nav-label;
-    cursor: pointer;
-    padding: 1rem;
-    white-space: nowrap;
-    transition: all .3s ease-out;
-    &:hover {
-      color: $color-black;
-      background-color: $color-nav-label;
-    }
+    //background: 0;
+    //border-radius: 8px;
+    //border: 2px solid $color-nav-label;
+    //font-size: 1.1rem;
+    //letter-spacing: 1px;
+    //color: $color-nav-label;
+    //cursor: pointer;
+    //padding: 1rem;
+    //white-space: nowrap;
+    //transition: all .3s ease-out;
+    //&:hover {
+    //  color: $color-black;
+    //  background-color: $color-nav-label;
+    //}
   }
 
   .logo {
@@ -181,6 +181,7 @@ footer {
   padding: 0;
   margin:0;
 }
+
 .content-block {
   display: flex;
   flex-direction: column;
@@ -202,6 +203,7 @@ footer {
     margin-top: 3rem;
   }
 }
+
 .description {
   p { white-space: pre-line; }
   // Create lead sentence
@@ -347,4 +349,10 @@ dd {
     }
   }
 
+}
+.hide-on-desktop {
+  display: inline-block;
+  @include mq($mq-narrow) {
+    display: none !important;
+  }
 }

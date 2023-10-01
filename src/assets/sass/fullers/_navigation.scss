@@ -1,4 +1,4 @@
-@use '../vars' as *;
+@use 'vars' as *;
 @use '../mixins' as *;
 
 /*
@@ -8,6 +8,7 @@
 
 // Navbar
 nav {
+  font-family: 'Roboto Condensed', sans-serif;
   opacity: 0;
   position: fixed;
   z-index: 100;
@@ -40,8 +41,8 @@ nav {
     align-items: center;
     .logo-mobile {
       display: inline-block;
-      height: auto;
-      width: 50%;
+      height: 62px;
+      width: auto;
     }
     .logo {
       display: none;
@@ -72,14 +73,22 @@ nav {
     li {
       display: block;
       margin-bottom: 2rem;
+      text-align: center;
       a {
-        font-size: 3.6rem;
+        font-size: 3.2rem;
         line-height: 1;
         font-weight: $font-weight-normal;
-        letter-spacing: .2rem;
+        letter-spacing: 0;
         text-transform: uppercase;
         color: inherit;
         transition: opacity .3s ease-out;
+        &:is(.phone) {
+          align-self: center;
+          svg {
+            fill: $color-cta-bgd;
+            height: 2.4rem;
+          }
+        }
       }
     }
     &:hover > li a {
@@ -99,18 +108,18 @@ nav {
     align-items: center;
     padding: 2rem;
     transition: all 400ms ease-out;
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
     opacity: 1;
     pointer-events: auto;
     &.nav-active { opacity: 1; }
-    &.nav-show { transform: translateY(0); }
+    // &.nav-show { transform: translateY(0); }
     a.brand {
       flex-direction: row;
       justify-content: flex-start;
       flex: 1;
       gap: 1rem;
       h1 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         margin-bottom: 0;
       }
       .logo-mobile {
@@ -124,8 +133,21 @@ nav {
       display: inline-block;
       margin: 0 0 0 1.6rem;
       a {
-        font-size: 1.2rem;
-        letter-spacing: 0.4rem;
+        height: 20px;
+        font-size: 1.6rem;
+        letter-spacing: 0rem;
+        display: flex;
+        align-items: center;
+        &.phone {
+          position: relative;
+          margin-left: 3rem;
+          svg {
+            position: absolute;
+            left: -24px;
+            height: 18px;
+            fill: $color-cta-bgd;
+          }
+        }
       }
     }
   }
