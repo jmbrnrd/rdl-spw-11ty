@@ -3,20 +3,18 @@ export default function () {
 
     console.log('event.js');
 
+    // Target our event elements
     const eventSection = document.getElementById('events');
-
-    // This will be our widget label
-    // const eventWidgetLabel = eventsWidget.dataset.widgetLabel;
+    const eventElements = document.querySelectorAll('[data-elem-event]');
+    // Set vars
     const restaurantId = document.querySelector('html').dataset.id;
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-staging.herokuapp.com';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
     let eventsLoaded = false;
-    const eventElements = document.querySelectorAll('[data-events-element]');
 
-
-    // Wait for page load
+    // Wait for page load & fetch events
     window.addEventListener('load', function () {
         console.log(`Page loaded so fetch offers`);
         getAllEvents();
@@ -45,7 +43,7 @@ export default function () {
             .then(data => {
                 // abort if array is empty
                 if (data.count < 1) { return false; }
-                // process
+                // build events
                 createEventSection(data['offers']);
             })
             .catch(err => console.log(err));
@@ -67,10 +65,8 @@ export default function () {
         // abort if no valid promotions are returned
         if (activeEvents.length < 1) {
             console.log('No active events!');
-
             return false;
         }
-
 
         // build DOM elements
         const eventFragment = document.createDocumentFragment();
@@ -83,67 +79,26 @@ export default function () {
         activeEvents.forEach(event => {
             let eventCard = document.createElement('div');
             let eventElementString =
-                `<div class="event-card">` +
-                `<img src="${event.offer_image}">` +
+                `<div class="event-card" aria-label="Event">` +
+                `<img src="${event.offer_image}" alt="Event image">` +
                 `<div class="event-card-content">` +
                 `<h2>${event.offer_tag}</h2>` +
                 `<span class="event-card-subtitle">${event.offer_strapline}</span>` +
                 `<p>${event.offer_text}</p>`;
-
+            // add optional link
             if(event.offer_link) {
                 eventElementString += `<a href="${event.offer_link}" target="_blank">More Information</a>`;
             }
+            // complete tags and append card to scroller
             eventElementString += `</div></div>`;
             eventCard.innerHTML = eventElementString;
             eventScroller.appendChild(eventCard);
         });
+        // build dom
         eventFragment.appendChild(eventScroller);
         eventSection.append(eventFragment);
-        console.log(eventScroller);
-    }
-
-    /**
-     * Display the list of offers/messages
-     * @param container - contain DOM element for our messages
-     * @param promotions - loaded offers/messages array
-     * @returns {boolean}
-     */
-    function dspOffers(container, promotions) {
-
-        // abort if already loaded
-        if (eventsLoaded) { return false; }
-
-        // build DOM elements
-        const listFragment = document.createDocumentFragment();
-        const list = document.createElement('ul');
-        list.className = 'offer-list';
-        let listItem;
-        let listItemLink;
-        promotions.forEach((item) => {
-            let cat = JSON.parse(item['offer_category']);
-          listItem = document.createElement('li');
-          listItem.innerHTML =
-              `<img src="${item['offer_image']}" style="width: 100%; height: auto; aspect-ratio: 3/1; object-fit: cover">` +
-              `<header>` +
-                  `<span class="category ${cat.id || 'event'}"></span>` +
-                  `<span><h3>${item['offer_tag']}</h3>` + `<div class="subtitle">${item['offer_strapline']}</div></span>` +
-              `</header>` +
-              `<p>${item['offer_text']}</p>`;
-          // Is there a link to additional content?
-            if (!!item['offer_link']) {
-                listItemLink = document.createElement('a');
-                listItemLink.innerHTML = 'Read More';
-                listItemLink.setAttribute('href', item['offer_link']);
-                listItemLink.setAttribute('aria-label', 'View event details');
-                listItem.appendChild(listItemLink);
-            }
-          list.appendChild(listItem);
-        });
-
-        // add to DOM
-        listFragment.appendChild(list);
-        container.prepend(listFragment);
-        eventsLoaded = true;
+        // remove hidden class from event elements
+        eventElements.forEach(elem => elem.classList.remove('hidden'));
     }
 
     /**

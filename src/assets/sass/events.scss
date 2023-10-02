@@ -1,23 +1,29 @@
 @use "vars" as *;
-//*[data-events-element] {
-//  //display: none;
-//}
+@use "mixins" as *;
+.hidden {
+  display: none !important;
+}
 .event-scroller {
   --spacer: 1.5rem;
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
   grid-auto-columns: 32%;
   grid-gap: var(--spacer);
   overflow-x: auto;
   overscroll-behavior: contain auto;
-  padding: 0;
+  padding-block: 1rem;
+  @include mq($mq-medium){
+    grid-auto-flow: column;
+    grid-auto-columns: 32%;
+  }
 }
 .event-card {
-  //padding: var(--spacer);
   background: #eee;
   display: grid ;
   height: 100%;
   grid-template-rows: min-content;
+  border-radius: $radius-sml;
+  overflow: hidden;
   &-content {
     padding: var(--spacer);
   }
@@ -36,6 +42,12 @@
     inline-size: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+  }
+  a {
+    color: $color-body-text-accent;
+    font-size: 1.6rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
   }
 }
 .snaps-inline {
