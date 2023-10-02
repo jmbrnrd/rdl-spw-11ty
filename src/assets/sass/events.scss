@@ -1,24 +1,23 @@
 @use "vars" as *;
 @use "mixins" as *;
-//*[data-events-element] {
-//  //display: none;
-//}
+.hidden {
+  display: none !important;
+}
 .event-scroller {
   --spacer: 1.5rem;
   display: grid;
   grid-auto-flow: row;
-  //grid-auto-columns: 32%;
+  grid-auto-columns: 32%;
   grid-gap: var(--spacer);
   overflow-x: auto;
   overscroll-behavior: contain auto;
-  padding: 0;
+  padding-block: 1rem;
   @include mq($mq-medium){
     grid-auto-flow: column;
     grid-auto-columns: 32%;
   }
 }
 .event-card {
-  //padding: var(--spacer);
   background: #eee;
   display: grid ;
   height: 100%;
