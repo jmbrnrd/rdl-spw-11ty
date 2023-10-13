@@ -36,13 +36,7 @@ brand:
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
-            <li><a href="#about" title="About ">{{ nav.label.about }}</a></li>
-            <!-- Optional section tag start - Menus Hero -->
-            <li><a href="#menus" title="Menus ">Menus</a></li>
-            <!-- Optional section tag end - Menus Hero -->
-            <li><a href="#reservations" title="Reservations">Reservations</a></li>
-            <li><a href="#contacts" title="Contact">Contacts</a></li>
-            <li><a href="#location" title="Find">Location</a></li>
+            {{> partials/nav-options }}
         </ul>
         <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
     </div>
@@ -79,10 +73,10 @@ brand:
                     <dt>Opening Times</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
 
-                    <!-- Optional section tag start - Opening Notes -->
+                    <!-- Optional section tag start - OPENING NOTES -->
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - Opening Notes -->
+                    <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
             </aside>
         </div>
@@ -97,7 +91,7 @@ brand:
         {{> partials/menu-downloads }}
     {{/if}}
 
-    <!-- bookings -->
+    <!-- Optional section tag start - RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
@@ -105,62 +99,13 @@ brand:
             <a href="#reservations" data-mzid="{{ data.mozrest.id }}" data-mzkey="{{ data.mozrest.key }}">BOOK ONLINE</a> at
             anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
         </p>
-        <!-- booking extras -->
-        <div class="content-block">
-            <aside>
-                <h2 class="sub-section-title">Group bookings</h2>
-                <p>{{ data.reservations.groups }}</p>
-            </aside>
-            <aside>
-                <h2 class="sub-section-title">Private Dining</h2>
-                <p>{{ data.reservations.private }}</p>
-            </aside>
-        </div>
-    </section>
 
-    <!-- contacts -->
-    <section id="contacts" class="content-section contact-section">
-        <h2 class="section-title">Contacts</h2>
-        <div class="content-block">
-            <!-- address -->
-            <aside>
-                <dl>
-                    <dt>Address</dt>
-                    <dd>{{ data.addressStreet }}</dd>
-                    <dd>{{ data.addressLocality }} {{ data.postalCode }}</dd>
-                    <dt>Telephone</dt>
-                    <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                </dl>
-            </aside>
-            <!-- social -->
-            <aside>
-                <dl>
-                    <dt>Links</dt>
-                    <dd>
-                        <div class="social-links">
-                        {{#each data.social.networks }}
-                            <div>
-                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                    <img src="/assets/images/icon-{{ this.name }}.svg" alt="{{ this.name }} logo" width="28" height="28">
-                                </a>
-                                <span>{{ this.name }}</span>
-                            </div>
-                        {{/each}}
-                        </div>
-                    </dd>
-                </dl>
-            </aside>
-            <!-- transport -->
-            <aside>
-                <dl>
-                    <dt>Public Transport</dt>
-                    <dd>{{ data.transport }}</dd>
-                    <dt>Parking</dt>
-                    <dd>{{ data.parking }}</dd>
-                </dl>
-            </aside>
-        </div>
+        {{> partials/booking-extra }}
+
     </section>
+    <!-- Optional section tag end - RESERVATIONS -->
+
+    {{> partials/contacts }}
 
     {{> partials/map }}
 
