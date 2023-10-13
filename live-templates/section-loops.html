@@ -2,17 +2,17 @@
 <!--                      FEATURES LOOP                                  -->
 <!------------------------------------------------------------------------->
 
-<!-- Loop section tag start - Features
+<!-- Loop section tag start - LOOP FEATURES
 {{#each features}}
     <li>{{ this }}</li>
 {{/each}}
-Loop section tag end - Features -->
+Loop section tag end - LOOP FEATURES -->
 
 <!------------------------------------------------------------------------->
 <!--                        IMAGES LOOP                                  -->
 <!------------------------------------------------------------------------->
 
-<!-- Loop section tag start - Images
+<!-- Loop section tag start - LOOP IMAGES
 {{#each image.gallery}}
 <a class="glightbox"
     href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
@@ -21,13 +21,13 @@ Loop section tag end - Features -->
             alt="{{ ../name }} gallery image">
         </a>
 {{/each}}
-Loop section tag end - Images -->
+Loop section tag end - LOOP IMAGES -->
 
 <!------------------------------------------------------------------------->
 <!--                      HTML MENUS LOOP                                -->
 <!------------------------------------------------------------------------->
 
-<!-- Loop section tag start - HTML Menus
+<!-- Loop section tag start - LOOP HTML MENUS
 {{#each menus.sections }}
 <div id="menu_section_{{@index}}" class="menu-section">
     <h3 class="menu-section-title">{{ name }}</h3>
@@ -45,13 +45,13 @@ Loop section tag end - Images -->
     </ul>
 </div>
 {{/each}}
-Loop section tag end - HTML Menus -->
+Loop section tag end - LOOP HTML MENUS -->
 
 <!------------------------------------------------------------------------->
 <!--                           PDF LOOP                                  -->
 <!------------------------------------------------------------------------->
 
-<!-- Loop section tag start - Downloadable Menus
+<!-- Loop section tag start - LOOP DOWNLOAD MENUS
 {{#each menus.pdfs }}
 <div class="menu-card-container">
 <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
@@ -60,13 +60,13 @@ Loop section tag end - HTML Menus -->
 </a>
 </div>
 {{/each }}
-Loop section tag end - Downloadable Menus -->
+Loop section tag end - LOOP DOWNLOAD MENUS -->
 
 <!------------------------------------------------------------------------->
 <!--                        SOCIAL LOOP                                  -->
 <!------------------------------------------------------------------------->
 
-<!-- Loop section tag start - Social
+<!-- Loop section tag start - LOOP SOCIAL LINKS
 {{#each social.networks }}
 <div>
     <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
@@ -75,6 +75,6 @@ Loop section tag end - Downloadable Menus -->
     </a>
 </div>
 {{/each}}
-Loop section tag end - Social -->
+Loop section tag end - LOOP SOCIAL LINKS -->
 
 

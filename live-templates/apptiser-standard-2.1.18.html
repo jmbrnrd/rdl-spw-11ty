@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.16" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.18" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -49,7 +49,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.16">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.18">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,11 +65,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.16" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.18" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.16" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.18" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.16" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.18" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -112,38 +112,50 @@
                 Opening times
             </a>
         </li>
-        <!-- Optional section tag start - Menus NavBar -->
+        <!-- Optional section tag start - MENU NAV -->
         <li>
             <a href="#menus"
                aria-label="{{ name }} Menus">
                 Menus
             </a>
         </li>
-        <!-- Optional section tag end - Menus NavBar -->
+        <!-- Optional section tag end - MENU NAV -->
+        
+        <!-- Optional section tag start - RESERVATIONS NAV -->
         <li>
             <a href="#reservations"
                aria-label="{{ name }} Reservations">
                 Reservations
             </a>
         </li>
+        <!-- Optional section tag end - RESERVATIONS NAV -->
+        
+        <!-- Optional section tag start - EVENTS NAV -->
         <li class="hidden" data-elem-event>
             <a href="#events"
                aria-label="Events &amp; Offers {{ name }}">
                 Events &amp; Offers
             </a>
         </li>
+        <!-- Optional section tag end - EVENTS NAV -->
+        
+        <!-- Optional section tag start - CONTACTS NAV -->
         <li>
             <a href="#contacts"
                aria-label="{{ name }} Contacts">
                 Contacts
             </a>
         </li>
+        <!-- Optional section tag end - CONTACTS NAV -->
+        
+        <!-- Optional section tag start - LOCATION NAV -->
         <li>
             <a href="#find"
                aria-label="{{ name }} Location">
                 Location
             </a>
         </li>
+        <!-- Optional section tag end - LOCATION NAV -->
     </ul>
 </nav>
 
@@ -165,38 +177,50 @@
                     Opening times
                 </a>
             </li>
-            <!-- Optional section tag start - Menus NavBar -->
+            <!-- Optional section tag start - MENU NAV HERO -->
             <li>
                 <a href="#menus"
                    aria-label="{{ name }} Menus">
                     Menus
                 </a>
             </li>
-            <!-- Optional section tag end - Menus NavBar -->
+            <!-- Optional section tag end - MENU NAV HERO -->
+            
+            <!-- Optional section tag start - RESERVATIONS NAV HERO -->
             <li>
                 <a href="#reservations"
                    aria-label="{{ name }} Reservations">
                     Reservations
                 </a>
             </li>
+            <!-- Optional section tag end - RESERVATIONS NAV HERO -->
+            
+            <!-- Optional section tag start - EVENTS NAV HERO -->
             <li class="hidden" data-elem-event>
                 <a href="#events"
                    aria-label="Events &amp; Offers {{ name }}">
                     Events &amp; Offers
                 </a>
             </li>
+            <!-- Optional section tag end - EVENTS NAV HERO -->
+            
+            <!-- Optional section tag start - CONTACTS NAV HERO -->
             <li>
                 <a href="#contacts"
                    aria-label="{{ name }} Contacts">
                     Contacts
                 </a>
             </li>
+            <!-- Optional section tag end - CONTACTS NAV HERO -->
+            
+            <!-- Optional section tag start - LOCATION NAV HERO -->
             <li>
                 <a href="#find"
                    aria-label="{{ name }} Location">
                     Location
                 </a>
             </li>
+            <!-- Optional section tag end - LOCATION NAV HERO -->
         </ul>
         <span class="desc-one-sentence fade-in">{{ description.sentence }}</span>
     </div>
@@ -208,23 +232,23 @@
          https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
          https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
          sizes="100vw">
-
+    
+    
 </section>
 
 <main id="home">
-
-    <!-- Optional section tag start - ABOUT -->
+    <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
             <div class="description" aria-label="description">
                 <p>{{ description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
-                    <!-- Loop section tag start - Features
+                    <!-- Loop section tag start - LOOP FEATURES
                     {{#each features}}
                         <li>{{ this }}</li>
                     {{/each}}
-                    Loop section tag end - Features -->
+                    Loop section tag end - LOOP FEATURES -->
                 </ul>
             </div>
             <!-- opening times -->
@@ -248,7 +272,7 @@
 
         <!-- Optional section tag start - IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!-- Loop section tag start - Images
+            <!-- Loop section tag start - LOOP IMAGES
             {{#each image.gallery}}
             <a class="glightbox"
                 href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
@@ -257,12 +281,11 @@
                         alt="{{ ../name }} gallery image">
                     </a>
             {{/each}}
-            Loop section tag end - Images -->
+            Loop section tag end - LOOP IMAGES -->
         </div>
         <!-- Optional section tag end - IMAGE GALLERY -->
 
     </section>
-    <!-- Optional section tag END - ABOUT -->
 
     <!-- Optional section tag start - MENUS HTML -->
     <section id="menus" class="content-section" aria-label="Our Menus">
@@ -278,10 +301,10 @@
                             <i class="vt" aria-hidden="true"></i>
                             Vegetarian
                         </li>
-                        <li><i class="vg" aria-hidden="true"></i>Vegetarian</li>
+                        <li><i class="vg" aria-hidden="true"></i>Vegan</li>
                         <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                     </ul>
-                    <!-- Loop section tag start - HTML Menus
+                    <!-- Loop section tag start - LOOP HTML MENUS
                     {{#each menus.sections }}
                     <div id="menu_section_{{@index}}" class="menu-section">
                         <h3 class="menu-section-title">{{ name }}</h3>
@@ -299,7 +322,7 @@
                         </ul>
                     </div>
                     {{/each}}
-                    Loop section tag end - HTML Menus -->
+                    Loop section tag end - LOOP HTML MENUS -->
     
                 </div>
             </div>
@@ -307,12 +330,13 @@
     </section>
     <!-- Optional section tag end - MENUS HTML -->
 
+    
     <!-- Optional section tag start - MENUS DOWNLOAD -->
     <section class="content-section menu-pdf" id="pdfMenus" aria-label="Menu downloads">
         <h2 class="section-title">Downloadable Menus</h2>
         <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
         <div class="content-block menu-downloads">
-            <!-- Loop section tag start - Downloadable Menus
+            <!-- Loop section tag start - LOOP DOWNLOAD MENUS
             {{#each menus.pdfs }}
             <div class="menu-card-container">
             <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
@@ -321,17 +345,18 @@
             </a>
             </div>
             {{/each }}
-            Loop section tag end - Downloadable Menus -->
+            Loop section tag end - LOOP DOWNLOAD MENUS -->
         </div>
     </section>
     <!-- Optional section tag end - MENUS DOWNLOAD -->
 
     <!-- Optional section tag start - RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="Booking widget">
+    
         <h2 class="section-title">Reservations</h2>
         <p>{{ reservations.info }}</p>
-
-        <!-- Optional section tag start - BOOKINGS WIDGET EMAIL -->
+    
+        <!-- Optional section tag start - BOOKING WIDGET -->
         <div class="booking-request-container">
             <form class="form-booking-request"
                   id="bkgRequestForm"
@@ -454,34 +479,35 @@
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent"><span>Thanks, we'll be in touch.</span>
             </div>
         </div>
-        <!-- Optional section tag end - BOOKINGS WIDGET EMAIL -->
-
+        <!-- Optional section tag end - BOOKING WIDGET -->
+    
         <!-- group & private bookings -->
         <div class="content-block">
-
-            <!-- Optional section tag start - BOOKINGS GROUP -->
+        
+            <!-- Optional section tag start - BOOKING GROUPS -->
             <aside>
                 <h2 class="sub-section-title">Group bookings</h2>
                 <p>{{ reservations.groups }}</p>
             </aside>
-            <!-- Optional section tag end - BOOKINGS GROUP -->
-
-            <!-- Optional section tag start - BOOKINGS PRIVATE -->
+            <!-- Optional section tag end - BOOKING GROUPS -->
+        
+            <!-- Optional section tag start - BOOKING PRIVATE -->
             <aside>
                 <h2 class="sub-section-title">Private dining</h2>
                 <p>{{ reservations.private  }}</p>
             </aside>
-            <!-- Optional section tag end - BOOKINGS PRIVATE -->
-
+            <!-- Optional section tag end - BOOKING PRIVATE -->
+        
         </div>
+    
     </section>
     <!-- Optional section tag end - RESERVATIONS -->
 
-    <!-- Optional section tag start - EVENTS -->
+
     <section id="events" class="content-section hidden" data-elem-event>
         <h2 class="section-title">Events & Offers</h2>
     </section>
-    <!-- Optional section tag end - EVENTS -->
+    
 
     <!-- Optional section tag start - CONTACTS -->
     <section id="contacts" class="content-section contact-section">
@@ -504,7 +530,7 @@
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                            <!-- Loop section tag start - Social
+                            <!-- Loop section tag start - LOOP SOCIAL LINKS
                             {{#each social.networks }}
                             <div>
                                 <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
@@ -513,7 +539,7 @@
                                 </a>
                             </div>
                             {{/each}}
-                            Loop section tag end - Social -->
+                            Loop section tag end - LOOP SOCIAL LINKS -->
                         </div>
                     </dd>
                 </dl>
@@ -539,7 +565,8 @@
     </section>
     <!-- Optional section tag end - CONTACTS -->
 
-    <!-- Optional section tag start - LOCATION -->
+    
+    <!-- location -->
     <section id="find" class="map-section" aria-label="location map">
         <div class="content-block"
              id="location"
@@ -558,7 +585,6 @@
             Get Directions
         </a>
     </section>
-    <!-- Optional section tag end - LOCATION -->
 
 </main>
 
