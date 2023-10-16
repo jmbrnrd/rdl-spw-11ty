@@ -18,7 +18,8 @@
       "location": "Localisation",
       "menuMobile": "Mobile navigation menu",
       "menus": "Menus",
-      "reservations": "Reservations"
+      "reservations": "Reservations",
+      "events": "Événements"
     }
   },
   "section": {
@@ -65,9 +66,9 @@
         "veggie": "Végétarien"
       },
       "label": {
-        "gluten": "Gluten-free",
-        "vegan": "Vegan",
-        "veggie": "Vegetarian"
+        "gluten": "Sans gluten",
+        "vegan": "Végétalien",
+        "veggie": "Végétarien"
       },
       "title": "Our Menus"
     },

@@ -12,9 +12,9 @@
   border: 0;
   cursor: pointer;
   padding-inline: 2rem;
-  padding-block: 1.5rem;
+  padding-block: 1.5rem !important;
   font-weight: $font-weight-bold;
-  font-size: clamp(2rem, 1vw + 1rem, 4rem);
+  font-size: clamp(2rem, 1vw + 1rem, 4rem) !important;
   color: hsl(255 100% 100% / 1);
   letter-spacing: .1rem;
   line-height: 1;
@@ -81,7 +81,7 @@ a[data-mzid] {
   //        rgba(0, 0, 0, 0.09) 0 -3px 5px;
   iframe {
     width: 98%;
-    height: auto;
+    height: 100%;
     border: none;
   }
 

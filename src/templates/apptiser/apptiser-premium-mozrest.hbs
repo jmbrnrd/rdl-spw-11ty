@@ -3,7 +3,7 @@ title: "Apptiser Premium"
 language: "en"
 layout: "layouts/apptiser-premium.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser-premium-{{ pkg.version }}.html"
+permalink: "/templates/apptiser-premium-mozrest-{{ pkg.version }}.html"
 brand:
     name: "Apptiser"
     prefix: "app"
@@ -49,10 +49,11 @@ brand:
         <div class="content-block">
             <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
-                <!-- Feature keywords-->
+                <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
+                    <!-- {{ data.features }} -->
                     {{#each data.features }}
-                    <li>{{ this }}</li>
+                        <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>

@@ -1,4 +1,4 @@
-import bookings from "./bookings";
+import bookings from "./bookings-mozrest";
 import map from "./map-lazy";
 import formatting from "./formatting";
 import nav from './nav';

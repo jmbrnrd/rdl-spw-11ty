@@ -53,6 +53,9 @@ footer {
     width: auto;
     opacity: .7;
     transition: all .3s ease-in-out;
+    &.ri {
+      height: 5rem;
+    }
     .icon{fill: white;}
     .label {fill: $color-nav-label;}
     &:hover {
