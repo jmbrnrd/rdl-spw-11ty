@@ -1,4 +1,32 @@
 {
+	"bookings": {
+		"email": {
+			"covers": {
+				"aria": "Request party size",
+				"people": "people",
+				"person": "person"
+			},
+			"date": {
+				"aria": "Request reservation date"
+			},
+			"submit": {
+				"aria": "Make a booking request"
+			},
+			"summary": {
+				"instructions": "Please enter your contact details below",
+				"label-cancel": "Cancel",
+				"label-email": "Your Email Address",
+				"label-name": "Your full name",
+				"label-send": "Request Booking",
+				"thanks": "Thanks! We'll be in touch shortly.",
+				"title": "Booking Request",
+				"warning": "**Please note**: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant."
+			},
+			"time": {
+				"aria": "Request time"
+			}
+		}
+	},
 	"button": {
 		"bkgRequest": "Booking Request",
 		"book": "Book Now",
@@ -81,7 +109,15 @@
 			"aria": "Booking widget",
 			"groups": "Group bookings",
 			"private": "Private dining",
-			"title": "Reservations"
+			"title": "Reservations",
+			"widget": {
+				"covers": {
+					"aria": "Booking party size"
+				},
+				"time": {
+					"aria": "Booking time"
+				}
+			}
 		}
 	}
 }
