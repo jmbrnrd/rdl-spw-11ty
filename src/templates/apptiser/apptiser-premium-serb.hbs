@@ -1,7 +1,7 @@
 ---
 title: "Apptiser Premium"
 language: "en"
-layout: "layouts/apptiser-premium.hbs"
+layout: "layouts/apptiser-premium-serb.hbs"
 gtag: "G-4FPKM2SVKM"
 permalink: "/templates/apptiser-premium-serb-{{ pkg.version }}.html"
 brand:
@@ -10,6 +10,7 @@ brand:
     url: "https://apptiser.io/"
     theme: "apptiser"
 ---
+
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
@@ -59,11 +60,13 @@ brand:
             </div>
             <!-- times -->
             <aside class="opening-times">
-                <button class="btn-book"
-                        data-mzid="{{ data.mozrest.id }}"
-                        data-mzkey="{{ data.mozrest.key }}">
+                <a class="btn-book"
+                   href="https://book.mysimpleerb.com/{{ data.providers.serb.id }}/{{ data.providers.serb.name }}/"
+                   target="_blank"
+                   data-formtarget="true"
+                   data-formtargetmode="ver">
                     BOOK ONLINE
-                </button>
+                </a>
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -96,10 +99,17 @@ brand:
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
-        <p>
-            <a href="#reservations" data-mzid="{{ data.mozrest.id }}" data-mzkey="{{ data.mozrest.key }}">BOOK ONLINE</a> at
-            anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
-        </p>
+
+
+        <a class="btn-book"
+           href="https://book.mysimpleerb.com/{{ data.providers.serb.id }}/{{ data.providers.serb.name }}/"
+           target="_blank"
+           data-formtarget="true"
+           data-formtargetmode="ver">
+            BOOK ONLINE
+        </a>
+
+
 
         {{> partials/booking-extra }}
 

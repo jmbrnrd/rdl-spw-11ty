@@ -10,7 +10,8 @@
 				"aria": "Demander une date de réservation"
 			},
 			"submit": {
-				"aria": "Faire une demande de réservation"
+				"aria": "Faire une demande de réservation",
+				"sending": ""
 			},
 			"summary": {
 				"instructions": "Veuillez entrer vos coordonnées ci-dessous",

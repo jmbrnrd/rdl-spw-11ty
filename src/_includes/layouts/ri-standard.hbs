@@ -18,10 +18,12 @@
 
     {{> partials/fonts }}
 
-    <link rel="stylesheet" href="/assets/styles/themes/{{ brand.theme }}.css" />
-	<link rel="stylesheet" href="/assets/styles/base.css" />
+    <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.config.theme }}.css?v={{ pkg.version }}" />
 
-	<script type="module" src="/assets/scripts/bundle.js" defer></script>
+    <link rel="stylesheet" href="{{ config.assets }}/styles/base.css?v={{ pkg.version }}" />
+
+    <script type="module" src="{{ config.assets }}/scripts/bundle.js?v={{ pkg.version }}" defer></script>
+
 
     {{> partials/google-apis }}
 

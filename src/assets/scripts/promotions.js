@@ -76,6 +76,7 @@ export default function () {
         // we only want offers that are in date or marketing date range
         const offers = getValidPromos(offerData);
 
+
         // abort if no valid promotions are returned
         if (offers.length < 1) {
             console.log('No offers available');
@@ -179,7 +180,11 @@ export default function () {
             // or before market from data
             if (currentDate < new Date(promo['offer_marketed_from'])) { return; }
             validPromotions.push(promo);
-        })
+        });
+        // Sort by event start date & return
+        validPromotions.sort((a, b) => {
+           return new Date(a['offer_from']) - new Date(b['offer_from']);
+        });
         return validPromotions;
     }
 }

@@ -10,7 +10,8 @@
 				"aria": "Request reservation date"
 			},
 			"submit": {
-				"aria": "Make a booking request"
+				"aria": "Make a booking request",
+				"sending": ""
 			},
 			"summary": {
 				"instructions": "Please enter your contact details below",
@@ -53,7 +54,7 @@
 	"section": {
 		"about": {
 			"address": "Address",
-			"description": "",
+			"description": "Description",
 			"features": "Features",
 			"openingNotes": "Please note",
 			"openingTimes": "Opening Times",

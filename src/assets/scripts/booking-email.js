@@ -170,8 +170,8 @@ export default function (){
 
     // Create cover select options
     const coversSelect = document.getElementById('selectCovers');
-    const person = coversSelect.dataset.labelPerson;
-    const people = coversSelect.dataset.labelPeople;
+    const person = coversSelect.dataset.labelPerson || 'person';
+    const people = coversSelect.dataset.labelPeople || 'people';
     const options = document.createDocumentFragment();
 
     for (let i = 1; i <= bkgMaxCovers; i++) {

@@ -39,22 +39,24 @@ export default function() {
 
         // Insert the iFrame content
         const bkgFrame = document.createElement('iframe');
-        bkgFrame.src = `https://widget.mozrest.com/`+
-            `?key=${key}`+
-            `&mzId=${id}`+
-            `&showOffers=true`+
-            `&showAreas=true`+
-            `&requireCC=true`+
-            `&bgColor=fff`+
-            `&showHeader=false`;
+        bkgFrame.src = `https://book.mysimpleerb.com/18326/6-8-bridge-street`;
 
         bkgFrame.width = '600';
-        bkgFrame.height = '750';
+        bkgFrame.height = '600';
         bkgFrame.allowFullscreen = true;
         bkgModal.appendChild(bkgFrame);
         bkgModal.appendChild(bkgModalClose);
         modalOverlay.appendChild(bkgModal);
         document.body.appendChild(modalOverlay);
+
+        const $head = bkgFrame.getElementsByTagName('head');
+
+        const $style = document.createElement('link');
+        $style.rel = 'stylesheet';
+        $style.href = 'sss';
+        $style.type = 'text/css'
+
+        $head.append($style);
 
         // Add listeners to all book buttons
         bkgButtons.forEach(btn => {

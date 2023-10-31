@@ -6,7 +6,7 @@ import gallery from './gallery';
 import promotions from './promotions'
 import bookingRequest from './booking-email';
 import about from "./about";
-import events from './events';
+// import events from './events';
 
 
 formatting();
@@ -16,7 +16,7 @@ bookingRequest();
 about();
 
 bookings();
-events();
+// events();
 promotions();
 nav();
 

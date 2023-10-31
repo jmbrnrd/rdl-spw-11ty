@@ -7,6 +7,8 @@ export default function() {
 
     console.log('booking.js loaded');
 
+
+
     // Reference the book button
     const bkgButtons = document.querySelectorAll('[data-mzid]');
 
@@ -24,8 +26,6 @@ export default function() {
         // Grab the mz keys
         const id = bkgButtons[0].dataset.mzid;
         const key = bkgButtons[0].dataset.mzkey;
-
-        console.log(id);
 
         // Create a background overlay
         const modalOverlay = document.createElement('div');

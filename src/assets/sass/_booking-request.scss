@@ -81,7 +81,7 @@
   max-height: 100vh;
   overflow-y: auto;
   @include mq($mq-medium) {
-    height: auto;
+    height: 62%;
   }
 }
 .modal-actions {
