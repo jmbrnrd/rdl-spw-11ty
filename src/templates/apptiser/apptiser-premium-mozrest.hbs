@@ -60,8 +60,8 @@ brand:
             <!-- times -->
             <aside class="opening-times">
                 <button class="btn-book"
-                        data-mzid="{{ data.mozrest.id }}"
-                        data-mzkey="{{ data.mozrest.key }}">
+                        data-mzid="{{ data.providers.mozrest.id }}"
+                        data-mzkey="{{ data.providers.mozrest.key }}">
                     BOOK ONLINE
                 </button>
                 <dl>
@@ -97,7 +97,7 @@ brand:
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
         <p>
-            <a href="#reservations" data-mzid="{{ data.mozrest.id }}" data-mzkey="{{ data.mozrest.key }}">BOOK ONLINE</a> at
+            <a href="#reservations" data-mzid="{{ data.providers.mozrest.id }}" data-mzkey="{{ data.providers.mozrest.key }}">BOOK ONLINE</a> at
             anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
         </p>
 
