@@ -119,4 +119,8 @@ a[data-mzid] {
 .stopScroll {
   overflow: hidden;
 }
+// override SimpleERB use of fancybox to fix a positioning bug
+#fancybox-outer {
+  position: absolute !important;
+}
 
