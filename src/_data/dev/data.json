@@ -204,8 +204,7 @@
         },
         "providers": {
             "serb": {
-                "id": "18326",
-                "name": "6-8-bridge-street"
+                "widgetUrl": "https://book.mysimpleerb.com/18326/6-8-bridge-street/"
             },
             "mozrest": {
                 "id": "61c46fa7ccf9d0cba39b6387",

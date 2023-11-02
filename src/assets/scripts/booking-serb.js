@@ -1,29 +1,29 @@
 export default function() {
 
-    if (!document.querySelectorAll('[data-mzid]')) {
-        console.log('No booking links found!');
+    if (!document.querySelectorAll('[data-serbid]')) {
+        console.log('No SERB booking links found!');
         return false;
     }
 
-    console.log('booking.js loaded');
+    console.log('booking-serb.js loaded');
 
     // Reference the book button
-    const bkgButtons = document.querySelectorAll('[data-mzid]');
+    const bkgButtons = document.querySelectorAll('[data-serbid]');
 
     // Wait for DOM to be loaded
     window.addEventListener('load', function () {
 
         // Abort if no button
         if (!bkgButtons[0]) {
-            console.log('No booking button found!');
+            console.log('No serb booking button found!');
             return;
         }
 
-        console.log('Create booking widget');
+        console.log('Create serb booking widget');
 
         // Grab the mz keys
-        const id = bkgButtons[0].dataset.mzid;
-        const key = bkgButtons[0].dataset.mzkey;
+        const id = bkgButtons[0].dataset.serbid;
+        const key = bkgButtons[0].dataset.serbkey;
 
         console.log(id);
 
@@ -39,7 +39,7 @@ export default function() {
 
         // Insert the iFrame content
         const bkgFrame = document.createElement('iframe');
-        bkgFrame.src = `https://book.mysimpleerb.com/18326/6-8-bridge-street`;
+        bkgFrame.src = `https://book.mysimpleerb.com/${id}/${key}`;
 
         bkgFrame.width = '600';
         bkgFrame.height = '600';

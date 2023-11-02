@@ -61,10 +61,8 @@ brand:
             <!-- times -->
             <aside class="opening-times">
                 <a class="btn-book serbwidget"
-                   href="https://book.mysimpleerb.com/{{ data.providers.serb.id }}/{{ data.providers.serb.name }}"
-                   target="_blank">
-                    BOOK ONLINE
-                </a>
+                   href="{{ data.providers.serb.widgetUrl }}"
+                   target="_blank">BOOK ONLINE</a>
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -100,10 +98,8 @@ brand:
 
 
         <a class="btn-book serbwidget"
-           href="https://book.mysimpleerb.com/{{ data.providers.serb.id }}/{{ data.providers.serb.name }}/"
-           target="_blank">
-            BOOK ONLINE
-        </a>
+           href="{{ data.providers.serb.widgetUrl }}"
+           target="_blank">BOOK ONLINE</a>
 
 
 
