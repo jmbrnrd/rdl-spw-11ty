@@ -21,9 +21,9 @@
 
 	<link rel="stylesheet" href="{{ config.assets }}/styles/base.css?v={{ pkg.version }}" />
 
-	<script type="module" src="{{ config.assets }}/scripts/main.js?v={{ pkg.version }}" defer></script>
+	<script type="module" src="{{ config.assets }}/scripts/bundle.js?v={{ pkg.version }}" defer></script>
 
-    <script type="text/javascript" src="{{ config.assets }}/scripts/vendor/serb.js" ></script>
+    <script type="text/javascript" src="{{ config.assets }}/scripts/serb.js?v={{ pkg.version }}" ></script>
 
     {{> partials/google-apis }}
 
