@@ -56,14 +56,9 @@
     "theme": "apptiser",
     "domain": ""
   },
-  "providers": {
-    "serb": {
-      "widgetUrl": "{{ serb Widget Url }}"
-    },
-    "mozrest": {
-      "id": "{{ Mozrest Id }}",
-      "key": "{{ Mozrest Key }}"
-    }
+  "mozrest": {
+    "id": "61c46fa7ccf9d0cba39b6387",
+    "key": "61a45e24757d22026a87f369"
   }
 }
 
