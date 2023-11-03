@@ -1,3 +1,11 @@
+/**
+ * This is a local copy of the SimpleERB script include
+ * this itself include deprecated JQuery etc.
+ * I've added it locally so that we could update some of
+ * the code etc.
+ *
+ */
+
 const serbWidgetTakeChildren = true;
 let serbWidget;
 let sJQ;
@@ -8,7 +16,7 @@ const serbDetection = {
     fancyboxLoaded: false,
 
     init: function () {
-        console.log('SERB');
+        console.log('SERB: init');
         const obj = this;
         const windowWidth = window.screen.width < window.outerWidth
             ? window.screen.width
@@ -28,7 +36,7 @@ const serbDetection = {
         // JQuery Load
         function getScript(url, success) {
 
-            console.log('SERB getScript');
+            console.log('SERB: getScript');
 
             const script = document.createElement('script');
             script.src = url;
@@ -51,23 +59,21 @@ const serbDetection = {
 
         getScript('//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', function () {
             if (typeof jQuery == 'undefined') {
-
-                // Super failsafe - still somehow failed...
-
+                console.log('SERB: getScript failed');
+                return;
+            }
+            if (!obj.isPhone && !obj.isTablet) {
+                // Load lightwindow, then initialise
+                loadLightWindow();
             } else {
-                if (!obj.isPhone && !obj.isTablet) {
-                    // Load lightwindow, then initialise
-                    loadLightWindow();
-                } else {
-                    // Just initialise
-                    doActualInitialisation();
-                }
+                // Just initialise
+                doActualInitialisation();
             }
         });
 
         function doActualInitialisation() {
-            console.log('doActualInitialisation');
-            sJQ = jQuery.noConflict(true); // Grab JQuery into our own variable and return jQuery and $ variables back to their previous state
+            console.log('SERB: doActualInitialisation');
+            sJQ = jQuery.noConflict(); // Grab JQuery into our own variable and return jQuery and $ variables back to their previous state
             sJQ(document).ready(function () {
                 serbWidget = new SerbWidgetClass();
                 serbWidget.Init();
@@ -75,7 +81,7 @@ const serbDetection = {
         }
 
         function loadLightWindow() {
-            console.log('loadLightWindow');
+            console.log('SERB: loadLightWindow');
             // Check for existing fancybox
             if (!jQuery.fancybox) {
                 // Get the CSS
@@ -109,10 +115,9 @@ function SerbWidgetClass() {
 
     // Private Functions
     this.Init = function () {
-        console.log('init SerbWidgetClass');
+        console.log('SERB: init SerbWidgetClass');
         SetupWidgetLinks();
     }
-    console.log('here');
 
     function CheckOptions(lnk) {
         console.log('CheckOptions', lnk);
@@ -168,14 +173,11 @@ function SerbWidgetClass() {
                 });
             }
         }
-
-
-
         return params;
     }
 
     function SetupWidgetLinks() {
-        console.log('SetupWidgetLinks');
+        console.log('SERB: SetupWidgetLinks');
         sJQ('.serbwidget').each(function (index, value) {
             const lnk = this;
             const wCode = Math.random().toString().replace('.', '');
@@ -192,7 +194,6 @@ function SerbWidgetClass() {
             } else {
                 lnkParams.push({ name: '__type', val: 'desk' });
             }
-
 
             if (options.iFrame) {
                 // Open into an iframe

@@ -17,9 +17,7 @@ module.exports = function (config) {
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
   config.addWatchTarget('./tls/');
   config.addPassthroughCopy("./src/assets/brands/");
-  config.addPassthroughCopy("./src/assets/brands/");
   config.addPassthroughCopy("./src/assets/images/");
-  config.addPassthroughCopy("./src/assets/scripts/vendor/");
 
   config.addPassthroughCopy("./src/assets/manifest.json");
   return {
