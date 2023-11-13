@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.19" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.24" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -49,7 +49,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.19">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.24">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,11 +65,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.19" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.24" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.19" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.24" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.19.2" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.24" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -232,8 +232,7 @@
          https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
          https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
          sizes="100vw">
-    
-    
+
 </section>
 
 <main id="home">
@@ -244,11 +243,7 @@
                 <p>{{ description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
-                    <!-- Loop section tag start - LOOP FEATURES
-                    {{#each features}}
-                        <li>{{ this }}</li>
-                    {{/each}}
-                    Loop section tag end - LOOP FEATURES -->
+                    <!-- -----------------[[ INSERT FEATURES LOOP ]]-------------------- -->
                 </ul>
             </div>
             <!-- opening times -->
@@ -272,16 +267,7 @@
 
         <!-- Optional section tag start - IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!-- Loop section tag start - LOOP IMAGES
-            {{#each image.gallery}}
-            <a class="glightbox"
-                href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
-                    <img loading="lazy"
-                        src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
-                        alt="{{ ../name }} gallery image">
-                    </a>
-            {{/each}}
-            Loop section tag end - LOOP IMAGES -->
+            <!-- ---------------[[ INSERT IMAGE GALLERY LOOP ]]--------------- -->
         </div>
         <!-- Optional section tag end - IMAGE GALLERY -->
 
@@ -304,25 +290,7 @@
                         <li><i class="vg" aria-hidden="true"></i>Vegan</li>
                         <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                     </ul>
-                    <!-- Loop section tag start - LOOP HTML MENUS
-                    {{#each menus.sections }}
-                    <div id="menu_section_{{@index}}" class="menu-section">
-                        <h3 class="menu-section-title">{{ name }}</h3>
-                        <ul class="menu-items">
-                            {{#each dishes }}
-                                <li>
-                                    <h4>{{ this.dish_name }}</h4>
-                                    <span>£{{ this.dish_price }}</span>
-                                    <span>{{ this.dish_desc }}</span>
-                                    {{#each this.dish_attributes}}
-                                        <i class="{{ this }}"></i>
-                                    {{/each}}
-                                </li>
-                            {{/each }}
-                        </ul>
-                    </div>
-                    {{/each}}
-                    Loop section tag end - LOOP HTML MENUS -->
+                    <!-- ---------------[[ INSERT MENU SECTION LOOP ]]--------------- -->
     
                 </div>
             </div>
@@ -336,16 +304,7 @@
         <h2 class="section-title">Downloadable Menus</h2>
         <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
         <div class="content-block menu-downloads">
-            <!-- Loop section tag start - LOOP DOWNLOAD MENUS
-            {{#each menus.pdfs }}
-            <div class="menu-card-container">
-            <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
-                <h3>{{ name }}</h3>
-                <span>Published: {{ date }}</span>
-            </a>
-            </div>
-            {{/each }}
-            Loop section tag end - LOOP DOWNLOAD MENUS -->
+            <!-- --------------[[ INSERT PDF MENU LOOP ]]--------------- -->
         </div>
     </section>
     <!-- Optional section tag end - MENUS DOWNLOAD -->
@@ -370,7 +329,10 @@
                         <div class="selected-value" id="txtCovers">2 people</div>
                         <div class="icon icon-arrow-down"></div>
                     </div>
-                    <select id="selectCovers" name="covers" aria-label="Booking party size"></select>
+                    <select id="selectCovers"
+                            name="covers" aria-label="Request party size"
+                            data-label-person="person"
+                            data-label-people="people"></select>
                 </div>
                 <div class="selector">
                     <div class="selector-substitute">
@@ -378,7 +340,7 @@
                         <div class="selected-value" id="txtTime">19:30</div>
                         <div class="icon icon-arrow-down"></div>
                     </div>
-                    <select name="time" aria-label="Booking time">
+                    <select name="time" aria-label="Request time">
                         <option value="09:00">09:00</option>
                         <option value="09:30">09:30</option>
                         <option value="10:00">10:00</option>
@@ -415,7 +377,7 @@
                     <div class="selector-substitute" id="selectDate">
                         <div class="icon icon-date"></div>
                         <input  id="bkgDateInput"
-                                aria-label="Booking date"
+                                aria-label="Request reservation date"
                                 type="text"
                                 class="select-input hide-on-mobile"
                                 name="date"
@@ -425,7 +387,7 @@
                     </div>
         
                 </div>
-                <button class="btn" aria-label="Make a booking request">Booking Request</button>
+                <button class="btn" aria-label="bookings.email.submit.aria">Booking Request</button>
             </form>
         </div>
         
@@ -467,17 +429,17 @@
                             <input id="email" type="email" name="email" placeholder=" " required>
                             <label for="email">Your Email Address</label>
                         </div>
-                        <p><strong>Please note</strong>: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant.</p>
+                        <p>**Please note**: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant.</p>
                         <!-- Actions -->
                         <div class="modal-actions">
-                            <button id="btnCancel" type="button" class="btn-cancel">CANCEL</button>
-                            <button id="btnSubmit" type="submit" class="btn">SEND REQUEST</button>
+                            <button id="btnCancel" type="button" class="btn-cancel">Cancel</button>
+                            <button id="btnSubmit" type="submit" class="btn">Request Booking</button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="booking-request-thanks">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent"><span>Thanks, we'll be in touch.</span>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent"><span>Thanks! We&#x27;ll be in touch shortly.</span>
             </div>
         </div>
         <!-- Optional section tag end - BOOKING WIDGET -->
@@ -505,7 +467,7 @@
     <!-- Optional section tag end - RESERVATIONS -->
 
     <section id="events" class="content-section hidden" data-elem-event>
-        <h2 class="section-title">Events & Offers</h2>
+        <h2 class="section-title">Events</h2>
     </section>
     
 
@@ -530,16 +492,7 @@
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                            <!-- Loop section tag start - LOOP SOCIAL LINKS
-                            {{#each social.networks }}
-                            <div>
-                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                    <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
-                                    .name }} logo" width="28" height="28">
-                                </a>
-                            </div>
-                            {{/each}}
-                            Loop section tag end - LOOP SOCIAL LINKS -->
+                            <!-- ---------------[[ INSERT SOCIAL LOOP ]]--------------- -->
                         </div>
                     </dd>
                 </dl>
