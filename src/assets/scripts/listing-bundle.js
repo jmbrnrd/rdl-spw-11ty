@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    console.log = () => {};
+};
+
 import map from "./map-lazy";
 import formatting from "./formatting";
 import claim from './claim';

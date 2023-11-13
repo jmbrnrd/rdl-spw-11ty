@@ -16,7 +16,7 @@ const serbDetection = {
     fancyboxLoaded: false,
 
     init: function () {
-        console.log('SERB: init');
+        // console.log('SERB: init');
         const obj = this;
         const windowWidth = window.screen.width < window.outerWidth
             ? window.screen.width
@@ -36,7 +36,7 @@ const serbDetection = {
         // JQuery Load
         function getScript(url, success) {
 
-            console.log('SERB: getScript');
+            // console.log('SERB: getScript');
 
             const script = document.createElement('script');
             script.src = url;
@@ -81,7 +81,7 @@ const serbDetection = {
         }
 
         function loadLightWindow() {
-            console.log('SERB: loadLightWindow');
+            // console.log('SERB: loadLightWindow');
             // Check for existing fancybox
             if (!jQuery.fancybox) {
                 // Get the CSS

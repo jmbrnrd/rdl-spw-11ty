@@ -14,6 +14,7 @@ module.exports = function (config) {
     return parseInt(value) + 1;
   });
   config.addWatchTarget("./src/assets/sass/");
+  config.addWatchTarget("./src/assets/scripts/*");
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
   config.addWatchTarget('./tls/');
   config.addPassthroughCopy("./src/assets/brands/");

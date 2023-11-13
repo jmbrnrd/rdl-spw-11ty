@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+    console.log = () => {};
+};
+
 import bookings from "./booking-mozrest";
 import map from "./map-lazy";
 import formatting from "./formatting";
