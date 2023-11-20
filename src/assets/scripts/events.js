@@ -10,7 +10,7 @@ export default function () {
     const restaurantId = document.querySelector('html').dataset.id;
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
-    const prodServer = 'https://rc-server-staging.herokuapp.com';
+    const prodServer = 'https://rc-server-prod.herokuapp.com/';
     const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
     let eventsLoaded = false;
 

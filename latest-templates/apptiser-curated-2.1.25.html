@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.14" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.25" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -48,7 +48,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.14">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.25">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,11 +64,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.14" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.25" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/listing.css?v=2.1.14" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/listing.css?v=2.1.25" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/listing-bundle.js?v=2.1.14" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/listing-bundle.js?v=2.1.25" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id="></script>
     <script>
@@ -110,9 +110,9 @@
                 <ul class="additional-features" aria-label="features">
                 </ul>
 
-                <!-- Optional section tag start - Images -->
+                <!-- Optional section tag start - IMAGE GALLERY -->
                 <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-                    <!-- Loop section tag start - Images
+                    <!-- Loop section tag start - LOOP IMAGES
                     {{#each image.gallery}}
                     <a class="glightbox"
                         href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
@@ -121,9 +121,9 @@
                                 alt="{{ ../name }} gallery image">
                             </a>
                     {{/each}}
-                    Loop section tag end - Images -->
+                    Loop section tag end - LOOP IMAGES -->
                 </div>
-                <!-- Optional section tag end - Images -->
+                <!-- Optional section tag end - IMAGE GALLERY -->
 
             </div>
 
@@ -138,35 +138,31 @@
                     <dd>{{ addressRegion }} {{ postalCode }}</dd>
                     <dt>Opening Times</dt>
                     <dd class="times">{{ openingTimes }}</dd>
-                    <!-- Optional section tag start - Opening Notes -->
+                    <!-- Optional section tag start - OPENING NOTES -->
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ openingNotes }}</dd>
-                    <!-- Optional section tag end - Opening Notes -->
+                    <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
+                
             </aside>
         </div>
 
     </section>
 
-    
     <!-- location -->
     <section id="find" class="map-section" aria-label="location map">
         <div class="content-block"
              id="location"
-             data-bkg-id="61c46fa7ccf9d0cba39b6387"
-             data-bkg-key="61a45e24757d22026a87f369"
              data-lat="{{ geocode.lat }}"
              data-lng="{{ geocode.lng }}"
              data-label="{{ name }}"
              data-map-show-info="true"
-             data-intersection="0">
+             data-intersection="50">
             <div id="map"></div>
         </div>
         <a class="btn btn-map-directions"
            target="_blank"
-           href="https://www.google.co.uk/maps?daddr={{ addressStreet }} {{ postalCode }}">
-            Get Directions
-        </a>
+           href="https://www.google.co.uk/maps?daddr={{ addressStreet }} {{ postalCode }}">Get Directions</a>
     </section>
 
 </main>
@@ -192,18 +188,6 @@
                 </svg>
             </a>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
 </footer>

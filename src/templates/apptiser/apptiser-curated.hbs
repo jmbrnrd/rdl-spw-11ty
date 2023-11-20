@@ -46,10 +46,10 @@ brand:
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>Opening Times</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
-                    <!-- Optional section tag start - Opening Notes -->
+                    <!-- Optional section tag start - OPENING NOTES -->
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - Opening Notes -->
+                    <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
                 {{ location.mapLoadOffset }}
             </aside>
@@ -70,9 +70,7 @@ brand:
         </div>
         <a class="btn btn-map-directions"
            target="_blank"
-           href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">
-        {{ button.directions }}
-        </a>
+           href="https://www.google.co.uk/maps?daddr={{ data.addressStreet }} {{ data.postalCode }}">{{ button.directions }}</a>
     </section>
 
 </main>

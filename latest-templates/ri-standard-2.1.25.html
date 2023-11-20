@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr" data-id="{{ id }}" data-template-version="2.1.25" xmlns="http://www.w3.org/1999/html">
+
+<head>
+	<meta charset="utf-8">
+    <title>{{ name }} |  {{ postalCode }}</title>
+    <meta name="description" content="{{ description.sentence }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: should only be applied to previews -->
+<!--    <meta name="robots" content="noindex">-->
+
+    <!-- schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "{{ name }}",
+            "@id": "#id",
+            "url": "{{ website }}",
+            "telephone": "{{ phone }}",
+            "servesCuisine": "{{ cuisine }}",
+            "acceptsReservations": "true",
+            "image": "https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ addressStreet }}",
+                "addressLocality": "{{ addressLocality }}",
+                "postalCode": "{{ postalCode }}",
+                "addressCountry": "{{ addressCountry }}"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "{{ geocode.lat }}",
+                "longitude": "{{ geocode.lng }}"
+            },
+             "sameAs": "{{ social.sameAs }}"
+        }
+    </script>
+
+    <!-- open graph -->
+    <meta property="og:title"
+          content="{{ name }}">
+    <meta property="og:type"
+          content="website">
+    <meta property="og:url"
+          content="{{ website }}">
+    <meta property="og:image"
+          content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}">
+
+    <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.25">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap" />
+    <link rel="stylesheet"
+          media="print"
+          onload="this.media='all'"
+          href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.25" />
+
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.25" />
+
+    <script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.25" defer></script>
+
+
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RX7PGJKJGS"></script>
+    <script>
+        // Gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RX7PGJKJGS');
+    </script>
+
+</head>
+
+<body>
+
+	
+<!-- mobile nav -->
+<div class="nav-menu" id="navMenu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ name }} navigation menu">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+    </button>
+</div>
+
+<!-- global nav -->
+<nav id="navBar" aria-label="primary">
+    <a href="#" class="brand" title="Retour au début de la page">
+        <h1>{{ name }}</h1>
+    </a>
+    <ul class="nav-list-mobile" role="list">
+        <li>
+            <a href="#about"
+               aria-label="Description {{ name }}">
+                Description
+            </a>
+        </li>
+        <li class="hide-on-desktop">
+            <a href="#hours"
+               aria-label="Horaires d&#x27;ouverture {{ name }}">
+                Horaires d&#x27;ouverture
+            </a>
+        </li>
+        <!-- Optional section tag start - MENU NAV -->
+        <li>
+            <a href="#menus"
+               aria-label="{{ name }} Menus">
+                Menus
+            </a>
+        </li>
+        <!-- Optional section tag end - MENU NAV -->
+        
+        <!-- Optional section tag start - RESERVATIONS NAV -->
+        <li>
+            <a href="#reservations"
+               aria-label="{{ name }} Réservations">
+                Réservations
+            </a>
+        </li>
+        <!-- Optional section tag end - RESERVATIONS NAV -->
+        
+        <!-- Optional section tag start - EVENTS -->
+        <li class="hidden" data-elem-event>
+            <a href="#events"
+               aria-label="Événements {{ name }}">
+                Événements
+            </a>
+        </li>
+        <!-- Optional section tag end - EVENTS NAV -->
+        
+        <!-- Optional section tag start - CONTACTS NAV -->
+        <li>
+            <a href="#contacts"
+               aria-label="{{ name }} Contacts">
+                Contacts
+            </a>
+        </li>
+        <!-- Optional section tag end - CONTACTS NAV -->
+        
+        <!-- Optional section tag start - LOCATION NAV -->
+        <li>
+            <a href="#find"
+               aria-label="{{ name }} Emplacement">
+                Emplacement
+            </a>
+        </li>
+        <!-- Optional section tag end - LOCATION NAV -->
+    </ul>
+</nav>
+
+<!-- hero -->
+<section id="hero" class="section-hero">
+    <div class="brand-container fade-in">
+        <h2>{{ name }}</h2>
+        <h3 class="subtitle">{{ subtitle }}</h3>
+        <ul class="hero-nav fade-in">
+            <li>
+                <a href="#about"
+                   aria-label="Description {{ name }}">
+                    Description
+                </a>
+            </li>
+            <li class="hide-on-desktop">
+                <a href="#hours"
+                   aria-label="Horaires d&#x27;ouverture {{ name }}">
+                    Horaires d&#x27;ouverture
+                </a>
+            </li>
+            <!-- Optional section tag start - MENU NAV -->
+            <li>
+                <a href="#menus"
+                   aria-label="{{ name }} Menus">
+                    Menus
+                </a>
+            </li>
+            <!-- Optional section tag end - MENU NAV -->
+            
+            <!-- Optional section tag start - RESERVATIONS NAV -->
+            <li>
+                <a href="#reservations"
+                   aria-label="{{ name }} Réservations">
+                    Réservations
+                </a>
+            </li>
+            <!-- Optional section tag end - RESERVATIONS NAV -->
+            
+            <!-- Optional section tag start - EVENTS -->
+            <li class="hidden" data-elem-event>
+                <a href="#events"
+                   aria-label="Événements {{ name }}">
+                    Événements
+                </a>
+            </li>
+            <!-- Optional section tag end - EVENTS NAV -->
+            
+            <!-- Optional section tag start - CONTACTS NAV -->
+            <li>
+                <a href="#contacts"
+                   aria-label="{{ name }} Contacts">
+                    Contacts
+                </a>
+            </li>
+            <!-- Optional section tag end - CONTACTS NAV -->
+            
+            <!-- Optional section tag start - LOCATION NAV -->
+            <li>
+                <a href="#find"
+                   aria-label="{{ name }} Emplacement">
+                    Emplacement
+                </a>
+            </li>
+            <!-- Optional section tag end - LOCATION NAV -->
+        </ul>
+        <span class="desc-one-sentence fade-in" >{{ description.sentence }}</span>
+    </div>
+    
+    <img alt="Image d&#x27;arrière-plan de{{ name }}"
+         src="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}"
+         srcset="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  300w,
+         https://res.cloudinary.com/rdl/image/upload/w_600,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  600w,
+         https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
+         https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
+         sizes="100vw">
+    
+    
+</section>
+
+<main id="home">
+
+    <!-- about -->
+    <section id="about" class="content-section" aria-label="La description">
+        <div class="content-block">
+            <div class="description desc-full" aria-label="description">
+                <p>{{ description.full }}</p>
+                <!-- feature tags-->
+                <ul class="additional-features" aria-label="features">
+                    <!-- Loop section tag start - LOOP FEATURES
+                    {{#each features}}
+                        <li>{{ this }}</li>
+                    {{/each}}
+                    Loop section tag end - LOOP FEATURES -->
+                </ul>
+            </div>
+            <!-- opening times -->
+            <aside id="hours" class="opening-times">
+                <dl>
+                    <dt>Téléphone</dt>
+                    <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+                    <dt>Adresse</dt>
+                    <dd>{{ addressStreet }}</dd>
+                    <dd>{{ addressLocality }}</dd>
+                    <dd>{{ addressRegion }} {{ postalCode }}</dd>
+                    <dt>Horaires</dt>
+                    <dd class="times">{{ openingTimes }}</dd>
+                    <!-- Optional section tag start - OPENING NOTES -->
+                    <dt>Notez s&#x27;il vous plaît</dt>
+                    <dd>{{ openingNotes }}</dd>
+                    <!-- Optional section tag end - OPENING NOTES -->
+                </dl>
+            </aside>
+        </div>
+
+        <!-- Optional section tag start - IMAGE GALLERY -->
+        <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
+            <!-- Loop section tag start - LOOP IMAGES
+            {{#each image.gallery}}
+            <a class="glightbox"
+                href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
+                    <img loading="lazy"
+                        src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
+                        alt="{{ ../name }} gallery image">
+                    </a>
+            {{/each}}
+            Loop section tag end - LOOP IMAGES -->
+        </div>
+        <!-- Optional section tag end - IMAGE GALLERY -->
+
+    </section>
+
+    <!-- Optional section tag start - MENUS HTML -->
+    <section id="menus" class="content-section" aria-label="Nos menus">
+    
+        <h2 class="section-title">Nos menus</h2>
+        <div class="menu-html">
+            <p>{{ menus.overview }}</p>
+            <!-- sample Menu -->
+            <div class="content-sub-section" aria-label="">
+                <div class="menu-html">
+                    <ul class="menu-key">
+                        <li>
+                            <i class="vt" aria-hidden="true"></i>
+                            Végétarien
+                        </li>
+                        <li><i class="vg" aria-hidden="true"></i>Végétalien</li>
+                        <li><i class="gf" aria-hidden="true"></i>Sans gluten</li>
+                    </ul>
+                    <!-- Loop section tag start - LOOP HTML MENUS
+                    {{#each menus.sections }}
+                    <div id="menu_section_{{@index}}" class="menu-section">
+                        <h3 class="menu-section-title">{{ name }}</h3>
+                        <ul class="menu-items">
+                            {{#each dishes }}
+                                <li>
+                                    <h4>{{ this.dish_name }}</h4>
+                                    <span>£{{ this.dish_price }}</span>
+                                    <span>{{ this.dish_desc }}</span>
+                                    {{#each this.dish_attributes}}
+                                        <i class="{{ this }}"></i>
+                                    {{/each}}
+                                </li>
+                            {{/each }}
+                        </ul>
+                    </div>
+                    {{/each}}
+                    Loop section tag end - LOOP HTML MENUS -->
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional section tag end - MENUS HTML -->
+
+    
+    <!-- Optional section tag start - MENUS DOWNLOAD -->
+    <section class="content-section menu-pdf" id="pdfMenus" aria-label="Téléchargements de menus">
+        <h2 class="section-title">Menus téléchargeables</h2>
+        <p>Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.</p>
+        <div class="content-block menu-downloads">
+            <!-- Loop section tag start - LOOP DOWNLOAD MENUS
+            {{#each menus.pdfs }}
+            <div class="menu-card-container">
+            <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                <h3>{{ name }}</h3>
+                <span>Published: {{ date }}</span>
+            </a>
+            </div>
+            {{/each }}
+            Loop section tag end - LOOP DOWNLOAD MENUS -->
+        </div>
+    </section>
+    <!-- Optional section tag end - MENUS DOWNLOAD -->
+
+    <!-- Optional section tag start - RESERVATIONS -->
+    <section id="reservations" class="content-section booking-section" aria-label="Widget de réservation">
+    
+        <h2 class="section-title">Reservations</h2>
+    
+        <p>{{ reservations.info }}</p>
+    
+        <!-- Optional section tag start - BOOKING WIDGET -->
+        <div class="booking-request-container">
+            <form class="form-booking-request"
+                  id="bkgRequestForm"
+                  aria-label="Booking request form"
+                  data-daysinadvance="{{ reservations.bkgAdvDays }}"
+                  data-maxcovers="{{ reservations.maxcover }}">
+                <div class="selector">
+                    <div class="selector-substitute">
+                        <div class="icon icon-covers"></div>
+                        <div class="selected-value" id="txtCovers">2 personnes</div>
+                        <div class="icon icon-arrow-down"></div>
+                    </div>
+                    <select id="selectCovers"
+                            name="covers" aria-label="Demander la taille du groupe"
+                            data-label-person="personne"
+                            data-label-people="personnes"></select>
+                </div>
+                <div class="selector">
+                    <div class="selector-substitute">
+                        <div class="icon icon-time"></div>
+                        <div class="selected-value" id="txtTime">19:30</div>
+                        <div class="icon icon-arrow-down"></div>
+                    </div>
+                    <select name="time" aria-label="Temps de demande">
+                        <option value="09:00">09:00</option>
+                        <option value="09:30">09:30</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:30">10:30</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:30">11:30</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:30">12:30</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30">13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:30">15:30</option>
+                        <option value="16:00">16:00</option>
+                        <option value="16:30">16:30</option>
+                        <option value="17:00">17:00</option>
+                        <option value="17:30">17:30</option>
+                        <option value="18:00">18:00</option>
+                        <option value="18:30">18:30</option>
+                        <option value="19:00">19:00</option>
+                        <option value="19:30" selected>19:30</option>
+                        <option value="20:00">20:00</option>
+                        <option value="20:30">20:30</option>
+                        <option value="21:00">21:00</option>
+                        <option value="21:30">21:30</option>
+                        <option value="22:00">22:00</option>
+                        <option value="22:30">22:30</option>
+                        <option value="23:00">23:00</option>
+                        <option value="23:30">23:30</option>
+                    </select>
+                </div>
+                <div class="selector">
+                    <div class="selector-substitute" id="selectDate">
+                        <div class="icon icon-date"></div>
+                        <input  id="bkgDateInput"
+                                aria-label="Demander une date de réservation"
+                                type="text"
+                                class="select-input hide-on-mobile"
+                                name="date"
+                                autocomplete="off"
+                                data-adv-days="30">
+                        <div class="icon icon-arrow-down hide-on-mobile"></div>
+                    </div>
+        
+                </div>
+                <button class="btn" aria-label="bookings.email.submit.aria">Table disponsible</button>
+            </form>
+        </div>
+        
+        <!-- modal -->
+        <div id="modal" class="modal-overlay">
+            <div class="modal-window email">
+                <div id="emailRequest" class="form-email-request">
+                    <form id="emailRequestForm">
+                        <input type="hidden" name="restaurant_name" value="{{ name }}">
+                        <input type="hidden" name="restaurant_email" value="{{ email }}">
+                        <input type="hidden" name="language" value="en">
+                        <input type="hidden" name="sender" value="app">
+                        <!-- Summary -->
+                        <div class="booking-summary">
+                            <h1>Demande de réservation</h1>
+                            <ul>
+                                <li>
+                                    <span class="icon icon-covers"></span>
+                                    <span id="partySize"></span>
+                                </li>
+                                <li>
+                                    <span class="icon icon-time"></span>
+                                    <span id="timeSlot"></span>
+                                </li>
+                                <li>
+                                    <span class="icon icon-date"></span>
+                                    <span id="dayDate"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2>Veuillez entrer vos coordonnées ci-dessous:</h2>
+                        <!-- Name -->
+                        <div class="text-field">
+                            <input id="full_name" type="text" name="full_name" placeholder=" " autofocus required tabindex="0">
+                            <label for="full_name">Your full name</label>
+                        </div>
+                        <!-- Email -->
+                        <div class="text-field">
+                            <input id="email" type="email" name="email" placeholder=" " required>
+                            <label for="email">Your Email Address</label>
+                        </div>
+                        <p>**Attention**: les demandes de réservation sont soumises à disponibilité et ne sont confirmées qu&#x27;après avoir été contacté par le restaurant.</p>
+                        <!-- Actions -->
+                        <div class="modal-actions">
+                            <button id="btnCancel" type="button" class="btn-cancel">Annuler</button>
+                            <button id="btnSubmit" type="submit" class="btn">Demande de réservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="booking-request-thanks">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent"><span>Merci! Nous vous contacterons sous peu.</span>
+            </div>
+        </div>
+        <!-- Optional section tag end - BOOKING WIDGET -->
+    
+        <!-- group & private bookings -->
+        <div class="content-block">
+        
+            <!-- Optional section tag start - BOOKING GROUPS -->
+            <aside>
+                <h2 class="sub-section-title">RÉSERVATIONS DE GROUPE</h2>
+                <p>{{ reservations.groups }}</p>
+            </aside>
+            <!-- Optional section tag end - BOOKING GROUPS -->
+        
+            <!-- Optional section tag start - BOOKING PRIVATE -->
+            <aside>
+                <h2 class="sub-section-title">Dîner privé</h2>
+                <p>{{ reservations.private  }}</p>
+            </aside>
+            <!-- Optional section tag end - BOOKING PRIVATE -->
+        
+        </div>
+    
+    </section>
+    <!-- Optional section tag end - RESERVATIONS -->
+
+    <section id="events" class="content-section hidden" data-elem-event>
+        <h2 class="section-title">Événements</h2>
+    </section>
+    
+
+    <!-- Optional section tag start - CONTACTS -->
+    <section id="contacts" class="content-section contact-section">
+        <h2 class="section-title">Contacts</h2>
+        <div class="content-block">
+    
+            <aside>
+                <dl>
+                    <dt>Adresse</dt>
+                    <dd>{{ addressStreet }}</dd>
+                    <dd>{{ addressLocality }} {{ postalCode }}</dd>
+                    <dt>Téléphone</dt>
+                    <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+                </dl>
+            </aside>
+    
+            <!-- Optional section tag start - SOCIAL LINKS -->
+            <aside>
+                <dl>
+                    <dt>Liens</dt>
+                    <dd>
+                        <div class="social-links">
+                            <!-- Loop section tag start - LOOP SOCIAL LINKS
+                            {{#each social.networks }}
+                            <div>
+                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                    <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
+                                    .name }} logo" width="28" height="28">
+                                </a>
+                            </div>
+                            {{/each}}
+                            Loop section tag end - LOOP SOCIAL LINKS -->
+                        </div>
+                    </dd>
+                </dl>
+            </aside>
+            <!-- Optional section tag end - SOCIAL LINKS -->
+    
+            <!-- Optional section tag start - TRANSPORT -->
+            <aside>
+                <dl>
+                    <!-- Optional section tag start - PUBLIC TRANSPORT -->
+                    <dt>Transport public</dt>
+                    <dd>{{ transport }}</dd>
+                    <!-- Optional section tag end - PUBLIC TRANSPORT -->
+    
+                    <!-- Optional section tag start - CAR PARKING -->
+                    <dt>Parking</dt>
+                    <dd>{{ parking }}</dd>
+                    <!-- Optional section tag end - CAR PARKING -->
+                </dl>
+            </aside>
+            <!-- Optional section tag end - TRANSPORT -->
+        </div>
+    </section>
+    <!-- Optional section tag end - CONTACTS -->
+
+    
+    <!-- location -->
+    <section id="find" class="map-section" aria-label="location map">
+        <div class="content-block"
+             id="location"
+             data-bkg-id="61c46fa7ccf9d0cba39b6387"
+             data-bkg-key="61a45e24757d22026a87f369"
+             data-lat="{{ geocode.lat }}"
+             data-lng="{{ geocode.lng }}"
+             data-label="{{ name }}"
+             data-map-show-info="true"
+             data-intersection="300">
+            <div id="map"></div>
+        </div>
+        <a class="btn btn-map-directions"
+           target="_blank"
+           href="https://www.google.co.uk/maps?daddr={{ addressStreet }} {{ postalCode }}">
+            Obtenir des directions
+        </a>
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-container">
+        <span>Généré par</span>
+        <a href="https://apptiser.io/" aria-label="Visit the https://restaurateursindependants.fr/ website">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 103" class="logo ri">
+                <g fill="#FFF" fill-rule="nonzero">
+                    <path d="M93.922 18.486c1.41 1.636 1.18 4.066-.514 5.428s-4.21 1.14-5.62-.496C79.262 13.53 66.677 7.708 53.1 7.708c-24.917 0-45.118 19.51-45.118 43.58 0 24.068 20.2 43.579 45.118 43.579 13.685 0 26.36-5.916 34.882-15.937 1.399-1.645 3.914-1.883 5.617-.532 1.704 1.35 1.95 3.78.551 5.424-10.022 11.785-24.95 18.753-41.05 18.753-29.326 0-53.1-22.963-53.1-51.288C0 22.962 23.774 0 53.1 0c15.974 0 30.797 6.859 40.822 18.486ZM78.331 28.979a3.762 3.762 0 0 1-.278 5.444c-1.633 1.43-4.157 1.31-5.638-.268-4.966-5.293-11.979-8.363-19.51-8.363-14.55 0-26.347 11.413-26.347 25.495 0 14.083 11.797 25.496 26.346 25.496 7.368 0 14.242-2.937 19.193-8.03 1.509-1.552 4.035-1.629 5.642-.172a3.761 3.761 0 0 1 .178 5.448C71.473 80.658 62.501 84.49 52.904 84.49c-18.96 0-34.328-14.867-34.328-33.204 0-18.336 15.367-33.203 34.328-33.203 9.81 0 18.963 4.007 25.427 10.895Z"/>
+                    <path d="M95.788 62.705V73.26h-1.473V62.705h1.473Zm12.359 0V73.26h-1.3l-4.981-6.829-.687-1.199h-.025v8.028h-1.472V62.705h1.3l5.006 6.842.662 1.186h.025v-8.028h1.472Zm10.948 5.278c0-2.072-.466-3.832-3.324-3.832h-2.466l.147.157v7.35l-.147.157h2.515c2.834 0 3.275-1.747 3.275-3.832Zm1.51 0c0 2.476-.688 5.278-4.662 5.278h-3.963V62.705h3.914c4.011 0 4.71 2.802 4.71 5.278Zm11.01 3.832v1.446h-7.607V62.705h7.606v1.446h-6.28l.146.157v2.789l-.147.17h5.692V68.7h-5.692l.147.156v2.802l-.147.157h6.281Zm10.2-5.8c0-1.12-.59-1.864-1.927-1.864h-3.36l.146.157v3.427l-.147.157h3.361c1.325 0 1.926-.782 1.926-1.877Zm1.508 0c0 1.864-1.239 3.323-3.435 3.323h-3.36l.146.157v3.766h-1.472V62.705h4.686c2.196 0 3.435 1.381 3.435 3.31Zm10.887 5.8v1.446h-7.605V62.705h7.605v1.446h-6.28l.147.157v2.789l-.147.17h5.692V68.7h-5.692l.147.156v2.802l-.147.157h6.28Zm12.053-9.11V73.26h-1.3l-4.98-6.829-.688-1.199h-.024v8.028h-1.472V62.705h1.3l5.005 6.842.662 1.186h.025v-8.028h1.472Zm10.949 5.278c0-2.072-.467-3.832-3.325-3.832h-2.466l.148.157v7.35l-.148.157h2.515c2.834 0 3.276-1.747 3.276-3.832Zm1.508 0c0 2.476-.687 5.278-4.661 5.278h-3.962V62.705h3.913c4.011 0 4.71 2.802 4.71 5.278Zm5.367 1.238h3.938l-.147-.156-1.521-3.584-.282-.965h-.025l-.282.952-1.533 3.597-.148.156Zm2.687-6.516 4.502 10.556h-1.607l-1.043-2.45.074-.143h-5.287l.073.143-1.042 2.45h-1.607l4.502-10.556h1.435Zm15.88 0V73.26h-1.3l-4.981-6.829-.687-1.199h-.024v8.028h-1.473V62.705h1.3l5.006 6.842.662 1.186h.025v-8.028h1.472Zm11.44 0v1.446h-3.57l.073.157v8.953h-1.472v-8.953l.086-.157h-3.582v-1.446h8.464Zm11.046 7.624c0 1.538-1.153 3.062-4.11 3.062-1.631 0-3.312-.534-4.453-1.798l1.092-1.12c1.14 1.068 2.085 1.472 3.312 1.472 1.828 0 2.65-.717 2.65-1.538 0-.586-.479-1.199-1.816-1.564-.208-.065-1.607-.443-1.828-.508-1.803-.521-3.128-1.212-3.128-2.828 0-1.538 1.3-2.932 4.049-2.932 1.619 0 2.993.6 3.974 1.694l-1.08 1.134c-.699-.874-1.63-1.382-2.894-1.382-1.84 0-2.54.73-2.54 1.434 0 .651.614 1.03 2.294 1.512.209.052 1.374.39 1.607.456 2 .534 2.87 1.616 2.87 2.906ZM51.178 47.169c0-1.439-.942-2.19-2.689-2.19h-4.671l.314.313v3.69l-.314.334h4.475c2.041 0 2.885-1.042 2.885-2.147Zm2.297 5.817L56.3 58.7h-3.749l-2.179-4.462c-.647-1.314-1.55-1.898-3.395-1.898h-3.16l.314.313V58.7h-3.337V41.81h7.694c3.16 0 6.085 1.668 6.085 5.275 0 1.794-1.296 3.42-2.709 4.108v.042c.53.25 1.178.876 1.61 1.751ZM70.77 55.53v3.17H57.62V41.81h13.15v3.17H60.643l.314.333v3.023l-.314.334h9.186v3.17h-9.186l.314.333v3.024l-.314.333h10.128Zm16.433-1.647c0 2.607-2.16 5.025-7.066 5.025-2.827 0-5.555-.938-7.557-2.981l2.316-2.461c1.63 1.564 3.513 2.294 5.358 2.294 2.61 0 3.553-.876 3.553-1.814 0-.543-.451-1.377-2.532-1.919-.353-.083-2.571-.667-2.944-.771-2.827-.772-5.358-1.898-5.358-4.755 0-2.69 2.414-4.9 6.967-4.9 2.846 0 5.202 1.022 6.929 2.899l-2.336 2.46c-1.099-1.334-2.787-2.21-4.632-2.21-2.59 0-3.533.876-3.533 1.668 0 .709.726 1.147 3.298 1.835.353.104 2.198.605 2.57.688 3.318.855 4.967 2.69 4.967 4.942ZM102.36 41.81v3.17h-5.672l.177.333V58.7h-3.337V45.313l.177-.334h-5.673v-3.17h14.328Zm5.01 9.904h4.985l-.333-.333-1.65-3.67-.49-1.543-.04.02-.49 1.523-1.648 3.67-.334.333Zm3.965-9.904 7.635 16.89h-3.651l-1.668-3.712.196-.313h-7.988l.196.313-1.649 3.712h-3.67l7.654-16.89h2.945Zm23.42 0v9.112c0 5.046-2.395 7.986-7.459 7.986-5.083 0-7.498-2.898-7.498-7.986V41.81h3.337V50.9c0 3.19 1.1 4.838 4.142 4.838 3.003 0 4.141-1.647 4.141-4.838V41.81h3.337Zm13.272 5.359c0-1.439-.942-2.19-2.689-2.19h-4.671l.314.313v3.69l-.314.334h4.475c2.041 0 2.885-1.042 2.885-2.147Zm2.297 5.817 2.826 5.714h-3.749l-2.178-4.462c-.648-1.314-1.55-1.898-3.396-1.898h-3.16l.314.313V58.7h-3.337V41.81h7.694c3.16 0 6.085 1.668 6.085 5.275 0 1.794-1.295 3.42-2.709 4.108v.042c.53.25 1.178.876 1.61 1.751Zm9.308-1.272h4.985l-.334-.333-1.648-3.67-.491-1.543-.04.02-.49 1.523-1.649 3.67-.333.333Zm3.964-9.904 7.636 16.89h-3.651l-1.669-3.712.197-.313h-7.989l.197.313-1.65 3.712h-3.67l7.655-16.89h2.944Zm20.339 0v3.17h-5.672l.176.333V58.7h-3.336V45.313l.176-.334h-5.672v-3.17h14.328Zm14.764 13.72v3.17h-13.15V41.81h13.15v3.17h-10.128l.315.333v3.023l-.315.334h9.186v3.17h-9.186l.315.333v3.024l-.315.333H198.7Zm17.454-13.72v9.112c0 5.046-2.395 7.986-7.459 7.986-5.083 0-7.498-2.898-7.498-7.986V41.81h3.337V50.9c0 3.19 1.1 4.838 4.142 4.838 3.003 0 4.141-1.647 4.141-4.838V41.81h3.337Zm13.272 5.359c0-1.439-.942-2.19-2.689-2.19h-4.671l.314.313v3.69l-.314.334h4.475c2.041 0 2.885-1.042 2.885-2.147Zm2.297 5.817 2.826 5.714H230.8l-2.178-4.462c-.648-1.314-1.551-1.898-3.396-1.898h-3.16l.314.313V58.7h-3.337V41.81h7.694c3.16 0 6.085 1.668 6.085 5.275 0 1.794-1.296 3.42-2.709 4.108v.042c.53.25 1.178.876 1.61 1.751Zm17.983.897c0 2.607-2.159 5.025-7.066 5.025-2.826 0-5.555-.938-7.557-2.981l2.316-2.461c1.63 1.564 3.514 2.294 5.359 2.294 2.61 0 3.552-.876 3.552-1.814 0-.543-.451-1.377-2.532-1.919-.353-.083-2.57-.667-2.944-.771-2.826-.772-5.358-1.898-5.358-4.755 0-2.69 2.414-4.9 6.968-4.9 2.846 0 5.201 1.022 6.928 2.899l-2.335 2.46c-1.1-1.334-2.787-2.21-4.632-2.21-2.591 0-3.533.876-3.533 1.668 0 .709.726 1.147 3.297 1.835.353.104 2.198.605 2.571.688 3.317.855 4.966 2.69 4.966 4.942Z"/>
+                </g>
+            </svg>
+        </a>
+        <span>&copy; 2023</span>
+    </div>
+
+</footer>
+
+<div id="eventsWidget" class="events-sticky" data-widget-label="Événements"></div>
+
+
+
+
+
+
+</body>
+</html>

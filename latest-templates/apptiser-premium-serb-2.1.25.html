@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr" data-id="{{ id }}" xmlns="http://www.w3.org/1999/html">
-
-<!-- 2.1.12 -->
-
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.25" xmlns="http://www.w3.org/1999/html">
 <head>
-
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
     <meta name="description" content="{{ description.sentence }}">
@@ -53,7 +49,7 @@
 
     <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.12">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.25">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,18 +65,21 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="/assets/styles/themes/collective.css" />
-	<link rel="stylesheet" href="/assets/styles/member.css" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.25" />
 
-	<script type="module" src="/assets/scripts/main.js" defer></script>
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.25" />
 
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RX7PGJKJGS"></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.25." defer></script>
+
+    <script type="text/javascript" src="https://assets.apptiser.io/scripts/serb.js?v=2.1.25" ></script>
+
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
         // Gtag
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-RX7PGJKJGS');
+        gtag('config', 'G-4FPKM2SVKM');
     </script>
 
 </head>
@@ -88,9 +87,10 @@
 <body>
 
 	
+
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ name }} navigation menu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -99,48 +99,66 @@
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" title="Back to top">
+    <a href="#" class="brand" aria-label="Return to start of page">
         <h1>{{ name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
         <li>
             <a href="#about"
-               aria-label="Description {{ name }}">
-                Description
+               aria-label="About {{ name }}">
+                About
             </a>
         </li>
         <li class="hide-on-desktop">
             <a href="#hours"
-               aria-label="Horaires {{ name }}">
-                Horaires
+               aria-label="Opening times {{ name }}">
+                Opening times
             </a>
         </li>
-        <!-- Optional section tag start - Menus NavBar -->
+        <!-- Optional section tag start - MENU NAV -->
         <li>
             <a href="#menus"
                aria-label="{{ name }} Menus">
                 Menus
             </a>
         </li>
-        <!-- Optional section tag end - Menus NavBar -->
+        <!-- Optional section tag end - MENU NAV -->
+        
+        <!-- Optional section tag start - RESERVATIONS NAV -->
         <li>
             <a href="#reservations"
                aria-label="{{ name }} Reservations">
                 Reservations
             </a>
         </li>
+        <!-- Optional section tag end - RESERVATIONS NAV -->
+        
+        <!-- Optional section tag start - EVENTS -->
+        <li class="hidden" data-elem-event>
+            <a href="#events"
+               aria-label="Events &amp; Offers {{ name }}">
+                Events &amp; Offers
+            </a>
+        </li>
+        <!-- Optional section tag end - EVENTS NAV -->
+        
+        <!-- Optional section tag start - CONTACTS NAV -->
         <li>
             <a href="#contacts"
-               aria-label="{{ name }} Coordonnees">
-                Coordonnees
+               aria-label="{{ name }} Contacts">
+                Contacts
             </a>
         </li>
+        <!-- Optional section tag end - CONTACTS NAV -->
+        
+        <!-- Optional section tag start - LOCATION NAV -->
         <li>
             <a href="#find"
-               aria-label="{{ name }} Localisation">
-                Localisation
+               aria-label="{{ name }} Location">
+                Location
             </a>
         </li>
+        <!-- Optional section tag end - LOCATION NAV -->
     </ul>
 </nav>
 
@@ -152,42 +170,60 @@
         <ul class="hero-nav fade-in">
             <li>
                 <a href="#about"
-                   aria-label="Description {{ name }}">
-                    Description
+                   aria-label="About {{ name }}">
+                    About
                 </a>
             </li>
             <li class="hide-on-desktop">
                 <a href="#hours"
-                   aria-label="Horaires {{ name }}">
-                    Horaires
+                   aria-label="Opening times {{ name }}">
+                    Opening times
                 </a>
             </li>
-            <!-- Optional section tag start - Menus NavBar -->
+            <!-- Optional section tag start - MENU NAV -->
             <li>
                 <a href="#menus"
                    aria-label="{{ name }} Menus">
                     Menus
                 </a>
             </li>
-            <!-- Optional section tag end - Menus NavBar -->
+            <!-- Optional section tag end - MENU NAV -->
+            
+            <!-- Optional section tag start - RESERVATIONS NAV -->
             <li>
                 <a href="#reservations"
                    aria-label="{{ name }} Reservations">
                     Reservations
                 </a>
             </li>
+            <!-- Optional section tag end - RESERVATIONS NAV -->
+            
+            <!-- Optional section tag start - EVENTS -->
+            <li class="hidden" data-elem-event>
+                <a href="#events"
+                   aria-label="Events &amp; Offers {{ name }}">
+                    Events &amp; Offers
+                </a>
+            </li>
+            <!-- Optional section tag end - EVENTS NAV -->
+            
+            <!-- Optional section tag start - CONTACTS NAV -->
             <li>
                 <a href="#contacts"
-                   aria-label="{{ name }} Coordonnees">
-                    Coordonnees
+                   aria-label="{{ name }} Contacts">
+                    Contacts
                 </a>
             </li>
+            <!-- Optional section tag end - CONTACTS NAV -->
+            
+            <!-- Optional section tag start - LOCATION NAV -->
             <li>
                 <a href="#find"
-                   aria-label="{{ name }} Localisation">
-                    Localisation
+                   aria-label="{{ name }} Location">
+                    Location
                 </a>
             </li>
+            <!-- Optional section tag end - LOCATION NAV -->
         </ul>
         <span class="desc-one-sentence fade-in" >{{ description.sentence }}</span>
     </div>
@@ -204,24 +240,26 @@
 </section>
 
 <main id="home">
-
     <!-- about -->
-    <section id="about" class="content-section" aria-label="Description">
+    <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-            <div class="description desc-full" aria-label="description">
+            <div class="description" aria-label="description">
                 <p>{{ description.full }}</p>
-                <!-- Feature keywords-->
-                <!-- TODO -->
+                <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
+                    <!-- Loop section tag start - LOOP FEATURES
+                    {{#each features}}
+                        <li>{{ this }}</li>
+                    {{/each}}
+                    Loop section tag end - LOOP FEATURES -->
                 </ul>
             </div>
             <!-- times -->
             <aside class="opening-times">
-                <button class="btn-book"
-                        data-mzid="61c46fa7ccf9d0cba39b6387"
-                        data-mzkey="61a45e24757d22026a87f369">
-                    BOOK ONLINE
-                </button>
+                <a class="btn-book serbwidget"
+                   aria-label="Book Online"
+                   href="{{ reservations.tgturl }}"
+                   target="_blank">BOOK ONLINE</a>
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
@@ -229,26 +267,35 @@
                     <dd>{{ addressStreet }}</dd>
                     <dd>{{ addressLocality }}</dd>
                     <dd>{{ addressRegion }} {{ postalCode }}</dd>
-                    <dt>Horaires</dt>
+                    <dt>Opening Times</dt>
                     <dd class="times">{{ openingTimes }}</dd>
 
-                    <!-- Optional section tag start - Opening Notes -->
+                    <!-- Optional section tag start - OPENING NOTES -->
                     <dt>PLEASE NOTE:</dt>
                     <dd>{{ openingNotes }}</dd>
-                    <!-- Optional section tag end - Opening Notes -->
+                    <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
             </aside>
         </div>
 
-        <!-- Optional section tag start - Images -->
+        <!-- Optional section tag start - IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!-- ---------------[[ INSERT IMAGE GALLERY LOOP ]]--------------- -->
+            <!-- Loop section tag start - LOOP IMAGES
+            {{#each image.gallery}}
+            <a class="glightbox"
+                href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
+                    <img loading="lazy"
+                        src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
+                        alt="{{ ../name }} gallery image">
+                    </a>
+            {{/each}}
+            Loop section tag end - LOOP IMAGES -->
         </div>
-        <!-- Optional section tag end - Images -->
+        <!-- Optional section tag end - IMAGE GALLERY -->
 
     </section>
 
-    <!-- Optional section tag start - HTML Menus -->
+    <!-- Optional section tag start - MENUS HTML -->
     <section id="menus" class="content-section" aria-label="Our Menus">
     
         <h2 class="section-title">Our Menus</h2>
@@ -262,52 +309,95 @@
                             <i class="vt" aria-hidden="true"></i>
                             Vegetarian
                         </li>
-                        <li><i class="vg" aria-hidden="true"></i>Vegetarian</li>
+                        <li><i class="vg" aria-hidden="true"></i>Vegan</li>
                         <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                     </ul>
-                    <!-- ---------------[[ INSERT MENU SECTION LOOP ]]--------------- -->
+                    <!-- Loop section tag start - LOOP HTML MENUS
+                    {{#each menus.sections }}
+                    <div id="menu_section_{{@index}}" class="menu-section">
+                        <h3 class="menu-section-title">{{ name }}</h3>
+                        <ul class="menu-items">
+                            {{#each dishes }}
+                                <li>
+                                    <h4>{{ this.dish_name }}</h4>
+                                    <span>£{{ this.dish_price }}</span>
+                                    <span>{{ this.dish_desc }}</span>
+                                    {{#each this.dish_attributes}}
+                                        <i class="{{ this }}"></i>
+                                    {{/each}}
+                                </li>
+                            {{/each }}
+                        </ul>
+                    </div>
+                    {{/each}}
+                    Loop section tag end - LOOP HTML MENUS -->
     
                 </div>
             </div>
         </div>
     </section>
-    <!-- Optional section tag end - HTML Menus -->
+    <!-- Optional section tag end - MENUS HTML -->
 
-    
-    <!-- Optional section tag start - Downloadable Menus -->
-    <section class="content-section menu-pdf" id="pdfMenus" aria-label="">
-        <h2 class="section-title">Menus téléchargeables</h2>
-        <p>Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.</p>
-        <div class="content-block menu-downloads">
-            <!-- --------------[[ INSERT PDF MENU LOOP ]]--------------- -->
-        </div>
-    </section>
-    <!-- Optional section tag end - Downloadable Menus -->
+        
+        <!-- Optional section tag start - MENUS DOWNLOAD -->
+        <section class="content-section menu-pdf" id="pdfMenus" aria-label="Menu downloads">
+            <h2 class="section-title">Downloadable Menus</h2>
+            <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+            <div class="content-block menu-downloads">
+                <!-- Loop section tag start - LOOP DOWNLOAD MENUS
+                {{#each menus.pdfs }}
+                <div class="menu-card-container">
+                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                    <h3>{{ name }}</h3>
+                    <span>Published: {{ date }}</span>
+                </a>
+                </div>
+                {{/each }}
+                Loop section tag end - LOOP DOWNLOAD MENUS -->
+            </div>
+        </section>
+        <!-- Optional section tag end - MENUS DOWNLOAD -->
 
-    <!-- bookings -->
+    <!-- Optional section tag start - RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
-        <p>You can <a href="#reservations" data-mzid="" data-mzkey="">BOOK ONLINE</a> at
-            anytime, or call us during restaurant opening hours on <a
-                    href="tel:+33492005090">+33 (0) 4 92 00 50 90</a>.</p>
-        <!-- booking extras -->
+        <p>{{ reservations.info }}</p>
+
+
+        <a class="btn-book serbwidget"
+           aria-label="book online"
+           href="{{ reservations.tgturl }}"
+           target="_blank">BOOK ONLINE</a>
+
+
+
+        <!-- group & private bookings -->
         <div class="content-block">
+        
+            <!-- Optional section tag start - BOOKING GROUPS -->
             <aside>
                 <h2 class="sub-section-title">Group bookings</h2>
                 <p>{{ reservations.groups }}</p>
             </aside>
+            <!-- Optional section tag end - BOOKING GROUPS -->
+        
+            <!-- Optional section tag start - BOOKING PRIVATE -->
             <aside>
-                <h2 class="sub-section-title">Private Dining</h2>
+                <h2 class="sub-section-title">Private dining</h2>
                 <p>{{ reservations.private  }}</p>
             </aside>
+            <!-- Optional section tag end - BOOKING PRIVATE -->
+        
         </div>
-    </section>
 
-    <!-- contacts -->
-    <section id="contacts" class="content-section">
+    </section>
+    <!-- Optional section tag end - RESERVATIONS -->
+
+    <!-- Optional section tag start - CONTACTS -->
+    <section id="contacts" class="content-section contact-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
-            <!-- address -->
+    
             <aside>
                 <dl>
                     <dt>Address</dt>
@@ -317,35 +407,55 @@
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
                 </dl>
             </aside>
-            <!-- social -->
+    
+            <!-- Optional section tag start - SOCIAL LINKS -->
             <aside>
                 <dl>
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
+                            <!-- Loop section tag start - LOOP SOCIAL LINKS
+                            {{#each social.networks }}
+                            <div>
+                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                    <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
+                                    .name }} logo" width="28" height="28">
+                                </a>
+                            </div>
+                            {{/each}}
+                            Loop section tag end - LOOP SOCIAL LINKS -->
                         </div>
                     </dd>
                 </dl>
             </aside>
-            <!-- transport -->
+            <!-- Optional section tag end - SOCIAL LINKS -->
+    
+            <!-- Optional section tag start - TRANSPORT -->
             <aside>
                 <dl>
+                    <!-- Optional section tag start - PUBLIC TRANSPORT -->
                     <dt>Public Transport</dt>
                     <dd>{{ transport }}</dd>
+                    <!-- Optional section tag end - PUBLIC TRANSPORT -->
+    
+                    <!-- Optional section tag start - CAR PARKING -->
                     <dt>Parking</dt>
                     <dd>{{ parking }}</dd>
+                    <!-- Optional section tag end - CAR PARKING -->
                 </dl>
             </aside>
+            <!-- Optional section tag end - TRANSPORT -->
         </div>
     </section>
+    <!-- Optional section tag end - CONTACTS -->
 
     
     <!-- location -->
     <section id="find" class="map-section" aria-label="location map">
         <div class="content-block"
              id="location"
-             data-bkg-id="61c46fa7ccf9d0cba39b6387"
-             data-bkg-key="61a45e24757d22026a87f369"
+             data-bkg-id=""
+             data-bkg-key=""
              data-lat="{{ geocode.lat }}"
              data-lng="{{ geocode.lng }}"
              data-label="{{ name }}"
@@ -361,27 +471,6 @@
     </section>
 
 </main>
-
-<!-- footer -->
-<footer>
-    <div class="footer-container">
-        <span>This page was generated by Restaurateurs Indépendants</span>
-        <a href="https://https://restaurateursindependants.fr/" aria-label="Visit https://restaurateursindependants.fr/ website">
-            <svg width="312" height="65" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#fff" fill-rule="nonzero">
-                    <path d="m38.259 52.548-15.836-9.222v10.198l5.384 3.124a3.37 3.37 0 0 0 3.386 0l7.066-4.1ZM16.817 50.27V31.412l-8.969 5.223V43.1c0 1.216.645 2.34 1.693 2.948l7.276 4.222ZM7.848 30.146l16.138-9.398-8.755-5.098-5.69 3.302A3.407 3.407 0 0 0 7.848 21.9v8.246ZM20.815 12.41l15.902 9.26V11.558l-5.524-3.206a3.37 3.37 0 0 0-3.386 0l-6.992 4.058Zm21.508 2.401v18.83l8.829-5.141v-6.6c0-1.216-.645-2.34-1.693-2.948l-7.136-4.141Zm8.829 20.18-15.946 9.287 8.636 5.03 5.617-3.26a3.407 3.407 0 0 0 1.693-2.948v-8.108Zm-28.73-6.844v8.687l7.21 4.198 7.085-4.126v-8.744l-7.16-4.17-7.134 4.155Zm12.705-26.63 18.246 10.591a11.328 11.328 0 0 1 5.627 9.8v21.184c0 4.043-2.145 7.779-5.627 9.8L35.127 63.484a11.201 11.201 0 0 1-11.254 0L5.627 52.892A11.328 11.328 0 0 1 0 43.092V21.908c0-4.043 2.145-7.779 5.627-9.8L23.873 1.516a11.201 11.201 0 0 1 11.254 0ZM87.218 46.947c-1.338 2.306-4.416 5.02-10.572 5.02C69.821 51.966 64 48.642 64 40.774c0-7.665 6.022-11.124 13.382-11.124 3.613 0 6.424.61 9.1 1.22 0-6.375-1.07-7.596-7.628-7.596-3.345 0-6.089.34-9.1 1.085-1.204.272-1.472-.271-1.806-1.492l-1.07-4.544c-.335-1.154-.202-1.628.802-1.9C68.885 16.085 74.505 15 80.527 15c13.182 0 15.189 5.223 15.189 16.89v17.702c0 1.221-.335 1.628-1.606 1.628h-4.015c-.936 0-1.472-.407-2.007-1.628l-.87-2.645Zm-9.31-11.084c-4.014 0-5.62 1.967-5.62 4.409 0 2.848 2.208 4.07 5.554 4.07 5.487 0 7.56-3.256 7.56-7.258v-.068c-2.274-.678-4.415-1.153-7.493-1.153ZM110 59.623c0 1.288-.334 1.627-1.606 1.627h-6.022c-1.204 0-1.605-.339-1.605-1.628V17.374c0-1.289.401-1.628 1.605-1.628h2.878c1.003 0 1.539.475 2.074 1.628l1.07 3.324C111.071 17.51 115.22 15 121.041 15c9.233 0 15.724 8.072 15.724 18.45 0 10.445-6.49 18.516-15.724 18.516-5.554 0-9.368-3.188-11.04-5.494v13.15Zm8.699-36.444c-5.22 0-8.699 4.409-8.699 9.97 0 5.63 3.48 10.04 8.699 10.04 5.152 0 8.698-4.206 8.698-10.04 0-5.765-3.546-9.97-8.698-9.97Zm31.489 36.443c0 1.29-.335 1.628-1.606 1.628h-6.022c-1.204 0-1.606-.339-1.606-1.628V17.374c0-1.289.402-1.628 1.606-1.628h2.877c1.004 0 1.54.475 2.074 1.628l1.071 3.324C151.26 17.51 155.407 15 161.228 15c9.234 0 15.724 8.072 15.724 18.45 0 10.445-6.49 18.516-15.724 18.516-5.553 0-9.367-3.188-11.04-5.494v13.15Zm8.698-36.443c-5.219 0-8.698 4.409-8.698 9.97 0 5.63 3.48 10.04 8.698 10.04 5.153 0 8.699-4.206 8.699-10.04 0-5.765-3.546-9.97-8.699-9.97Zm23.527-7.582v-5.97c0-1.288.335-1.627 1.606-1.627h5.687c1.272 0 1.606.34 1.606 1.628v5.969h8.766c1.271 0 1.606.407 1.606 1.628v5.155c0 1.288-.335 1.627-1.606 1.627h-8.766V38.59c0 3.595 1.07 4.613 3.614 4.613 1.74 0 2.743-.407 4.282-1.018.803-.339 1.07 0 1.338.679l1.94 4.951c.402 1.085.067 1.492-.802 2.035-2.41 1.424-5.286 1.831-7.428 1.831-7.427 0-12.177-3.934-12.177-13.09V24.006h-2.677c-1.271 0-1.606-.339-1.606-1.627v-5.155c0-1.221.335-1.628 1.606-1.628h3.011Zm23.301-8.035c0-3.052 2.41-5.562 5.42-5.562 3.078 0 5.487 2.51 5.487 5.562 0 3.052-2.409 5.494-5.487 5.494-3.01 0-5.42-2.442-5.42-5.494Zm.761 42.284V16.628c0-1.289.402-1.628 1.673-1.628h5.955c1.271 0 1.606.34 1.606 1.628v33.218c0 1.221-.335 1.628-1.606 1.628h-5.955c-1.271 0-1.673-.407-1.673-1.628Zm28.947-5.612c4.35 0 5.553-1.289 5.553-3.052 0-2.103-2.14-2.985-7.092-3.527-7.16-.747-13.115-2.985-13.115-11.328 0-6.579 5.42-11.327 13.85-11.327 4.016 0 8.833.882 13.316 3.595 1.138.678.937 1.289.402 2.306l-2.141 3.73c-.402.679-.67 1.086-1.205 1.086-.2 0-.535-.136-.937-.34-3.211-1.695-6.089-2.645-9.635-2.645-3.278 0-4.884 1.153-4.884 3.256 0 2.035 1.873 2.849 7.025 3.527 7.093.95 13.249 2.781 13.249 10.92 0 6.783-4.952 11.531-14.654 11.531-4.349 0-9.167-.882-14.252-4.07-1.07-.678-.937-1.22-.334-2.306l2.074-3.73c.401-.678.669-1.085 1.204-1.085.201 0 .536.135.937.339 3.346 1.967 6.49 3.12 10.639 3.12Zm50.626-10.65v1.629c0 1.288-.268 1.763-1.472 1.763h-23.352c1.003 4.613 4.148 6.987 9.033 6.987 3.613 0 5.754-.814 7.962-2.239.468-.271.87-.407 1.204-.407.536 0 .937.34 1.272.814l2.208 3.256c.669.882.669 1.831-.134 2.374-3.613 2.849-7.093 4.205-12.847 4.205-10.639 0-18.133-8.003-18.133-18.517 0-10.445 7.829-18.449 17.732-18.449 10.906 0 16.527 8.41 16.527 18.585Zm-24.958-3.35h15.858c-.268-3.8-2.543-7.665-7.36-7.665-4.283 0-7.561 2.577-8.498 7.664Zm48.284-5.263c-7.227 0-9.903 3.459-9.903 8.817v16.804c0 1.221-.335 1.628-1.606 1.628h-6.022c-1.204 0-1.606-.407-1.606-1.628V17.374c0-1.289.402-1.628 1.606-1.628h2.877c1.004 0 1.54.475 2.074 1.628l1.606 4.341C300.475 18.052 303.42 15 310.511 15c1.472 0 1.54.407 1.472 1.492l-.87 6.986c-.2 1.29-.602 1.493-1.74 1.493Z"/>
-                </g>
-            </svg>
-        </a>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
+<div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 import flatpickr from 'flatpickr';
+import { French } from 'flatpickr/dist/l10n/fr.js';
 
 export default function (){
 
@@ -161,7 +162,7 @@ export default function (){
     // Date input field
     const bkgDate = document.getElementById('selectDate');
     const bkgDateInput = document.getElementById('bkgDateInput');
-    bkgDateInput.value = new Date().toDateString();
+    bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
 
     // Set booking request values
     const bkgAdvDays = Number(bkgRequestWidget.dataset.daysinadvance || 30);
@@ -169,11 +170,14 @@ export default function (){
 
     // Create cover select options
     const coversSelect = document.getElementById('selectCovers');
+    const person = coversSelect.dataset.labelPerson || 'person';
+    const people = coversSelect.dataset.labelPeople || 'people';
     const options = document.createDocumentFragment();
+
     for (let i = 1; i <= bkgMaxCovers; i++) {
       let opt = document.createElement('option');
-      opt.innerHTML = `${i} people`;
-      if (i === 1) { opt.innerHTML = `${i} person`; }
+      opt.innerHTML = `${i} ${people}`;
+      if (i === 1) { opt.innerHTML = `${i} ${person}`; }
       if (i === 2) { opt.selected = true; }
       options.appendChild(opt);
     }
@@ -189,8 +193,8 @@ export default function (){
       maxDate: new Date().fp_incr(bkgAdvDays),
       monthSelectorType: 'static',
       disableMobile: "false",
-      locale: htmlLang,
-      onChange: (selectedDates, dateStr, instance) => {
+      locale: htmlLang === 'fr' ? French : 'en',
+      onChange: (selectedDates, dateStr) => {
         bkgDateInput.value = dateStr;
       }
     });

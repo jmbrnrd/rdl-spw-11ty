@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ language }}" data-id="{{ data.id }}" data-template-version="{{ pkg.version }}" xmlns="http://www.w3.org/1999/html">
+
 <head>
 	<meta charset="utf-8">
     <title>{{ data.name }} | {{ data.streetAddress }} {{ data.postalCode }}</title>
@@ -19,10 +20,9 @@
 
     <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.config.theme }}.css?v={{ pkg.version }}" />
 
-	<link rel="stylesheet" href="{{ config.assets }}/styles/base.css?v={{ pkg.version }}" />
+    <link rel="stylesheet" href="{{ config.assets }}/styles/base.css?v={{ pkg.version }}" />
 
-	<script type="module" src="{{ config.assets }}/scripts/main.js?v={{ pkg.version }}" defer></script>
-
+    <script type="module" src="{{ config.assets }}/scripts/bundle.js?v={{ pkg.version }}" defer></script>
 
 
     {{> partials/google-apis }}

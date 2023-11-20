@@ -1,15 +1,16 @@
 ---
-title: "Apptiser Standard"
+title: "Apptiser Premium"
 language: "en"
-layout: "layouts/apptiser-standard.hbs"
+layout: "layouts/apptiser-premium-serb.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser-standard-{{ pkg.version }}.html"
+permalink: "/templates/apptiser-premium-serb-{{ pkg.version }}.html"
 brand:
-    name: "apptiser"
-    prefix: "apt"
+    name: "Apptiser"
+    prefix: "app"
     url: "https://apptiser.io/"
     theme: "apptiser"
 ---
+
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
@@ -30,7 +31,7 @@ brand:
     </ul>
 </nav>
 
-<!-- HERO -->
+<!-- hero -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
         <h2>{{ data.name }}</h2>
@@ -38,13 +39,13 @@ brand:
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}
         </ul>
-        <span class="desc-one-sentence fade-in">{{ data.description.sentence }}</span>
+        <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
     </div>
     {{> partials/hero-image }}
 </section>
 
 <main id="home">
-    <!-- ABOUT -->
+    <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
             <div class="description" aria-label="description">
@@ -53,23 +54,27 @@ brand:
                 <ul class="additional-features" aria-label="features">
                     <!-- {{ data.features }} -->
                     {{#each data.features }}
-                    <li>{{ this }}</li>
+                        <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>
-            <!-- opening times -->
-            <aside id="hours" class="opening-times">
+            <!-- times -->
+            <aside class="opening-times">
+                <a class="btn-book serbwidget"
+                   href="{{ data.reservations.tgtUrl }}"
+                   target="_blank">BOOK ONLINE</a>
                 <dl>
-                    <dt>{{ section.about.tel }}</dt>
+                    <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                    <dt>{{ section.about.address }}</dt>
+                    <dt>Address</dt>
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }}</dd>
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>{{ section.about.openingTimes }}</dt>
+                    <dt>Opening Times</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
+
                     <!-- Optional section tag start - OPENING NOTES -->
-                    <dt>{{ section.about.openingNotes }}</dt>
+                    <dt>PLEASE NOTE:</dt>
                     <dd>{{ data.openingNotes }}</dd>
                     <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
@@ -82,11 +87,26 @@ brand:
 
     {{> partials/menus }}
 
-    {{> partials/menu-downloads }}
+    {{#if data.menus.pdfs.length }}
+        {{> partials/menu-downloads }}
+    {{/if}}
 
-    {{> partials/booking }}
+    <!-- Optional section tag start - RESERVATIONS -->
+    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
+        <h2 class="section-title">Reservations</h2>
+        <p>{{ data.reservations.info }}</p>
 
-    {{> partials/events }}
+
+        <a class="btn-book serbwidget"
+           href="{{ data.reservations.tgtUrl }}"
+           target="_blank">BOOK ONLINE</a>
+
+
+
+        {{> partials/booking-extra }}
+
+    </section>
+    <!-- Optional section tag end - RESERVATIONS -->
 
     {{> partials/contacts }}
 
@@ -94,8 +114,8 @@ brand:
 
 </main>
 
-{{> partials/footer-standard }}
-
 <div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
+
+
 
 

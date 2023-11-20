@@ -1,11 +1,15 @@
 ---
-title: "Fullers"
+title: "Apptiser Premium"
 language: "en"
-layout: "layouts/fullers.hbs"
+layout: "layouts/apptiser-premium.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/fullers-{{ pkg.version }}.html"
+permalink: "/templates/apptiser-premium-mozrest-{{ pkg.version }}.html"
+brand:
+    name: "Apptiser"
+    prefix: "app"
+    url: "https://apptiser.io/"
+    theme: "apptiser"
 ---
-
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
@@ -19,8 +23,6 @@ permalink: "/templates/fullers-{{ pkg.version }}.html"
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
     <a href="#" class="brand" aria-label="{{ nav.label.backToTop }}">
-        <img src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo" class="logo-mobile">
-        <img src="https://res.cloudinary.com/rdl/image/upload/f_auto/v1692252102/fullers/logo-nav.png" alt="Fuller's logo" class="logo">
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -28,10 +30,9 @@ permalink: "/templates/fullers-{{ pkg.version }}.html"
     </ul>
 </nav>
 
-<!-- HERO -->
+<!-- hero -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
-        <img class="brand-logo fade-in" src="https://res.cloudinary.com/rdl/image/upload/c_scale,f_auto,w_1000/v1692252038/fullers/logo-full.png" alt="Fuller's logo">
         <h2>{{ data.name }}</h2>
         <h3 class="subtitle">{{ data.subtitle }}</h3>
         <ul class="hero-nav fade-in">
@@ -43,8 +44,7 @@ permalink: "/templates/fullers-{{ pkg.version }}.html"
 </section>
 
 <main id="home">
-
-    <!-- ABOUT -->
+    <!-- about -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
             <div class="description" aria-label="description">
@@ -53,26 +53,31 @@ permalink: "/templates/fullers-{{ pkg.version }}.html"
                 <ul class="additional-features" aria-label="features">
                     <!-- {{ data.features }} -->
                     {{#each data.features }}
-                    <li>{{ this }}</li>
+                        <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>
-            <!-- opening times -->
-            <aside id="hours" class="opening-times">
+            <!-- times -->
+            <aside class="opening-times">
+                <button class="btn-book"
+                        data-mzid="{{ data.providers.mozrest.id }}"
+                        data-mzkey="{{ data.providers.mozrest.key }}">
+                    BOOK ONLINE
+                </button>
                 <dl>
-                    <dt>{{ section.about.tel }}</dt>
+                    <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                    <dt>{{ section.about.address }}</dt>
+                    <dt>Address</dt>
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }}</dd>
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>{{ section.about.openingTimes }}</dt>
+                    <dt>Opening Times</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
 
-                    <!-- Optional section tag start - Opening Notes -->
-                    <dt>{{ section.about.openingNotes }}</dt>
+                    <!-- Optional section tag start - OPENING NOTES -->
+                    <dt>PLEASE NOTE:</dt>
                     <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - Opening Notes -->
+                    <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
             </aside>
         </div>
@@ -83,34 +88,23 @@ permalink: "/templates/fullers-{{ pkg.version }}.html"
 
     {{> partials/menus }}
 
-    {{> partials/menu-downloads }}
+    {{#if data.menus.pdfs.length }}
+        {{> partials/menu-downloads }}
+    {{/if}}
 
-    <!-- RESERVATIONS -->
+    <!-- Optional section tag start - RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
-        <h2 class="section-title">{{ section.reservations.title }}</h2>
+        <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
+        <p>
+            <a href="#reservations" data-mzid="{{ data.providers.mozrest.id }}" data-mzkey="{{ data.providers.mozrest.key }}">BOOK ONLINE</a> at
+            anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
+        </p>
 
-        {{> partials/booking-request }}
+        {{> partials/booking-extra }}
 
-        <!-- group & private bookings -->
-        <div class="content-block">
-
-            <!-- Optional section tag start - Bookings Group -->
-            <aside>
-                <h2 class="sub-section-title">{{ section.reservations.groups }}</h2>
-                <p>{{ data.reservations.groups }}</p>
-            </aside>
-            <!-- Optional section tag end - Bookings Group -->
-
-            <!-- Optional section tag start - Bookings Private -->
-            <aside>
-                <h2 class="sub-section-title">{{ section.reservations.private }}</h2>
-                <p>{{ data.reservations.private }}</p>
-            </aside>
-            <!-- Optional section tag end - Bookings Private -->
-
-        </div>
     </section>
+    <!-- Optional section tag end - RESERVATIONS -->
 
     {{> partials/contacts }}
 
@@ -118,8 +112,6 @@ permalink: "/templates/fullers-{{ pkg.version }}.html"
 
 </main>
 
-{{> partials/fullers/footer }}
 
-<div id="eventsWidget" data-widget-label="{{{ button.promotions }}}"></div>
 
 
