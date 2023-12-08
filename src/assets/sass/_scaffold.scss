@@ -165,6 +165,16 @@ footer {
     background-color: rgba($color-black, .5);
   }
 }
+.company-logo {
+  display: flex;
+  justify-content: center;
+  max-height: 10rem;
+  img {
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+}
 
 .content-section {
   max-width: $layout-max-width;
