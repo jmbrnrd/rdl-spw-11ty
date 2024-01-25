@@ -94,6 +94,9 @@ footer {
     }
   }
   .brand-container {
+    margin-top: -10%;
+    display: grid;
+    place-items: center;
     font-family: $font-family-display;
     text-align: center;
     width: min(90%, 960px);
@@ -165,6 +168,27 @@ footer {
     background-color: rgba($color-black, .5);
   }
 }
+.company-logo {
+  display: flex;
+  justify-content: center;
+  max-height: 10rem;
+  img {
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+.venue-logo-mask {
+  background-color: white;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: bottom;
+  height: 160px;
+  width: 50%;
+  max-width: 400px;
+  max-height: 200px;
+}
+
 
 .content-section {
   max-width: $layout-max-width;

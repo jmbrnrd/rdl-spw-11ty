@@ -1,12 +1,12 @@
 ---
-title: "Apptiser Premium"
+title: "Apptiser Standard"
 language: "en"
-layout: "layouts/apptiser-premium.hbs"
+layout: "layouts/apptiser-standard.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser-premium-mozrest-{{ pkg.version }}.html"
+permalink: "/templates/apptiser-standard-logo-{{ pkg.version }}.html"
 brand:
-    name: "Apptiser"
-    prefix: "app"
+    name: "apptiser"
+    prefix: "apt"
     url: "https://apptiser.io/"
     theme: "apptiser"
 ---
@@ -30,21 +30,24 @@ brand:
     </ul>
 </nav>
 
-<!-- hero -->
+<!-- HERO -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
-        <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }}</h3>
+
+        <div class="venue-logo-mask" style="-webkit-mask-image: url({{ data.logo }})"></div>
+
+<!--        <h2>{{ data.name }}</h2>-->
+<!--        <h3 class="subtitle">{{ data.subtitle }}</h3>-->
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}
         </ul>
-        <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
+        <span class="desc-one-sentence fade-in">{{ data.description.sentence }}</span>
     </div>
     {{> partials/hero-image }}
 </section>
 
 <main id="home">
-    <!-- about -->
+    <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
             <div class="description" aria-label="description">
@@ -53,29 +56,23 @@ brand:
                 <ul class="additional-features" aria-label="features">
                     <!-- {{ data.features }} -->
                     {{#each data.features }}
-                        <li>{{ this }}</li>
+                    <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>
-            <!-- times -->
-            <aside class="opening-times">
-                <button class="btn-book"
-                        data-mzid="{{ data.mozrest.id }}"
-                        data-mzkey="{{ data.mozrest.key }}">
-                    BOOK ONLINE
-                </button>
+            <!-- opening times -->
+            <aside id="hours" class="opening-times">
                 <dl>
-                    <dt>Telephone</dt>
+                    <dt>{{ section.about.tel }}</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
-                    <dt>Address</dt>
+                    <dt>{{ section.about.address }}</dt>
                     <dd>{{ data.addressStreet }}</dd>
                     <dd>{{ data.addressLocality }}</dd>
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
-                    <dt>Opening Times</dt>
+                    <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
-
                     <!-- Optional section tag start - OPENING NOTES -->
-                    <dt>PLEASE NOTE:</dt>
+                    <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
                     <!-- Optional section tag end - OPENING NOTES -->
                 </dl>
@@ -88,29 +85,19 @@ brand:
 
     {{> partials/menus }}
 
-    {{#if data.menus.pdfs.length }}
-        {{> partials/menu-downloads }}
-    {{/if}}
+    {{> partials/menu-downloads }}
 
-    <!-- Optional section tag start - RESERVATIONS -->
-    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
-        <h2 class="section-title">Reservations</h2>
-        <p>{{ data.reservations.info }}</p>
-        <p>
-            <a href="#reservations" data-mzid="{{ data.providers.mozrest.id }}" data-mzkey="{{ data.providers.mozrest.key }}">BOOK ONLINE</a> at
-            anytime, or call us during opening hours on <a href="tel:{{ data.phone }}">{{ data.phone }}</a>.
-        </p>
+    {{> partials/booking }}
 
-        {{> partials/booking-extra }}
-
-    </section>
-    <!-- Optional section tag end - RESERVATIONS -->
+    {{> partials/events }}
 
     {{> partials/contacts }}
 
     {{> partials/map }}
 
 </main>
+
+{{> partials/footer-standard }}
 
 <div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
 

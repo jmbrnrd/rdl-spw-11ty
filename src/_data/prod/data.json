@@ -2,6 +2,7 @@
   "id": "{{ id }}",
   "number": "{{ number }}",
   "name": "{{ name }}",
+  "logo": "{{ logo }}",
   "subtitle": "{{ subtitle }}",
   "addressStreet": "{{ addressStreet }}",
   "addressLocality": "{{ addressLocality }}",
