@@ -34,10 +34,12 @@ brand:
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
 
-        <div class="venue-logo-mask" style="-webkit-mask-image: url({{ data.logo }})"></div>
+        <div data-venue-logo="{{ data.logo }}"
+             class="venue-logo-mask"
+             aria-label="Company logo image"></div>
 
-        <h2 class="hide">{{ data.name }}</h2>
-        <h3 class="subtitle hide">{{ data.subtitle }}</h3>
+        <h2 data-title>{{ data.name }}</h2>
+        <h3 data-title class="subtitle">{{ data.subtitle }}</h3>
 
         <ul class="hero-nav fade-in">
             {{> partials/nav-options }}

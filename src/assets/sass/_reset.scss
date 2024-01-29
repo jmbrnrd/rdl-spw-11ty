@@ -10,6 +10,7 @@
 *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
+  font: inherit;
 }
 
 /* Preferred box-sizing value */
@@ -17,6 +18,21 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  hanging-punctuation:  first last;
+}
+body {
+  min-height: 100svh;
+}
+h1,h2,h3,h4,h5,h6 {
+  text-wrap: balance;
+}
+/* limit line length and prevent orphaned words */
+p {
+  max-width: 75ch;
+  text-wrap: pretty;
 }
 
 /* Reapply the pointer cursor for anchor tags */
@@ -31,8 +47,11 @@ ol, ul, menu {
 
 /* For images to not be able to exceed their container */
 img {
-  display: block; // lose space below
   max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  // if img doesn't load, this will differentiate the alt text
+  font-style: italic;
 }
 
 /* removes spacing between cells in tables */

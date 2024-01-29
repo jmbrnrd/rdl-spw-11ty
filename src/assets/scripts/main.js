@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV === 'production') {
     console.log = () => {};
-};
+}
 
 import bookings from "./booking-mozrest";
 import map from "./map-lazy";
@@ -10,7 +10,9 @@ import gallery from './gallery';
 import promotions from './promotions'
 import bookingRequest from './booking-email';
 import about from "./about";
+import logo from "./logo";
 
+logo();
 bookings();
 promotions();
 nav();
@@ -19,6 +21,8 @@ map();
 gallery();
 bookingRequest();
 about();
+
+
 
 
 

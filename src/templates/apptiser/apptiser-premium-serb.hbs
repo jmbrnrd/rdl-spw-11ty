@@ -60,9 +60,11 @@ brand:
             </div>
             <!-- times -->
             <aside class="opening-times">
+                <!-- Optional section tag start - RESERVATIONS -->
                 <a class="btn-book serbwidget"
                    href="{{ data.reservations.tgtUrl }}"
                    target="_blank">BOOK ONLINE</a>
+                <!-- Optional section tag end - RESERVATIONS -->
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -96,12 +98,9 @@ brand:
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
 
-
         <a class="btn-book serbwidget"
-           href="{{ data.reservations.tgtUrl }}"
+           href="{{ data.reservations.tgturl }}"
            target="_blank">BOOK ONLINE</a>
-
-
 
         {{> partials/booking-extra }}
 

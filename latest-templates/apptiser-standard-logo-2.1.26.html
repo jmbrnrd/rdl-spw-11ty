@@ -163,10 +163,10 @@
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
 
-        <div class="venue-logo-mask" style="-webkit-mask-image: url({{ logo }})"></div>
+        <div data-logo="{{ logo }}" class="venue-logo-mask" style="-webkit-mask-image: url({{ logo }})"></div>
 
-        <h2 class="hide">{{ name }}</h2>
-        <h3 class="subtitle hide">{{ subtitle }}</h3>
+        <h2 data-title>{{ name }}</h2>
+        <h3 data-title class="subtitle">{{ subtitle }}</h3>
 
         <ul class="hero-nav fade-in">
             <li>
