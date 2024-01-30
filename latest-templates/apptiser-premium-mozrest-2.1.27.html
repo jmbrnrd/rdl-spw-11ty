@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" data-id="{{ id }}" data-template-version="2.1.27" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+    <title>{{ name }} |  {{ postalCode }}</title>
+    <meta name="description" content="{{ description.sentence }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: should only be applied to previews -->
+<!--    <meta name="robots" content="noindex">-->
+
+    <!-- schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "name": "{{ name }}",
+            "@id": "#id",
+            "url": "{{ website }}",
+            "telephone": "{{ phone }}",
+            "servesCuisine": "{{ cuisine }}",
+            "acceptsReservations": "true",
+            "image": "https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ addressStreet }}",
+                "addressLocality": "{{ addressLocality }}",
+                "postalCode": "{{ postalCode }}",
+                "addressCountry": "{{ addressCountry }}"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "{{ geocode.lat }}",
+                "longitude": "{{ geocode.lng }}"
+            },
+             "sameAs": "{{ social.sameAs }}"
+        }
+    </script>
+
+    <!-- open graph -->
+    <meta property="og:title"
+          content="{{ name }}">
+    <meta property="og:type"
+          content="website">
+    <meta property="og:url"
+          content="{{ website }}">
+    <meta property="og:image"
+          content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}">
+
+    <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
+    <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.27">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap" />
+    <link rel="stylesheet"
+          media="print"
+          onload="this.media='all'"
+          href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.27" />
+
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.27" />
+
+	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.1.27" defer></script>
+
+
+
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
+    <script>
+        // Gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4FPKM2SVKM');
+    </script>
+
+</head>
+
+<body>
+
+	
+<!-- mobile nav -->
+<div class="nav-menu" id="navMenu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+    </button>
+</div>
+
+<!-- global nav -->
+<nav id="navBar" aria-label="primary">
+    <a href="#" class="brand" aria-label="Return to start of page">
+        <h1>{{ name }}</h1>
+    </a>
+    <ul class="nav-list-mobile" role="list">
+        <li>
+            <a href="#about"
+               aria-label="About {{ name }}">
+                About
+            </a>
+        </li>
+        <li class="hide-on-desktop">
+            <a href="#hours"
+               aria-label="Opening times {{ name }}">
+                Opening times
+            </a>
+        </li>
+        <!-- Optional section tag start - MENU NAV -->
+        <li>
+            <a href="#menus"
+               aria-label="{{ name }} Menus">
+                Menus
+            </a>
+        </li>
+        <!-- Optional section tag end - MENU NAV -->
+        
+        <!-- Optional section tag start - RESERVATIONS NAV -->
+        <li>
+            <a href="#reservations"
+               aria-label="{{ name }} Reservations">
+                Reservations
+            </a>
+        </li>
+        <!-- Optional section tag end - RESERVATIONS NAV -->
+        
+        <!-- Optional section tag start - EVENTS -->
+        <li class="hidden" data-elem-event>
+            <a href="#events"
+               aria-label="Events &amp; Offers {{ name }}">
+                Events &amp; Offers
+            </a>
+        </li>
+        <!-- Optional section tag end - EVENTS NAV -->
+        
+        <!-- Optional section tag start - CONTACTS NAV -->
+        <li>
+            <a href="#contacts"
+               aria-label="{{ name }} Contacts">
+                Contacts
+            </a>
+        </li>
+        <!-- Optional section tag end - CONTACTS NAV -->
+        
+        <!-- Optional section tag start - LOCATION NAV -->
+        <li>
+            <a href="#find"
+               aria-label="{{ name }} Location">
+                Location
+            </a>
+        </li>
+        <!-- Optional section tag end - LOCATION NAV -->
+    </ul>
+</nav>
+
+<!-- hero -->
+<section id="hero" class="section-hero">
+    <div class="brand-container fade-in">
+    
+        <div data-venue-logo="{{ logo }}"
+             class="venue-logo-mask"
+             aria-label="Company logo image"></div>
+    
+        <h2 data-title>{{ name }}</h2>
+        <h3 data-title class="subtitle">{{ subtitle }}</h3>
+    
+        <ul class="hero-nav fade-in">
+            <li>
+                <a href="#about"
+                   aria-label="About {{ name }}">
+                    About
+                </a>
+            </li>
+            <li class="hide-on-desktop">
+                <a href="#hours"
+                   aria-label="Opening times {{ name }}">
+                    Opening times
+                </a>
+            </li>
+            <!-- Optional section tag start - MENU NAV -->
+            <li>
+                <a href="#menus"
+                   aria-label="{{ name }} Menus">
+                    Menus
+                </a>
+            </li>
+            <!-- Optional section tag end - MENU NAV -->
+            
+            <!-- Optional section tag start - RESERVATIONS NAV -->
+            <li>
+                <a href="#reservations"
+                   aria-label="{{ name }} Reservations">
+                    Reservations
+                </a>
+            </li>
+            <!-- Optional section tag end - RESERVATIONS NAV -->
+            
+            <!-- Optional section tag start - EVENTS -->
+            <li class="hidden" data-elem-event>
+                <a href="#events"
+                   aria-label="Events &amp; Offers {{ name }}">
+                    Events &amp; Offers
+                </a>
+            </li>
+            <!-- Optional section tag end - EVENTS NAV -->
+            
+            <!-- Optional section tag start - CONTACTS NAV -->
+            <li>
+                <a href="#contacts"
+                   aria-label="{{ name }} Contacts">
+                    Contacts
+                </a>
+            </li>
+            <!-- Optional section tag end - CONTACTS NAV -->
+            
+            <!-- Optional section tag start - LOCATION NAV -->
+            <li>
+                <a href="#find"
+                   aria-label="{{ name }} Location">
+                    Location
+                </a>
+            </li>
+            <!-- Optional section tag end - LOCATION NAV -->
+        </ul>
+        <span class="desc-one-sentence fade-in">{{ description.sentence }}</span>
+    </div>
+    
+    <img alt="Background image of {{ name }}"
+         src="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}"
+         srcset="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  300w,
+         https://res.cloudinary.com/rdl/image/upload/w_600,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  600w,
+         https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
+         https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
+         sizes="100vw">
+    
+    
+</section>
+
+<main id="home">
+    <!-- about -->
+    <section id="about" class="content-section" aria-label="introduction">
+        <div class="content-block">
+            <div class="description" aria-label="description">
+                <p>{{ description.full }}</p>
+                <!-- feature tags-->
+                <ul class="additional-features" aria-label="features">
+                    <!-- -----------------[[ INSERT FEATURES LOOP ]]-------------------- -->
+                </ul>
+            </div>
+            <!-- times -->
+            <aside class="opening-times">
+                <button class="btn-book"
+                        data-mzid="61c46fa7ccf9d0cba39b6387"
+                        data-mzkey="61a45e24757d22026a87f369">
+                    BOOK ONLINE
+                </button>
+                <dl>
+                    <dt>Telephone</dt>
+                    <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+                    <dt>Address</dt>
+                    <dd>{{ addressStreet }}</dd>
+                    <dd>{{ addressLocality }}</dd>
+                    <dd>{{ addressRegion }} {{ postalCode }}</dd>
+                    <dt>Opening Times</dt>
+                    <dd class="times">{{ openingTimes }}</dd>
+
+                    <!-- Optional section tag start - OPENING NOTES -->
+                    <dt>PLEASE NOTE:</dt>
+                    <dd>{{ openingNotes }}</dd>
+                    <!-- Optional section tag end - OPENING NOTES -->
+                </dl>
+            </aside>
+        </div>
+
+        <!-- Optional section tag start - IMAGE GALLERY -->
+        <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
+            <!-- ---------------[[ INSERT IMAGE GALLERY LOOP ]]--------------- -->
+        </div>
+        <!-- Optional section tag end - IMAGE GALLERY -->
+
+    </section>
+
+    <!-- Optional section tag start - MENUS HTML -->
+    <section id="menus" class="content-section" aria-label="Our Menus">
+    
+        <h2 class="section-title">Our Menus</h2>
+        <div class="menu-html">
+            <p>{{ menus.overview }}</p>
+            <!-- sample Menu -->
+            <div class="content-sub-section" aria-label="">
+                <div class="menu-html">
+                    <ul class="menu-key">
+                        <li>
+                            <i class="vt" aria-hidden="true"></i>
+                            Vegetarian
+                        </li>
+                        <li><i class="vg" aria-hidden="true"></i>Vegan</li>
+                        <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
+                    </ul>
+                    <!-- ---------------[[ INSERT MENU SECTION LOOP ]]--------------- -->
+    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional section tag end - MENUS HTML -->
+
+        
+        <!-- Optional section tag start - MENUS DOWNLOAD -->
+        <section class="content-section menu-pdf" id="pdfMenus" aria-label="Menu downloads">
+            <h2 class="section-title">Downloadable Menus</h2>
+            <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+            <div class="content-block menu-downloads">
+                <!-- --------------[[ INSERT PDF MENU LOOP ]]--------------- -->
+            </div>
+        </section>
+        <!-- Optional section tag end - MENUS DOWNLOAD -->
+
+    <!-- Optional section tag start - RESERVATIONS -->
+    <section id="reservations" class="content-section booking-section" aria-label="booking widget">
+        <h2 class="section-title">Reservations</h2>
+        <p>{{ reservations.info }}</p>
+        <p>
+            <a href="#reservations" data-mzid="" data-mzkey="">BOOK ONLINE</a> at
+            anytime, or call us during opening hours on <a href="tel:{{ phone }}">{{ phone }}</a>.
+        </p>
+
+        <!-- group & private bookings -->
+        <div class="content-block">
+        
+            <!-- Optional section tag start - BOOKING GROUPS -->
+            <aside>
+                <h2 class="sub-section-title">Group bookings</h2>
+                <p>{{ reservations.groups }}</p>
+            </aside>
+            <!-- Optional section tag end - BOOKING GROUPS -->
+        
+            <!-- Optional section tag start - BOOKING PRIVATE -->
+            <aside>
+                <h2 class="sub-section-title">Private dining</h2>
+                <p>{{ reservations.private  }}</p>
+            </aside>
+            <!-- Optional section tag end - BOOKING PRIVATE -->
+        
+        </div>
+
+    </section>
+    <!-- Optional section tag end - RESERVATIONS -->
+
+    <!-- Optional section tag start - CONTACTS -->
+    <section id="contacts" class="content-section contact-section">
+        <h2 class="section-title">Contacts</h2>
+        <div class="content-block">
+    
+            <aside>
+                <dl>
+                    <dt>Address</dt>
+                    <dd>{{ addressStreet }}</dd>
+                    <dd>{{ addressLocality }} {{ postalCode }}</dd>
+                    <dt>Telephone</dt>
+                    <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
+                </dl>
+            </aside>
+    
+            <!-- Optional section tag start - SOCIAL LINKS -->
+            <aside>
+                <dl>
+                    <dt>Links</dt>
+                    <dd>
+                        <div class="social-links">
+                            <!-- ---------------[[ INSERT SOCIAL LOOP ]]--------------- -->
+                        </div>
+                    </dd>
+                </dl>
+            </aside>
+            <!-- Optional section tag end - SOCIAL LINKS -->
+    
+            <!-- Optional section tag start - TRANSPORT -->
+            <aside>
+                <dl>
+                    <!-- Optional section tag start - PUBLIC TRANSPORT -->
+                    <dt>Public Transport</dt>
+                    <dd>{{ transport }}</dd>
+                    <!-- Optional section tag end - PUBLIC TRANSPORT -->
+    
+                    <!-- Optional section tag start - CAR PARKING -->
+                    <dt>Parking</dt>
+                    <dd>{{ parking }}</dd>
+                    <!-- Optional section tag end - CAR PARKING -->
+                </dl>
+            </aside>
+            <!-- Optional section tag end - TRANSPORT -->
+        </div>
+    </section>
+    <!-- Optional section tag end - CONTACTS -->
+
+    
+    <!-- location -->
+    <section id="find" class="map-section" aria-label="location map">
+        <div class="content-block"
+             id="location"
+             data-bkg-id="61c46fa7ccf9d0cba39b6387"
+             data-bkg-key="61a45e24757d22026a87f369"
+             data-lat="{{ geocode.lat }}"
+             data-lng="{{ geocode.lng }}"
+             data-label="{{ name }}"
+             data-map-show-info="true"
+             data-intersection="300">
+            <div id="map"></div>
+        </div>
+        <a class="btn btn-map-directions"
+           target="_blank"
+           href="https://www.google.co.uk/maps?daddr={{ addressStreet }} {{ postalCode }}">
+            Get Directions
+        </a>
+    </section>
+
+</main>
+
+<div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
+
+
+
+
+</body>
+</html>
