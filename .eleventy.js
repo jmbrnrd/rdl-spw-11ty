@@ -19,7 +19,7 @@ module.exports = function (config) {
   config.addWatchTarget('./tls/');
   config.addPassthroughCopy("./src/assets/brands/");
   config.addPassthroughCopy("./src/assets/images/");
-
+  config.addPassthroughCopy("./src/favicon.ico");
   config.addPassthroughCopy("./src/assets/manifest.json");
   return {
     dir: {
