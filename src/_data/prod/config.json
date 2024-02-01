@@ -1,5 +1,5 @@
 {
-  "assets": "/assets",
+  "assets": "https://assets.apptiser.io",
   "image": {
     "url": "https://res.cloudinary.com/rdl/image/upload/",
     "folder":"/restaurants/",
