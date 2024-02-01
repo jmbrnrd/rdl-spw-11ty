@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.25" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.2.0" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -47,9 +47,11 @@
     <meta property="og:image"
           content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}">
 
-    <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="https://assets.apptiser.io/images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.25">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.2.0">
+    
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,11 +67,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.25" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.2.0" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.25" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.2.0" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.25" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.2.0" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -162,8 +164,14 @@
 <!-- HERO -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
-        <h2>{{ name }}</h2>
-        <h3 class="subtitle">{{ subtitle }}</h3>
+    
+        <div data-venue-logo="{{ logo }}"
+             class="venue-logo-mask"
+             aria-label="Company logo image"></div>
+    
+        <h2 data-title>{{ name }}</h2>
+        <h3 data-title class="subtitle">{{ subtitle }}</h3>
+    
         <ul class="hero-nav fade-in">
             <li>
                 <a href="#about"
@@ -232,7 +240,8 @@
          https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
          https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
          sizes="100vw">
-
+    
+    
 </section>
 
 <main id="home">
@@ -603,12 +612,15 @@
                 </g>
             </svg>
         </a>
-        <span>&copy; 2023</span>
+        <span>&copy; 2024</span>
     </div>
 
 </footer>
 
 <div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
+
+
+
 
 </body>
 </html>

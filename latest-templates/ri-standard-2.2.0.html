@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-id="{{ id }}" data-template-version="2.1.27" xmlns="http://www.w3.org/1999/html">
+<html lang="fr" data-id="{{ id }}" data-template-version="2.2.0" xmlns="http://www.w3.org/1999/html">
 
 <head>
 	<meta charset="utf-8">
@@ -48,9 +48,11 @@
     <meta property="og:image"
           content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}">
 
-    <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="https://assets.apptiser.io/images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.27">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.2.0">
+    
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,11 +68,11 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.27" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.2.0" />
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.27" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.2.0" />
 
-    <script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.27" defer></script>
+    <script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.2.0" defer></script>
 
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RX7PGJKJGS"></script>
@@ -247,7 +249,11 @@
                 <p>{{ description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
-                    <!-- -----------------[[ INSERT FEATURES LOOP ]]-------------------- -->
+                    <!-- Loop section tag start - LOOP FEATURES
+                    {{#each features}}
+                        <li>{{ this }}</li>
+                    {{/each}}
+                    Loop section tag end - LOOP FEATURES -->
                 </ul>
             </div>
             <!-- opening times -->
@@ -271,7 +277,16 @@
 
         <!-- Optional section tag start - IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!-- ---------------[[ INSERT IMAGE GALLERY LOOP ]]--------------- -->
+            <!-- Loop section tag start - LOOP IMAGES
+            {{#each image.gallery}}
+            <a class="glightbox"
+                href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
+                    <img loading="lazy"
+                        src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
+                        alt="{{ ../name }} gallery image">
+                    </a>
+            {{/each}}
+            Loop section tag end - LOOP IMAGES -->
         </div>
         <!-- Optional section tag end - IMAGE GALLERY -->
 
@@ -294,7 +309,25 @@
                         <li><i class="vg" aria-hidden="true"></i>Végétalien</li>
                         <li><i class="gf" aria-hidden="true"></i>Sans gluten</li>
                     </ul>
-                    <!-- ---------------[[ INSERT MENU SECTION LOOP ]]--------------- -->
+                    <!-- Loop section tag start - LOOP HTML MENUS
+                    {{#each menus.sections }}
+                    <div id="menu_section_{{@index}}" class="menu-section">
+                        <h3 class="menu-section-title">{{ name }}</h3>
+                        <ul class="menu-items">
+                            {{#each dishes }}
+                                <li>
+                                    <h4>{{ this.dish_name }}</h4>
+                                    <span>£{{ this.dish_price }}</span>
+                                    <span>{{ this.dish_desc }}</span>
+                                    {{#each this.dish_attributes}}
+                                        <i class="{{ this }}"></i>
+                                    {{/each}}
+                                </li>
+                            {{/each }}
+                        </ul>
+                    </div>
+                    {{/each}}
+                    Loop section tag end - LOOP HTML MENUS -->
     
                 </div>
             </div>
@@ -308,7 +341,16 @@
         <h2 class="section-title">Menus téléchargeables</h2>
         <p>Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.</p>
         <div class="content-block menu-downloads">
-            <!-- --------------[[ INSERT PDF MENU LOOP ]]--------------- -->
+            <!-- Loop section tag start - LOOP DOWNLOAD MENUS
+            {{#each menus.pdfs }}
+            <div class="menu-card-container">
+            <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                <h3>{{ name }}</h3>
+                <span>Published: {{ date }}</span>
+            </a>
+            </div>
+            {{/each }}
+            Loop section tag end - LOOP DOWNLOAD MENUS -->
         </div>
     </section>
     <!-- Optional section tag end - MENUS DOWNLOAD -->
@@ -496,7 +538,16 @@
                     <dt>Liens</dt>
                     <dd>
                         <div class="social-links">
-                            <!-- ---------------[[ INSERT SOCIAL LOOP ]]--------------- -->
+                            <!-- Loop section tag start - LOOP SOCIAL LINKS
+                            {{#each social.networks }}
+                            <div>
+                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
+                                    <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
+                                    .name }} logo" width="28" height="28">
+                                </a>
+                            </div>
+                            {{/each}}
+                            Loop section tag end - LOOP SOCIAL LINKS -->
                         </div>
                     </dd>
                 </dl>
