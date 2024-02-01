@@ -33,14 +33,7 @@ brand:
 
 <!-- hero -->
 <section id="hero" class="section-hero">
-    <div class="brand-container fade-in">
-        <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }}</h3>
-        <ul class="hero-nav fade-in">
-            {{> partials/nav-options }}
-        </ul>
-        <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
-    </div>
+    {{> partials/brand }}
     {{> partials/hero-image }}
 </section>
 
@@ -60,9 +53,11 @@ brand:
             </div>
             <!-- times -->
             <aside class="opening-times">
+                <!-- Optional section tag start - RESERVATIONS -->
                 <a class="btn-book serbwidget"
                    href="{{ data.reservations.tgtUrl }}"
                    target="_blank">BOOK ONLINE</a>
+                <!-- Optional section tag end - RESERVATIONS -->
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -96,12 +91,9 @@ brand:
         <h2 class="section-title">Reservations</h2>
         <p>{{ data.reservations.info }}</p>
 
-
         <a class="btn-book serbwidget"
-           href="{{ data.reservations.tgtUrl }}"
+           href="{{ data.reservations.tgturl }}"
            target="_blank">BOOK ONLINE</a>
-
-
 
         {{> partials/booking-extra }}
 

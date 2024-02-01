@@ -1,3 +1,8 @@
+/**
+ * Creates a debug model that can be used by RDL
+ * Displays Apptiser version and browser details
+ */
+
 export default function () {
 
     console.log('About is loaded');

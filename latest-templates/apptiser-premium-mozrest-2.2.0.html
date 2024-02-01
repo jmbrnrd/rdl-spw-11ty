@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.1.25" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.2.0" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -47,9 +47,11 @@
     <meta property="og:image"
           content="https://res.cloudinary.com/rdl/image/upload/w_800,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ number }}/{{ image.default }}">
 
-    <link rel="icon" href="https://assets.apptiser.io/images/favicon.svg">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="https://assets.apptiser.io/images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.1.25">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.2.0">
+    
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,13 +67,13 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.1.25" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.2.0" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.1.25" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.2.0" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.1.25." defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.2.0" defer></script>
 
-    <script type="text/javascript" src="https://assets.apptiser.io/scripts/serb.js?v=2.1.25" ></script>
+
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -87,7 +89,6 @@
 <body>
 
 	
-
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
     <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="">
@@ -165,8 +166,14 @@
 <!-- hero -->
 <section id="hero" class="section-hero">
     <div class="brand-container fade-in">
-        <h2>{{ name }}</h2>
-        <h3 class="subtitle">{{ subtitle }}</h3>
+    
+        <div data-venue-logo="{{ logo }}"
+             class="venue-logo-mask"
+             aria-label="Company logo image"></div>
+    
+        <h2 data-title>{{ name }}</h2>
+        <h3 data-title class="subtitle">{{ subtitle }}</h3>
+    
         <ul class="hero-nav fade-in">
             <li>
                 <a href="#about"
@@ -225,7 +232,7 @@
             </li>
             <!-- Optional section tag end - LOCATION NAV -->
         </ul>
-        <span class="desc-one-sentence fade-in" >{{ description.sentence }}</span>
+        <span class="desc-one-sentence fade-in">{{ description.sentence }}</span>
     </div>
     
     <img alt="Background image of {{ name }}"
@@ -256,10 +263,11 @@
             </div>
             <!-- times -->
             <aside class="opening-times">
-                <a class="btn-book serbwidget"
-                   aria-label="Book Online"
-                   href="{{ reservations.tgturl }}"
-                   target="_blank">BOOK ONLINE</a>
+                <button class="btn-book"
+                        data-mzid="61c46fa7ccf9d0cba39b6387"
+                        data-mzkey="61a45e24757d22026a87f369">
+                    BOOK ONLINE
+                </button>
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
@@ -362,14 +370,10 @@
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
         <p>{{ reservations.info }}</p>
-
-
-        <a class="btn-book serbwidget"
-           aria-label="book online"
-           href="{{ reservations.tgturl }}"
-           target="_blank">BOOK ONLINE</a>
-
-
+        <p>
+            <a href="#reservations" data-mzid="" data-mzkey="">BOOK ONLINE</a> at
+            anytime, or call us during opening hours on <a href="tel:{{ phone }}">{{ phone }}</a>.
+        </p>
 
         <!-- group & private bookings -->
         <div class="content-block">
@@ -449,13 +453,12 @@
     </section>
     <!-- Optional section tag end - CONTACTS -->
 
-    
     <!-- location -->
     <section id="find" class="map-section" aria-label="location map">
         <div class="content-block"
              id="location"
-             data-bkg-id=""
-             data-bkg-key=""
+             data-bkg-id="61c46fa7ccf9d0cba39b6387"
+             data-bkg-key="61a45e24757d22026a87f369"
              data-lat="{{ geocode.lat }}"
              data-lng="{{ geocode.lng }}"
              data-label="{{ name }}"
@@ -471,6 +474,8 @@
     </section>
 
 </main>
+
 <div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
+
 </body>
 </html>

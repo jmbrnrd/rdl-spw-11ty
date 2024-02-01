@@ -1,7 +1,9 @@
+
+/**
+ * Post load content formatting
+ * Create a lead paragraph using the first sentence of description
+ */
 export default function() {
-    /**
-     * Create a lead paragraph using the first sentence of description
-     */
     console.log('formatting.js loaded');
     const desc = document.querySelector('.description');
     const ptag = document.querySelector('.description p');
@@ -17,4 +19,6 @@ export default function() {
     desc.prepend(p);
     // add the first sentence
     p.append(t1 + '.');
+
+
 }

@@ -232,7 +232,7 @@ footer {
 }
 
 .description {
-  p { white-space: pre-line; }
+  // p { white-space: pre-line; }
   // Create lead sentence
   p:first-child {
     font-weight: $font-weight-bold;
@@ -382,4 +382,9 @@ dd {
   @include mq($mq-narrow) {
     display: none !important;
   }
+}
+.hide {
+  // from view, not from screen-readers, spiders etc.
+  position: absolute;
+  left: -10000px;
 }

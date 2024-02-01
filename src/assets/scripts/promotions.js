@@ -15,7 +15,7 @@ export default function () {
         return false;
     }
 
-    console.log(eventsWidget.dataset.label);
+    // console.log(eventsWidget.dataset.label);
 
     // This will be our widget label
     const eventWidgetLabel = eventsWidget.dataset.widgetLabel;
@@ -143,7 +143,7 @@ export default function () {
             let cat = JSON.parse(item['offer_category']);
           listItem = document.createElement('li');
           listItem.innerHTML =
-              `<img src="${item['offer_image']}" style="width: 100%; height: auto; aspect-ratio: 3/1; object-fit: cover">` +
+              `<img src="${item['offer_image']}" alt="Event image" style="width: 100%; height: auto; aspect-ratio: 3/1; object-fit: cover">` +
               `<header>` +
                   `<span class="category ${cat.id || 'event'}"></span>` +
                   `<span><h3>${item['offer_tag']}</h3>` + `<div class="subtitle">${item['offer_strapline']}</div></span>` +

@@ -66,6 +66,7 @@ ul.menu-key {
         flex: 100%;
         color: $color-body-text;
         padding-top: .2rem;
+        white-space: pretty;
         @include mq($mq-medium) {
           font-size: 1.4rem;
         }

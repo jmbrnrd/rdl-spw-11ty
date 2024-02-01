@@ -11,8 +11,9 @@ import promotions from './promotions'
 import bookingRequest from './booking-email';
 import about from "./about";
 // import events from './events';
+import logo from "./logo";
 
-
+logo();
 formatting();
 map();
 gallery();

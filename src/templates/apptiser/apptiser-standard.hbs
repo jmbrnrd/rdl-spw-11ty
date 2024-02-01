@@ -32,14 +32,7 @@ brand:
 
 <!-- HERO -->
 <section id="hero" class="section-hero">
-    <div class="brand-container fade-in">
-        <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }}</h3>
-        <ul class="hero-nav fade-in">
-            {{> partials/nav-options }}
-        </ul>
-        <span class="desc-one-sentence fade-in">{{ data.description.sentence }}</span>
-    </div>
+    {{> partials/brand }}
     {{> partials/hero-image }}
 </section>
 

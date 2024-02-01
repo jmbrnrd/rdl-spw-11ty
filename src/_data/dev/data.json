@@ -190,10 +190,9 @@
             ]
         },
         "reservations": {
-            "tgturl": "",
             "maxcover": 6,
             "provider": "email",
-            "tgtUrl": "https://book.mysimpleerb.com/18326/6-8-bridge-street/",
+            "tgturl": "https://book.mysimpleerb.com/18326/6-8-bridge-street/",
             "rest_id":"241",
             "bkgAdvDays": 45,
             "info": "For table reservations, please telephone the restaurant during opening hours.",
