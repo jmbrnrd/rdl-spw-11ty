@@ -7,7 +7,7 @@
   --spacer: 1.5rem;
   display: grid;
   grid-auto-flow: row;
-  grid-auto-columns: 32%;
+  grid-auto-columns: 100%;
   grid-gap: var(--spacer);
   overflow-x: auto;
   overscroll-behavior: contain auto;
@@ -55,5 +55,5 @@
   scroll-snap-type: inline mandatory;
 }
 .snaps-inline > * {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }

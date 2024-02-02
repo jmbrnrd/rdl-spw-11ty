@@ -71,22 +71,25 @@ export default function () {
         // build DOM elements
         const eventFragment = document.createDocumentFragment();
         const eventScroller = document.createElement('div');
-
-        // apply classes
         eventScroller.className = 'event-scroller snaps-inline';
 
+        if (activeEvents.length > 3) {
+            const eventNav = document.createElement('div');
+            eventNav.className = 'event-nav';
+        }
+
         // build event cards
-        activeEvents.forEach(event => {
+        activeEvents.forEach((event, index) => {
             let eventCard = document.createElement('div');
             let eventElementString =
-                `<div class="event-card" aria-label="Event">` +
+                `<div class="event-card" aria-label="Event" id="e${index}">` +
                 `<img src="${event.offer_image}" alt="Event image">` +
                 `<div class="event-card-content">` +
                 `<h2>${event.offer_tag}</h2>` +
                 `<span class="event-card-subtitle">${event.offer_strapline}</span>` +
                 `<p>${event.offer_text}</p>`;
             // add optional link
-            if(event.offer_link) {
+            if (event.offer_link) {
                 eventElementString += `<a href="${event.offer_link}" target="_blank">More Information</a>`;
             }
             // complete tags and append card to scroller
