@@ -14,7 +14,7 @@
   padding-block: 1rem;
   @include mq($mq-medium){
     grid-auto-flow: column;
-    grid-auto-columns: 32%;
+    grid-auto-columns: 40%;
   }
 }
 .event-card {
