@@ -17,7 +17,7 @@
     .selector {
       position: relative;
       height: 6rem;
-      background-color: #eee;
+      background-color: $color-grey-lightest;
       font-weight: 500;
       &:first-child {
         border-radius: 8px 8px 0 0;

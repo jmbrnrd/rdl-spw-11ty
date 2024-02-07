@@ -2,6 +2,7 @@
 // basics
 $color-black                  : hsla(0, 0%, 20%, 1);
 $color-white                  : hsla(0, 0%, 100%, 1);
+$color-grey-lightest          : var(--clr-grey-50, hsla(0, 0%, 95%, 1));
 $color-grey                   : var(--clr-grey-500, hsla(0, 0%, 50%, 1));
 $color-grey-light             : var(--clr-grey-100, hsla(0, 0%, 80%, 1));
 $color-grey-dark              : var(--clr-grey-800, hsla(213, 5%, 39%, 1));
@@ -44,10 +45,10 @@ $mq-medium                    : 48em; // 960px
 $mq-wide                      : 59em; // 1200px
 $radius-sml                   : 5px;
 $modal-box-shadow             : rgba(0, 0, 0, 0.25) 0 54px 55px,
-rgba(0, 0, 0, 0.12) 0 -12px 30px,
-rgba(0, 0, 0, 0.12) 0 4px 6px,
-rgba(0, 0, 0, 0.17) 0 12px 13px,
-rgba(0, 0, 0, 0.09) 0 -3px 5px;
+                                rgba(0, 0, 0, 0.12) 0 -12px 30px,
+                                rgba(0, 0, 0, 0.12) 0 4px 6px,
+                                rgba(0, 0, 0, 0.17) 0 12px 13px,
+                                rgba(0, 0, 0, 0.09) 0 -3px 5px;
 
 // Hamburger button
 $hamburger-padding            : 8px 12px ;
@@ -66,6 +67,6 @@ $rdl-radius                   : 12px;
 $btn-size                     : 64px;
 $btn-size-max                 : 75vw;
 $shadow                       : rgba(0, 0, 0, 0.3) 0px 19px 38px,
-rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                                rgba(0, 0, 0, 0.22) 0px 15px 12px;
 $width-promo-btn              : 400px;
 

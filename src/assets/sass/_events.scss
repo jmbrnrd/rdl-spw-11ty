@@ -1,29 +1,47 @@
 @use "vars" as *;
 @use "mixins" as *;
-.hidden {
-  display: none !important;
-}
+
+.hidden { display: none !important; }
+
 .event-scroller {
   --spacer: 1.5rem;
   display: grid;
   grid-auto-flow: row;
   grid-auto-columns: 100%;
   grid-gap: var(--spacer);
+  padding-block: 1rem;
   overflow-x: auto;
   overscroll-behavior: contain auto;
-  padding-block: 1rem;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    height: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-primary;
+    border-radius: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-grey-lightest;
+    border-radius: 12px;
+  }
+
   @include mq($mq-medium){
     grid-auto-flow: column;
-    grid-auto-columns: 40%;
+    grid-auto-columns: 45%;
   }
 }
 .event-card {
-  background: #eee;
+  background: $color-grey-lightest;
   display: grid ;
   height: 100%;
   grid-template-rows: min-content;
   border-radius: $radius-sml;
   overflow: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 
   &-content {
     padding: var(--spacer);
@@ -57,3 +75,4 @@
 .snaps-inline > * {
   scroll-snap-align: center;
 }
+

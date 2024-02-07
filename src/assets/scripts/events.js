@@ -1,4 +1,5 @@
 
+
 export default function () {
 
     console.log('event.js');
@@ -17,10 +18,10 @@ export default function () {
     // Wait for page load & fetch events
     window.addEventListener('load', function () {
         console.log(`Page loaded so fetch offers`);
-        getAllEvents();
+        fetchAllEvents();
     });
 
-    function getAllEvents() {
+    function fetchAllEvents() {
 
         // Abort if already loaded
         if (eventsLoaded) { return false; }
@@ -64,43 +65,42 @@ export default function () {
 
         // abort if no valid promotions are returned
         if (activeEvents.length < 1) {
-            console.log('No active events!');
+            console.log(`${events.length} events but all inactive!`);
             return false;
         }
 
-        // build DOM elements
+        // create DOM elements
         const eventFragment = document.createDocumentFragment();
-        const eventScroller = document.createElement('div');
-        eventScroller.className = 'event-scroller snaps-inline';
+        const eventSlider = document.createElement('div');
+        eventSlider.className = 'event-scroller snaps-inline';
 
-        if (activeEvents.length > 3) {
-            const eventNav = document.createElement('div');
-            eventNav.className = 'event-nav';
-        }
-
-        // build event cards
+        // create event cards
         activeEvents.forEach((event, index) => {
             let eventCard = document.createElement('div');
             let eventElementString =
-                `<div class="event-card" aria-label="Event" id="e${index}">` +
-                `<img src="${event.offer_image}" alt="Event image">` +
+                `<div class="event-card" aria-label="Event" id="event-${index + 1}">` +
+                `<img src="${event['offer_image']}" alt="Event image">` +
                 `<div class="event-card-content">` +
-                `<h2>${event.offer_tag}</h2>` +
-                `<span class="event-card-subtitle">${event.offer_strapline}</span>` +
-                `<p>${event.offer_text}</p>`;
+                `<h2>${event['offer_tag']}</h2>` +
+                `<span class="event-card-subtitle">${event['offer_strapline']}</span>` +
+                `<p>${event['offer_text']}</p>`;
+
             // add optional link
-            if (event.offer_link) {
-                eventElementString += `<a href="${event.offer_link}" target="_blank">More Information</a>`;
+            if (event['offer_link']) {
+                eventElementString += `<a href="${event['offer_link']}" target="_blank">More Information</a>`;
             }
+
             // complete tags and append card to scroller
             eventElementString += `</div></div>`;
             eventCard.innerHTML = eventElementString;
-            eventScroller.appendChild(eventCard);
+            eventSlider.appendChild(eventCard);
         });
-        // build dom
-        eventFragment.appendChild(eventScroller);
+
+        // add to DOM
+        eventFragment.append(eventSlider);
         eventSection.append(eventFragment);
-        // remove hidden class from event elements
+
+        // remove hidden class from all relevant DOM elements
         eventElements.forEach(elem => elem.classList.remove('hidden'));
     }
 
@@ -122,3 +122,4 @@ export default function () {
         return activeEvents;
     }
 }
+

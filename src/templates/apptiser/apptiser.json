@@ -21,7 +21,7 @@
 				"label-send": "Request Booking",
 				"thanks": "Thanks! We'll be in touch shortly.",
 				"title": "Booking Request",
-				"warning": "**Please note**: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant."
+				"warning": "Please note: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant."
 			},
 			"time": {
 				"aria": "Request time"

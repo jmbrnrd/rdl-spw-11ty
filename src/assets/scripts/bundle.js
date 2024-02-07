@@ -19,7 +19,6 @@ map();
 gallery();
 bookingRequest();
 about();
-
 bookings();
 events();
 promotions();
