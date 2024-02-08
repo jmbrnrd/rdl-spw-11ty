@@ -1,7 +1,9 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-.hidden { display: none !important; }
+.hidden {
+  display: none !important;
+}
 
 .event-scroller {
   --spacer: 1.5rem;
