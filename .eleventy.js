@@ -1,4 +1,3 @@
-
 module.exports = function (config) {
 
   config.setServerOptions({
@@ -9,6 +8,7 @@ module.exports = function (config) {
       }
     }
   );
+
   // increment loop counter
   config.addHandlebarsHelper("inc", (value) => {
     return parseInt(value) + 1;

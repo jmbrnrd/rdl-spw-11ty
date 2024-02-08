@@ -47,7 +47,7 @@
     "info": "{{ reservations.info }}",
     "groups": "{{ reservations.groups }}",
     "private": "{{ reservations.private  }}",
-    "tgturl": "{{ reservations.tgturl }}",
+    "tgtUrl": "{{ reservations.tgturl }}",
     "maxcover": "{{ reservations.maxcover }}",
     "provider": "{{ reservations.provider }}",
     "restId": "{{ reservations.rest_id }}",

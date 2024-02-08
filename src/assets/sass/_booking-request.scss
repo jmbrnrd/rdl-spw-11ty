@@ -17,7 +17,7 @@
     .selector {
       position: relative;
       height: 6rem;
-      background-color: #eee;
+      background-color: $color-grey-lightest;
       font-weight: 500;
       &:first-child {
         border-radius: 8px 8px 0 0;
@@ -80,9 +80,9 @@
   padding: 3rem;
   max-height: 100vh;
   overflow-y: auto;
-  @include mq($mq-medium) {
-    height: 62%;
-  }
+  //@include mq($mq-medium) {
+  //  height: min(100svh, 62%);
+  //}
 }
 .modal-actions {
   display: flex;

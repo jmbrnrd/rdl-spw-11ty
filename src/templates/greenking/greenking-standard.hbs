@@ -1,16 +1,15 @@
 ---
-title: "Apptiser Standard"
+title: "Green King"
 language: "en"
-layout: "layouts/apptiser-standard.hbs"
+layout: "layouts/greenking.hbs"
 gtag: "G-4FPKM2SVKM"
-permalink: "/templates/apptiser-standard-{{ pkg.version }}.html"
+permalink: "/templates/greenking-standard-{{ pkg.version }}.html"
 brand:
-    name: "apptiser"
-    prefix: "apt"
-    url: "https://apptiser.io/"
-    theme: "apptiser"
+    name: "greenking"
+    prefix: "gk"
+    url: "https://www.greenking.co.uk/"
+    theme: "greenking"
 ---
-
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
     <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ nav.label.navMenuMobile }}">
@@ -46,7 +45,7 @@ brand:
                 <ul class="additional-features" aria-label="features">
                     <!-- {{ data.features }} -->
                     {{#each data.features }}
-                    <li>{{ this }}</li>
+                        <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>
