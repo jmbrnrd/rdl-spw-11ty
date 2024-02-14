@@ -11,8 +11,8 @@ export default function () {
     const restaurantId = document.querySelector('html').dataset.id;
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
-    const prodServer = 'https://rc-server-prod.herokuapp.com/';
-    const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
+    const prodServer = 'https://rc-server-prod.herokuapp.com';
+    const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? prodServer : prodServer;
     let eventsLoaded = false;
 
     // Wait for page load & fetch events
@@ -26,15 +26,19 @@ export default function () {
         // Abort if already loaded
         if (eventsLoaded) { return false; }
 
+        const body = JSON.stringify({
+            api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
+            user_code: 'CF-418-Beta',
+            restaurant_id: restaurantId,
+            valid: false
+        });
+
+        console.log(body);
+
         fetch(`${api}/public/restaurantoffers`, {
             method: 'POST',
             headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
-                user_code: 'CF-418-Beta',
-                restaurant_id: restaurantId,
-                valid: false
-            })
+            body: body
         })
             // check for valid response
             .then(response => {
@@ -118,7 +122,7 @@ export default function () {
             if (currentDate < new Date(event['offer_marketed_from'])) { return; }
             activeEvents.push(event);
         });
-        console.log(activeEvents);
+        console.log(`Events: ${activeEvents.length} / ${events.length} active`);
         return activeEvents;
     }
 }
