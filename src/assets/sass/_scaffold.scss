@@ -5,6 +5,13 @@
 body { background-color: $color-primary; }
 main { background-color: $color-body-bgd; }
 
+@keyframes grow {
+  100% {
+    transform: scale(1.5);
+    filter: blur(50px);
+  }
+}
+
 footer {
   $link-height: 3rem;
   background-color: $color-primary-dark;
@@ -76,6 +83,7 @@ footer {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
+
   > img {
     position: fixed;
     inset: 0 0 0 0;
@@ -83,6 +91,8 @@ footer {
     height: inherit;
     width: 100vw;
     object-fit: cover;
+    animation: grow linear;
+    animation-timeline: scroll();
   }
   // For non-member templates
   &.golden-ratio {
@@ -94,7 +104,7 @@ footer {
     }
   }
   .brand-container {
-    margin-top: -10%;
+    margin-top: -50px;
     display: grid;
     place-items: center;
     font-family: $font-family-display;
@@ -179,6 +189,7 @@ footer {
   }
 }
 .venue-logo-mask {
+
   background-color: white;
   mask-repeat: no-repeat;
   mask-size: contain;
@@ -187,6 +198,8 @@ footer {
   width: 50%;
   max-width: 400px;
   max-height: 200px;
+  animation: drop linear;
+  animation-timing: scroll();
 }
 
 
