@@ -1,3 +1,5 @@
+
+
 if (process.env.NODE_ENV === 'production') {
     console.log = () => {};
 }
@@ -12,6 +14,9 @@ import bookingRequest from './booking-email';
 import about from "./about";
 import logo from "./logo";
 
+
+
+
 logo();
 bookings();
 promotions();
@@ -21,6 +26,9 @@ map();
 gallery();
 bookingRequest();
 about();
+
+
+
 
 
 

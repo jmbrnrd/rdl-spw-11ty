@@ -1,7 +1,10 @@
+
+
+
 if (process.env.NODE_ENV === 'production') {
     console.log = () => {};
 }
-
+import scroll from './scroll';
 import bookings from "./booking-mozrest";
 import map from "./map-lazy";
 import formatting from "./formatting";
@@ -13,6 +16,7 @@ import about from "./about";
 import events from './events';
 import logo from "./logo";
 
+
 logo();
 formatting();
 map();
@@ -23,6 +27,9 @@ bookings();
 events();
 promotions();
 nav();
+scroll();
+
+
 
 
 

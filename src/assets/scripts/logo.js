@@ -9,12 +9,18 @@ export default function (){
     // get the logo element and the value of the attribute
     // which will be the url of the logo mask image
     const logoElem = document.querySelector('[data-venue-logo]');
+
+    // Abort if we don't have a logo element
+    if (!logoElem) { return false; }
+
+    // Extract the url
     const logoUrl = logoElem.dataset.venueLogo;
 
+    // Abort if there is no url
     if (!logoUrl) {
         console.log('No mask image url');
         logoElem.style.display = 'none';
-        return;
+        return false;
     }
 
     console.log('Mask image found', logoUrl);

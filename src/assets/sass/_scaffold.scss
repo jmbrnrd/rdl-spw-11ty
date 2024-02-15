@@ -5,10 +5,30 @@
 body { background-color: $color-primary; }
 main { background-color: $color-body-bgd; }
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 @keyframes grow {
   100% {
     transform: scale(1.5);
-    filter: blur(50px);
+    //filter: blur(50px);
   }
 }
 
@@ -198,8 +218,11 @@ footer {
   width: 50%;
   max-width: 400px;
   max-height: 200px;
-  animation: drop linear;
-  animation-timing: scroll();
+  &.venue-header {
+    height: 48px;
+    max-width: 200px;
+    max-height: 100px;
+  }
 }
 
 

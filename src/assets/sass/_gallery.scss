@@ -12,9 +12,13 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 4px;
   a {
-    display: block;
+    display: grid;
+
     width: 100%;
     overflow: hidden;
+    > * {
+
+    }
   }
   img {
     width: 100%;
