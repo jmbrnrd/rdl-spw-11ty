@@ -1,3 +1,4 @@
+// import Lenis from '@studio-freight/lenis';
 
 
 export default function () {
@@ -12,8 +13,9 @@ export default function () {
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-prod.herokuapp.com';
-    const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? prodServer : prodServer;
+    const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
     let eventsLoaded = false;
+
 
     // Wait for page load & fetch events
     window.addEventListener('load', function () {
@@ -106,6 +108,26 @@ export default function () {
 
         // remove hidden class from all relevant DOM elements
         eventElements.forEach(elem => elem.classList.remove('hidden'));
+
+        // const eventScroller = document.querySelector('.event-scroller');
+        //
+        // const lenis = new Lenis({
+        //     wrapper: eventScroller,
+        //     infinite: true,
+        //     orientation: 'horizontal'
+        // });
+        // lenis.on('scroll', (e) => {
+        //     console.log(e)
+        // });
+        // function raf(time) {
+        //     lenis.raf(time);
+        //     requestAnimationFrame(raf);
+        // }
+        //
+        // requestAnimationFrame(raf);
+        //
+        // console.log(eventScroller);
+
     }
 
     /**
