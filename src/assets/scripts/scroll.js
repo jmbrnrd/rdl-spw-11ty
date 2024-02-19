@@ -2,11 +2,13 @@ import Lenis from '@studio-freight/lenis';
 
 export default function () {
 
+    console.log('scroll.js loaded');
+
     const lenis = new Lenis();
 
-    lenis.on('scroll', (e) => {
-        //console.log(e)
-    })
+    // lenis.on('scroll', (e) => {
+    //     console.log(e)
+    // });
 
     function raf(time) {
         lenis.raf(time);
@@ -15,10 +17,19 @@ export default function () {
 
     requestAnimationFrame(raf);
 
-    const navLinks = document.querySelectorAll('#navBar a, .hero-nav a');
-    console.log(navLinks);
-
+    // Target links
+    const navLinks = document.querySelectorAll('a');
+    let anchor;
+    // If they're internal, apply lenis scrollTo
     navLinks.forEach((nav) => {
-        nav.addEventListener('click', () => lenis.scrollTo(nav.getAttribute('href')));
+        anchor = nav.getAttribute('href');
+        if (anchor.indexOf('#') === 0) {
+            nav.addEventListener('click', () => {
+                lenis.scrollTo(nav.getAttribute('href'));
+            });
+        }
     });
+
+
+
 }

@@ -16,9 +16,8 @@ module.exports = class {
         await esbuild.build({
             entryPoints: [
                 'src/assets/scripts/serb.js',
-                'src/assets/scripts/main.js',
                 'src/assets/scripts/bundle.js',
-                'src/assets/scripts/listing-bundle.js'],
+                'src/assets/scripts/bundle-listing.js'],
             bundle: true,
             minify: isProduction,
             outdir: 'public/assets/scripts',
