@@ -124,4 +124,10 @@ a[data-mzid] {
 #fancybox-outer {
   position: absolute !important;
 }
-
+.bookings-btn {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include mq($mq-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

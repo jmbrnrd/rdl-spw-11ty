@@ -331,6 +331,7 @@ dd {
       transition: all .3s ease-in-out;
       &:hover, &:focus-visible {
         background-color: $color-cta-bgd-dark;
+        transform: translateY(-2px);
         //box-shadow: $shadow;
       }
     }

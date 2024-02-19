@@ -89,11 +89,19 @@ brand:
     <!-- Optional section tag start - RESERVATIONS -->
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
-        <p>{{ data.reservations.info }}</p>
+        <div class="bookings-btn">
+            <p>{{ data.reservations.info }}</p>
 
-        <a class="btn-book serbwidget"
-           href="{{ data.reservations.tgtUrl }}"
-           target="_blank">BOOK ONLINE</a>
+            <a class="btn-book serbwidget"
+               href="{{ data.reservations.tgtUrl }}"
+               target="_blank">BOOK ONLINE</a>
+        </div>
+
+
+
+
+
+
 
         {{> partials/booking-extra }}
 

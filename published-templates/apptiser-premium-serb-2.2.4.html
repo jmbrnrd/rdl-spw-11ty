@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.2.3" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="2.2.4" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -50,7 +50,7 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="https://assets.apptiser.io/images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.2.3">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.2.4">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,13 +66,13 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.2.3" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.2.4" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.2.3" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.2.4" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/main.js?v=2.2.3" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.2.4" defer></script>
 
-
+    <script type="text/javascript" src="https://assets.apptiser.io/scripts/serb.js?v=2.2.4" ></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -88,6 +88,7 @@
 <body>
 
 	
+
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
     <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="">
@@ -262,11 +263,11 @@
             </div>
             <!-- times -->
             <aside class="opening-times">
-                <button class="btn-book"
-                        data-mzid="61c46fa7ccf9d0cba39b6387"
-                        data-mzkey="61a45e24757d22026a87f369">
-                    BOOK ONLINE
-                </button>
+                <!-- Optional section tag start - RESERVATIONS -->
+                <a class="btn-book serbwidget"
+                   href="{{ reservations.tgturl }}"
+                   target="_blank">BOOK ONLINE</a>
+                <!-- Optional section tag end - RESERVATIONS -->
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
@@ -369,10 +370,10 @@
     <section id="reservations" class="content-section booking-section" aria-label="booking widget">
         <h2 class="section-title">Reservations</h2>
         <p>{{ reservations.info }}</p>
-        <p>
-            <a href="#reservations" data-mzid="" data-mzkey="">BOOK ONLINE</a> at
-            anytime, or call us during opening hours on <a href="tel:{{ phone }}">{{ phone }}</a>.
-        </p>
+
+        <a class="btn-book serbwidget"
+           href="{{ reservations.tgturl }}"
+           target="_blank">BOOK ONLINE</a>
 
         <!-- group & private bookings -->
         <div class="content-block">
@@ -476,6 +477,8 @@
 </main>
 
 <div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>
+
+
 
 
 
