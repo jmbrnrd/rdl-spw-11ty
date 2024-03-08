@@ -1,0 +1,23 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+.hidden {
+  display: none !important;
+}
+
+a.btn-takeaway {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 150px;
+    object-fit: contain;
+  }
+
+
+
+}
+

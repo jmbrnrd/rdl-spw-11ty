@@ -13,7 +13,7 @@ export default function () {
     const currentDate = new Date();
     const devServer = 'http://localhost:4000';
     const prodServer = 'https://rc-server-prod.herokuapp.com';
-    const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? devServer : prodServer;
+    const api = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) ? prodServer : prodServer;
     let eventsLoaded = false;
 
 

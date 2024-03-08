@@ -48,7 +48,8 @@
 			"location": "Location",
 			"menuMobile": "Mobile navigation menu",
 			"menus": "Menus",
-			"reservations": "Reservations"
+			"reservations": "Reservations",
+			"takeaway": "Takeaway"
 		}
 	},
 	"section": {
@@ -119,6 +120,9 @@
 					"aria": "Booking time"
 				}
 			}
+		},
+		"takeaway": {
+			"title": "Takeaway"
 		}
 	}
 }
