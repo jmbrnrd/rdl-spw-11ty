@@ -195,6 +195,7 @@ export default function (){
 
     // Use 3rd party datepicker as Safari
     // doesn't support the Html5 default picker
+
     flatpickr(bkgDate, {
       dateFormat: 'D d M Y',
       defaultDate: 'today',
