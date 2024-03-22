@@ -199,7 +199,7 @@ export default function (){
       dateFormat: 'D d M Y',
       defaultDate: 'today',
       minDate: 'today',
-      maxDate: null, //new Date().fp_incr(bkgAdvDays),
+      maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
       monthSelectorType: 'static',
       disableMobile: "false",
       locale: htmlLang === 'fr' ? French : 'en',
