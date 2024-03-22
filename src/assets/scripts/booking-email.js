@@ -12,12 +12,6 @@ export default function (){
   // Is this an iOS device?
   const iOS = /iPad|iPhone/.test(navigator.userAgent);
 
-  if (/iPad|iPhone/.test(navigator.userAgent)) {
-    console.log("This is an iOS device.");
-  } else {
-    console.log("This is not an iOS device!");
-  }
-
   // Element references
   const body = document.querySelector('body');
   const htmlLang = document.querySelector('html').getAttribute('lang') || 'en';
@@ -200,6 +194,7 @@ export default function (){
       dateFormat: 'D d M Y',
       defaultDate: 'today',
       minDate: 'today',
+      // Max date doesn't play nicely on iPhone/iPad
       maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
       monthSelectorType: 'static',
       disableMobile: "false",
