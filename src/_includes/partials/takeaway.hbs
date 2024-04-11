@@ -1,22 +1,24 @@
 <section id="takeaway" class="content-section" data-elem-takeaway>
     <h2 class="section-title">{{ section.takeaway.title }}</h2>
     <div class="content-block">
+    {{#each data.takeaway.services }}
+
         <div class="grid-2-1">
             <div>
-                <h2>ORDER YOUR FAVOURITES AT HOME</h2>
-                <p>For those days when you just don’t want to leave the house, you can order your <strong>{{ data.name }}
-                    favourites</strong> through our chosen trusted delivery partner.</p>
+                <p>{{ this.instructions }}</p>
+                <p><a class="btn btn-takeaway-service" href="{{ this.url }}" target="_blank">{{ this.label }}</a></p>
             </div>
             <div>
-                <a href="/" class="btn-takeaway">
-                    <img src="https://res.cloudinary.com/rdl/image/upload/v1709724002/cms/assets/logo-deliveroo.png"
-                         alt="Order online">
+                <a href="{{ this.url }}" class="btn-takeaway-logo"
+                   aria-label="{{ this.label }}"
+                   target="_blank">
+                    <img src="{{ this.provider.logo }}"
+                         alt="{{ this.takeaway.label }}">
                 </a>
             </div>
 
-
         </div>
-
+    {{/each}}
     </div>
 </section>
 

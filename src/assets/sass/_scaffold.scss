@@ -113,8 +113,8 @@ footer {
     height: inherit;
     width: 100vw;
     object-fit: cover;
-    animation: grow linear;
-    animation-timeline: scroll();
+    //animation: grow linear;
+    //animation-timeline: scroll();
   }
   // For non-member templates
   &.golden-ratio {
@@ -265,8 +265,11 @@ footer {
       margin-bottom: 1rem;
     }
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
+    @include mq($mq-medium) {
+      grid-template-columns: 4fr 1fr;
+    }
   }
   @include mq($mq-medium) {
     flex-direction: row;
@@ -274,6 +277,9 @@ footer {
     justify-content: space-between;
     margin-top: 3rem;
   }
+}
+.section-title + .content-block {
+  margin-top: 0;
 }
 
 .description {

@@ -207,6 +207,19 @@
         "config": {
             "theme": "greenking",
             "managedBy": ""
+        },
+        "takeaway": {
+            "services": [
+                {
+                    "instructions": "Have your favourite Apptiser dishes delivered to your door, by our trusted service, and enjoy it the comfort of your own home. Click below to place your order:",
+                    "label": "Online delivery service",
+                    "url": "https://apptiser.io/",
+                    "provider": {
+                        "name": "Deliveroo",
+                        "logo": "https://res.cloudinary.com/rdl/image/upload/v1709724002/cms/assets/logo-deliveroo.png"
+                    }
+                }
+            ]
         }
     }
 

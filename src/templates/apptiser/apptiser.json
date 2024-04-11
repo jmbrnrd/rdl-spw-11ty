@@ -122,7 +122,9 @@
 			}
 		},
 		"takeaway": {
-			"title": "Takeaway"
+			"title": "Takeaway",
+			"subtitle": "Ordering Instructions",
+			"instructions": "For those days when you just don’t want to leave the house, you can order your menu favourites using our chosen trusted delivery partner. Click to place your order:"
 		}
 	}
 }
