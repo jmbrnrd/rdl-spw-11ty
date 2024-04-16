@@ -63,6 +63,28 @@ Loop section tag end - LOOP HTML MENUS -->
 Loop section tag end - LOOP DOWNLOAD MENUS -->
 
 <!------------------------------------------------------------------------->
+<!--                      TAKEAWAY LOOP                                  -->
+<!------------------------------------------------------------------------->
+
+<!-- Loop section tag start - LOOP TAKEAWAY
+{{#each services}}
+    <div>
+        <p>{{ instructions }}</p>
+        <p><a class="btn btn-takeaway-service" href="{{ url }}" target="_blank">{{ label }}</a></p>
+    </div>
+    <div>
+        <a href="{{ url }}" class="btn-takeaway-logo"
+           aria-label="{{ label }}"
+           target="_blank">
+            <img src="{{ providerLogo }}" alt="{{ providerName }}">
+        </a>
+    </div>
+{{/each}}
+Loop section tag end - LOOP TAKEAWAY -->
+
+
+
+<!------------------------------------------------------------------------->
 <!--                        SOCIAL LOOP                                  -->
 <!------------------------------------------------------------------------->
 
