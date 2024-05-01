@@ -104,10 +104,10 @@
     "groups":"The maximum table size we can accommodate is 20 people.",
     "private":"If you would like to discuss hiring the restaurant for a private function then please telephone us during our opening times.",
     "tgtUrl":"",
-    "maxcover":6,
+    "maxCovers":6,
     "provider":"kuuleats",
     "rest_id":"241",
-    "bkgAdvDays":180
+    "advDays":180
   },
   "menus":{
     "overview":"The great italian taste!",

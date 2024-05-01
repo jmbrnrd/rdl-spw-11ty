@@ -48,10 +48,10 @@
     "groups": "{{ reservations.groups }}",
     "private": "{{ reservations.private  }}",
     "tgtUrl": "{{ reservations.tgturl }}",
-    "maxcover": "{{ reservations.maxcover }}",
+    "maxCovers": "{{ reservations.maxcover }}",
     "provider": "{{ reservations.provider }}",
     "restId": "{{ reservations.rest_id }}",
-    "bkgAdvDays": "{{ reservations.bkgAdvDays }}"
+    "advDays": "{{ reservations.bkgAdvDays }}"
   },
   "config": {
     "theme": "apptiser",

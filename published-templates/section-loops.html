@@ -65,9 +65,8 @@ Loop section tag end - LOOP DOWNLOAD MENUS -->
 <!------------------------------------------------------------------------->
 <!--                      TAKEAWAY LOOP                                  -->
 <!------------------------------------------------------------------------->
-
 <!-- Loop section tag start - LOOP TAKEAWAY
-{{#each services}}
+{{#each takeawayServices.services}}
     <div>
         <p>{{ instructions }}</p>
         <p><a class="btn btn-takeaway-service" href="{{ url }}" target="_blank">{{ label }}</a></p>
@@ -76,7 +75,7 @@ Loop section tag end - LOOP DOWNLOAD MENUS -->
         <a href="{{ url }}" class="btn-takeaway-logo"
            aria-label="{{ label }}"
            target="_blank">
-            <img src="{{ providerLogo }}" alt="{{ providerName }}">
+            <img src="https://res.cloudinary.com/rdl/image/upload/{{ providerLogo }}" alt="{{ providerName }}">
         </a>
     </div>
 {{/each}}
