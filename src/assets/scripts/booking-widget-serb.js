@@ -17,40 +17,33 @@ import * as modal from './booking-modal';
  */
 export default function(config) {
 
-    // Abort if there's no widget
+    // Abort if there's no provider
     if(!config.provider) {
         console.warn('No booking provider specified!');
         return false;
     }
 
-    // References all button targets
     const bookingButtonElements = document.querySelectorAll('[data-book-online]');
     if(bookingButtonElements.length < 1) {
         console.warn(`No 'data-book-online' targets specified in template!`);
         return false;
     }
 
-    // Create modal content
-    function createMozrestContent() {
-        // Insert the iFrame content
-        const bkgFrame = document.createElement('iframe');
-        bkgFrame.src = `${config.providerUrl}
-            &showOffers=true
-            &showAreas=true
-            &requireCC=true
-            &bgColor=fff
-            &showHeader=false`;
-        bkgFrame.width = '600';
-        bkgFrame.height = '750';
-        bkgFrame.allowFullscreen = true;
-        modal.container.appendChild(bkgFrame);
+    function createSerbContent() {
+        console.log('Create SERB widget content');
+
+        const serbContent = document.createElement('iframe');
+        serbContent.src = config.providerUrl;
+        serbContent.width = '600';
+        serbContent.height = '600';
+        serbContent.allowFullscreen = true;
+        //modal.container.classList.add('large');
+        modal.container.appendChild(serbContent);
     }
 
     // Wait for DOM to be loaded
     window.addEventListener('load', function () {
-
-        createMozrestContent();
+        createSerbContent();
         modal.addButtons();
-
     });
 }

@@ -66,30 +66,24 @@ a[data-mzid] {
   display: flex;
   justify-content: center;
   border-radius: 0;
-  padding-inline: 1.5rem;
-  padding-block: 5rem 2rem;
+  // padding-inline: 1.5rem;
+  // padding-block: 5rem 2rem;
   background-color: $color-white;
   width: 100vw;
-  // overwrite with svh in case not supported
-  height: 100vh;
+  // using SVH to overwrite 100% for browser that support it
+  height: 100%;
   height: 100svh;
-  //box-shadow:
-  //        rgba(0, 0, 0, 0.25) 0 54px 55px,
-  //        rgba(0, 0, 0, 0.12) 0 -12px 30px,
-  //        rgba(0, 0, 0, 0.12) 0 4px 6px,
-  //        rgba(0, 0, 0, 0.17) 0 12px 13px,
-  //        rgba(0, 0, 0, 0.09) 0 -3px 5px;
+
   iframe {
-    width: 98%;
+    width: 100%;
     height: 100%;
     border: none;
   }
 
   @include mq($mq-medium) {
     border-radius: 16px;
-    width: Min(38vw, 600px);
-    // height: Min(50vh, 750px);
-    height: fit-content;
+    width: Min(38vw, 800px);
+    height: Min(85vh, 800px);
   }
 
   .modal-close {

@@ -195,9 +195,10 @@
             "person": "person",
             "people": "people",
             "provider": {
-                "name": "email",
+                "name": "mozrest",
                 "id": "61c46fa7ccf9d0cba39b6387",
-                "url": "https://book.mysimpleerb.com/18326/6-8-bridge-street/"
+                "key": "61a45e24757d22026a87f369",
+                "url": "https://widget.mozrest.com/?key=61a45e24757d22026a87f369&mzId=61c46fa7ccf9d0cba39b6387"
             },
             "info": "For table reservations, please telephone the restaurant during opening hours.",
             "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
@@ -205,8 +206,16 @@
 
         },
         "mozrest": {
+            "name": "mozrest",
             "id": "61c46fa7ccf9d0cba39b6387",
-            "key": "61a45e24757d22026a87f369"
+            "key": "61a45e24757d22026a87f369",
+            "url": "https://widget.mozrest.com/?key=61a45e24757d22026a87f369&mzId=61c46fa7ccf9d0cba39b6387"
+        },
+        "serb": {
+            "name": "serb",
+            "id": "18326",
+            "key": "027402670231808757",
+            "url": "https://book.mysimpleerb.com/18326/6-8-bridge-street/"
         },
         "config": {
             "theme": "greenking",

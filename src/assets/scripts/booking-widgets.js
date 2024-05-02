@@ -2,6 +2,7 @@ console.log('booking-widgets.js loaded');
 // import modules
 import emailWidget from './booking-widget-email';
 import mozrestWidget from './booking-widget-mozrest';
+import serbWidget from './booking-widget-serb';
 
 init();
 
@@ -16,11 +17,12 @@ function init() {
     // Reference section data
     const reservations = document.getElementById('reservations');
     const config = reservations.dataset;
+
     console.log('CONFIG:', config);
 
     // Abort if there's no widget
     if(!config.provider) {
-        console.log('No booking provider supplied');
+        console.warn('No booking provider supplied');
         return false;
     }
 
@@ -28,11 +30,12 @@ function init() {
     switch (config.provider) {
         case 'mozrest': {
             console.log('MOZREST WIDGET');
-            mozrestWidget();
+            mozrestWidget(config);
             break;
         }
         case 'serb': {
             console.log('SERB WIDGET');
+            serbWidget(config);
             break;
         }
         case 'resdiary': {
@@ -42,7 +45,6 @@ function init() {
         default: {
             console.log('EMAIL WIDGET');
             emailWidget(config);
-
             break;
         }
     }
