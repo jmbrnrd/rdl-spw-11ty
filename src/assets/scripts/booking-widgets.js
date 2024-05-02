@@ -3,8 +3,10 @@ console.log('booking-widgets.js loaded');
 import emailWidget from './booking-widget-email';
 import mozrestWidget from './booking-widget-mozrest';
 import serbWidget from './booking-widget-serb';
+import resdiaryWidget from './booking-widget-resdiary'
+import opentableWidget from './booking-widget-opentable';
 
-init();
+init()
 
 function init() {
 
@@ -26,6 +28,7 @@ function init() {
         return false;
     }
 
+
     // Which provider?
     switch (config.provider) {
         case 'mozrest': {
@@ -36,10 +39,17 @@ function init() {
         case 'serb': {
             console.log('SERB WIDGET');
             serbWidget(config);
+            this[`${config.provider}Widget`]();
             break;
         }
         case 'resdiary': {
             console.log('RESDIARY WIDGET');
+            resdiaryWidget(config);
+            break;
+        }
+        case 'opentable': {
+            console.log('OPENTABLE WIDGET');
+            opentableWidget(config);
             break;
         }
         default: {

@@ -195,15 +195,26 @@
             "person": "person",
             "people": "people",
             "provider": {
-                "name": "mozrest",
-                "id": "61c46fa7ccf9d0cba39b6387",
-                "key": "61a45e24757d22026a87f369",
-                "url": "https://widget.mozrest.com/?key=61a45e24757d22026a87f369&mzId=61c46fa7ccf9d0cba39b6387"
+                "name": "opentable",
+                "id": "184047",
+                "key": "",
+                "url": "https://www.opentable.co.uk/widget/reservation/canvas?rid=184047&theme=tall"
             },
             "info": "For table reservations, please telephone the restaurant during opening hours.",
             "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
             "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
-
+        },
+        "opentable": {
+            "name": "opentable",
+            "id": "184047",
+            "key": "",
+            "url": "https://track.opentable.co.uk/marketing/signal?marketing_page_name=AVAILABILITY_VISIT&data_notice_preferences=2%3A&data_domain=70&marketing_is_restref=true"
+        },
+        "resdiary": {
+            "name": "resdiary",
+            "id": "61c46fa7ccf9d0cba39b6387",
+            "key": "61a45e24757d22026a87f369",
+            "url": "https://booking.resdiary.com/widget/Standard/BossaNova1/40"
         },
         "mozrest": {
             "name": "mozrest",

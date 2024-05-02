@@ -30,15 +30,13 @@ export default function(config) {
     }
 
     function createSerbContent() {
-        console.log('Create SERB widget content');
-
-        const serbContent = document.createElement('iframe');
-        serbContent.src = config.providerUrl;
-        serbContent.width = '600';
-        serbContent.height = '600';
-        serbContent.allowFullscreen = true;
-        //modal.container.classList.add('xl');
-        modal.container.appendChild(serbContent);
+        console.log('Create RESDIARY widget content');
+        const widgetContent = document.createElement('iframe');
+        widgetContent.src = config.providerUrl;
+        widgetContent.width = '600';
+        widgetContent.height = '600';
+        widgetContent.allowFullscreen = true;
+        modal.container.appendChild(widgetContent);
     }
 
     // Wait for DOM to be loaded
