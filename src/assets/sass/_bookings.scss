@@ -98,8 +98,6 @@ a[data-mzid] {
     }
   }
 
-
-
   .modal-close {
     display: flex;
     justify-content: center;
@@ -123,11 +121,12 @@ a[data-mzid] {
       transform: rotate(90deg);
     }
   }
-
 }
+
 .stopScroll {
   overflow: hidden;
 }
+
 // override SimpleERB use of fancybox to fix a positioning bug
 #fancybox-outer {
   position: absolute !important;
