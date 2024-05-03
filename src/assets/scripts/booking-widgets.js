@@ -1,10 +1,12 @@
 console.log('booking-widgets.js loaded');
+
 // import modules
 import emailWidget from './booking-widget-email';
 import mozrestWidget from './booking-widget-mozrest';
 import serbWidget from './booking-widget-serb';
 import resdiaryWidget from './booking-widget-resdiary'
 import opentableWidget from './booking-widget-opentable';
+import resyWidget from './booking-widget-resy';
 
 init()
 
@@ -28,7 +30,6 @@ function init() {
         return false;
     }
 
-
     // Which provider?
     switch (config.provider) {
         case 'mozrest': {
@@ -39,7 +40,6 @@ function init() {
         case 'serb': {
             console.log('SERB WIDGET');
             serbWidget(config);
-            this[`${config.provider}Widget`]();
             break;
         }
         case 'resdiary': {
@@ -52,6 +52,11 @@ function init() {
             opentableWidget(config);
             break;
         }
+        case 'resy': {
+            console.log('RESY');
+            resyWidget(config);
+            break;
+        }
         default: {
             console.log('EMAIL WIDGET');
             emailWidget(config);
@@ -59,18 +64,3 @@ function init() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -29,19 +29,19 @@ export default function(config) {
         return false;
     }
 
-    function createSerbContent() {
-        console.log('Create RESDIARY widget content');
+    function createWidgetContent() {
         const widgetContent = document.createElement('iframe');
         widgetContent.src = config.providerUrl;
-        widgetContent.width = '600';
-        widgetContent.height = '600';
+        widgetContent.width = '480';
+        widgetContent.height = '750';
         widgetContent.allowFullscreen = true;
+        modal.container.classList.add('max480');
         modal.container.appendChild(widgetContent);
     }
 
     // Wait for DOM to be loaded
     window.addEventListener('load', function () {
-        createSerbContent();
+        createWidgetContent();
         modal.addButtons();
     });
 }

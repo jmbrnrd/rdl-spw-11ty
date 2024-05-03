@@ -66,25 +66,39 @@ a[data-mzid] {
   display: flex;
   justify-content: center;
   border-radius: 0;
-  // padding-inline: 1.5rem;
-  // padding-block: 5rem 2rem;
   background-color: $color-white;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   // using SVH to overwrite 100% for browser that support it
   height: 100%;
   height: 100svh;
-
-  iframe {
-    width: 300px;
-    height: 100%;
-    border: none;
-  }
-
   @include mq($mq-medium) {
     border-radius: 16px;
-    width: Min(38vw, 800px);
-    height: Min(85vh, 640px);
+    width: 62vw;
+    max-width: 560px;
+    height: auto;
+    &.max360 {
+      max-width: 320px;
+    }
+    &.max480 {
+      max-width: 480px;
+    }
+    &.max640 {
+      max-width: 640px;
+    }
   }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    @include mq($mq-medium) {
+      width: 400px;
+      height: 560px;
+    }
+  }
+
+
 
   .modal-close {
     display: flex;

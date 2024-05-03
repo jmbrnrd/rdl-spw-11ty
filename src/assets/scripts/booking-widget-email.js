@@ -194,7 +194,7 @@ export default function (config){
 
   /**
    * Send email request
-   * @param form key value pairs
+   * @param form
    */
   function sendBkgRequest(form) {
 

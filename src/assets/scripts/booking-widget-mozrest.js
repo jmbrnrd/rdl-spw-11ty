@@ -31,26 +31,25 @@ export default function(config) {
     }
 
     // Create modal content
-    function createMozrestContent() {
+    function createWidgetContent() {
         // Insert the iFrame content
-        const bkgFrame = document.createElement('iframe');
-        bkgFrame.src = `${config.providerUrl}
+        const widgetContent = document.createElement('iframe');
+        widgetContent.src = `${config.providerUrl}
             &showOffers=true
             &showAreas=true
             &requireCC=true
             &bgColor=fff
             &showHeader=false`;
-        bkgFrame.width = '600';
-        bkgFrame.height = '750';
-        bkgFrame.allowFullscreen = true;
-        modal.container.appendChild(bkgFrame);
+        widgetContent.width = '480';
+        widgetContent.height = '750';
+        widgetContent.allowFullscreen = true;
+        modal.container.classList.add('max480');
+        modal.container.appendChild(widgetContent);
     }
 
     // Wait for DOM to be loaded
     window.addEventListener('load', function () {
-
-        createMozrestContent();
+        createWidgetContent();
         modal.addButtons();
-
     });
 }

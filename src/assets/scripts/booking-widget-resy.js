@@ -30,13 +30,14 @@ export default function(config) {
     }
 
     function createWidgetContent() {
-        console.log('Create RESDIARY widget content');
+        console.log('Create RESY widget content');
+
         const widgetContent = document.createElement('iframe');
         widgetContent.src = config.providerUrl;
+        widgetContent.width = '600';
+        widgetContent.height = '600';
         widgetContent.allowFullscreen = true;
-        widgetContent.style.width = '286px';
-        widgetContent.style.height = '480px';
-        modal.container.classList.add('max360');
+        //modal.container.classList.add('xl');
         modal.container.appendChild(widgetContent);
     }
 

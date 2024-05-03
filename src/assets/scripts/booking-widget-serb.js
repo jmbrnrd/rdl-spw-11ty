@@ -29,21 +29,21 @@ export default function(config) {
         return false;
     }
 
-    function createSerbContent() {
+    function createWidgetContent() {
         console.log('Create SERB widget content');
 
-        const serbContent = document.createElement('iframe');
-        serbContent.src = config.providerUrl;
-        serbContent.width = '600';
-        serbContent.height = '600';
-        serbContent.allowFullscreen = true;
-        //modal.container.classList.add('xl');
-        modal.container.appendChild(serbContent);
+        const widgetContent = document.createElement('iframe');
+        widgetContent.src = config.providerUrl;
+        widgetContent.width = '480';
+        widgetContent.height = '750';
+        widgetContent.allowFullscreen = true;
+        modal.container.classList.add('max480');
+        modal.container.appendChild(widgetContent);
     }
 
     // Wait for DOM to be loaded
     window.addEventListener('load', function () {
-        createSerbContent();
+        createWidgetContent();
         modal.addButtons();
     });
 }
