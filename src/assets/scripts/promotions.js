@@ -29,7 +29,7 @@ export default function () {
     // Wait for page load
     window.addEventListener('load', function () {
         console.log(`Page loaded so fetch offers`);
-        getOffers();
+        //getOffers();
     });
 
     function getOffers() {

@@ -18,7 +18,7 @@ export default function (){
 
     // Abort if there is no url
     if (!logoUrl) {
-        console.log('No mask image url');
+        console.warn('No mask image url');
         logoElem.style.display = 'none';
         return false;
     }

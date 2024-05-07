@@ -195,10 +195,10 @@
             "person": "person",
             "people": "people",
             "provider": {
-                "name": "email",
-                "id": "18326",
-                "key": "027402670231808757",
-                "url": "https://book.mysimpleerb.com/18326/6-8-bridge-street/"
+                "name": "opentable",
+                "id": "184047",
+                "key": "",
+                "url": "https://www.opentable.co.uk/widget/reservation/canvas?rid=184047&theme=tall&overlay=false&domain=couk&lang=en-GB&r3uid=xXx1SMNZe&newtab=true"
             },
             "info": "For table reservations, please telephone the restaurant during opening hours.",
             "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
