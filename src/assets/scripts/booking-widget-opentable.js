@@ -29,6 +29,7 @@ export default function(config) {
         return false;
     }
 
+    // Set frame attributes& modal class
     function createWidgetContent() {
         console.log('Create RESDIARY widget content');
         const widgetContent = document.createElement('iframe');

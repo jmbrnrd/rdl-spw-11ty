@@ -23,21 +23,21 @@ export default function(config) {
         return false;
     }
 
+    // Grab button targets
     const bookingButtonElements = document.querySelectorAll('[data-book-online]');
     if(bookingButtonElements.length < 1) {
         console.warn(`No 'data-book-online' targets specified in template!`);
         return false;
     }
 
+    // Initiate widget
     function createWidgetContent() {
         console.log('Create RESY widget content');
-
         const widgetContent = document.createElement('iframe');
         widgetContent.src = config.providerUrl;
         widgetContent.width = '600';
         widgetContent.height = '600';
         widgetContent.allowFullscreen = true;
-        //modal.container.classList.add('xl');
         modal.container.appendChild(widgetContent);
     }
 

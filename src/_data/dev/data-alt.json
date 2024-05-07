@@ -1,0 +1,51 @@
+{
+    "opentable": {
+        "name": "opentable",
+        "id": "184047",
+        "key": "",
+        "url": "https://www.opentable.co.uk/widget/reservation/canvas?rid=184047&theme=tall&overlay=false&domain=couk&lang=en-GB&r3uid=xXx1SMNZe&newtab=true"
+    },
+    "resdiary": {
+        "name": "resdiary",
+        "id": "61c46fa7ccf9d0cba39b6387",
+        "key": "61a45e24757d22026a87f369",
+        "url": "https://booking.resdiary.com/widget/Standard/BossaNova1/40"
+    },
+    "mozrest": {
+        "name": "mozrest",
+        "id": "61c46fa7ccf9d0cba39b6387",
+        "key": "61a45e24757d22026a87f369",
+        "url": "https://widget.mozrest.com/?key=61a45e24757d22026a87f369&mzId=61c46fa7ccf9d0cba39b6387"
+    },
+    "serb": {
+        "name": "serb",
+        "id": "18326",
+        "key": "027402670231808757",
+        "url": "https://book.mysimpleerb.com/18326/6-8-bridge-street/"
+    },
+    "resy": {
+        "name": "resy",
+        "id": "18326",
+        "key": "027402670231808757",
+        "url": "https://widgets.resy.com/?ref=https%3A%2F%2Fwww.clarencetavern.com%2F&src=www.clarencetavern.com-widget&innerHeight=934&innerWidth=1920&apiKey=ayBWfgaIIqyYr7a4nAAqyx7eehsQyWg0&venueId=10528#/venues/10528"
+    },
+    "config": {
+        "theme": "greenking",
+        "managedBy": ""
+    },
+    "takeawayServices": {
+        "services": [
+            {
+                "instructions": "Have your favourite Apptiser dishes delivered to your door, by our trusted service, and enjoy it the comfort of your own home. Click below to place your order:",
+                "label": "Online delivery service",
+                "url": "https://apptiser.io/",
+                "provider": {
+                    "name": "Deliveroo",
+                    "logo": "https://res.cloudinary.com/rdl/image/upload/v1709724002/cms/assets/logo-deliveroo.png"
+                }
+            }
+        ]
+    }
+}
+
+

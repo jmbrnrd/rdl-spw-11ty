@@ -48,10 +48,17 @@
     "groups": "{{ reservations.groups }}",
     "private": "{{ reservations.private  }}",
     "tgtUrl": "{{ reservations.tgturl }}",
-    "maxCovers": "{{ reservations.maxcover }}",
-    "provider": "{{ reservations.provider }}",
+    "maxCovers": "{{ reservations.maxCovers }}",
+    "provider": {
+      "name": "{{ reservations.providerName }}",
+      "id": "{{ reservations.providerId }}",
+      "key": "{{ reservations.providerKey }}",
+      "url": "{{ reservations.providerUrl }}"
+    },
     "restId": "{{ reservations.rest_id }}",
-    "advDays": "{{ reservations.bkgAdvDays }}"
+    "advanceDays": "{{ reservations.bkgAdvDays }}",
+    "person": "{{ reservations.person }}",
+    "people": "{{ reservations.people }}"
   },
   "config": {
     "theme": "apptiser",

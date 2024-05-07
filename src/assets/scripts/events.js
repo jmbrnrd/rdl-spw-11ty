@@ -3,6 +3,11 @@
 
 export default function () {
 
+    if (!document.getElementById('events')) {
+        console.log('No EVENTS Section - abort');
+        return false;
+    }
+
     console.log('event.js');
 
     // Target our event elements

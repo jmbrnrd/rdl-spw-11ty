@@ -1,19 +1,19 @@
 
 export default function () {
 
-    console.log('promotion.js');
-
     /**
      * eventsWidget is a 'placeholder' DOM element that we're using
      * to pass to our js the UI content (label etc.) from our
      * eleventy templates.
      */
     const eventsWidget = document.getElementById('eventsWidget');
+
     // If there is no eventsWidget in the DOM then abort.
     if (!eventsWidget) {
-        console.log('No widget included.');
+        console.warn('No EVENTS widget found');
         return false;
     }
+    console.log('promotion.js');
 
     // console.log(eventsWidget.dataset.label);
 

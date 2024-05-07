@@ -1,4 +1,10 @@
 export default function() {
+
+    if(!document.getElementById('navBar')) {
+        return false;
+    }
+
+
     console.log('nav.js loaded');
     const navBar = document.getElementById('navBar');
     const navMenu = document.getElementById('navMenu');
