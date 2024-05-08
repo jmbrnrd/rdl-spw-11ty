@@ -2,7 +2,7 @@ import Lenis from '@studio-freight/lenis';
 
 export default function () {
 
-    console.log('scroll.js loaded');
+    console.log('lenis-scroll.js loaded');
 
     const lenis = new Lenis();
 

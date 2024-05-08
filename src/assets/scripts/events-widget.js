@@ -10,10 +10,10 @@ export default function () {
 
     // If there is no eventsWidget in the DOM then abort.
     if (!eventsWidget) {
-        console.warn('No EVENTS widget found');
+        console.warn('No EVENTS widget element found');
         return false;
     }
-    console.log('promotion.js');
+    console.log('events-widget.js loaded');
 
     // console.log(eventsWidget.dataset.label);
 
@@ -29,7 +29,7 @@ export default function () {
     // Wait for page load
     window.addEventListener('load', function () {
         console.log(`Page loaded so fetch offers`);
-        //getOffers();
+        getOffers();
     });
 
     function getOffers() {
