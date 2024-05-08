@@ -1,4 +1,4 @@
-console.log('Loading modal');
+console.log('booking-modal.js loaded');
 /**
  * this module creates a modal overlay & container
  * then export DOM element references and methods

@@ -31,7 +31,7 @@ export default function(config) {
 
     // Set frame attributes& modal class
     function createWidgetContent() {
-        console.log('Create RESDIARY widget content');
+        console.log('Create Opentable widget content');
         const widgetContent = document.createElement('iframe');
         widgetContent.src = config.providerUrl;
         widgetContent.allowFullscreen = true;

@@ -22,7 +22,7 @@ function init() {
     const reservations = document.getElementById('reservations');
     const config = reservations.dataset;
 
-    console.log('CONFIG:', config);
+    console.log('Reservation config:', config);
 
     // Abort if there's no widget
     if(!config.provider) {
@@ -33,27 +33,27 @@ function init() {
     // Which provider?
     switch (config.provider) {
         case 'mozrest': {
-            console.log('MOZREST WIDGET');
+            console.log('Init MozRest widget');
             mozrestWidget(config);
             break;
         }
         case 'serb': {
-            console.log('SERB WIDGET');
+            console.log('Init SERB widget');
             serbWidget(config);
             break;
         }
         case 'resdiary': {
-            console.log('RESDIARY WIDGET');
+            console.log('Init ResDiary widget');
             resdiaryWidget(config);
             break;
         }
         case 'opentable': {
-            console.log('OPENTABLE WIDGET');
+            console.log('Init Opentable widget');
             opentableWidget(config);
             break;
         }
         case 'resy': {
-            console.log('RESY');
+            console.log('Init Resy widget');
             resyWidget(config);
             break;
         }

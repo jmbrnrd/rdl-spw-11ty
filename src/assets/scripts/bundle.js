@@ -3,11 +3,11 @@
 
 process.env.NODE_ENV === 'production'
     ? console.log = () => {}
-    : console.log('In Development Mode');
+    : console.log('Dev Mode');
 
 
 import scroll from './scroll';
-import map from './googlmap';
+import map from './map';
 import formatting from "./formatting";
 import nav from './nav';
 import gallery from './gallery';

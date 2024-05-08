@@ -5,8 +5,8 @@
 export default function () {
 
   // Guard clause
-  if(!document.querySelector('.modal-container')) {
-    console.log('No modal container found!');
+  if(!document.querySelector('[data-claim-widget]')) {
+    // console.log('No claim widget required');
     return false;
   }
 

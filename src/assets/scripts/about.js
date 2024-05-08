@@ -5,7 +5,7 @@
 
 export default function () {
 
-    console.log('About is loaded');
+    console.log('about.js loaded');
 
     /**
      * Display debug data/browser

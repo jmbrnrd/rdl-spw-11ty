@@ -13,6 +13,8 @@ export default function (){
     // Abort if we don't have a logo element
     if (!logoElem) { return false; }
 
+    console.log('logo.js loaded');
+
     // Extract the url
     const logoUrl = logoElem.dataset.venueLogo;
 
@@ -23,7 +25,7 @@ export default function (){
         return false;
     }
 
-    console.log('Mask image found', logoUrl);
+    console.log(`Mask image: ${logoUrl}`);
     logoElem.setAttribute('style', `mask-image: url(${logoUrl})`);
     // hide any elements that are used as the venue 'title'
     const elems =  document.querySelectorAll('[data-title]');
