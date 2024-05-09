@@ -46,11 +46,11 @@ export default function (){
                     // Promise for a specific library
                     loader
                         .importLibrary('maps')
-                        .then(async ({Map}) => {
+                        .then(async ({ Map, InfoWindow }) => {
 
                             const map = new Map(document.getElementById("map"), mapOptions);
                             const { AdvancedMarkerElement, PinElement } = await loader.importLibrary('marker');
-                            const { InfoWindow } = await loader.importLibrary('maps');
+
                             const pin = new PinElement({
                                 glyph: `★`,
                                 scale: 1,
@@ -73,6 +73,7 @@ export default function (){
                             marker.addListener("click", () => {
                                 info.open(marker.map, marker);
                             });
+
 
 
                         })
