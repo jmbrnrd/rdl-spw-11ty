@@ -75,7 +75,6 @@
     <script type="module" src="https://assets.apptiser.io/scripts/bundle-booking-widgets.js?v=3.0.1" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
-
     <script>
         // Gtag
         window.dataLayer = window.dataLayer || [];
@@ -88,6 +87,7 @@
 
 <body>
 
+	
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
     <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="">
@@ -100,6 +100,7 @@
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
     <a href="/" class="brand" aria-label="Return to start of page">
+
         <h1>{{ name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -109,6 +110,7 @@
                 About
             </a>
         </li>
+
         <li class="hide-on-desktop">
             <a href="#hours"
                aria-label="Opening times {{ name }}">
@@ -260,6 +262,9 @@
          https://res.cloudinary.com/rdl/image/upload/w_1200,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  1200w,
          https://res.cloudinary.com/rdl/image/upload/w_1920,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }} 1920w"
          sizes="100vw">
+    
+    
+
 </section>
 
 <main id="home">
@@ -278,8 +283,11 @@
                     Loop section tag end - LOOP FEATURES -->
                 </ul>
             </div>
-
             <!-- opening times -->
+            <div>
+
+
+            </div>
             <aside id="hours" class="opening-times" data-book-online>
                 <dl>
                     <dt>Telephone</dt>
@@ -312,70 +320,76 @@
             Loop section tag end - LOOP IMAGES -->
         </div>
         <!-- Optional section tag end - IMAGE GALLERY -->
+
     </section>
 
-    <!-- Optional section tag start - MENUS HTML -->
-    <section id="menus" class="content-section" aria-label="Our Menus">
+    <!-- Optional section tag start - MENUS SECTION -->
+    <section id="menus" aria-label="Our Menus">
     
-        <h2 class="section-title">Our Menus</h2>
-        <div class="menu-html">
-            <p>{{ menus.overview }}</p>
-            <!-- sample Menu -->
-            <div class="content-sub-section" aria-label="">
-                <div class="menu-html">
-                    <ul class="menu-key">
-                        <li>
-                            <i class="vt" aria-hidden="true"></i>
-                            Vegetarian
-                        </li>
-                        <li><i class="vg" aria-hidden="true"></i>Vegan</li>
-                        <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
-                    </ul>
-                    <!-- Loop section tag start - LOOP HTML MENUS
-                    {{#each menus.sections }}
-                    <div id="menu_section_{{@index}}" class="menu-section">
-                        <h3 class="menu-section-title">{{ name }}</h3>
-                        <ul class="menu-items">
-                            {{#each dishes }}
-                                <li>
-                                    <h4>{{ this.dish_name }}</h4>
-                                    <span>£{{ this.dish_price }}</span>
-                                    <span>{{ this.dish_desc }}</span>
-                                    {{#each this.dish_attributes}}
-                                        <i class="{{ this }}"></i>
-                                    {{/each}}
-                                </li>
-                            {{/each }}
+        <!-- Optional section tag start - MENUS HTML -->
+        <section id="menusHtml" class="content-section">
+            <h2 class="section-title">Our Menus</h2>
+            <div class="menu-html">
+                <p>{{ menus.overview }}</p>
+                <!-- sample Menu -->
+                <div class="content-sub-section" aria-label="">
+                    <div class="menu-html">
+                        <ul class="menu-key">
+                            <li>
+                                <i class="vt" aria-hidden="true"></i>
+                                Vegetarian
+                            </li>
+                            <li><i class="vg" aria-hidden="true"></i>Vegan</li>
+                            <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                         </ul>
+                        <!-- Loop section tag start - LOOP HTML MENUS
+                        {{#each menus.sections }}
+                        <div id="menu_section_{{@index}}" class="menu-section">
+                            <h3 class="menu-section-title">{{ name }}</h3>
+                            <ul class="menu-items">
+                                {{#each dishes }}
+                                    <li>
+                                        <h4>{{ this.dish_name }}</h4>
+                                        <span>£{{ this.dish_price }}</span>
+                                        <span>{{ this.dish_desc }}</span>
+                                        {{#each this.dish_attributes}}
+                                            <i class="{{ this }}"></i>
+                                        {{/each}}
+                                    </li>
+                                {{/each }}
+                            </ul>
+                        </div>
+                        {{/each}}
+                        Loop section tag end - LOOP HTML MENUS -->
+        
                     </div>
-                    {{/each}}
-                    Loop section tag end - LOOP HTML MENUS -->
-    
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Optional section tag end - MENUS HTML -->
-
+        </section>
+        <!-- Optional section tag end - MENUS HTML -->
     
-    <!-- Optional section tag start - MENUS DOWNLOAD -->
-    <section id="menus" class="content-section menu-pdf" id="pdfMenus" aria-label="Menu downloads">
-        <h2 class="section-title">Downloadable Menus</h2>
-        <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
-        <div class="content-block menu-downloads">
-            <!-- Loop section tag start - LOOP DOWNLOAD MENUS
-            {{#each menus.pdfs }}
-            <div class="menu-card-container">
-            <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
-                <h3>{{ name }}</h3>
-                <span>Published: {{ date }}</span>
-            </a>
+        
+        <!-- Optional section tag start - MENUS DOWNLOAD -->
+        <section id="menusPdf" class="content-section menu-pdf" aria-label="Menu downloads">
+            <h2 class="section-title">Downloadable Menus</h2>
+            <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+            <div class="content-block menu-downloads">
+                <!-- Loop section tag start - LOOP DOWNLOAD MENUS
+                {{#each menus.pdfs }}
+                <div class="menu-card-container">
+                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                    <h3>{{ name }}</h3>
+                    <span>Published: {{ date }}</span>
+                </a>
+                </div>
+                {{/each }}
+                Loop section tag end - LOOP DOWNLOAD MENUS -->
             </div>
-            {{/each }}
-            Loop section tag end - LOOP DOWNLOAD MENUS -->
-        </div>
+        </section>
+        <!-- Optional section tag end - MENUS DOWNLOAD -->
+    
     </section>
-    <!-- Optional section tag end - MENUS DOWNLOAD -->
+    <!-- Optional section tag end - MENUS SECTION -->
 
     <!-- Optional section tag start - TAKEAWAY -->
     <section id="takeaway" class="content-section" data-elem-takeaway>
@@ -399,10 +413,12 @@
         </div>
     </section>
     <!-- Optional section tag end - TAKEAWAY -->
+    
 
     <section id="events" class="content-section hidden" data-elem-event>
         <h2 class="section-title">Events</h2>
     </section>
+    
 
     <!-- Optional section tag start - RESERVATIONS -->
     <section id="reservations"
@@ -417,8 +433,8 @@
              data-provider-url="{{ reservations.providerUrl }}"
              data-max-covers="{{ reservations.maxCovers }}"
              data-advance-days="{{ reservations.bkgAdvDays }}"
-             data-person="{{ reservations.person }}"
-             data-people="{{ reservations.people }}">
+             data-person="person"
+             data-people="people">
     
         <h2 class="section-title">Reservations</h2>
     
@@ -524,7 +540,9 @@
             Get Directions
         </a>
     </section>
+
 </main>
+
 
 <footer>
 
@@ -544,6 +562,9 @@
 </footer>
 
 <!--<div id="eventsWidget" class="events-sticky" data-widget-label="Events Widget"></div>-->
+
+
+
 
 </body>
 </html>
