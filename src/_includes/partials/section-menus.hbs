@@ -1,43 +1,9 @@
 <!-- Optional section tag start - MENUS HTML -->
-<section id="menus" class="content-section" aria-label="{{ section.menus.title }}">
+<section id="menus" aria-label="{{ section.menus.title }}">
 
-    <h2 class="section-title">{{ section.menus.title }}</h2>
-    <div class="menu-html">
-        <p>{{ data.menus.overview }}</p>
-        <!-- sample Menu -->
-        <div class="content-sub-section" aria-label="{{ section.menus.aria }}">
-            <div class="menu-html">
-                <ul class="menu-key">
-                    <li>
-                        <i class="vt" aria-hidden="true"></i>
-                        {{ section.menus.label.veggie }}
-                    </li>
-                    <li><i class="vg" aria-hidden="true"></i>{{ section.menus.label.vegan
-                    }}</li>
-                    <li><i class="gf" aria-hidden="true"></i>{{ section.menus.label.gluten
-                    }}</li>
-                </ul>
-                <!-- {{ data.menus.sections }} -->
-                {{#each data.menus.sections }}
-                    <div id="menu_section_{{@index}}" class="menu-section">
-                        <h3 class="menu-section-title">{{ name }}</h3>
-                        <ul class="menu-items">
-                            {{#each dishes }}
-                                <li>
-                                    <h4>{{ name }}</h4>
-                                    <span>£{{ price }}</span>
-                                    <span>{{ description }}</span>
-                                    {{#each attributes}}
-                                        <i class="{{ this }}"></i>
-                                    {{/each}}
-                                </li>
-                            {{/each }}
-                        </ul>
-                    </div>
-                {{/each}}
+    {{> partials/menu-html }}
 
-            </div>
-        </div>
-    </div>
+    {{> partials/menu-downloads }}
+
 </section>
 <!-- Optional section tag end - MENUS HTML -->

@@ -1,5 +1,7 @@
 {
 	"bookings": {
+		"person": "person",
+		"people": "people",
 		"email": {
 			"covers": {
 				"aria": "Request party size",
