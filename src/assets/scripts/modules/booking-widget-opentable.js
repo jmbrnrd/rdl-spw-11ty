@@ -35,8 +35,8 @@ export default function(config) {
         const widgetContent = document.createElement('iframe');
         widgetContent.src = config.providerUrl;
         widgetContent.allowFullscreen = true;
-        widgetContent.style.width = '286px';
-        widgetContent.style.height = '480px';
+        widgetContent.style.width = '290px';
+        widgetContent.style.height = '490px';
         modal.container.classList.add('max360');
         modal.container.appendChild(widgetContent);
     }

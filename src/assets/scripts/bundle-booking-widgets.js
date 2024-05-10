@@ -1,12 +1,12 @@
-console.log('booking-widgets.js loaded');
+console.log('bundle-booking-widgets.js loaded');
 
 // import modules
-import emailWidget from './booking-widget-email';
-import mozrestWidget from './booking-widget-mozrest';
-import serbWidget from './booking-widget-serb';
-import resdiaryWidget from './booking-widget-resdiary'
-import opentableWidget from './booking-widget-opentable';
-import resyWidget from './booking-widget-resy';
+import emailWidget from './modules/booking-widget-email';
+import mozrestWidget from './modules/booking-widget-mozrest';
+import serbWidget from './modules/booking-widget-serb';
+import resdiaryWidget from './modules/booking-widget-resdiary'
+import opentableWidget from './modules/booking-widget-opentable';
+import resyWidget from './modules/booking-widget-resy';
 
 init()
 

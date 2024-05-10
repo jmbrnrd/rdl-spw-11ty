@@ -8,7 +8,7 @@ export default function () {
         return false;
     }
 
-    console.log('event.js');
+    console.log('event.js loaded');
 
     // Target our event elements
     const eventSection = document.getElementById('events');
@@ -24,7 +24,7 @@ export default function () {
 
     // Wait for page load & fetch events
     window.addEventListener('load', function () {
-        console.log(`Page loaded so fetch offers`);
+        console.log(`Fetch events`);
         fetchAllEvents();
     });
 
@@ -40,7 +40,7 @@ export default function () {
             valid: false
         });
 
-        console.log(body);
+        // console.log(body);
 
         fetch(`${api}/public/restaurantoffers`, {
             method: 'POST',
@@ -69,7 +69,7 @@ export default function () {
      */
     function createEventSection(events)  {
 
-        console.log(events);
+        // console.log(events);
 
         // we only want offers that are in date or marketing date range
         const activeEvents = getActiveEvents(events);
@@ -149,7 +149,7 @@ export default function () {
             if (currentDate < new Date(event['offer_marketed_from'])) { return; }
             activeEvents.push(event);
         });
-        console.log(`Events: ${activeEvents.length} / ${events.length} active`);
+        // console.log(`Events: ${activeEvents.length} / ${events.length} active`);
         return activeEvents;
     }
 }

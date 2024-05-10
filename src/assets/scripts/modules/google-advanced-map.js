@@ -25,7 +25,7 @@ export default function (){
             lat: Number(elem.dataset.lat),
             lng: Number(elem.dataset.lng)
         },
-        zoom: 14,
+        zoom: 15,
         mapId: 'f547725f57ef2ea8'
     };
 
@@ -36,7 +36,7 @@ export default function (){
 
     // Wait for DOM loaded event
     document.addEventListener("DOMContentLoaded", () => {
-        console.log('DOMContentLoaded');
+        // console.log('DOMContentLoaded');
         // Set
         const handleIntersection = (entries) => {
             entries.map((entry) => {
@@ -52,11 +52,11 @@ export default function (){
                             const { AdvancedMarkerElement, PinElement } = await loader.importLibrary('marker');
 
                             const pin = new PinElement({
+                                scale: 1.2,
                                 glyph: `★`,
-                                scale: 1,
+                                glyphColor: '#fff',
                                 background: clrMarker,
-                                borderColor: clrMarker,
-                                glyphColor: '#fff'
+                                borderColor: clrMarker
                             })
 
                             const marker = new AdvancedMarkerElement({
@@ -80,7 +80,7 @@ export default function (){
                         .catch((e) => {
                             console.log(e);
                         });
-                    console.log('Map loaded now');
+                    console.log('Map loaded!');
                     // once loaded remove observer
                     observer.unobserve(elem);
                 }
@@ -88,11 +88,8 @@ export default function (){
         }
 
         // Offset the load according to the content
-        console.log(!!elem.dataset.intersection);
         const offset = !!elem.dataset.intersection ? `${elem.dataset.intersection}px` : `0px`;
         const observer = new IntersectionObserver(handleIntersection, { rootMargin: offset });
         observer.observe(elem);
     });
-
-
 }

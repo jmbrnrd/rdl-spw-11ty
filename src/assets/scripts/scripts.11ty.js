@@ -15,8 +15,8 @@ module.exports = class {
     async render() {
         await esbuild.build({
             entryPoints: [
-                'src/assets/scripts/bundle.js',
-                'src/assets/scripts/booking-widgets.js'],
+                'src/assets/scripts/bundle-main.js',
+                'src/assets/scripts/bundle-booking-widgets.js'],
             bundle: true,
             minify: isProduction,
             outdir: 'public/assets/scripts',
