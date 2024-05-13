@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
+    <!-- RDL META NOINDEX -->
+    <meta name="robots" content="noindex">
+    <!-- /RDL META NOINDEX -->
     <meta name="description" content="{{ description.sentence }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- TODO: should only be applied to previews -->
-<!--    <meta name="robots" content="noindex">-->
 
     <!-- schema -->
     <script type="application/ld+json">
@@ -117,59 +117,59 @@
                 Opening times
             </a>
         </li>
-        <!-- Optional section tag start - MENU NAV -->
+        <!-- RDL MENU NAV -->
         <li>
             <a href="#menus"
                aria-label="{{ name }} Menus">
                 Menus
             </a>
         </li>
-        <!-- Optional section tag end - MENU NAV -->
+        <!-- /RDL MENU NAV -->
         
-        <!-- Optional section tag start - TAKEAWAY NAV -->
+        <!-- RDL TAKEAWAY NAV -->
         <li>
             <a href="#takeaway"
                aria-label="{{ name }} Takeaway">
                 Takeaway
             </a>
         </li>
-        <!-- Optional section tag end - TAKEAWAY NAV -->
+        <!-- /RDL TAKEAWAY NAV -->
         
-        <!-- Optional section tag start - RESERVATIONS NAV -->
+        <!-- RDL RESERVATIONS NAV -->
         <li>
             <a href="#reservations"
                aria-label="{{ name }} Reservations">
                 Reservations
             </a>
         </li>
-        <!-- Optional section tag end - RESERVATIONS NAV -->
+        <!-- /RDL RESERVATIONS NAV -->
         
-        <!-- Optional section tag start - EVENTS -->
+        <!-- RDL EVENTS -->
         <li class="hidden" data-elem-event>
             <a href="#events"
                aria-label="Events &amp; Offers {{ name }}">
                 Events &amp; Offers
             </a>
         </li>
-        <!-- Optional section tag end - EVENTS NAV -->
+        <!-- /RDL EVENTS NAV -->
         
-        <!-- Optional section tag start - CONTACTS NAV -->
+        <!-- RDL CONTACTS NAV -->
         <li>
             <a href="#contacts"
                aria-label="{{ name }} Contacts">
                 Contacts
             </a>
         </li>
-        <!-- Optional section tag end - CONTACTS NAV -->
+        <!-- /RDL CONTACTS NAV -->
         
-        <!-- Optional section tag start - LOCATION NAV -->
+        <!-- RDL LOCATION NAV -->
         <li>
             <a href="#find"
                aria-label="{{ name }} Location">
                 Location
             </a>
         </li>
-        <!-- Optional section tag end - LOCATION NAV -->
+        <!-- /RDL LOCATION NAV -->
     </ul>
 </nav>
 
@@ -198,59 +198,59 @@
                     Opening times
                 </a>
             </li>
-            <!-- Optional section tag start - MENU NAV -->
+            <!-- RDL MENU NAV -->
             <li>
                 <a href="#menus"
                    aria-label="{{ name }} Menus">
                     Menus
                 </a>
             </li>
-            <!-- Optional section tag end - MENU NAV -->
+            <!-- /RDL MENU NAV -->
             
-            <!-- Optional section tag start - TAKEAWAY NAV -->
+            <!-- RDL TAKEAWAY NAV -->
             <li>
                 <a href="#takeaway"
                    aria-label="{{ name }} Takeaway">
                     Takeaway
                 </a>
             </li>
-            <!-- Optional section tag end - TAKEAWAY NAV -->
+            <!-- /RDL TAKEAWAY NAV -->
             
-            <!-- Optional section tag start - RESERVATIONS NAV -->
+            <!-- RDL RESERVATIONS NAV -->
             <li>
                 <a href="#reservations"
                    aria-label="{{ name }} Reservations">
                     Reservations
                 </a>
             </li>
-            <!-- Optional section tag end - RESERVATIONS NAV -->
+            <!-- /RDL RESERVATIONS NAV -->
             
-            <!-- Optional section tag start - EVENTS -->
+            <!-- RDL EVENTS -->
             <li class="hidden" data-elem-event>
                 <a href="#events"
                    aria-label="Events &amp; Offers {{ name }}">
                     Events &amp; Offers
                 </a>
             </li>
-            <!-- Optional section tag end - EVENTS NAV -->
+            <!-- /RDL EVENTS NAV -->
             
-            <!-- Optional section tag start - CONTACTS NAV -->
+            <!-- RDL CONTACTS NAV -->
             <li>
                 <a href="#contacts"
                    aria-label="{{ name }} Contacts">
                     Contacts
                 </a>
             </li>
-            <!-- Optional section tag end - CONTACTS NAV -->
+            <!-- /RDL CONTACTS NAV -->
             
-            <!-- Optional section tag start - LOCATION NAV -->
+            <!-- RDL LOCATION NAV -->
             <li>
                 <a href="#find"
                    aria-label="{{ name }} Location">
                     Location
                 </a>
             </li>
-            <!-- Optional section tag end - LOCATION NAV -->
+            <!-- /RDL LOCATION NAV -->
         </ul>
         <span class="desc-one-sentence fade-in">{{ description.sentence }}</span>
     </div>
@@ -276,11 +276,11 @@
                 <p>{{ description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
-                    <!-- Loop section tag start - LOOP FEATURES
+                    <!-- RDL LOOP FEATURES
                     {{#each features}}
                         <li>{{ this }}</li>
                     {{/each}}
-                    Loop section tag end - LOOP FEATURES -->
+                    /RDL LOOP FEATURES -->
                 </ul>
             </div>
             <!-- opening times -->
@@ -298,17 +298,17 @@
                     <dd>{{ addressRegion }} {{ postalCode }}</dd>
                     <dt>Opening Times</dt>
                     <dd class="times">{{ openingTimes }}</dd>
-                    <!-- Optional section tag start - OPENING NOTES -->
+                    <!-- RDL OPENING NOTES -->
                     <dt>Please note</dt>
                     <dd>{{ openingNotes }}</dd>
-                    <!-- Optional section tag end - OPENING NOTES -->
+                    <!-- /RDL OPENING NOTES -->
                 </dl>
             </aside>
         </div>
 
-        <!-- Optional section tag start - IMAGE GALLERY -->
+        <!-- RDL IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!-- Loop section tag start - LOOP IMAGES
+            <!-- RDL LOOP IMAGES
             {{#each image.gallery}}
             <a class="glightbox"
                 href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
@@ -317,16 +317,16 @@
                         alt="{{ ../name }} gallery image">
                     </a>
             {{/each}}
-            Loop section tag end - LOOP IMAGES -->
+            /RDL LOOP IMAGES -->
         </div>
-        <!-- Optional section tag end - IMAGE GALLERY -->
+        <!-- /RDL IMAGE GALLERY -->
 
     </section>
 
-    <!-- Optional section tag start - MENUS SECTION -->
+    <!-- RDL MENUS SECTION -->
     <section id="menus" aria-label="Our Menus">
     
-        <!-- Optional section tag start - MENUS HTML -->
+        <!-- RDL MENUS HTML -->
         <section id="menusHtml" class="content-section">
             <h2 class="section-title">Our Menus</h2>
             <div class="menu-html">
@@ -342,7 +342,7 @@
                             <li><i class="vg" aria-hidden="true"></i>Vegan</li>
                             <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                         </ul>
-                        <!-- Loop section tag start - LOOP HTML MENUS
+                        <!-- RDL LOOP HTML MENUS
                         {{#each menus.sections }}
                         <div id="menu_section_{{@index}}" class="menu-section">
                             <h3 class="menu-section-title">{{ name }}</h3>
@@ -360,21 +360,21 @@
                             </ul>
                         </div>
                         {{/each}}
-                        Loop section tag end - LOOP HTML MENUS -->
+                        /RDL LOOP HTML MENUS -->
         
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Optional section tag end - MENUS HTML -->
+        <!-- /RDL MENUS HTML -->
     
         
-        <!-- Optional section tag start - MENUS DOWNLOAD -->
+        <!-- RDL MENUS DOWNLOAD -->
         <section id="menusPdf" class="content-section menu-pdf" aria-label="Menu downloads">
             <h2 class="section-title">Downloadable Menus</h2>
             <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
             <div class="content-block menu-downloads">
-                <!-- Loop section tag start - LOOP DOWNLOAD MENUS
+                <!-- RDL LOOP DOWNLOAD MENUS
                 {{#each menus.pdfs }}
                 <div class="menu-card-container">
                 <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
@@ -383,19 +383,19 @@
                 </a>
                 </div>
                 {{/each }}
-                Loop section tag end - LOOP DOWNLOAD MENUS -->
+                /RDL LOOP DOWNLOAD MENUS -->
             </div>
         </section>
-        <!-- Optional section tag end - MENUS DOWNLOAD -->
+        <!-- /RDL MENUS DOWNLOAD -->
     
     </section>
-    <!-- Optional section tag end - MENUS SECTION -->
+    <!-- /RDL MENUS SECTION -->
 
-    <!-- Optional section tag start - TAKEAWAY -->
+    <!-- RDL TAKEAWAY -->
     <section id="takeaway" class="content-section" data-elem-takeaway>
         <h2 class="section-title">Takeaway</h2>
         <div class="content-block">
-            <!-- Loop section tag start - LOOP TAKEAWAY
+            <!-- RDL LOOP TAKEAWAY
             {{#each takeawayServices.services}}
                 <div>
                     <p>{{ instructions }}</p>
@@ -409,10 +409,10 @@
                     </a>
                 </div>
             {{/each}}
-            Loop section tag end - LOOP TAKEAWAY -->
+            /RDL LOOP TAKEAWAY -->
         </div>
     </section>
-    <!-- Optional section tag end - TAKEAWAY -->
+    <!-- /RDL TAKEAWAY -->
     
 
     <section id="events" class="content-section hidden" data-elem-event>
@@ -420,7 +420,7 @@
     </section>
     
 
-    <!-- Optional section tag start - RESERVATIONS -->
+    <!-- RDL RESERVATIONS -->
     <section id="reservations"
              class="content-section booking-section"
              aria-label="Booking widget"
@@ -439,32 +439,34 @@
         <h2 class="section-title">Reservations</h2>
     
         <p>{{ reservations.info }}</p>
-    
+
+        <!-- RDL BOOKING WIDGET -->
         <div id="bookingWidgetContainer" data-book-online></div>
+        <!-- /RDL BOOKING WIDGET -->
     
         <!-- group & private bookings -->
         <div class="content-block">
         
-            <!-- Optional section tag start - BOOKING GROUPS -->
+            <!-- RDL BOOKING GROUPS -->
             <aside>
                 <h2 class="sub-section-title">Group bookings</h2>
                 <p>{{ reservations.groups }}</p>
             </aside>
-            <!-- Optional section tag end - BOOKING GROUPS -->
+            <!-- /RDL BOOKING GROUPS -->
         
-            <!-- Optional section tag start - BOOKING PRIVATE -->
+            <!-- RDL BOOKING PRIVATE -->
             <aside>
                 <h2 class="sub-section-title">Private dining</h2>
                 <p>{{ reservations.private  }}</p>
             </aside>
-            <!-- Optional section tag end - BOOKING PRIVATE -->
+            <!-- /RDL BOOKING PRIVATE -->
         
         </div>
     
     </section>
-    <!-- Optional section tag end - RESERVATIONS -->
+    <!-- /RDL RESERVATIONS -->
 
-    <!-- Optional section tag start - CONTACTS -->
+    <!-- RDL CONTACTS -->
     <section id="contacts" class="content-section contact-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
@@ -479,13 +481,13 @@
                 </dl>
             </aside>
     
-            <!-- Optional section tag start - SOCIAL LINKS -->
+            <!-- RDL SOCIAL LINKS -->
             <aside>
                 <dl>
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                            <!-- Loop section tag start - LOOP SOCIAL LINKS
+                            <!-- RDL LOOP SOCIAL LINKS
                             {{#each social.networks }}
                             <div>
                                 <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
@@ -494,31 +496,31 @@
                                 </a>
                             </div>
                             {{/each}}
-                            Loop section tag end - LOOP SOCIAL LINKS -->
+                            /RDL LOOP SOCIAL LINKS -->
                         </div>
                     </dd>
                 </dl>
             </aside>
-            <!-- Optional section tag end - SOCIAL LINKS -->
+            <!-- /RDL SOCIAL LINKS -->
     
-            <!-- Optional section tag start - TRANSPORT -->
+            <!-- RDL TRANSPORT -->
             <aside>
                 <dl>
-                    <!-- Optional section tag start - PUBLIC TRANSPORT -->
+                    <!-- RDL PUBLIC TRANSPORT -->
                     <dt>Public Transport</dt>
                     <dd>{{ transport }}</dd>
-                    <!-- Optional section tag end - PUBLIC TRANSPORT -->
+                    <!-- /RDL PUBLIC TRANSPORT -->
     
-                    <!-- Optional section tag start - CAR PARKING -->
+                    <!-- RDL CAR PARKING -->
                     <dt>Parking</dt>
                     <dd>{{ parking }}</dd>
-                    <!-- Optional section tag end - CAR PARKING -->
+                    <!-- /RDL CAR PARKING -->
                 </dl>
             </aside>
-            <!-- Optional section tag end - TRANSPORT -->
+            <!-- /RDL TRANSPORT -->
         </div>
     </section>
-    <!-- Optional section tag end - CONTACTS -->
+    <!-- /RDL CONTACTS -->
 
     
     <!-- location -->

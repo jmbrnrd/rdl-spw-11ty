@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
     <title>{{ data.name }} | {{ data.streetAddress }} {{ data.postalCode }}</title>
+    <!-- RDL META NOINDEX -->
+    <meta name="robots" content="noindex">
+    <!-- /RDL META NOINDEX -->
     <meta name="description" content="{{ data.description.sentence }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- TODO: should only be applied to previews -->
-<!--    <meta name="robots" content="noindex">-->
 
     {{> partials/schema.org }}
 
