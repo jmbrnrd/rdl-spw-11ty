@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="2.3.0" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="3.0.2" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
+    <!-- RDL META NOINDEX -->
+    <meta name="robots" content="noindex">
+    <!-- /RDL META NOINDEX -->
     <meta name="description" content="{{ description.sentence }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- TODO: should only be applied to previews -->
-<!--    <meta name="robots" content="noindex">-->
 
     <!-- schema -->
     <script type="application/ld+json">
@@ -50,7 +50,7 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="https://assets.apptiser.io/images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=2.3.0">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=3.0.2">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,11 +66,13 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=2.3.0" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=3.0.2" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/base.css?v=2.3.0" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/bundle-main.css?v=3.0.2" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle.js?v=2.3.0" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle-main.js?v=3.0.2" defer></script>
+
+    <script type="module" src="https://assets.apptiser.io/scripts/bundle-booking-widgets.js?v=3.0.2" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -114,59 +116,53 @@
                 Opening times
             </a>
         </li>
-        <!-- Optional section tag start - MENU NAV -->
+        <!-- RDL MENU NAV -->
         <li>
             <a href="#menus"
                aria-label="{{ name }} Menus">
                 Menus
             </a>
         </li>
-        <!-- Optional section tag end - MENU NAV -->
+        <!-- /RDL MENU NAV -->
         
-        <!-- Optional section tag start - TAKEAWAY NAV -->
+        <!-- RDL TAKEAWAY NAV -->
         <li>
             <a href="#takeaway"
                aria-label="{{ name }} Takeaway">
                 Takeaway
             </a>
         </li>
-        <!-- Optional section tag end - TAKEAWAY NAV -->
+        <!-- /RDL TAKEAWAY NAV -->
         
-        <!-- Optional section tag start - RESERVATIONS NAV -->
+        <!-- RDL RESERVATIONS NAV -->
         <li>
             <a href="#reservations"
                aria-label="{{ name }} Reservations">
                 Reservations
             </a>
         </li>
-        <!-- Optional section tag end - RESERVATIONS NAV -->
+        <!-- /RDL RESERVATIONS NAV -->
         
-        <!-- Optional section tag start - EVENTS -->
         <li class="hidden" data-elem-event>
             <a href="#events"
                aria-label="Events &amp; Offers {{ name }}">
                 Events &amp; Offers
             </a>
         </li>
-        <!-- Optional section tag end - EVENTS NAV -->
         
-        <!-- Optional section tag start - CONTACTS NAV -->
         <li>
             <a href="#contacts"
                aria-label="{{ name }} Contacts">
                 Contacts
             </a>
         </li>
-        <!-- Optional section tag end - CONTACTS NAV -->
         
-        <!-- Optional section tag start - LOCATION NAV -->
         <li>
             <a href="#find"
                aria-label="{{ name }} Location">
                 Location
             </a>
         </li>
-        <!-- Optional section tag end - LOCATION NAV -->
     </ul>
 </nav>
 
@@ -195,59 +191,53 @@
                     Opening times
                 </a>
             </li>
-            <!-- Optional section tag start - MENU NAV -->
+            <!-- RDL MENU NAV -->
             <li>
                 <a href="#menus"
                    aria-label="{{ name }} Menus">
                     Menus
                 </a>
             </li>
-            <!-- Optional section tag end - MENU NAV -->
+            <!-- /RDL MENU NAV -->
             
-            <!-- Optional section tag start - TAKEAWAY NAV -->
+            <!-- RDL TAKEAWAY NAV -->
             <li>
                 <a href="#takeaway"
                    aria-label="{{ name }} Takeaway">
                     Takeaway
                 </a>
             </li>
-            <!-- Optional section tag end - TAKEAWAY NAV -->
+            <!-- /RDL TAKEAWAY NAV -->
             
-            <!-- Optional section tag start - RESERVATIONS NAV -->
+            <!-- RDL RESERVATIONS NAV -->
             <li>
                 <a href="#reservations"
                    aria-label="{{ name }} Reservations">
                     Reservations
                 </a>
             </li>
-            <!-- Optional section tag end - RESERVATIONS NAV -->
+            <!-- /RDL RESERVATIONS NAV -->
             
-            <!-- Optional section tag start - EVENTS -->
             <li class="hidden" data-elem-event>
                 <a href="#events"
                    aria-label="Events &amp; Offers {{ name }}">
                     Events &amp; Offers
                 </a>
             </li>
-            <!-- Optional section tag end - EVENTS NAV -->
             
-            <!-- Optional section tag start - CONTACTS NAV -->
             <li>
                 <a href="#contacts"
                    aria-label="{{ name }} Contacts">
                     Contacts
                 </a>
             </li>
-            <!-- Optional section tag end - CONTACTS NAV -->
             
-            <!-- Optional section tag start - LOCATION NAV -->
             <li>
                 <a href="#find"
                    aria-label="{{ name }} Location">
                     Location
                 </a>
             </li>
-            <!-- Optional section tag end - LOCATION NAV -->
         </ul>
         <span class="desc-one-sentence fade-in">{{ description.sentence }}</span>
     </div>
@@ -273,19 +263,19 @@
                 <p>{{ description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
-                    <!------------------------------------------------------------------------->
-                    <!--                      FEATURES LOOP                                  -->
-                    <!------------------------------------------------------------------------->
-
-                    <!-- Loop section tag start - LOOP FEATURES
+                    <!-- RDL LOOP FEATURES
                     {{#each features}}
                         <li>{{ this }}</li>
                     {{/each}}
-                    Loop section tag end - LOOP FEATURES -->
+                    /RDL LOOP FEATURES -->
                 </ul>
             </div>
             <!-- opening times -->
-            <aside id="hours" class="opening-times">
+            <div>
+
+
+            </div>
+            <aside id="hours" class="opening-times" data-book-online>
                 <dl>
                     <dt>Telephone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
@@ -295,21 +285,17 @@
                     <dd>{{ addressRegion }} {{ postalCode }}</dd>
                     <dt>Opening Times</dt>
                     <dd class="times">{{ openingTimes }}</dd>
-                    <!-- Optional section tag start - OPENING NOTES -->
+                    <!-- RDL OPENING NOTES -->
                     <dt>Please note</dt>
                     <dd>{{ openingNotes }}</dd>
-                    <!-- Optional section tag end - OPENING NOTES -->
+                    <!-- /RDL OPENING NOTES -->
                 </dl>
             </aside>
         </div>
 
-        <!-- Optional section tag start - IMAGE GALLERY -->
+        <!-- RDL IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!------------------------------------------------------------------------->
-            <!--                        IMAGES LOOP                                  -->
-            <!------------------------------------------------------------------------->
-
-            <!-- Loop section tag start - LOOP IMAGES
+            <!-- RDL LOOP IMAGES
             {{#each image.gallery}}
             <a class="glightbox"
                 href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
@@ -318,91 +304,85 @@
                         alt="{{ ../name }} gallery image">
                     </a>
             {{/each}}
-            Loop section tag end - LOOP IMAGES -->
+            /RDL LOOP IMAGES -->
         </div>
-        <!-- Optional section tag end - IMAGE GALLERY -->
+        <!-- /RDL IMAGE GALLERY -->
 
     </section>
 
-    <!-- Optional section tag start - MENUS HTML -->
-    <section id="menus" class="content-section" aria-label="Our Menus">
+    <!-- RDL MENUS SECTION -->
+    <section id="menus" aria-label="Our Menus">
     
-        <h2 class="section-title">Our Menus</h2>
-        <div class="menu-html">
-            <p>{{ menus.overview }}</p>
-            <!-- sample Menu -->
-            <div class="content-sub-section" aria-label="">
-                <div class="menu-html">
-                    <ul class="menu-key">
-                        <li>
-                            <i class="vt" aria-hidden="true"></i>
-                            Vegetarian
-                        </li>
-                        <li><i class="vg" aria-hidden="true"></i>Vegan</li>
-                        <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
-                    </ul>
-                    <!------------------------------------------------------------------------->
-                    <!--                      HTML MENUS LOOP                                -->
-                    <!------------------------------------------------------------------------->
-
-                    <!-- Loop section tag start - LOOP HTML MENUS
-                    {{#each menus.sections }}
-                    <div id="menu_section_{{@index}}" class="menu-section">
-                        <h3 class="menu-section-title">{{ name }}</h3>
-                        <ul class="menu-items">
-                            {{#each dishes }}
-                                <li>
-                                    <h4>{{ this.dish_name }}</h4>
-                                    <span>£{{ this.dish_price }}</span>
-                                    <span>{{ this.dish_desc }}</span>
-                                    {{#each this.dish_attributes}}
-                                        <i class="{{ this }}"></i>
-                                    {{/each}}
-                                </li>
-                            {{/each }}
+        <!-- RDL MENUS HTML -->
+        <section id="menusHtml" class="content-section">
+            <h2 class="section-title">Our Menus</h2>
+            <div class="menu-html">
+                <p>{{ menus.overview }}</p>
+                <!-- sample Menu -->
+                <div class="content-sub-section" aria-label="">
+                    <div class="menu-html">
+                        <ul class="menu-key">
+                            <li>
+                                <i class="vt" aria-hidden="true"></i>
+                                Vegetarian
+                            </li>
+                            <li><i class="vg" aria-hidden="true"></i>Vegan</li>
+                            <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                         </ul>
+                        <!-- RDL LOOP HTML MENUS
+                        {{#each menus.sections }}
+                        <div id="menu_section_{{@index}}" class="menu-section">
+                            <h3 class="menu-section-title">{{ name }}</h3>
+                            <ul class="menu-items">
+                                {{#each dishes }}
+                                    <li>
+                                        <h4>{{ this.dish_name }}</h4>
+                                        <span>£{{ this.dish_price }}</span>
+                                        <span>{{ this.dish_desc }}</span>
+                                        {{#each this.dish_attributes}}
+                                            <i class="{{ this }}"></i>
+                                        {{/each}}
+                                    </li>
+                                {{/each }}
+                            </ul>
+                        </div>
+                        {{/each}}
+                        /RDL LOOP HTML MENUS -->
+        
                     </div>
-                    {{/each}}
-                    Loop section tag end - LOOP HTML MENUS -->
-    
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Optional section tag end - MENUS HTML -->
-
+        </section>
+        <!-- /RDL MENUS HTML -->
     
-    <!-- Optional section tag start - MENUS DOWNLOAD -->
-    <section id="menus" class="content-section menu-pdf" id="pdfMenus" aria-label="Menu downloads">
-        <h2 class="section-title">Downloadable Menus</h2>
-        <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
-        <div class="content-block menu-downloads">
-            <!------------------------------------------------------------------------->
-            <!--                           PDF LOOP                                  -->
-            <!------------------------------------------------------------------------->
-
-            <!-- Loop section tag start - LOOP DOWNLOAD MENUS
-            {{#each menus.pdfs }}
-            <div class="menu-card-container">
-            <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
-                <h3>{{ name }}</h3>
-                <span>Published: {{ date }}</span>
-            </a>
+        
+        <!-- RDL MENUS DOWNLOAD -->
+        <section id="menusPdf" class="content-section menu-pdf" aria-label="Menu downloads">
+            <h2 class="section-title">Downloadable Menus</h2>
+            <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+            <div class="content-block menu-downloads">
+                <!-- RDL LOOP DOWNLOAD MENUS
+                {{#each menus.pdfs }}
+                <div class="menu-card-container">
+                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
+                    <h3>{{ name }}</h3>
+                    <span>Published: {{ date }}</span>
+                </a>
+                </div>
+                {{/each }}
+                /RDL LOOP DOWNLOAD MENUS -->
             </div>
-            {{/each }}
-            Loop section tag end - LOOP DOWNLOAD MENUS -->
-        </div>
+        </section>
+        <!-- /RDL MENUS DOWNLOAD -->
+    
     </section>
-    <!-- Optional section tag end - MENUS DOWNLOAD -->
+    <!-- /RDL MENUS SECTION -->
 
-    <!-- Optional section tag start - TAKEAWAY -->
+    <!-- RDL TAKEAWAY -->
     <section id="takeaway" class="content-section" data-elem-takeaway>
         <h2 class="section-title">Takeaway</h2>
         <div class="content-block">
-            <!------------------------------------------------------------------------->
-            <!--                      TAKEAWAY LOOP                                  -->
-            <!------------------------------------------------------------------------->
-            <!-- Loop section tag start - LOOP TAKEAWAY
+            <!-- RDL LOOP TAKEAWAY
             {{#each takeawayServices.services}}
                 <div>
                     <p>{{ instructions }}</p>
@@ -416,10 +396,10 @@
                     </a>
                 </div>
             {{/each}}
-            Loop section tag end - LOOP TAKEAWAY -->
+            /RDL LOOP TAKEAWAY -->
         </div>
     </section>
-    <!-- Optional section tag end - TAKEAWAY -->
+    <!-- /RDL TAKEAWAY -->
     
 
     <section id="events" class="content-section hidden" data-elem-event>
@@ -427,164 +407,53 @@
     </section>
     
 
-    <!-- Optional section tag start - RESERVATIONS -->
-    <section id="reservations" class="content-section booking-section" aria-label="Booking widget">
+    <!-- RDL RESERVATIONS -->
+    <section id="reservations"
+             class="content-section booking-section"
+             aria-label="Booking widget"
+             data-id="{{ id }}"
+             data-name="{{ name }}"
+             data-email="{{ email }}"
+             data-provider="{{ reservations.providerName }}"
+             data-provider-id="{{ reservations.providerId }}"
+             data-provider-key="{{ reservations.providerKey }}"
+             data-provider-url="{{ reservations.providerUrl }}"
+             data-max-covers="{{ reservations.maxCovers }}"
+             data-advance-days="{{ reservations.bkgAdvDays }}"
+             data-person="person"
+             data-people="people">
     
         <h2 class="section-title">Reservations</h2>
     
         <p>{{ reservations.info }}</p>
     
-        <!-- Optional section tag start - BOOKING WIDGET -->
-        <div class="booking-request-container">
-            <form class="form-booking-request"
-                  id="bkgRequestForm"
-                  aria-label="Booking request form"
-                  data-daysinadvance="{{ reservations.bkgAdvDays }}"
-                  data-maxcovers="{{ reservations.maxcover }}">
-                <div class="selector">
-                    <div class="selector-substitute">
-                        <div class="icon icon-covers"></div>
-                        <div class="selected-value" id="txtCovers">2 people</div>
-                        <div class="icon icon-arrow-down"></div>
-                    </div>
-                    <select id="selectCovers"
-                            name="covers" aria-label="Request party size"
-                            data-label-person="person"
-                            data-label-people="people"></select>
-                </div>
-                <div class="selector">
-                    <div class="selector-substitute">
-                        <div class="icon icon-time"></div>
-                        <div class="selected-value" id="txtTime">19:30</div>
-                        <div class="icon icon-arrow-down"></div>
-                    </div>
-                    <select name="time" aria-label="Request time">
-                        <option value="09:00">09:00</option>
-                        <option value="09:30">09:30</option>
-                        <option value="10:00">10:00</option>
-                        <option value="10:30">10:30</option>
-                        <option value="11:00">11:00</option>
-                        <option value="11:30">11:30</option>
-                        <option value="12:00">12:00</option>
-                        <option value="12:30">12:30</option>
-                        <option value="13:00">13:00</option>
-                        <option value="13:30">13:30</option>
-                        <option value="14:00">14:00</option>
-                        <option value="14:30">14:30</option>
-                        <option value="15:00">15:00</option>
-                        <option value="15:30">15:30</option>
-                        <option value="16:00">16:00</option>
-                        <option value="16:30">16:30</option>
-                        <option value="17:00">17:00</option>
-                        <option value="17:30">17:30</option>
-                        <option value="18:00">18:00</option>
-                        <option value="18:30">18:30</option>
-                        <option value="19:00">19:00</option>
-                        <option value="19:30" selected>19:30</option>
-                        <option value="20:00">20:00</option>
-                        <option value="20:30">20:30</option>
-                        <option value="21:00">21:00</option>
-                        <option value="21:30">21:30</option>
-                        <option value="22:00">22:00</option>
-                        <option value="22:30">22:30</option>
-                        <option value="23:00">23:00</option>
-                        <option value="23:30">23:30</option>
-                    </select>
-                </div>
-                <div class="selector">
-                    <div class="selector-substitute" id="selectDate">
-                        <div class="icon icon-date"></div>
-                        <input  id="bkgDateInput"
-                                aria-label="Request reservation date"
-                                type="text"
-                                class="select-input hide-on-mobile"
-                                name="date"
-                                autocomplete="off"
-                                data-adv-days="30">
-                        <div class="icon icon-arrow-down hide-on-mobile"></div>
-                    </div>
-        
-                </div>
-                <button class="btn" aria-label="bookings.email.submit.aria">Booking Request</button>
-            </form>
-        </div>
-        
-        <!-- modal -->
-        <div id="modal" class="modal-overlay">
-            <div class="modal-window email">
-                <div id="emailRequest" class="form-email-request">
-                    <form id="emailRequestForm">
-                        <input type="hidden" name="restaurant_name" value="{{ name }}">
-                        <input type="hidden" name="restaurant_email" value="{{ email }}">
-                        <input type="hidden" name="language" value="en">
-                        <input type="hidden" name="sender" value="app">
-                        <!-- Summary -->
-                        <div class="booking-summary">
-                            <h1>Booking Request</h1>
-                            <ul>
-                                <li>
-                                    <span class="icon icon-covers"></span>
-                                    <span id="partySize"></span>
-                                </li>
-                                <li>
-                                    <span class="icon icon-time"></span>
-                                    <span id="timeSlot"></span>
-                                </li>
-                                <li>
-                                    <span class="icon icon-date"></span>
-                                    <span id="dayDate"></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <h2>Please enter your contact details below:</h2>
-                        <!-- Name -->
-                        <div class="text-field">
-                            <input id="full_name" type="text" name="full_name" placeholder=" " autofocus required tabindex="0">
-                            <label for="full_name">Your full name</label>
-                        </div>
-                        <!-- Email -->
-                        <div class="text-field">
-                            <input id="email" type="email" name="email" placeholder=" " required>
-                            <label for="email">Your Email Address</label>
-                        </div>
-                        <p>Please note: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant.</p>
-                        <!-- Actions -->
-                        <div class="modal-actions">
-                            <button id="btnCancel" type="button" class="btn-cancel">Cancel</button>
-                            <button id="btnSubmit" type="submit" class="btn">Request Booking</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="booking-request-thanks">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent"><span>Thanks! We&#x27;ll be in touch shortly.</span>
-            </div>
-        </div>
-        <!-- Optional section tag end - BOOKING WIDGET -->
+        <!-- RDL BOOKING WIDGET -->
+        <div id="bookingWidgetContainer" data-book-online></div>
+        <!-- /RDL BOOKING WIDGET -->
     
         <!-- group & private bookings -->
         <div class="content-block">
         
-            <!-- Optional section tag start - BOOKING GROUPS -->
+            <!-- RDL BOOKING GROUPS -->
             <aside>
                 <h2 class="sub-section-title">Group bookings</h2>
                 <p>{{ reservations.groups }}</p>
             </aside>
-            <!-- Optional section tag end - BOOKING GROUPS -->
+            <!-- /RDL BOOKING GROUPS -->
         
-            <!-- Optional section tag start - BOOKING PRIVATE -->
+            <!-- RDL BOOKING PRIVATE -->
             <aside>
                 <h2 class="sub-section-title">Private dining</h2>
                 <p>{{ reservations.private  }}</p>
             </aside>
-            <!-- Optional section tag end - BOOKING PRIVATE -->
+            <!-- /RDL BOOKING PRIVATE -->
         
         </div>
     
     </section>
-    <!-- Optional section tag end - RESERVATIONS -->
+    <!-- /RDL RESERVATIONS -->
 
-    <!-- Optional section tag start - CONTACTS -->
+    
     <section id="contacts" class="content-section contact-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
@@ -598,18 +467,13 @@
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
                 </dl>
             </aside>
-    
-            <!-- Optional section tag start - SOCIAL LINKS -->
+
             <aside>
                 <dl>
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                            <!------------------------------------------------------------------------->
-                            <!--                        SOCIAL LOOP                                  -->
-                            <!------------------------------------------------------------------------->
-
-                            <!-- Loop section tag start - LOOP SOCIAL LINKS
+                            <!-- RDL LOOP SOCIAL LINKS
                             {{#each social.networks }}
                             <div>
                                 <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
@@ -618,31 +482,29 @@
                                 </a>
                             </div>
                             {{/each}}
-                            Loop section tag end - LOOP SOCIAL LINKS -->
+                            /RDL LOOP SOCIAL LINKS -->
                         </div>
                     </dd>
                 </dl>
             </aside>
-            <!-- Optional section tag end - SOCIAL LINKS -->
     
-            <!-- Optional section tag start - TRANSPORT -->
+            <!-- RDL TRANSPORT -->
             <aside>
                 <dl>
-                    <!-- Optional section tag start - PUBLIC TRANSPORT -->
+                    <!-- RDL PUBLIC TRANSPORT -->
                     <dt>Public Transport</dt>
                     <dd>{{ transport }}</dd>
-                    <!-- Optional section tag end - PUBLIC TRANSPORT -->
+                    <!-- /RDL PUBLIC TRANSPORT -->
     
-                    <!-- Optional section tag start - CAR PARKING -->
+                    <!-- RDL CAR PARKING -->
                     <dt>Parking</dt>
                     <dd>{{ parking }}</dd>
-                    <!-- Optional section tag end - CAR PARKING -->
+                    <!-- /RDL CAR PARKING -->
                 </dl>
             </aside>
-            <!-- Optional section tag end - TRANSPORT -->
+            <!-- /RDL TRANSPORT -->
         </div>
     </section>
-    <!-- Optional section tag end - CONTACTS -->
 
     
     <!-- location -->
@@ -685,7 +547,7 @@
 
 </footer>
 
-<!--<div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>-->
+<!--<div id="eventsWidget" class="events-sticky" data-widget-label="Events Widget"></div>-->
 
 
 
