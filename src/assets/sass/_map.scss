@@ -39,4 +39,28 @@ a.btn-map-directions {
   position: absolute;
   inset: 10px 56px auto auto;
 }
+.map-marker {
+  background-color: orangered;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  //padding: 10px 15px;
+  width: 25px;
+  aspect-ratio: 1;
+  position: relative;
+  opacity: 50%;
+}
+
+//.map-marker::after {
+//  content: "";
+//  position: absolute;
+//  left: 50%;
+//  top: 100%;
+//  transform: translate(-50%, 0);
+//  width: 0;
+//  height: 0;
+//  border-left: 8px solid transparent;
+//  border-right: 8px solid transparent;
+//  border-top: 8px solid $color-cta-bgd;
+//}
 

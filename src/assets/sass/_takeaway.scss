@@ -1,0 +1,30 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+.hidden {
+  display: none !important;
+}
+
+a.btn-takeaway {
+  &-service {
+    display: block;
+    padding: 1.75rem;
+    text-align: center;
+    @include mq($mq-medium) {
+      display: inline-block;
+    }
+  }
+  &-logo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+      max-height: 150px;
+      object-fit: contain;
+    }
+  }
+}
+

@@ -48,10 +48,17 @@
     "groups": "{{ reservations.groups }}",
     "private": "{{ reservations.private  }}",
     "tgtUrl": "{{ reservations.tgturl }}",
-    "maxcover": "{{ reservations.maxcover }}",
-    "provider": "{{ reservations.provider }}",
+    "maxCovers": "{{ reservations.maxCovers }}",
+    "provider": {
+      "name": "{{ reservations.providerName }}",
+      "id": "{{ reservations.providerId }}",
+      "key": "{{ reservations.providerKey }}",
+      "url": "{{ reservations.providerUrl }}"
+    },
     "restId": "{{ reservations.rest_id }}",
-    "bkgAdvDays": "{{ reservations.bkgAdvDays }}"
+    "advanceDays": "{{ reservations.bkgAdvDays }}",
+    "person": "{{ reservations.person }}",
+    "people": "{{ reservations.people }}"
   },
   "config": {
     "theme": "apptiser",
@@ -60,6 +67,9 @@
   "mozrest": {
     "id": "61c46fa7ccf9d0cba39b6387",
     "key": "61a45e24757d22026a87f369"
+  },
+  "takeawayServices": {
+    "services": "-----------------[[ INSERT TAKEAWAY LOOP ]]--------------------"
   }
 }
 

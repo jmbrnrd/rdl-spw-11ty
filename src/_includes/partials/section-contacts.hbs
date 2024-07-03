@@ -1,0 +1,57 @@
+
+<section id="contacts" class="content-section contact-section">
+    <h2 class="section-title">{{ section.contacts.title }}</h2>
+    <div class="content-block">
+
+        <aside>
+            <dl>
+                <dt>{{ section.contacts.address }}</dt>
+                <dd>{{ data.addressStreet }}</dd>
+                <dd>{{ data.addressLocality }} {{ data.postalCode }}</dd>
+                <dt>{{ section.contacts.tel }}</dt>
+                <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
+            </dl>
+        </aside>
+
+        <!-- RDL SOCIAL LINKS -->
+        <aside>
+            <dl>
+                <dt>{{ section.contacts.links }}</dt>
+                <dd>
+                    <div class="social-links">
+                        <!-- {{ data.social.networks }} -->
+                        {{#each data.social.networks }}
+                            <div>
+                                <a class="social-link" href="{{ this.url }}"
+                                   target="_blank"
+                                   aria-label="{{ this.alt }}">
+                                    <img src="/assets/images/icon-{{ this.name }}.svg"
+                                         alt="{{ this.name }} logo"
+                                         width="28"
+                                         height="28">
+                                </a>
+                            </div>
+                        {{/each}}
+                    </div>
+                </dd>
+            </dl>
+        </aside>
+        <!-- /RDL SOCIAL LINKS -->
+
+        <!-- RDL TRANSPORT -->
+        <aside>
+            <dl>
+                <!-- RDL PUBLIC TRANSPORT -->
+                <dt>{{ section.contacts.transport }}</dt>
+                <dd>{{ data.transport }}</dd>
+                <!-- /RDL PUBLIC TRANSPORT -->
+
+                <!-- RDL CAR PARKING -->
+                <dt>{{ section.contacts.parking }}</dt>
+                <dd>{{ data.parking }}</dd>
+                <!-- /RDL CAR PARKING -->
+            </dl>
+        </aside>
+        <!-- /RDL TRANSPORT -->
+    </div>
+</section>

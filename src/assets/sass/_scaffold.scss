@@ -5,6 +5,33 @@
 body { background-color: $color-primary; }
 main { background-color: $color-body-bgd; }
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@keyframes grow {
+  100% {
+    transform: scale(1.5);
+    //filter: blur(50px);
+  }
+}
+
 footer {
   $link-height: 3rem;
   background-color: $color-primary-dark;
@@ -71,11 +98,14 @@ footer {
 .section-hero {
   height: 100vh;
   display: grid;
+  grid-template-areas: "stack";
   place-items: center;
   > * {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    grid-area: stack;
+    //grid-column: 1 / 2;
+    //grid-row: 1 / 2;
   }
+
   > img {
     position: fixed;
     inset: 0 0 0 0;
@@ -83,6 +113,8 @@ footer {
     height: inherit;
     width: 100vw;
     object-fit: cover;
+    //animation: grow linear;
+    //animation-timeline: scroll();
   }
   // For non-member templates
   &.golden-ratio {
@@ -94,7 +126,7 @@ footer {
     }
   }
   .brand-container {
-    margin-top: -10%;
+    margin-top: -50px;
     display: grid;
     place-items: center;
     font-family: $font-family-display;
@@ -187,6 +219,11 @@ footer {
   width: 50%;
   max-width: 400px;
   max-height: 200px;
+  &.venue-header {
+    height: 48px;
+    max-width: 200px;
+    max-height: 100px;
+  }
 }
 
 
@@ -223,6 +260,17 @@ footer {
       font-weight: $font-weight-bold;
     }
   }
+  .grid-2-1 {
+    h2{
+      margin-bottom: 1rem;
+    }
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @include mq($mq-medium) {
+      grid-template-columns: 4fr 1fr;
+    }
+  }
   @include mq($mq-medium) {
     flex-direction: row;
     align-items: flex-start;
@@ -230,10 +278,11 @@ footer {
     margin-top: 3rem;
   }
 }
+.section-title + .content-block {
+  margin-top: 0;
+}
 
 .description {
-  // p { white-space: pre-line; }
-  // Create lead sentence
   p:first-child {
     font-weight: $font-weight-bold;
     font-size: 2.4rem;
@@ -295,6 +344,7 @@ dd {
       transition: all .3s ease-in-out;
       &:hover, &:focus-visible {
         background-color: $color-cta-bgd-dark;
+        transform: translateY(-2px);
         //box-shadow: $shadow;
       }
     }

@@ -1,0 +1,27 @@
+<!-- RDL TAKEAWAY -->
+<section id="takeaway" class="content-section" data-elem-takeaway>
+    <h2 class="section-title">{{ section.takeaway.title }}</h2>
+    <div class="content-block">
+        <!-- {{ data.takeawayServices.services }} -->
+        {{#each data.takeawayServices.services }}
+
+        <div class="grid-2-1">
+            <div>
+                <p>{{ this.instructions }}</p>
+                <p><a class="btn btn-takeaway-service" href="{{ this.url }}" target="_blank">{{ this.label }}</a></p>
+            </div>
+            <div>
+                <a href="{{ this.url }}" class="btn-takeaway-logo"
+                   aria-label="{{ this.label }}"
+                   target="_blank">
+                    <img src="{{ this.provider.logo }}"
+                         alt="{{ this.takeaway.label }}">
+                </a>
+            </div>
+
+        </div>
+    {{/each}}
+    </div>
+</section>
+<!-- /RDL TAKEAWAY -->
+

@@ -9,12 +9,13 @@ module.exports = function (config) {
     }
   );
 
+
   // increment loop counter
   config.addHandlebarsHelper("inc", (value) => {
     return parseInt(value) + 1;
   });
   config.addWatchTarget("./src/assets/sass/");
-  config.addWatchTarget("./src/assets/scripts/*");
+  config.addWatchTarget("./src/assets/scripts/");
   config.addShortcode("year", () => `${new Date().getFullYear()}`);
   config.addWatchTarget('./tls/');
   config.addPassthroughCopy("./src/assets/brands/");

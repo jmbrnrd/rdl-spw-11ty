@@ -32,7 +32,7 @@
 
   @include mq($mq-medium){
     grid-auto-flow: column;
-    grid-auto-columns: 45%;
+    grid-auto-columns: 38%;
   }
 }
 .event-card {

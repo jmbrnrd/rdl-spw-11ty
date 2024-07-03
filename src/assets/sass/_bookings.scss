@@ -66,30 +66,36 @@ a[data-mzid] {
   display: flex;
   justify-content: center;
   border-radius: 0;
-  padding-inline: 1.5rem;
-  padding-block: 5rem 2rem;
   background-color: $color-white;
-  width: 100vw;
-  // overwrite with svh in case not supported
-  height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  // using SVH to overwrite 100% for browser that support it
+  height: 100%;
   height: 100svh;
-  //box-shadow:
-  //        rgba(0, 0, 0, 0.25) 0 54px 55px,
-  //        rgba(0, 0, 0, 0.12) 0 -12px 30px,
-  //        rgba(0, 0, 0, 0.12) 0 4px 6px,
-  //        rgba(0, 0, 0, 0.17) 0 12px 13px,
-  //        rgba(0, 0, 0, 0.09) 0 -3px 5px;
-  iframe {
-    width: 98%;
-    height: 100%;
-    border: none;
-  }
-
   @include mq($mq-medium) {
     border-radius: 16px;
-    width: Min(38vw, 600px);
-    // height: Min(50vh, 750px);
-    height: fit-content;
+    width: 62vw;
+    max-width: 560px;
+    height: auto;
+    &.max360 {
+      max-width: 360px;
+    }
+    &.max480 {
+      max-width: 480px;
+    }
+    &.max640 {
+      max-width: 640px;
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    @include mq($mq-medium) {
+      width: 400px;
+      height: 560px;
+    }
   }
 
   .modal-close {
@@ -115,13 +121,20 @@ a[data-mzid] {
       transform: rotate(90deg);
     }
   }
-
 }
+
 .stopScroll {
   overflow: hidden;
 }
+
 // override SimpleERB use of fancybox to fix a positioning bug
 #fancybox-outer {
   position: absolute !important;
 }
-
+.bookings-btn {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include mq($mq-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

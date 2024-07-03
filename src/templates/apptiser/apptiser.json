@@ -1,5 +1,7 @@
 {
 	"bookings": {
+		"person": "person",
+		"people": "people",
 		"email": {
 			"covers": {
 				"aria": "Request party size",
@@ -48,7 +50,8 @@
 			"location": "Location",
 			"menuMobile": "Mobile navigation menu",
 			"menus": "Menus",
-			"reservations": "Reservations"
+			"reservations": "Reservations",
+			"takeaway": "Takeaway"
 		}
 	},
 	"section": {
@@ -119,6 +122,11 @@
 					"aria": "Booking time"
 				}
 			}
+		},
+		"takeaway": {
+			"title": "Takeaway",
+			"subtitle": "Ordering Instructions",
+			"instructions": "For those days when you just don’t want to leave the house, you can order your menu favourites using our chosen trusted delivery partner. Click to place your order:"
 		}
 	}
 }

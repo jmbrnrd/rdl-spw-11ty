@@ -22,7 +22,8 @@ brand:
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" aria-label="{{ nav.label.backToTop }}">
+    <a href="/" class="brand" aria-label="{{ nav.label.backToTop }}">
+
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -32,14 +33,17 @@ brand:
 
 <!-- HERO -->
 <section id="hero" class="section-hero">
+
     {{> partials/brand }}
     {{> partials/hero-image }}
+
 </section>
 
 <main id="home">
     <!-- ABOUT -->
     <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
+
             <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
                 <!-- feature tags-->
@@ -51,7 +55,11 @@ brand:
                 </ul>
             </div>
             <!-- opening times -->
-            <aside id="hours" class="opening-times">
+            <div>
+
+
+            </div>
+            <aside id="hours" class="opening-times" data-book-online>
                 <dl>
                     <dt>{{ section.about.tel }}</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -61,10 +69,10 @@ brand:
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
-                    <!-- Optional section tag start - OPENING NOTES -->
+                    <!-- RDL OPENING NOTES -->
                     <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - OPENING NOTES -->
+                    <!-- /RDL OPENING NOTES -->
                 </dl>
             </aside>
         </div>
@@ -73,17 +81,15 @@ brand:
 
     </section>
 
+    {{> partials/section-menus }}
 
+    {{> partials/section-takeaway }}
 
-    {{> partials/menus }}
+    {{> partials/section-events }}
 
-    {{> partials/menu-downloads }}
+    {{> partials/section-reservations }}
 
-    {{> partials/events }}
-
-    {{> partials/booking }}
-
-    {{> partials/contacts }}
+    {{> partials/section-contacts }}
 
     {{> partials/map }}
 
@@ -91,6 +97,6 @@ brand:
 
 {{> partials/footer-standard }}
 
-<!--<div id="eventsWidget" class="events-sticky" data-widget-label="Events & Offers"></div>-->
+<!--<div id="eventsWidget" class="events-sticky" data-widget-label="Events Widget"></div>-->
 
 
