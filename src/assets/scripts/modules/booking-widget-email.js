@@ -213,6 +213,8 @@ export default function (config){
       body: JSON.stringify({
         api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
         user_code: 'CF-418-Beta',
+        now_date: new Date().toUTCString(),
+        restaurant_id: document.querySelector('html').getAttribute('data-id'),
         restaurant_name: form.elements['restaurant_name'].value,
         restaurant_email: form.elements['restaurant_email'].value,
         booking_covers: bkgParams.bkgSize,

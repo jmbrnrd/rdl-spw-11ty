@@ -3,12 +3,11 @@
  * Theme name
  * MUST be the same as the filename!
  */
-$theme: 'rdl';
-
+$theme: 'green-orange';
 
 // Base palette
-$clr-primary: hsla(0, 0%, 20%, 1);
-$clr-accent:    hsla(187, 100%, 42%, 1);
+$clr-primary: #01837d;
+$clr-accent:    #ff5720;
 
 $clr-grey:      #333;
 $clr-warn:      hsla(344, 100%, 41%, 1);
