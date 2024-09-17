@@ -60,6 +60,13 @@
     "person": "{{ reservations.person }}",
     "people": "{{ reservations.people }}"
   },
+  "brand": {
+    "prefix": "{{ brand.prefix }}",
+    "name": "{{ brand.name }}",
+    "logo": "{{ brand.logo }}",
+    "web": "{{ brand.web }}",
+    "language": "{{ brand.language }}"
+  },
   "config": {
     "theme": "apptiser",
     "domain": ""

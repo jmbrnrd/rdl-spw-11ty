@@ -19,11 +19,12 @@ console.log('API', api);
  * @param config.name
  * @param config.people
  * @param config.person
+ * @param config.sender
  * @returns {boolean}
  */
 export default function (config){
 
-  console.log('Dataset', config.provider);
+  console.log('Dataset', config);
 
   // Abort if there's no widget
   if(!config.provider) {
@@ -129,7 +130,7 @@ export default function (config){
             <input type="hidden" name="restaurant_name" value="${config.name}">
             <input type="hidden" name="restaurant_email" value="${config.email}">
             <input type="hidden" name="language" value="en">
-            <input type="hidden" name="sender" value="app">
+            <input type="hidden" name="sender" value="${config.sender}">
                 <!-- Summary -->
                 <div class="booking-summary">
                   <h1>Request Summary</h1>
