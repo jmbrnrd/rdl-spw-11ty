@@ -1,5 +1,7 @@
 {
 	"bookings": {
+		"person": "personne",
+		"people": "personnes",
 		"email": {
 			"covers": {
 				"aria": "Demander la taille du groupe",
@@ -119,6 +121,11 @@
 					"aria": "Heure de réservation"
 				}
 			}
+		},
+		"takeaway": {
+			"title": "Emporter",
+			"subtitle": "Instructions de commande",
+			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander vos plats préférés en utilisant notre partenaire de livraison de confiance choisi. Cliquez pour passer votre commande :"
 		}
 	}
 }

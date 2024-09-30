@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="3.0.3" xmlns="http://www.w3.org/1999/html">
+<html lang="fr" data-id="{{ id }}" data-template-version="3.0.3" xmlns="http://www.w3.org/1999/html">
 
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
-    <!-- RDL META NOINDEX -->
-    <meta name="robots" content="noindex">
-    <!-- /RDL META NOINDEX -->
     <meta name="description" content="{{ description.sentence }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- TODO: should only be applied to previews -->
+<!--    <meta name="robots" content="noindex">-->
 
     <!-- schema -->
     <script type="application/ld+json">
@@ -69,19 +69,20 @@
 
     <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=3.0.3" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/bundle-main.css?v=3.0.3" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/bundle-main.css?v=3.0.3" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle-main.js?v=3.0.3" defer></script>
+    <script type="module" src="https://assets.apptiser.io/scripts/bundle-main.js?v=3.0.3" defer></script>
 
-    <script type="module" src="/assets/scripts/bundle-booking-widgets.js?v=3.0.3" defer></script>
+    <script type="module" src="https://assets.apptiser.io/scripts/bundle-booking-widgets.js?v=3.0.3" defer></script>
 
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
+
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-RX7PGJKJGS"></script>
     <script>
         // Gtag
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-4FPKM2SVKM');
+        gtag('config', 'G-RX7PGJKJGS');
     </script>
 
 </head>
@@ -100,21 +101,21 @@
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#hero" class="brand" aria-label="Return to start of page">
+    <a href="#hero" class="brand" aria-label="Retour au début de la page">
 
         <h1>{{ name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
         <li>
             <a href="#about"
-               aria-label="About {{ name }}">
-                About
+               aria-label="Description {{ name }}">
+                Description
             </a>
         </li>
         <li class="hide-on-desktop">
             <a href="#hours"
-               aria-label="Opening times {{ name }}">
-                Opening times
+               aria-label="Horaires d&#x27;ouverture {{ name }}">
+                Horaires d&#x27;ouverture
             </a>
         </li>
         <!-- RDL MENU NAV -->
@@ -129,8 +130,8 @@
         <!-- RDL TAKEAWAY NAV -->
         <li>
             <a href="#takeaway"
-               aria-label="{{ name }} Takeaway">
-                Takeaway
+               aria-label="{{ name }} ">
+                
             </a>
         </li>
         <!-- /RDL TAKEAWAY NAV -->
@@ -138,16 +139,16 @@
         <!-- RDL RESERVATIONS NAV -->
         <li>
             <a href="#reservations"
-               aria-label="{{ name }} Reservations">
-                Reservations
+               aria-label="{{ name }} Réservations">
+                Réservations
             </a>
         </li>
         <!-- /RDL RESERVATIONS NAV -->
         
         <li class="hidden" data-elem-event>
             <a href="#events"
-               aria-label="Events &amp; Offers {{ name }}">
-                Events &amp; Offers
+               aria-label="Événements {{ name }}">
+                Événements
             </a>
         </li>
         
@@ -160,8 +161,8 @@
         
         <li>
             <a href="#find"
-               aria-label="{{ name }} Location">
-                Location
+               aria-label="{{ name }} Emplacement">
+                Emplacement
             </a>
         </li>
     </ul>
@@ -182,14 +183,14 @@
         <ul class="hero-nav fade-in">
             <li>
                 <a href="#about"
-                   aria-label="About {{ name }}">
-                    About
+                   aria-label="Description {{ name }}">
+                    Description
                 </a>
             </li>
             <li class="hide-on-desktop">
                 <a href="#hours"
-                   aria-label="Opening times {{ name }}">
-                    Opening times
+                   aria-label="Horaires d&#x27;ouverture {{ name }}">
+                    Horaires d&#x27;ouverture
                 </a>
             </li>
             <!-- RDL MENU NAV -->
@@ -204,8 +205,8 @@
             <!-- RDL TAKEAWAY NAV -->
             <li>
                 <a href="#takeaway"
-                   aria-label="{{ name }} Takeaway">
-                    Takeaway
+                   aria-label="{{ name }} ">
+                    
                 </a>
             </li>
             <!-- /RDL TAKEAWAY NAV -->
@@ -213,16 +214,16 @@
             <!-- RDL RESERVATIONS NAV -->
             <li>
                 <a href="#reservations"
-                   aria-label="{{ name }} Reservations">
-                    Reservations
+                   aria-label="{{ name }} Réservations">
+                    Réservations
                 </a>
             </li>
             <!-- /RDL RESERVATIONS NAV -->
             
             <li class="hidden" data-elem-event>
                 <a href="#events"
-                   aria-label="Events &amp; Offers {{ name }}">
-                    Events &amp; Offers
+                   aria-label="Événements {{ name }}">
+                    Événements
                 </a>
             </li>
             
@@ -235,15 +236,15 @@
             
             <li>
                 <a href="#find"
-                   aria-label="{{ name }} Location">
-                    Location
+                   aria-label="{{ name }} Emplacement">
+                    Emplacement
                 </a>
             </li>
         </ul>
         <span class="desc-one-sentence fade-in">{{ description.sentence }}</span>
     </div>
     
-    <img alt="Background image of {{ name }}"
+    <img alt="Image d&#x27;arrière-plan de{{ name }}"
          src="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}"
          srcset="https://res.cloudinary.com/rdl/image/upload/w_300,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  300w,
          https://res.cloudinary.com/rdl/image/upload/w_600,e_blur:100,f_auto,q_auto,dpr_auto/e_colorize:50,co_rgb:212121/restaurants/{{ number }}/{{ image.default }}  600w,
@@ -278,16 +279,16 @@
             </div>
             <aside id="hours" class="opening-times" data-book-online>
                 <dl>
-                    <dt>Telephone</dt>
+                    <dt>Téléphone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
-                    <dt>Address</dt>
+                    <dt>Adresse</dt>
                     <dd>{{ addressStreet }}</dd>
                     <dd>{{ addressLocality }}</dd>
                     <dd>{{ addressRegion }} {{ postalCode }}</dd>
-                    <dt>Opening Times</dt>
+                    <dt>Horaires</dt>
                     <dd class="times">{{ openingTimes }}</dd>
                     <!-- RDL OPENING NOTES -->
-                    <dt>Please note</dt>
+                    <dt>Notez s&#x27;il vous plaît</dt>
                     <dd>{{ openingNotes }}</dd>
                     <!-- /RDL OPENING NOTES -->
                 </dl>
@@ -312,11 +313,11 @@
     </section>
 
     <!-- RDL MENUS SECTION -->
-    <section id="menus" aria-label="Our Menus">
+    <section id="menus" aria-label="Nos menus">
     
         <!-- RDL MENUS HTML -->
         <section id="menusHtml" class="content-section">
-            <h2 class="section-title">Our Menus</h2>
+            <h2 class="section-title">Nos menus</h2>
             <div class="menu-html">
                 <p>{{ menus.overview }}</p>
                 <!-- sample Menu -->
@@ -325,10 +326,10 @@
                         <ul class="menu-key">
                             <li>
                                 <i class="vt" aria-hidden="true"></i>
-                                Vegetarian
+                                Végétarien
                             </li>
-                            <li><i class="vg" aria-hidden="true"></i>Vegan</li>
-                            <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
+                            <li><i class="vg" aria-hidden="true"></i>Végétalien</li>
+                            <li><i class="gf" aria-hidden="true"></i>Sans gluten</li>
                         </ul>
                         <!-- RDL LOOP HTML MENUS
                         {{#each menus.sections }}
@@ -358,9 +359,9 @@
     
         
         <!-- RDL MENUS DOWNLOAD -->
-        <section id="menusPdf" class="content-section menu-pdf" aria-label="Menu downloads">
-            <h2 class="section-title">Downloadable Menus</h2>
-            <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
+        <section id="menusPdf" class="content-section menu-pdf" aria-label="Téléchargements de menus">
+            <h2 class="section-title">Menus téléchargeables</h2>
+            <p>Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.</p>
             <div class="content-block menu-downloads">
                 <!-- RDL LOOP DOWNLOAD MENUS
                 {{#each menus.pdfs }}
@@ -381,7 +382,7 @@
 
     <!-- RDL TAKEAWAY -->
     <section id="takeaway" class="content-section" data-elem-takeaway>
-        <h2 class="section-title">Takeaway</h2>
+        <h2 class="section-title">Emporter</h2>
         <div class="content-block">
             <!-- RDL LOOP TAKEAWAY
             {{#each takeawayServices.services}}
@@ -404,14 +405,14 @@
     
 
     <section id="events" class="content-section hidden" data-elem-event>
-        <h2 class="section-title">Events</h2>
+        <h2 class="section-title">Événements</h2>
     </section>
     
 
     <!-- RDL RESERVATIONS -->
     <section id="reservations"
              class="content-section booking-section"
-             aria-label="Booking widget"
+             aria-label="Widget de réservation"
              data-id="{{ id }}"
              data-name="{{ name }}"
              data-email="{{ email }}"
@@ -421,8 +422,8 @@
              data-provider-url="{{ reservations.providerUrl }}"
              data-max-covers="{{ reservations.maxCovers }}"
              data-advance-days="{{ reservations.bkgAdvDays }}"
-             data-person="person"
-             data-people="people">
+             data-person="personne"
+             data-people="personnes">
     
         <h2 class="section-title">Reservations</h2>
     
@@ -437,14 +438,14 @@
         
             <!-- RDL BOOKING GROUPS -->
             <aside>
-                <h2 class="sub-section-title">Group bookings</h2>
+                <h2 class="sub-section-title">RÉSERVATIONS DE GROUPE</h2>
                 <p>{{ reservations.groups }}</p>
             </aside>
             <!-- /RDL BOOKING GROUPS -->
         
             <!-- RDL BOOKING PRIVATE -->
             <aside>
-                <h2 class="sub-section-title">Private dining</h2>
+                <h2 class="sub-section-title">Dîner privé</h2>
                 <p>{{ reservations.private  }}</p>
             </aside>
             <!-- /RDL BOOKING PRIVATE -->
@@ -461,17 +462,18 @@
     
             <aside>
                 <dl>
-                    <dt>Address</dt>
+                    <dt>Adresse</dt>
                     <dd>{{ addressStreet }}</dd>
                     <dd>{{ addressLocality }} {{ postalCode }}</dd>
-                    <dt>Telephone</dt>
+                    <dt>Téléphone</dt>
                     <dd><a href="tel:{{ phone }}">{{ phone }}</a></dd>
                 </dl>
             </aside>
-
+    
+            <!-- RDL SOCIAL LINKS -->
             <aside>
                 <dl>
-                    <dt>Links</dt>
+                    <dt>Liens</dt>
                     <dd>
                         <div class="social-links">
                             <!-- RDL LOOP SOCIAL LINKS
@@ -488,12 +490,13 @@
                     </dd>
                 </dl>
             </aside>
+            <!-- /RDL SOCIAL LINKS -->
     
             <!-- RDL TRANSPORT -->
             <aside>
                 <dl>
                     <!-- RDL PUBLIC TRANSPORT -->
-                    <dt>Public Transport</dt>
+                    <dt>Transport public</dt>
                     <dd>{{ transport }}</dd>
                     <!-- /RDL PUBLIC TRANSPORT -->
     
@@ -524,7 +527,7 @@
         <a class="btn btn-map-directions"
            target="_blank"
            href="https://www.google.co.uk/maps?daddr={{ addressStreet }} {{ postalCode }}">
-            Get Directions
+            Obtenir des directions
         </a>
     </section>
 
@@ -534,8 +537,8 @@
 <footer>
 
     <div class="footer-container">
-        <span>Generated by </span>
-        <a href="https://apptiser.io/" aria-label="Visit the https://apptiser.io/ website">
+        <span>Généré par</span>
+        <a href="https://apptiser.io/" aria-label="Visit the https://restaurateursindependants.fr/ website">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323 66" class="logo">
                 <g fill-rule="evenodd">
                     <path class="icon" d="M38.168 53.548 22.37 44.326v10.198l5.371 3.124a3.356 3.356 0 0 0 3.378 0l7.05-4.1Zm-21.39-2.278V32.412l-8.949 5.223V44.1c0 1.216.644 2.34 1.69 2.948l7.258 4.222ZM7.828 31.146l16.1-9.398-8.734-5.098-5.677 3.302A3.408 3.408 0 0 0 7.83 22.9v8.246ZM20.766 13.41l15.864 9.26V12.558L31.12 9.352a3.356 3.356 0 0 0-3.378 0l-6.975 4.058Zm21.457 2.401v18.83L51.03 29.5v-6.6c0-1.216-.644-2.34-1.69-2.948l-7.118-4.141Zm8.808 20.18-15.909 9.287 8.616 5.03 5.604-3.26A3.408 3.408 0 0 0 51.03 44.1v-8.108ZM22.37 29.148v8.687l7.191 4.198 7.07-4.126v-8.744l-7.144-4.17-7.117 4.155Zm12.674-26.63 18.202 10.591a11.333 11.333 0 0 1 5.614 9.8v21.184c0 4.043-2.14 7.779-5.614 9.8L35.044 64.484a11.152 11.152 0 0 1-11.228 0L5.614 53.892A11.333 11.333 0 0 1 0 44.092V22.908c0-4.043 2.14-7.779 5.614-9.8L23.816 2.516a11.152 11.152 0 0 1 11.228 0Z"/>
@@ -547,8 +550,6 @@
     </div>
 
 </footer>
-
-<!--<div id="eventsWidget" class="events-sticky" data-widget-label="Events Widget"></div>-->
 
 
 

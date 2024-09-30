@@ -13,7 +13,7 @@ brand:
 
 <!-- mobile nav -->
 <div class="nav-menu" id="navMenu">
-    <button id="navBtn" class="hamburger hamburger--spin" type="button" title="{{ data.name }} navigation menu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ nav.label.navMenuMobile }}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -22,7 +22,8 @@ brand:
 
 <!-- global nav -->
 <nav id="navBar" aria-label="primary">
-    <a href="#" class="brand" title="{{ nav.label.backToTop }}">
+    <a href="#hero" class="brand" aria-label="{{ nav.label.backToTop }}">
+
         <h1>{{ data.name }}</h1>
     </a>
     <ul class="nav-list-mobile" role="list">
@@ -30,36 +31,35 @@ brand:
     </ul>
 </nav>
 
-<!-- hero -->
+<!-- HERO -->
 <section id="hero" class="section-hero">
-    <div class="brand-container fade-in">
-        <h2>{{ data.name }}</h2>
-        <h3 class="subtitle">{{ data.subtitle }}</h3>
-        <ul class="hero-nav fade-in">
-            {{> partials/nav-options }}
-        </ul>
-        <span class="desc-one-sentence fade-in" >{{ data.description.sentence }}</span>
-    </div>
+
+    {{> partials/brand }}
     {{> partials/hero-image }}
+
 </section>
 
 <main id="home">
-
-    <!-- about -->
-    <section id="about" class="content-section" aria-label="{{ section.about.title }}">
+    <!-- ABOUT -->
+    <section id="about" class="content-section" aria-label="introduction">
         <div class="content-block">
-            <div class="description desc-full" aria-label="description">
+
+            <div class="description" aria-label="description">
                 <p>{{ data.description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
                     <!-- {{ data.features }} -->
                     {{#each data.features }}
-                        <li>{{ this }}</li>
+                    <li>{{ this }}</li>
                     {{/each}}
                 </ul>
             </div>
             <!-- opening times -->
-            <aside id="hours" class="opening-times">
+            <div>
+
+
+            </div>
+            <aside id="hours" class="opening-times" data-book-online>
                 <dl>
                     <dt>{{ section.about.tel }}</dt>
                     <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
@@ -69,10 +69,10 @@ brand:
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>{{ section.about.openingTimes }}</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
-                    <!-- Optional section tag start - OPENING NOTES -->
+                    <!-- RDL OPENING NOTES -->
                     <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - OPENING NOTES -->
+                    <!-- /RDL OPENING NOTES -->
                 </dl>
             </aside>
         </div>
@@ -83,11 +83,11 @@ brand:
 
     {{> partials/section-menus }}
 
-    {{> partials/menu-downloads }}
-
-    {{> partials/section-reservations }}
+    {{> partials/section-takeaway }}
 
     {{> partials/section-events }}
+
+    {{> partials/section-reservations }}
 
     {{> partials/section-contacts }}
 
@@ -95,10 +95,6 @@ brand:
 
 </main>
 
-{{> partials/footer-restaurateurs-independants }}
-
-<div id="eventsWidget" class="events-sticky" data-widget-label="Événements"></div>
-
-
+{{> partials/footer-standard }}
 
 

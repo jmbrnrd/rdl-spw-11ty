@@ -1,226 +1,232 @@
-
-    {
-        "id": "85719",
-        "number": "EN03085719",
-        "name": "Apptiser",
-        "logo": "https://res.cloudinary.com/rdl/image/upload/e_colorize,co_rgb:ffffff/v1707073096/restaurants/EN03085719/q8hbqjfobafrd0jkyfn3.png",
-        "subtitle": "Restaurant & Bar",
-        "addressStreet": "31 Horse Fair",
-        "addressLocality": "Banbury",
-        "addressRegion": "Oxfordshire",
-        "addressCountry": "GB",
-        "postalCode": "OX16 0AE",
-        "phone": "07467 030572",
-        "email": "tech@restaurantdevelopments.ltd",
-        "website": "https://www.example-restaurant.com/",
-        "cuisine": "British",
-        "url": "https://restaurant.apptiser.io/85719-apptiser/",
-        "openingTimes": "Sun: Closed all day\n Mon: 08:00 - 18:00\n Tue: 08:00 - 18:00\n Wed: 08:00 - 18:00\n Thu: 08:00 - 18:00\n Fri: 08:00 - 18:00\n Sat: Closed all day",
-        "openingNotes": "Open all year",
-        "geocode": {
-            "lat": "52.060703",
-            "lng": "-1.3395623"
-        },
-        "social": {
-            "sameAs": [
-                "https://www.facebook.com/restaurantcollective/",
-                "https://www.instagram.com/restaurantcollectiveuk/"
-            ],
-            "networks": [
-                {
-                    "name": "email",
-                    "url": "mailto:info@example-restaurant.com",
-                    "alt": "Contact us via email"
-                },
-
-                {
-                    "name": "facebook",
-                    "url": "https://www.facebook.com/restaurantcollective/",
-                    "alt": "Visit our Facebook page"
-                },
-                {
-                    "name": "instagram",
-                    "url": "https://www.instagram.com/restaurantcollectiveuk/",
-                    "alt": "Follow us on Instagram"
-                }
-            ]
-        },
-        "image": {
-            "default": "afah5sjsbdhbmx5l8cgz.jpg",
-            "gallery": [
-                "afah5sjsbdhbmx5l8cgz.jpg",
-                "wbu193bqzneibm7sbofn.jpg",
-                "uzg33elemocmafiise63.jpg"
-            ]
-        },
-        "description": {
-            "sentence": "A one sentence restaurant description.",
-            "paragraph": "",
-            "full": "This is the first sentence of the FULL description that is extracted and used as a lead paragraph. The rest of the full description is then displayed below. This is used for a detailed marketing heavy description of the restaurant and its attractions."
-        },
-        "features": [
-            "Free WiFi",
-            "Dog-friendly",
-            "Outside seating",
-            "Vegan options",
-            "All-day opening"
+{
+    "id": "85719",
+    "number": "EN03085719",
+    "name": "Apptiser",
+    "logo": "https://res.cloudinary.com/rdl/image/upload/e_colorize,co_rgb:ffffff/v1707073096/restaurants/EN03085719/q8hbqjfobafrd0jkyfn3.png",
+    "subtitle": "Restaurant & Bar",
+    "addressStreet": "31 Horse Fair",
+    "addressLocality": "Banbury",
+    "addressRegion": "Oxfordshire",
+    "addressCountry": "GB",
+    "postalCode": "OX16 0AE",
+    "phone": "07467 030572",
+    "email": "tech@restaurantdevelopments.ltd",
+    "website": "https://www.example-restaurant.com/",
+    "cuisine": "British",
+    "url": "https://restaurant.apptiser.io/85719-apptiser/",
+    "openingTimes": "Sun: Closed all day\n Mon: 08:00 - 18:00\n Tue: 08:00 - 18:00\n Wed: 08:00 - 18:00\n Thu: 08:00 - 18:00\n Fri: 08:00 - 18:00\n Sat: Closed all day",
+    "openingNotes": "Open all year",
+    "geocode": {
+        "lat": "52.060703",
+        "lng": "-1.3395623"
+    },
+    "social": {
+        "sameAs": [
+            "https://www.facebook.com/restaurantcollective/",
+            "https://www.instagram.com/restaurantcollectiveuk/"
         ],
-        "transport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
-        "parking": "There are pay and display bays in the streets surrounding the restaurant.",
-        "menus": {
-            "overview": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
-            "sections": [
-                {
-                    "name": "Antipasti",
-                    "dishes": [
-                        {
-                            "name": "Paté di Fegatini",
-                            "price": "6.00",
-                            "description": "Home-made Chicken Liver Paté served with Rustic Sicilian Bread and Relish.",
-                            "attributes": []
-                        },
-                        {
-                            "name": "Mousse di Sgombro",
-                            "price": "10.00",
-                            "description": "A traditional Ligurian recipe of Smoked Mackerel Paté with Focaccia and Horseradish.",
-                            "attributes": [ "vg", "vt" ]
-                        },
-                        {
-                            "name": "Capesante alla Martini",
-                            "price": "8.50",
-                            "description": "Seared King Scallops served in a Martini Creamy Sauce on our home-made Crostino.",
-                            "attributes": [ "vg", "vt", "gf" ]
-                        },
-                        {
-                            "name": "Insalata Caprese GF",
-                            "price": "6.00",
-                            "description": "Sliced Beef Tomato, Mozzarella and Rocket with a drizzle of Virgin Olive Oil and Oregano / or with Avocado.",
-                            "attributes": ["vg", "vt"]
-                        },
-                        {
-                            "name": "Gamberoni alla Spagnola",
-                            "price": "9.00",
-                            "description": "Tiger Prawns pan-seared with Garlic, Fresh Parsley, Butter and Lemon Sauce.",
-                            "attributes": []
-                        },
-                        {
-                            "name": "Grigliata di Ortaggi e Verdure",
-                            "price": "8.50",
-                            "description": "Grilled mixed Vegetables marinated in Extra Virgin Olive Oil and Vinegar.",
-                            "attributes": [ "vg", "vt", "gf" ]
-                        }
-                    ]
-                },
-                {
-                    "name": "La Paste",
-                    "dishes": [
-                        {
-                            "name": "Spaghetti alle Vongole",
-                            "price": "12.50",
-                            "description": "Spaghetti Tomates de San Marzano & Basilico.",
-                            "attributes": [ "vg" ]
-                        },
-                        {
-                            "name": "Ravioloni all'Aragosta",
-                            "price": "13.00",
-                            "description": "Homemade Pasta Parcels of Lobster and Ricotta, in its Bisque Sauce and Shrimps.",
-                            "attributes": []
-                        },
-                        {
-                            "name": "Linguine Montalbano",
-                            "price": "10.00",
-                            "description": "Pasta with half dozen of King Prawns, Garlic, Chilli and little bit of Tomato Sauce.",
-                            "attributes": []
-                        },
-                        {
-                            "name": "Risotto ai Funghi Porcini",
-                            "price": "13.95",
-                            "description": "Carmaroli Rice cooked in White Wine with Shallots and Porcini Mushrooms, drizzled with Truffle Oil, sprinkled with flakes of Parmigiano, topped with Wild Rocket.",
-                            "attributes": ["vt"]
-                        },
-                        {
-                            "name": "Agnolotti d'Agnello",
-                            "price": "13.95",
-                            "description": "Homemade Pasta Parcels filled with young Welsh Lamb, served in a Velvety Red Wine, fresh Rosemary and Garlic Sauce.",
-                            "attributes": []
-                        },
-                        {
-                            "name": "Malfatti Salsiccia e Rucola",
-                            "price": "14.95",
-                            "description": "Homemade twist Pasta with Tomato Sauce, Luganica Sausage, Garlic, Chillies and Wild Rocket.",
-                            "attributes": []
-                        }
-                    ]
-                },
-                {
-                    "name": "Dolci e Gelati",
-                    "dishes": [
-                        {
-                            "name": "Tortino appiccicoso",
-                            "price": "6.00",
-                            "description": "Sticky Toffee Pudding coated in warm Butterscotch sauce and served with Vanilla ice cream.",
-                            "attributes": []
-                        },
-                        {
-                            "name": "Affogato al Caffè Liquoroso",
-                            "price": "10.00",
-                            "description": "A Trio of Vanilla ice cream with Espresso Coffee and a shot of Strega or Disaronno liqueur.",
-                            "attributes": [ "vg", "vt" ]
-                        },
-                        {
-                            "name": "Tiramisù (Individual Glass Portion)",
-                            "price": "8.50",
-                            "description": "Our version of this classic Italian dessert.",
-                            "attributes": [ "vg", "vt", "gf" ]
-                        }
-                    ]
-                }
-            ],
-            "pdfs": [
-                {
-                    "name": "Breakfast Menu",
-                    "date": "1 February 2023",
-                    "path": "https://www.pitymeinn.co.uk/_files/ugd/93cdd9_30b52cbcb43343e2866aa40576a54742.pdf"
-                },
-                {
-                    "name": "Main Menu",
-                    "date": "1 February 2023",
-                    "path": "https://www.pitymeinn.co.uk/_files/ugd/93cdd9_2e157e9a279b45719db718c80a913c06.pdf"
-                }
-            ]
-        },
-        "reservations": {
-            "maxCovers": 6,
-            "advanceDays": 30,
-            "person": "person",
-            "people": "people",
-            "provider": {
-                "name": "opentable",
-                "id": "184047",
-                "key": "",
-                "url": "https://www.opentable.co.uk/widget/reservation/canvas?rid=184047&theme=tall&overlay=false&domain=couk&lang=en-GB&r3uid=xXx1SMNZe&newtab=true"
+        "networks": [
+            {
+                "name": "email",
+                "url": "mailto:info@example-restaurant.com",
+                "alt": "Contact us via email"
             },
-            "info": "For table reservations, please telephone the restaurant during opening hours.",
-            "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
-            "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
-        },
-        "config": {
-            "theme": "greenking",
-            "managedBy": ""
-        },
-        "takeawayServices": {
-            "services": [
-                {
-                    "instructions": "Have your favourite Apptiser dishes delivered to your door, by our trusted service, and enjoy it the comfort of your own home. Click below to place your order:",
-                    "label": "Online delivery service",
-                    "url": "https://apptiser.io/",
-                    "provider": {
-                        "name": "Deliveroo",
-                        "logo": "https://res.cloudinary.com/rdl/image/upload/v1709724002/cms/assets/logo-deliveroo.png"
+
+            {
+                "name": "facebook",
+                "url": "https://www.facebook.com/restaurantcollective/",
+                "alt": "Visit our Facebook page"
+            },
+            {
+                "name": "instagram",
+                "url": "https://www.instagram.com/restaurantcollectiveuk/",
+                "alt": "Follow us on Instagram"
+            }
+        ]
+    },
+    "image": {
+        "default": "afah5sjsbdhbmx5l8cgz.jpg",
+        "gallery": [
+            "afah5sjsbdhbmx5l8cgz.jpg",
+            "wbu193bqzneibm7sbofn.jpg",
+            "uzg33elemocmafiise63.jpg"
+        ]
+    },
+    "description": {
+        "sentence": "A one sentence restaurant description.",
+        "paragraph": "",
+        "full": "This is the first sentence of the FULL description that is extracted and used as a lead paragraph. The rest of the full description is then displayed below. This is used for a detailed marketing heavy description of the restaurant and its attractions."
+    },
+    "features": [
+        "Free WiFi",
+        "Dog-friendly",
+        "Outside seating",
+        "Vegan options",
+        "All-day opening"
+    ],
+    "transport": "Nice mainline station is 1.6km\nBus routes 27, 34, 102",
+    "parking": "There are pay and display bays in the streets surrounding the restaurant.",
+    "menus": {
+        "overview": "The following dishes are selected from our current menus as a sample. Our ingredients are predominately fresh and locally sourced and we have a number of choices that are suitable for those on vegan, vegetarian or gluten-free diets. All of our fish are from sustainable sources.",
+        "sections": [
+            {
+                "name": "Antipasti",
+                "dishes": [
+                    {
+                        "name": "Paté di Fegatini",
+                        "price": "6.00",
+                        "description": "Home-made Chicken Liver Paté served with Rustic Sicilian Bread and Relish.",
+                        "attributes": []
+                    },
+                    {
+                        "name": "Mousse di Sgombro",
+                        "price": "10.00",
+                        "description": "A traditional Ligurian recipe of Smoked Mackerel Paté with Focaccia and Horseradish.",
+                        "attributes": [ "vg", "vt" ]
+                    },
+                    {
+                        "name": "Capesante alla Martini",
+                        "price": "8.50",
+                        "description": "Seared King Scallops served in a Martini Creamy Sauce on our home-made Crostino.",
+                        "attributes": [ "vg", "vt", "gf" ]
+                    },
+                    {
+                        "name": "Insalata Caprese GF",
+                        "price": "6.00",
+                        "description": "Sliced Beef Tomato, Mozzarella and Rocket with a drizzle of Virgin Olive Oil and Oregano / or with Avocado.",
+                        "attributes": ["vg", "vt"]
+                    },
+                    {
+                        "name": "Gamberoni alla Spagnola",
+                        "price": "9.00",
+                        "description": "Tiger Prawns pan-seared with Garlic, Fresh Parsley, Butter and Lemon Sauce.",
+                        "attributes": []
+                    },
+                    {
+                        "name": "Grigliata di Ortaggi e Verdure",
+                        "price": "8.50",
+                        "description": "Grilled mixed Vegetables marinated in Extra Virgin Olive Oil and Vinegar.",
+                        "attributes": [ "vg", "vt", "gf" ]
                     }
+                ]
+            },
+            {
+                "name": "La Paste",
+                "dishes": [
+                    {
+                        "name": "Spaghetti alle Vongole",
+                        "price": "12.50",
+                        "description": "Spaghetti Tomates de San Marzano & Basilico.",
+                        "attributes": [ "vg" ]
+                    },
+                    {
+                        "name": "Ravioloni all'Aragosta",
+                        "price": "13.00",
+                        "description": "Homemade Pasta Parcels of Lobster and Ricotta, in its Bisque Sauce and Shrimps.",
+                        "attributes": []
+                    },
+                    {
+                        "name": "Linguine Montalbano",
+                        "price": "10.00",
+                        "description": "Pasta with half dozen of King Prawns, Garlic, Chilli and little bit of Tomato Sauce.",
+                        "attributes": []
+                    },
+                    {
+                        "name": "Risotto ai Funghi Porcini",
+                        "price": "13.95",
+                        "description": "Carmaroli Rice cooked in White Wine with Shallots and Porcini Mushrooms, drizzled with Truffle Oil, sprinkled with flakes of Parmigiano, topped with Wild Rocket.",
+                        "attributes": ["vt"]
+                    },
+                    {
+                        "name": "Agnolotti d'Agnello",
+                        "price": "13.95",
+                        "description": "Homemade Pasta Parcels filled with young Welsh Lamb, served in a Velvety Red Wine, fresh Rosemary and Garlic Sauce.",
+                        "attributes": []
+                    },
+                    {
+                        "name": "Malfatti Salsiccia e Rucola",
+                        "price": "14.95",
+                        "description": "Homemade twist Pasta with Tomato Sauce, Luganica Sausage, Garlic, Chillies and Wild Rocket.",
+                        "attributes": []
+                    }
+                ]
+            },
+            {
+                "name": "Dolci e Gelati",
+                "dishes": [
+                    {
+                        "name": "Tortino appiccicoso",
+                        "price": "6.00",
+                        "description": "Sticky Toffee Pudding coated in warm Butterscotch sauce and served with Vanilla ice cream.",
+                        "attributes": []
+                    },
+                    {
+                        "name": "Affogato al Caffè Liquoroso",
+                        "price": "10.00",
+                        "description": "A Trio of Vanilla ice cream with Espresso Coffee and a shot of Strega or Disaronno liqueur.",
+                        "attributes": [ "vg", "vt" ]
+                    },
+                    {
+                        "name": "Tiramisù (Individual Glass Portion)",
+                        "price": "8.50",
+                        "description": "Our version of this classic Italian dessert.",
+                        "attributes": [ "vg", "vt", "gf" ]
+                    }
+                ]
+            }
+        ],
+        "pdfs": [
+            {
+                "name": "Breakfast Menu",
+                "date": "1 February 2023",
+                "path": "https://www.pitymeinn.co.uk/_files/ugd/93cdd9_30b52cbcb43343e2866aa40576a54742.pdf"
+            },
+            {
+                "name": "Main Menu",
+                "date": "1 February 2023",
+                "path": "https://www.pitymeinn.co.uk/_files/ugd/93cdd9_2e157e9a279b45719db718c80a913c06.pdf"
+            }
+        ]
+    },
+    "reservations": {
+        "maxCovers": 6,
+        "advanceDays": 30,
+        "person": "person",
+        "people": "people",
+        "provider": {
+            "name": "email",
+            "id": "184047",
+            "key": "",
+            "url": "https://www.opentable.co.uk/widget/reservation/canvas?rid=184047&theme=tall&overlay=false&domain=couk&lang=en-GB&r3uid=xXx1SMNZe&newtab=true"
+        },
+        "info": "For table reservations, please telephone the restaurant during opening hours.",
+        "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
+        "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
+    },
+    "config": {
+        "theme": "greenking",
+        "managedBy": ""
+    },
+    "takeawayServices": {
+        "services": [
+            {
+                "instructions": "Have your favourite Apptiser dishes delivered to your door, by our trusted service, and enjoy it the comfort of your own home. Click below to place your order:",
+                "label": "Online delivery service",
+                "url": "https://apptiser.io/",
+                "provider": {
+                    "name": "Deliveroo",
+                    "logo": "https://res.cloudinary.com/rdl/image/upload/v1709724002/cms/assets/logo-deliveroo.png"
                 }
-            ]
-        }
+            }
+        ]
+    },
+    "brand": {
+        "prefix": "brakes",
+        "name": "Brakes Foodservice",
+        "logo": "https://spw.restaurantcollective.org.uk/common/images/logo-rc-white.svg",
+        "web": "https://apptiser.io",
+        "language": "en"
     }
+}
 
 

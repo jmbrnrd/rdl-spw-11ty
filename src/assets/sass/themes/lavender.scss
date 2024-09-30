@@ -3,11 +3,11 @@
  * Theme name
  * MUST be the same as the filename!
  */
-$theme: 'greenking';
+$theme: 'lavender';
 
 // Base palette
-$clr-primary:   hsl(157 54% 18%);
-$clr-accent:    hsl(157 54% 40%);
+$clr-primary    : hsla(291, 36%, 60%, 1);
+$clr-accent     : hsla(286, 92%, 35%, 1);
 
 $clr-grey:      #333;
 $clr-warn:      hsla(344, 100%, 41%, 1);

@@ -14,6 +14,11 @@ module.exports = function (config) {
   config.addHandlebarsHelper("inc", (value) => {
     return parseInt(value) + 1;
   });
+
+  config.addHandlebarsHelper('raw', function(options) {
+    return options.fn(this);
+  });
+
   config.addWatchTarget("./src/assets/sass/");
   config.addWatchTarget("./src/assets/scripts/");
   config.addShortcode("year", () => `${new Date().getFullYear()}`);

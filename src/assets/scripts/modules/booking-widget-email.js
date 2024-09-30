@@ -2,7 +2,9 @@ import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
 
-const api = process.env.NODE_ENV === 'production'
+console.log(process.env.NODE_ENV);
+
+const api= process.env.NODE_ENV === 'production'
     ? `https://api.restaurantcollective.io`
     : `http://localhost:4000`;
 
@@ -19,11 +21,13 @@ console.log('API', api);
  * @param config.name
  * @param config.people
  * @param config.person
+ * @param config.sender
+ * @param config.email_system
  * @returns {boolean}
  */
 export default function (config){
 
-  console.log('Dataset', config.provider);
+  console.log('Dataset', config);
 
   // Abort if there's no widget
   if(!config.provider) {
@@ -129,7 +133,8 @@ export default function (config){
             <input type="hidden" name="restaurant_name" value="${config.name}">
             <input type="hidden" name="restaurant_email" value="${config.email}">
             <input type="hidden" name="language" value="en">
-            <input type="hidden" name="sender" value="app">
+            <input type="hidden" name="email_system" value="v2">
+            <input type="hidden" name="sender" value="${config.sender}">
                 <!-- Summary -->
                 <div class="booking-summary">
                   <h1>Request Summary</h1>
@@ -198,6 +203,8 @@ export default function (config){
    */
   function sendBkgRequest(form) {
 
+    console.log(form);
+
     const btnCancel = document.getElementById('btnCancel');
     const btnSubmit = document.getElementById('btnSubmit');
 
@@ -213,6 +220,8 @@ export default function (config){
       body: JSON.stringify({
         api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
         user_code: 'CF-418-Beta',
+        now_date: new Date().toUTCString(),
+        restaurant_id: document.querySelector('html').getAttribute('data-id'),
         restaurant_name: form.elements['restaurant_name'].value,
         restaurant_email: form.elements['restaurant_email'].value,
         booking_covers: bkgParams.bkgSize,
@@ -221,6 +230,7 @@ export default function (config){
         booking_name: form.elements['full_name'].value,
         booking_email: form.elements['email'].value,
         company_prefix:form.elements['sender'].value,
+        email_system:form.elements['email_system'].value
       })
     })
       .then(response => {
