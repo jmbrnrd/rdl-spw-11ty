@@ -14,8 +14,6 @@ import events from './modules/events';
 import logo from "./modules/logo";
 import claim from "./modules/claim";
 
-
-
 nav();
 logo();
 formatting();
@@ -26,6 +24,7 @@ eventsWidget();
 map();
 claim();
 scroll();
+
 
 
 

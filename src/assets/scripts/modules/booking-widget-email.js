@@ -240,6 +240,9 @@ export default function (config){
           const error = (response.message) || response.status;
           return Promise.reject(error);
         }
+        // Analytics
+        gtag('event', 'booking_request_sent', { 'provider': 'email'});
+
         // Display success message
         dspThankYouMessage();
       })
