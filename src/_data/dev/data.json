@@ -194,7 +194,7 @@
         "person": "person",
         "people": "people",
         "provider": {
-            "name": "opentable",
+            "name": "email",
             "id": "184047",
             "key": "",
             "url": "https://www.opentable.co.uk/widget/reservation/canvas?rid=184047&theme=tall&overlay=false&domain=couk&lang=en-GB&r3uid=xXx1SMNZe&newtab=true"

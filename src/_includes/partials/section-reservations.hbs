@@ -13,6 +13,15 @@
          data-advance-days="{{ data.reservations.advanceDays }}"
          data-person="{{ bookings.person }}"
          data-people="{{ bookings.people }}"
+         data-summary-title="{{ bookings.email.summary.title }}"
+         data-instructions="{{ bookings.email.summary.instructions }}"
+         data-label-request="{{ button.bkgRequest }}"
+         data-label-name="{{ bookings.email.summary.name }}"
+         data-label-email="{{ bookings.email.summary.email }}"
+         data-label-cancel="{{ bookings.email.summary.cancel }}"
+         data-label-send="{{ bookings.email.summary.send }}"
+         data-warning="{{ bookings.email.summary.warning }}"
+         data-thanks="{{ bookings.email.summary.thanks }}"
          data-sender="{{ data.brand.prefix }}">
 
     <h2 class="section-title">{{ section.reservations.title }}</h2>
