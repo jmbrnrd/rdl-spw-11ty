@@ -1,7 +1,5 @@
 {
 	"bookings": {
-		"person": "personne",
-		"people": "personnes",
 		"email": {
 			"covers": {
 				"aria": "Demander la taille du groupe",
@@ -16,19 +14,21 @@
 				"sending": ""
 			},
 			"summary": {
+				"cancel": "Annuler",
+				"email": "Votre adresse email",
 				"instructions": "Veuillez entrer vos coordonnées ci-dessous",
-				"label-cancel": "Annuler",
-				"label-email": "Votre adresse email",
-				"label-name": "Ton nom complet",
-				"label-send": "Demande de réservation",
+				"name": "Ton nom complet",
+				"send": "Demande de réservation",
 				"thanks": "Merci! Nous vous contacterons sous peu.",
 				"title": "Demande de réservation",
-				"warning": "**Attention**: les demandes de réservation sont soumises à disponibilité et ne sont confirmées qu'après avoir été contacté par le restaurant."
+				"warning": "Attention: les demandes de réservation sont soumises à disponibilité et ne sont confirmées qu'après avoir été contacté par le restaurant."
 			},
 			"time": {
 				"aria": "Temps de demande"
 			}
-		}
+		},
+		"people": "personnes",
+		"person": "personne"
 	},
 	"button": {
 		"bkgRequest": "Table disponsible",
@@ -50,7 +50,8 @@
 			"location": "Emplacement",
 			"menuMobile": "Menu de navigation mobile",
 			"menus": "Menus",
-			"reservations": "Réservations"
+			"reservations": "Réservations",
+			"takeaway": ""
 		}
 	},
 	"section": {
@@ -123,9 +124,9 @@
 			}
 		},
 		"takeaway": {
-			"title": "Emporter",
+			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander vos plats préférés en utilisant notre partenaire de livraison de confiance choisi. Cliquez pour passer votre commande :",
 			"subtitle": "Instructions de commande",
-			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander vos plats préférés en utilisant notre partenaire de livraison de confiance choisi. Cliquez pour passer votre commande :"
+			"title": "Emporter"
 		}
 	}
 }

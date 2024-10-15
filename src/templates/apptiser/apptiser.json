@@ -1,7 +1,5 @@
 {
 	"bookings": {
-		"person": "person",
-		"people": "people",
 		"email": {
 			"covers": {
 				"aria": "Request party size",
@@ -16,11 +14,11 @@
 				"sending": ""
 			},
 			"summary": {
+				"cancel": "Cancel",
+				"email": "Your email address",
 				"instructions": "Please enter your contact details below",
-				"label-cancel": "Cancel",
-				"label-email": "Your Email Address",
-				"label-name": "Your full name",
-				"label-send": "Request Booking",
+				"name": "You full name",
+				"send": "Send Request",
 				"thanks": "Thanks! We'll be in touch shortly.",
 				"title": "Booking Request",
 				"warning": "Please note: booking requests are subject to availability and are not confirmed until you have been contacted by the restaurant."
@@ -28,7 +26,9 @@
 			"time": {
 				"aria": "Request time"
 			}
-		}
+		},
+		"people": "people",
+		"person": "person"
 	},
 	"button": {
 		"bkgRequest": "Booking Request",
@@ -124,9 +124,9 @@
 			}
 		},
 		"takeaway": {
-			"title": "Takeaway",
+			"instructions": "For those days when you just don’t want to leave the house, you can order your menu favourites using our chosen trusted delivery partner. Click to place your order:",
 			"subtitle": "Ordering Instructions",
-			"instructions": "For those days when you just don’t want to leave the house, you can order your menu favourites using our chosen trusted delivery partner. Click to place your order:"
+			"title": "Takeaway"
 		}
 	}
 }

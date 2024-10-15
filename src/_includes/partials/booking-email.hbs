@@ -77,7 +77,7 @@
 <div id="modal" class="modal-overlay">
     <div class="modal-window email">
         <div id="emailRequest" class="form-email-request">
-            <form id="emailRequestForm">
+            <form id="emailRequestForm" data-form-instructions="{{ bookings.email.summary.instructions }}">
                 <input type="hidden" name="restaurant_name" value="{{ data.name }}">
                 <input type="hidden" name="restaurant_email" value="{{ data.email }}">
                 <input type="hidden" name="language" value="en">
@@ -115,8 +115,8 @@
                 <p>{{ bookings.email.summary.warning }}</p>
                 <!-- Actions -->
                 <div class="modal-actions">
-                    <button id="btnCancel" type="button" class="btn-cancel">{{ bookings.email.summary.label-cancel }}</button>
-                    <button id="btnSubmit" type="submit" class="btn">{{ bookings.email.summary.label-send }}</button>
+                    <button id="btnCancel" type="button" class="btn-cancel">{{ bookings.email.summary.cancel }}</button>
+                    <button id="btnSubmit" type="submit" class="btn">{{ bookings.email.summary.send }}</button>
                 </div>
             </form>
         </div>

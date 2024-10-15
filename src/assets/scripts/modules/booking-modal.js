@@ -43,6 +43,10 @@ function open() {
     container.classList.add('fade-in-fast');
 
     document.body.classList.add('stopScroll');
+
+    // Analytics
+    gtag('event', 'booking_modal_open');
+
 }
 
 function addButtons() {
