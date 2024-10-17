@@ -28,7 +28,7 @@ export default function () {
         aboutDialogContent.innerHTML =
                     `<h2>RDL:</h2>` +
                     `<span>Restaurant ID:</span> <span>${data.id}</span>` +
-                    `<span>Template: Version:</span><span>${data.templateVersion}</span>` +
+                    `<span>Template: Version:</span><span>${data.templateVersion} (${data.templateBrand})</span>` +
                     `<span>Browser look-up:</span><a href="https://www.whatsmybrowser.org/" target="_blank">whatsmybrowser.org</a>`;
 
         // Add to DOM
