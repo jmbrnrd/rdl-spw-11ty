@@ -13,6 +13,7 @@ import about from "./modules/about";
 import events from './modules/events';
 import logo from "./modules/logo";
 import claim from "./modules/claim";
+import gtags from "./modules/gtags";
 
 nav();
 logo();
@@ -24,6 +25,7 @@ eventsWidget();
 map();
 claim();
 scroll();
+gtags();
 
 
 

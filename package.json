@@ -9,7 +9,7 @@
     "build:sass": "sass  --no-source-map src/assets/sass:public/assets/styles",
     "build:eleventy": "eleventy",
     "postbuild": "postcss 'public/assets/styles/**/*.css' -u autoprefixer cssnano -r --no-map",
-    "start": "npm-run-all build:sass --parallel watch:*",
+    "start": "npm run cert & npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass build:eleventy",
     "build:prod": "NODE_ENV=production npm-run-all build:sass build:eleventy postbuild",
     "cert": "mkdir -p ./tls & mkcert -cert-file ./tls/localhost-cert.pem -key-file ./tls/localhost-key.pem -ecdsa localhost 127.0.0.1 ::1"

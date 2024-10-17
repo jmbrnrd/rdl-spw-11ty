@@ -198,7 +198,7 @@ export default function (config){
       }
 
       // Display the modal
-      modal.open();
+      modal.open(config.provider);
       // Set input focus
       setTimeout(() => {
         document.getElementById('full_name').focus();
@@ -250,7 +250,7 @@ export default function (config){
           return Promise.reject(error);
         }
         // Analytics
-        gtag('event', 'booking_request_sent', { 'provider': 'email'});
+        gtag('event', 'booking_request_sent', { 'provider': config.provider });
 
         // Display success message
         dspThankYouMessage();
