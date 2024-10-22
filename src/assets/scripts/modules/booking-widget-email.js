@@ -250,7 +250,10 @@ export default function (config){
           return Promise.reject(error);
         }
         // Analytics
-        gtag('event', 'booking_request_sent', { 'provider': config.provider });
+        gtag('event', 'booking_request_sent', {
+          'provider': config.provider,
+          'value': Number(document.getElementById('selectCovers').value)
+        });
 
         // Display success message
         dspThankYouMessage();
@@ -346,6 +349,7 @@ export default function (config){
     for (let i = 1; i <= bkgMaxCovers; i++) {
       let opt = document.createElement('option');
       opt.innerHTML = `${i} ${people}`;
+      opt.value = `${i}`;
       if (i === 1) { opt.innerHTML = `${i} ${person}`; }
       if (i === 2) { opt.selected = true; }
       options.appendChild(opt);
