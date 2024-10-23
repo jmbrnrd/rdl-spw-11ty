@@ -252,7 +252,7 @@ export default function (config){
         // Analytics
         gtag('event', 'booking_request_sent', {
           'provider': config.provider,
-          'value': Number(document.getElementById('selectCovers').value)
+          'covers': Number(document.getElementById('selectCovers').value)
         });
 
         // Display success message
