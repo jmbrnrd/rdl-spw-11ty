@@ -58,7 +58,7 @@ function init() {
             break;
         }
         default: {
-            console.log('EMAIL WIDGET');
+            console.log('Init email widget');
             emailWidget(config);
             break;
         }

@@ -36,7 +36,7 @@ console.log('API', api);
  */
 export default function (config){
 
-  console.log('Dataset', config);
+  // console.log('Dataset', config);
 
   // Abort if there's no widget
   if(!config.provider) {
@@ -247,7 +247,7 @@ export default function (config){
         if (!response.ok) {
           // get error message from body or default to response status
           const error = (response.message) || response.status;
-          return Promise.reject(error);
+          return Promise.reject(response);
         }
         // Analytics
         gtag('event', 'booking_request_sent', {
@@ -259,7 +259,7 @@ export default function (config){
         dspThankYouMessage();
       })
       .catch(error => {
-        console.log(`Error: ${error}`);
+        console.error(error);
       });
   }
 
