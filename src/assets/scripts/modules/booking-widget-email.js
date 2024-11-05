@@ -238,8 +238,8 @@ export default function (config){
         booking_date: bkgParams.bkgDate,
         booking_name: form.elements['full_name'].value,
         booking_email: form.elements['email'].value,
-        company_prefix:form.elements['sender'].value,
-        email_system:form.elements['email_system'].value
+        company_prefix: form.elements['sender'].value,
+        email_system: form.elements['email_system'].value
       })
     })
       .then(response => {
@@ -336,6 +336,8 @@ export default function (config){
     const bkgDateInput = document.getElementById('bkgDateInput');
     bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
 
+    console.log(bkgDateInput.value);
+
     // Set booking request values
     const bkgAdvDays = Number(config.advanceDays || 30);
     const bkgMaxCovers = Number(config.maxCovers || 10);
@@ -361,7 +363,7 @@ export default function (config){
     // doesn't support the Html5 default picker
 
     flatpickr (bkgDate, {
-      dateFormat: 'D d M Y',
+      dateFormat: 'D, M d, Y',
       defaultDate: 'today',
       minDate: 'today',
       // Max date doesn't play nicely on iPhone/iPad
@@ -369,10 +371,11 @@ export default function (config){
       monthSelectorType: 'static',
       disableMobile: "false",
       locale: htmlLang === 'fr' ? French : 'en',
-      onChange: (selectedDates, dateStr) => {
+      onChange: (selectedDate, dateStr) => {
         bkgDateInput.value = dateStr;
       }
     });
+
     // Hide if flatpickr activates the mobile UI
     // which uses a native date picker
     if(!!document.querySelector('.flatpickr-mobile')) {
@@ -382,7 +385,6 @@ export default function (config){
       })
     }
   });
-
 };
 
 
