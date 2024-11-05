@@ -36,7 +36,7 @@ console.log('API', api);
  */
 export default function (config){
 
-  console.log('Dataset', config);
+  // console.log('Dataset', config);
 
   // Abort if there's no widget
   if(!config.provider) {
@@ -198,7 +198,7 @@ export default function (config){
       }
 
       // Display the modal
-      modal.open();
+      modal.open(config.provider);
       // Set input focus
       setTimeout(() => {
         document.getElementById('full_name').focus();
@@ -238,8 +238,8 @@ export default function (config){
         booking_date: bkgParams.bkgDate,
         booking_name: form.elements['full_name'].value,
         booking_email: form.elements['email'].value,
-        company_prefix:form.elements['sender'].value,
-        email_system:form.elements['email_system'].value
+        company_prefix: form.elements['sender'].value,
+        email_system: form.elements['email_system'].value
       })
     })
       .then(response => {
@@ -247,16 +247,19 @@ export default function (config){
         if (!response.ok) {
           // get error message from body or default to response status
           const error = (response.message) || response.status;
-          return Promise.reject(error);
+          return Promise.reject(response);
         }
         // Analytics
-        gtag('event', 'booking_request_sent', { 'provider': 'email'});
+        gtag('event', 'booking_request_sent', {
+          'provider': config.provider,
+          'covers': Number(document.getElementById('selectCovers').value)
+        });
 
         // Display success message
         dspThankYouMessage();
       })
       .catch(error => {
-        console.log(`Error: ${error}`);
+        console.error(error);
       });
   }
 
@@ -333,6 +336,8 @@ export default function (config){
     const bkgDateInput = document.getElementById('bkgDateInput');
     bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
 
+    console.log(bkgDateInput.value);
+
     // Set booking request values
     const bkgAdvDays = Number(config.advanceDays || 30);
     const bkgMaxCovers = Number(config.maxCovers || 10);
@@ -346,6 +351,7 @@ export default function (config){
     for (let i = 1; i <= bkgMaxCovers; i++) {
       let opt = document.createElement('option');
       opt.innerHTML = `${i} ${people}`;
+      opt.value = `${i}`;
       if (i === 1) { opt.innerHTML = `${i} ${person}`; }
       if (i === 2) { opt.selected = true; }
       options.appendChild(opt);
@@ -357,7 +363,7 @@ export default function (config){
     // doesn't support the Html5 default picker
 
     flatpickr (bkgDate, {
-      dateFormat: 'D d M Y',
+      dateFormat: 'D, M d, Y',
       defaultDate: 'today',
       minDate: 'today',
       // Max date doesn't play nicely on iPhone/iPad
@@ -365,10 +371,11 @@ export default function (config){
       monthSelectorType: 'static',
       disableMobile: "false",
       locale: htmlLang === 'fr' ? French : 'en',
-      onChange: (selectedDates, dateStr) => {
+      onChange: (selectedDate, dateStr) => {
         bkgDateInput.value = dateStr;
       }
     });
+
     // Hide if flatpickr activates the mobile UI
     // which uses a native date picker
     if(!!document.querySelector('.flatpickr-mobile')) {
@@ -378,7 +385,6 @@ export default function (config){
       })
     }
   });
-
 };
 
 

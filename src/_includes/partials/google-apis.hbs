@@ -4,4 +4,8 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ gtag }}');
+    gtag('event', 'page_view', {
+        brand_prefix: document.querySelector('html').dataset.templateBrand,
+        template_version: document.querySelector('html').dataset.templateVersion
+    });
 </script>

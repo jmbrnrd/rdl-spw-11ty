@@ -42,6 +42,6 @@ export default function(config) {
     // Wait for DOM to be loaded
     window.addEventListener('load', function () {
         createWidgetContent();
-        modal.addButtons();
+        modal.addButtons(config.provider);
     });
 }

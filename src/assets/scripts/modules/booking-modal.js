@@ -30,7 +30,7 @@ modalFragment.append(overlay);
 document.body.appendChild(modalFragment);
 
 // Display the modal container
-function open() {
+function open(provider) {
 
     overlay.style.display = 'flex';
     overlay.style.opacity = '1'
@@ -45,17 +45,17 @@ function open() {
     document.body.classList.add('stopScroll');
 
     // Analytics
-    gtag('event', 'booking_modal_open');
+    gtag('event', 'booking_modal_open', {'provider': provider});
 
 }
 
-function addButtons() {
+function addButtons(provider = '') {
     let btn;
     document.querySelectorAll('[data-book-online]').forEach((elem) => {
         btn = document.createElement('button');
         btn.classList.add('btn-book');
         btn.textContent = 'Book Online';
-        btn.addEventListener('click', open);
+        btn.addEventListener('click', () => { open(provider) });
         elem.prepend(btn);
     });
 }

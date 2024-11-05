@@ -204,7 +204,7 @@
         "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
     },
     "config": {
-        "theme": "greenking",
+        "theme": "apptiser",
         "managedBy": ""
     },
     "takeawayServices": {
@@ -221,8 +221,8 @@
         ]
     },
     "brand": {
-        "prefix": "brakes",
-        "name": "Brakes Foodservice",
+        "prefix": "app",
+        "name": "Apptiser",
         "logo": "https://spw.restaurantcollective.org.uk/common/images/logo-rc-white.svg",
         "web": "https://apptiser.io",
         "language": "en"
