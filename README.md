@@ -1,6 +1,6 @@
 ![logo](https://res.cloudinary.com/jmbrnrd/image/upload/c_scale,r_0,w_240/v1651842572/jmbrnrd/img-jmbrnrd-640_2x.jpg)
 
-# 11ty Template
+# 11ty Apptiser Templates
 
 Whenever a Github commit is made to the master branch, it will trigger a build on Netlify and deploy to https://apptiser.netlify.app
 
