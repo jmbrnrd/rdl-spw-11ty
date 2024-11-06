@@ -54,6 +54,7 @@ export default function () {
         contact_name: form.elements['name'].value,
         contact_email: form.elements['email'].value,
         company_prefix: form.elements['brand'].value,
+        email_system: 'v2',
         check_only: false,
         production: false
       })

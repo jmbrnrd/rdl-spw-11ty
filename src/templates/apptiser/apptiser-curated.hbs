@@ -1,11 +1,12 @@
 ---
-title: "Apptiser Page - Curated"
+title: "Apptiser Curated"
 language: "en"
 layout: "layouts/apptiser-curated.hbs"
+gtag: "G-4FPKM2SVKM"
 permalink: "/templates/apptiser-curated-{{ pkg.version }}.html"
 brand:
     name: "apptiser"
-    prefix: "app"
+    prefix: "apptiser"
     url: "https://apptiser.io/"
     theme: "apptiser"
 ---
@@ -46,10 +47,10 @@ brand:
                     <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
                     <dt>Opening Times</dt>
                     <dd class="times">{{ data.openingTimes }}</dd>
-                    <!-- Optional section tag start - OPENING NOTES -->
-                    <dt>PLEASE NOTE:</dt>
+                    <!-- RDL OPENING NOTES -->
+                    <dt>{{ section.about.openingNotes }}</dt>
                     <dd>{{ data.openingNotes }}</dd>
-                    <!-- Optional section tag end - OPENING NOTES -->
+                    <!-- /RDL OPENING NOTES -->
                 </dl>
                 {{ location.mapLoadOffset }}
             </aside>
