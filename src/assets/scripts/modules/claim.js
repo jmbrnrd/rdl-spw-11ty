@@ -25,6 +25,7 @@ export default function () {
     modal.style.display = 'flex';
     modal.classList.add('fade-in-fast');
   };
+
   // close
   const hideModal = () => {
     modalContainer.style.opacity = '0';
@@ -53,7 +54,7 @@ export default function () {
         restaurant_id: form.elements['id'].value,
         contact_name: form.elements['name'].value,
         contact_email: form.elements['email'].value,
-        company_prefix: form.elements['brand'].value,
+        company_prefix: 'app',
         email_system: 'v2',
         check_only: false,
         production: false
