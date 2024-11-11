@@ -239,7 +239,8 @@ export default function (config){
         booking_name: form.elements['full_name'].value,
         booking_email: form.elements['email'].value,
         company_prefix: form.elements['sender'].value,
-        email_system: form.elements['email_system'].value
+        email_system: form.elements['email_system'].value,
+        template_version: document.querySelector('html').getAttribute('data-template-version')
       })
     })
       .then(response => {
