@@ -52,7 +52,8 @@ export default function (config){
   const iOS = /iPad|iPhone/.test(navigator.userAgent);
 
   // Set element references
-  const htmlLang = document.querySelector('html').getAttribute('lang') || 'en';
+  const htmlData = document.querySelector('html').dataset;
+  const htmlLang = htmlData.lang || 'en';
   const domFragment = document.createDocumentFragment();
   const bkgForm = document.createElement('form');
   bkgForm.classList.add('form-booking-request');
@@ -230,7 +231,7 @@ export default function (config){
         api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
         user_code: 'CF-418-Beta',
         now_date: new Date().toUTCString(),
-        restaurant_id: document.querySelector('html').getAttribute('data-id'),
+        restaurant_id: htmlData.id,
         restaurant_name: form.elements['restaurant_name'].value,
         restaurant_email: form.elements['restaurant_email'].value,
         booking_covers: bkgParams.bkgSize,
@@ -240,7 +241,7 @@ export default function (config){
         booking_email: form.elements['email'].value,
         company_prefix: form.elements['sender'].value,
         email_system: form.elements['email_system'].value,
-        template_version: document.querySelector('html').getAttribute('data-template-version')
+        template_version: htmlData.templateVersion
       })
     })
       .then(response => {
