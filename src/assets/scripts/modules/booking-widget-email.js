@@ -115,6 +115,7 @@ export default function (config){
         <div class="selector-substitute" id="selectDate">
           <div class="icon icon-date"></div>
           <input  id="bkgDateInput"
+                  readonly
                   aria-label="Select date"
                   type="text"
                   class="select-input hide-on-mobile"
