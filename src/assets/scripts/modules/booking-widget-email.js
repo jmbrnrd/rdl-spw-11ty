@@ -1,9 +1,7 @@
 import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
-import uaDetection  from './ua-detection';
-
-console.log(process.env.NODE_ENV);
+import uaDetection from './ua-detection';
 
 const api= process.env.NODE_ENV === 'production'
     ? `https://api.restaurantcollective.io`
@@ -33,7 +31,6 @@ console.log('API', api);
  * @param config.labelSend
  * @param config.warning
  * @param config.thanks
- * @param config.ua
  * @returns {boolean}
  */
 export default function (config){
@@ -249,7 +246,7 @@ export default function (config){
         company_prefix: form.elements['sender'].value,
         email_system: form.elements['email_system'].value,
         template_version: htmlData.templateVersion,
-        user_agent: uaDetection()
+        user_agent: uaDetection() ?? ''
       })
     })
       .then(response => {

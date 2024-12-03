@@ -1,7 +1,7 @@
-
-process.env.NODE_ENV === 'production'
-    ? console.log = () => {}
-    : console.log('Dev Mode');
+console.log(`env = ${process.env.NODE_ENV}`);
+if(process.env.NODE_ENV === 'production') {
+    console.log = () => {}
+}
 
 import scroll from './modules/lenis-scroll';
 import map from './modules/google-advanced-map';
