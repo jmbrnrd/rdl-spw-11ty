@@ -1,6 +1,7 @@
 import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
+import uaDetection  from './ua-detection';
 
 console.log(process.env.NODE_ENV);
 
@@ -32,6 +33,7 @@ console.log('API', api);
  * @param config.labelSend
  * @param config.warning
  * @param config.thanks
+ * @param config.ua
  * @returns {boolean}
  */
 export default function (config){
@@ -134,6 +136,8 @@ export default function (config){
   // Generate request summary
   const openEmailRequest = () => {
 
+    console.log(config);
+
       if (!document.getElementById('emailRequest')) {
 
         const emailRequestSummary = document.createElement('div');
@@ -224,6 +228,8 @@ export default function (config){
     btnSubmit.innerHTML = "Sending Request..."
     btnSubmit.disabled = true;
 
+
+
     // Send
     fetch(`${api}/public/sendbookingemail`, {
       method: 'POST',
@@ -242,7 +248,8 @@ export default function (config){
         booking_email: form.elements['email'].value,
         company_prefix: form.elements['sender'].value,
         email_system: form.elements['email_system'].value,
-        template_version: htmlData.templateVersion
+        template_version: htmlData.templateVersion,
+        user_agent: uaDetection()
       })
     })
       .then(response => {

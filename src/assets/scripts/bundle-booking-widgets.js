@@ -1,3 +1,4 @@
+
 console.log('bundle-booking-widgets.js loaded');
 
 // import modules
@@ -22,13 +23,13 @@ function init() {
     const reservations = document.getElementById('reservations');
     const config = reservations.dataset;
 
-    console.log('Reservation config:', config);
-
     // Abort if there's no widget
     if(!config.provider) {
         console.warn('No booking provider supplied');
         return false;
     }
+
+    console.log('Reservation config:', config);
 
     // Which provider?
     switch (config.provider) {
