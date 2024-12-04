@@ -2,7 +2,8 @@ import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
 
-console.log(process.env.NODE_ENV);
+// Added for debug
+import uaDetection from './ua-detection';
 
 const api= process.env.NODE_ENV === 'production'
     ? `https://api.restaurantcollective.io`
@@ -52,7 +53,8 @@ export default function (config){
   const iOS = /iPad|iPhone/.test(navigator.userAgent);
 
   // Set element references
-  const htmlLang = document.querySelector('html').getAttribute('lang') || 'en';
+  const htmlData = document.querySelector('html').dataset;
+  const htmlLang = htmlData.lang || 'en';
   const domFragment = document.createDocumentFragment();
   const bkgForm = document.createElement('form');
   bkgForm.classList.add('form-booking-request');
@@ -114,6 +116,7 @@ export default function (config){
         <div class="selector-substitute" id="selectDate">
           <div class="icon icon-date"></div>
           <input  id="bkgDateInput"
+                  readonly
                   aria-label="Select date"
                   type="text"
                   class="select-input hide-on-mobile"
@@ -131,6 +134,8 @@ export default function (config){
 
   // Generate request summary
   const openEmailRequest = () => {
+
+    console.log(config);
 
       if (!document.getElementById('emailRequest')) {
 
@@ -219,7 +224,8 @@ export default function (config){
 
     // While sending
     btnCancel.style.display = 'none';
-    btnSubmit.innerHTML = "Sending Request..."
+    btnSubmit.innerHTML = "Sending"
+    btnSubmit.classList.add('sending');
     btnSubmit.disabled = true;
 
     // Send
@@ -230,7 +236,7 @@ export default function (config){
         api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
         user_code: 'CF-418-Beta',
         now_date: new Date().toUTCString(),
-        restaurant_id: document.querySelector('html').getAttribute('data-id'),
+        restaurant_id: htmlData.id,
         restaurant_name: form.elements['restaurant_name'].value,
         restaurant_email: form.elements['restaurant_email'].value,
         booking_covers: bkgParams.bkgSize,
@@ -239,7 +245,9 @@ export default function (config){
         booking_name: form.elements['full_name'].value,
         booking_email: form.elements['email'].value,
         company_prefix: form.elements['sender'].value,
-        email_system: form.elements['email_system'].value
+        email_system: form.elements['email_system'].value,
+        template_version: htmlData.templateVersion,
+        user_agent: uaDetection() || 'No detection'
       })
     })
       .then(response => {

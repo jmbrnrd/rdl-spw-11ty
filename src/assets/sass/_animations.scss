@@ -11,7 +11,7 @@
 }
 @keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity:0.01;
   }
   100% {
     opacity:1;
@@ -20,7 +20,7 @@
 @keyframes fadeInUp {
   0% {
     transform: translateY(50px);
-    opacity:0;
+    opacity:0.01;
   }
   100% {
     transform: translateY(0);
@@ -29,7 +29,7 @@
 }
 @keyframes scale-in-center {
   0% {
-    opacity:0;
+    opacity:0.01;
     transform:scale(0)
   }
   50% {
@@ -54,7 +54,7 @@
 .fade-in-fast {
   position: relative;
   display: block;
-  opacity:0;
+  opacity:0.01;
   animation-name: fadeInUp;
   animation-delay: 500ms;
   animation-timing-function: ease-out;
@@ -74,4 +74,14 @@
   animation-fill-mode:forwards;
   animation-timing-function:cubic-bezier(.175,.885,.32,1.275)}
 
-
+.btn.sending {
+  animation: pulse 2s infinite !important;
+}
+@keyframes pulse {
+  0%, 100% {
+    background-color: #555;
+  }
+  50% {
+    background-color: #111;
+  }
+}

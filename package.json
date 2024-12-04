@@ -1,6 +1,6 @@
 {
   "name": "11ty-apptiser",
-  "version": "3.0.9",
+  "version": "3.0.13",
   "description": "Apptiser Templates",
   "main": "index.html",
   "scripts": {
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
-    "clean-css": "^5.3.3"
+    "clean-css": "^5.3.3",
+    "ua-parser-js": "^2.0.0"
   }
 }

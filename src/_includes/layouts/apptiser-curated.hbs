@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ language }}" data-id="{{ data.id }}" data-template-version="{{ pkg.version }}" xmlns="http://www.w3.org/1999/html">
+<html lang="{{ language }}" data-id="{{ data.id }}" data-template-version="{{ pkg.version }}" data-template-brand="{{ brand.prefix }}" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ data.name }} | {{ data.streetAddress }} {{ data.postalCode }}</title>
@@ -17,7 +17,7 @@
 
     {{> partials/fonts }}
 
-    <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ brand.theme }}.css?v={{ pkg.version }}" />
+    <link rel="stylesheet" href="{{ config.assets }}/styles/themes/{{ data.config.theme }}.css?v={{ pkg.version }}" />
 
 	<link rel="stylesheet" href="{{ config.assets }}/styles/bundle-listing.css?v={{ pkg.version }}" />
 
