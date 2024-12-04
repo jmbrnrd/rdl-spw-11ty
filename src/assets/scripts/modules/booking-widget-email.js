@@ -1,6 +1,8 @@
 import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
+
+// Added for debug
 import uaDetection from './ua-detection';
 
 const api= process.env.NODE_ENV === 'production'
@@ -222,10 +224,9 @@ export default function (config){
 
     // While sending
     btnCancel.style.display = 'none';
-    btnSubmit.innerHTML = "Sending Request..."
+    btnSubmit.innerHTML = "Sending"
+    btnSubmit.classList.add('sending');
     btnSubmit.disabled = true;
-
-
 
     // Send
     fetch(`${api}/public/sendbookingemail`, {
@@ -246,7 +247,7 @@ export default function (config){
         company_prefix: form.elements['sender'].value,
         email_system: form.elements['email_system'].value,
         template_version: htmlData.templateVersion,
-        user_agent: uaDetection() ?? ''
+        user_agent: uaDetection() || 'No detection'
       })
     })
       .then(response => {
