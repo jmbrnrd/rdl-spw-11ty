@@ -63,23 +63,25 @@ export default function (config){
 
   bkgForm.innerHTML =
       `<div class="selector">
-        <div class="selector-substitute">
-        <div class="icon icon-covers"></div>
-        <div class="selected-value" id="txtCovers">2 ${config.people}</div>
-        <div class="icon icon-arrow-down"></div>
-      </div>
-      <select id="selectCovers"
+         <div class="selector-substitute">
+           <div class="icon icon-covers"></div>
+           <div class="selected-value" id="txtCovers">2 ${config.people}</div>
+           <div class="icon icon-arrow-down"></div>
+         </div>
+         <select 
+              id="selectCovers"
               name="covers" aria-label="Select party size"
               data-label-person="${config.person}"
-              data-label-people="${config.people}"></select>
-      </div>
+              data-label-people="${config.people}">
+         </select>
+       </div>
        <div class="selector">
-        <div class="selector-substitute">
-          <div class="icon icon-time"></div>
-          <div class="selected-value" id="txtTime">19:30</div>
-          <div class="icon icon-arrow-down"></div>
-        </div>
-        <select name="time" aria-label="Select time">
+         <div class="selector-substitute">
+           <div class="icon icon-time"></div>
+           <div class="selected-value" id="txtTime">19:30</div>
+           <div class="icon icon-arrow-down"></div>
+         </div>
+         <select name="time" id="selectTime" aria-label="Select time">
           <option value="09:00">09:00</option>
           <option value="09:30">09:30</option>
           <option value="10:00">10:00</option>
@@ -112,10 +114,11 @@ export default function (config){
           <option value="23:30">23:30</option>
         </select>
       </div>
-       <div class="selector">
+      <div class="selector">
         <div class="selector-substitute" id="selectDate">
-          <div class="icon icon-date"></div>
+          <div class="icon icon-date" data-toggle></div>
           <input  id="bkgDateInput"
+                  data-input
                   readonly
                   aria-label="Select date"
                   type="text"
@@ -123,10 +126,10 @@ export default function (config){
                   name="date"
                   autocomplete="off"
                   data-adv-days="${config.advanceDays}">
-            <div class="icon icon-arrow-down hide-on-mobile"></div>
+          <div class="icon icon-arrow-down hide-on-mobile" data-toggle></div>
         </div>  
       </div>
-       <button class="btn" aria-label="bookings.email.submit.aria">${config.labelRequest}</button>`;
+      <button class="btn" aria-label="bookings.email.submit.aria">${config.labelRequest}</button>`;
 
   domFragment.append(bkgForm);
   bookingWidgetContainer.appendChild(domFragment);
@@ -300,7 +303,6 @@ export default function (config){
     }, 2000);
   }
 
-  // Reset the UI for any future requests
   function formReset() {
     document.getElementById('btnCancel').style.display = 'block'
     const btnSubmit = document.getElementById('btnSubmit')
@@ -315,9 +317,9 @@ export default function (config){
     e.preventDefault();
 
     // Update the latest params
-    bkgParams.bkgDate = bkgForm.elements['date'].value;
-    bkgParams.bkgSize = bkgForm.elements['covers'].value;
-    bkgParams.bkgTime = bkgForm.elements['time'].value;
+    bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
+    bkgParams.bkgSize = document.getElementById('selectCovers').value;
+    bkgParams.bkgTime = document.getElementById('selectTime').value;
 
     // Display request summary
     openEmailRequest();
@@ -325,11 +327,11 @@ export default function (config){
   });
 
   // Update the mock cover & time select fields
-  bkgForm.elements['covers'].addEventListener('change', (e) => {
+  document.getElementById('selectCovers').addEventListener('change', (e) => {
     const covers = e.target;
     document.getElementById('txtCovers').innerHTML = covers?.value;
   });
-  bkgForm.elements['time'].addEventListener('change', (e) => {
+  document.getElementById('selectTime').addEventListener('change', (e) => {
     const time = e.target;
     document.getElementById('txtTime').innerHTML = time?.value;
   });
@@ -342,9 +344,9 @@ export default function (config){
     // Date input field
     const bkgDate = document.getElementById('selectDate');
     const bkgDateInput = document.getElementById('bkgDateInput');
-    bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
+    //bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
 
-    console.log(bkgDateInput.value);
+    //console.log(bkgDateInput.value);
 
     // Set booking request values
     const bkgAdvDays = Number(config.advanceDays || 30);
@@ -370,19 +372,26 @@ export default function (config){
     // Use 3rd party datepicker as Safari
     // doesn't support the Html5 default picker
 
-    flatpickr (bkgDate, {
-      dateFormat: 'D, M d, Y',
+    const fp = flatpickr (bkgDate, {
+      dateFormat: 'D, d M Y',
       defaultDate: 'today',
+      disable: [new Date(2025, 1, 19), 'Thu, 20 Feb 2025'],
       minDate: 'today',
       // Max date doesn't play nicely on iPhone/iPad
       maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
       monthSelectorType: 'static',
       disableMobile: "false",
       locale: htmlLang === 'fr' ? French : 'en',
+      wrap: true,
+      clickOpens: false,
       onChange: (selectedDate, dateStr) => {
         bkgDateInput.value = dateStr;
       }
     });
+
+    bkgDate.addEventListener('click', () => {
+      fp.open();
+    })
 
     // Hide if flatpickr activates the mobile UI
     // which uses a native date picker
@@ -393,6 +402,7 @@ export default function (config){
       })
     }
   });
+
 };
 
 
