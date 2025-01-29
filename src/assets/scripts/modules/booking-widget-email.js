@@ -311,51 +311,54 @@ export default function (config){
     modal.close();
   }
 
-  // Generate request summary
-  bkgForm.addEventListener('submit', (e) => {
 
-    e.preventDefault();
-
-    // Update the latest params
-    bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
-    bkgParams.bkgSize = document.getElementById('selectCovers').value;
-    bkgParams.bkgTime = document.getElementById('selectTime').value;
-
-    // Display request summary
-    openEmailRequest();
-
-  });
-
-  // Update the mock cover & time select fields
-  document.getElementById('selectCovers').addEventListener('change', (e) => {
-    const covers = e.target;
-    document.getElementById('txtCovers').innerHTML = covers?.value;
-  });
-  document.getElementById('selectTime').addEventListener('change', (e) => {
-    const time = e.target;
-    document.getElementById('txtTime').innerHTML = time?.value;
-  });
 
   // Update DOM after window load
   window.addEventListener('load', function () {
 
     console.log('Window loaded!');
 
-    // Date input field
-    const bkgDate = document.getElementById('selectDate');
-    const bkgDateInput = document.getElementById('bkgDateInput');
-    //bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
+    const selectCovers = document.getElementById('selectCovers');
+    const selectTime = document.getElementById('selectTime');
 
-    //console.log(bkgDateInput.value);
+    // Generate request summary
+    bkgForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+
+      // Update the latest params
+      bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
+      bkgParams.bkgSize = document.getElementById('selectCovers').value;
+      bkgParams.bkgTime = document.getElementById('selectTime').value;
+
+      // Display request summary
+      openEmailRequest();
+
+    });
+
+    // Update the mock cover & time select fields
+    selectCovers.addEventListener('change', (e) => {
+      const covers = e.target;
+      document.getElementById('txtCovers').innerHTML = covers?.value;
+    });
+
+    selectTime.addEventListener('change', (e) => {
+      const time = e.target;
+      document.getElementById('txtTime').innerHTML = time?.value;
+    });
+
+    // Date input field
+    const selectDate = document.getElementById('selectDate');
+    const dateInput = document.getElementById('bkgDateInput');
 
     // Set booking request values
     const bkgAdvDays = Number(config.advanceDays || 30);
     const bkgMaxCovers = Number(config.maxCovers || 10);
 
     // Create cover select options
-    const coversSelect = document.getElementById('selectCovers');
-    const person = coversSelect.dataset.labelPerson || 'person';
-    const people = coversSelect.dataset.labelPeople || 'people';
+    const person = selectCovers.dataset.labelPerson || 'person';
+    const people = selectCovers.dataset.labelPeople || 'people';
+
     const options = document.createDocumentFragment();
 
     for (let i = 1; i <= bkgMaxCovers; i++) {
@@ -366,16 +369,16 @@ export default function (config){
       if (i === 2) { opt.selected = true; }
       options.appendChild(opt);
     }
-    coversSelect.appendChild(options);
+    selectCovers.appendChild(options);
 
 
     // Use 3rd party datepicker as Safari
     // doesn't support the Html5 default picker
 
-    const fp = flatpickr (bkgDate, {
+    const fp = flatpickr (selectDate, {
       dateFormat: 'D, d M Y',
       defaultDate: 'today',
-      disable: [new Date(2025, 1, 19), 'Thu, 20 Feb 2025'],
+      disable: [],
       minDate: 'today',
       // Max date doesn't play nicely on iPhone/iPad
       maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
@@ -385,11 +388,12 @@ export default function (config){
       wrap: true,
       clickOpens: false,
       onChange: (selectedDate, dateStr) => {
-        bkgDateInput.value = dateStr;
+        dateInput.value = dateStr;
       }
     });
-
-    bkgDate.addEventListener('click', () => {
+    // open flatpickr manually so that we can trigger it from
+    // anywhere in the containing element - i.e. including the icons
+    selectDate.addEventListener('click', () => {
       fp.open();
     })
 
