@@ -50,7 +50,8 @@
 			"location": "Location",
 			"menuMobile": "Mobile navigation menu",
 			"menus": "Menus",
-			"reservations": "Reservations",
+			"reservations": "Table Bookings",
+			"rooms": "Room Bookings",
 			"takeaway": "Takeaway"
 		}
 	},
@@ -113,7 +114,7 @@
 			"aria": "Booking widget",
 			"groups": "Group bookings",
 			"private": "Private dining",
-			"title": "Reservations",
+			"title": "Table Reservations",
 			"widget": {
 				"covers": {
 					"aria": "Booking party size"
@@ -122,6 +123,23 @@
 					"aria": "Booking time"
 				}
 			}
+		},
+		"rooms": {
+			"features": [
+				"Wi-Fi",
+				"Breakfast included",
+				"Dog-friendly"
+			],
+			"info": "The Plough is a stone-built village pub with an open plan bar and dining room. Step inside and you will find leather chesterfields, open fires, and wooden dining tables. The pub has five comfortable single, double, and twin bedrooms and is within proximity of Bicester Shopping Village. A convenient stop-over for overnight shopping trips or as a base for exploring the Oxfordshire Cotswolds.",
+			"labelFeatures": "Room Facilities",
+			"labelName": "Full Name",
+			"labelEmail": "Email Address",
+			"labelPhone": "Telephone",
+			"labelSend": "Send Request",
+			"labelCancel": "Cancel",
+			"title": "Room Reservations",
+			"summaryTitle": "Room Reservation Request",
+			"instructions": "Please complete all fields."
 		},
 		"takeaway": {
 			"instructions": "For those days when you just don’t want to leave the house, you can order your menu favourites using our chosen trusted delivery partner. Click to place your order:",

@@ -5,6 +5,8 @@ import * as modal from './booking-modal';
 // Added for debug
 import uaDetection from './ua-detection';
 
+
+
 const api= process.env.NODE_ENV === 'production'
     ? `https://api.restaurantcollective.io`
     : `http://localhost:4000`;
@@ -37,7 +39,10 @@ console.log('API', api);
  */
 export default function (config){
 
-  // console.log('Dataset', config);
+
+
+
+
 
   // Abort if there's no widget
   if(!config.provider) {
@@ -138,7 +143,7 @@ export default function (config){
   // Generate request summary
   const openEmailRequest = () => {
 
-    console.log(config);
+    // console.log(config);
 
       if (!document.getElementById('emailRequest')) {
 
@@ -188,7 +193,9 @@ export default function (config){
                   <button id="btnSubmit" type="submit" class="btn">${config.labelSend}</button>
                 </div>
                 </form>`;
-        modal.container.appendChild(emailRequestSummary);
+
+        modal.clearContent();
+        modal.modalContent.appendChild(emailRequestSummary);
         document.getElementById('btnCancel').addEventListener('click', () => {
           modal.close();
         });
@@ -198,6 +205,7 @@ export default function (config){
         });
 
       } else {
+
         // If the modal had already been created then just
         // update the summary values accordingly
         document.getElementById('partySize').innerHTML = bkgParams.bkgSize;
@@ -277,7 +285,7 @@ export default function (config){
   function dspThankYouMessage() {
 
     // Hide the summary modal
-    modal.container.style.display = "none";
+    modal.modalContainer.style.display = "none";
 
     // Create our message element
     const messageContainer = document.createElement('div');
@@ -298,7 +306,7 @@ export default function (config){
       messageContainer.classList.remove('fade-in-fast');
       messageContainer.style.display = 'none';
       messageContainer.style.display = 'none';
-      modal.container.style.display = "block";
+      modal.modalContainer.style.display = "block";
       formReset();
     }, 2000);
   }

@@ -260,6 +260,12 @@ footer {
       font-weight: $font-weight-bold;
     }
   }
+
+  &.rooms {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .grid-2-1 {
     h2{
       margin-bottom: 1rem;
@@ -323,6 +329,9 @@ footer {
     @include mq($mq-medium) {
       font-size: 1.4rem;
     }
+  }
+  &.rooms {
+    margin-block: 1rem;
   }
 }
 dd {
@@ -437,4 +446,52 @@ dd {
   // from view, not from screen-readers, spiders etc.
   position: absolute;
   left: -10000px;
+}
+
+.content-block-grid {
+  //margin-block: 3rem;
+  // border: 1px solid gray;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+
+  @include mq($mq-medium) {
+    grid-template-columns: 1fr 1fr;
+  }
+  h3 {
+    font-size: 1.25rem;
+    color: $color-body-text-accent;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+}
+// Rooms
+.img-grid {
+  overflow: hidden;
+  display: grid;
+  //border: 1px solid red;
+  grid-template-rows: 1fr;
+  img {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+  }
+  .img-nav {
+    display: grid;
+    color: white;
+    grid-template-columns: repeat(3, 5rem);
+
+    gap: 1rem;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    align-self: end;
+    justify-self: center;
+    margin-bottom: 2rem;
+
+    button {
+      text-align: center;
+    }
+  }
+
 }

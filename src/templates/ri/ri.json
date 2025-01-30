@@ -51,6 +51,7 @@
 			"menuMobile": "Menu de navigation mobile",
 			"menus": "Menus",
 			"reservations": "Réservations",
+			"rooms": "Réservations de chambres",
 			"takeaway": ""
 		}
 	},
@@ -122,6 +123,16 @@
 					"aria": "Heure de réservation"
 				}
 			}
+		},
+		"rooms": {
+			"features": [
+				"",
+				"",
+				""
+			],
+			"info": "",
+			"labelFeatures": "",
+			"title": "Réservations de chambres"
 		},
 		"takeaway": {
 			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander vos plats préférés en utilisant notre partenaire de livraison de confiance choisi. Cliquez pour passer votre commande :",

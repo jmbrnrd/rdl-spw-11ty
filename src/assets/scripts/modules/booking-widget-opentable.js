@@ -37,8 +37,8 @@ export default function(config) {
         widgetContent.allowFullscreen = true;
         widgetContent.style.width = '290px';
         widgetContent.style.height = '490px';
-        modal.container.classList.add('max360');
-        modal.container.appendChild(widgetContent);
+        modal.modalContainer.classList.add('max360');
+        modal.modalContainer.appendChild(widgetContent);
     }
 
     // Wait for DOM to be loaded

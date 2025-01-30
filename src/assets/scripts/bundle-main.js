@@ -1,7 +1,13 @@
-console.log(`env = ${process.env.NODE_ENV}`);
-if(process.env.NODE_ENV === 'production') {
-    console.log = () => {}
-}
+
+import { app } from './modules/app-config';
+
+
+console.log(`Production = ${app.isProd}`);
+console.log(`Api Server = ${app.server}`);
+
+// If in production kill console.logs
+if (app.isProd) { console.log = () => {}; }
+
 
 import scroll from './modules/lenis-scroll';
 import map from './modules/google-advanced-map';
