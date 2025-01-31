@@ -73,6 +73,11 @@ function clearContent() {
     }
 }
 
+function removeModal() {
+    if (modalOverlay.hasChildNodes()) {
+        modalOverlay.removeChild(modalOverlay.children[0]);
+    }
+}
 
 // Hide the modal container
 function close() {
@@ -83,4 +88,4 @@ function close() {
 
 // Click outside to close
 
-export { open, close, addButtons, clearContent, modalContainer, modalContent, modalOverlay }
+export { open, close, addButtons, clearContent, removeModal, modalContainer, modalContent, modalOverlay }

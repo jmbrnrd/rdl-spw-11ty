@@ -469,28 +469,36 @@ dd {
 .img-grid {
   overflow: hidden;
   display: grid;
+  position: relative;
   //border: 1px solid red;
   grid-template-rows: 1fr;
-  img {
-    grid-column: 1 / 1;
-    grid-row: 1 / 1;
-    width: 100%;
-    object-fit: cover;
+  & > * {
+    grid-row-start: 1;
+    grid-column-start: 1;
   }
+  //img {
+  //  grid-column: 1 / 1;
+  //  grid-row: 1 / 1;
+  //  width: 100%;
+  //  object-fit: cover;
+  //}
   .img-nav {
-    display: grid;
-    color: white;
-    grid-template-columns: repeat(3, 5rem);
 
-    gap: 1rem;
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-    align-self: end;
-    justify-self: center;
-    margin-bottom: 2rem;
-
+    //display: grid;
+    //color: white;
+    //grid-template-columns: repeat(3, 5rem);
+    //gap: 1rem;
+    //grid-row: 1 / 1;
+    //grid-column: 1 / 1;
+    //align-self: end;
+    //justify-self: center;
+    //margin-bottom: 2rem;
     button {
+      position: absolute;
+      bottom: 0;
+      height: 3rem;
       text-align: center;
+
     }
   }
 

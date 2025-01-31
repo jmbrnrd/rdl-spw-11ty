@@ -135,11 +135,12 @@
 			"labelName": "Full Name",
 			"labelEmail": "Email Address",
 			"labelPhone": "Telephone",
-			"labelSend": "Send Request",
+			"labelSend": "Send Room Enquiry",
 			"labelCancel": "Cancel",
 			"title": "Room Reservations",
 			"summaryTitle": "Room Reservation Request",
-			"instructions": "Please complete all fields."
+			"instructions": "Please complete all fields.",
+			"acknowledgement": "Thank you for your enquiry. We will contact you shortly, to discuss your requirement."
 		},
 		"takeaway": {
 			"instructions": "For those days when you just don’t want to leave the house, you can order your menu favourites using our chosen trusted delivery partner. Click to place your order:",

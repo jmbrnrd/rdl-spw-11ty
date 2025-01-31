@@ -67,7 +67,7 @@ export default function (data){
                 <!-- booking -->
                 <div class="form-grid-3">
                   <div class="text-field">
-                    <input type="number" name="totalGuests" value="2"><label for="totalGuests">No. People</label>
+                    <input type="number" name="totalGuests" id="totalGuests" value="2"><label for="totalGuests">No. People</label>
                   </div>
                   <div class="text-field">
                     <input type="text" name="arrivalDate" id="arrivalDateInput"><label for="arrivalDate">Arrival Date</label>
@@ -76,6 +76,7 @@ export default function (data){
                     <input type="number" name="totalNights" value="2"><label for="totalNights">No. Nights</label>
                   </div>
                 </div>
+               
                 
                 <!-- Name -->
                 <div class="text-field">
@@ -96,13 +97,13 @@ export default function (data){
                 </div>
                 
                 
-                <p>${data.warning} <strong>${data.sender}</strong>.</p>
-                
+                <p>This is not a confirmed reservation. You will be contacted by the venue to 
+                discuss availability and to finalise your reservation.</p>                
                 
                 <!-- Actions -->
                 <div class="modal-actions">
                   <button id="btnCancel" type="button" class="btn-cancel">${data.labelCancel}</button>
-                  <button id="btnSubmit" type="submit" class="btn">${data.labelSend}</button>
+                  <button id="btnSubmit" type="submit" class="btn">${data.labelSend}...</button>
                 </div>
                 </form>`;
 
@@ -111,8 +112,6 @@ export default function (data){
         modal.modalContent.appendChild(roomRequestForm);
 
         const arrivalDateInput = document.getElementById('arrivalDateInput');
-
-        console.log(arrivalDateInput);
 
         const rfp = flatpickr (arrivalDateInput, {
           dateFormat: 'D, M d Y',
@@ -147,7 +146,7 @@ export default function (data){
       modal.open(data.provider);
       // Set input focus
       setTimeout(() => {
-        document.getElementById('full_name').focus();
+        document.getElementById('totalGuests').focus();
       },200);
 
     }
@@ -158,17 +157,15 @@ export default function (data){
    */
   function sendRoomRequest(form) {
 
+    // Output key value pairs for debug
     for(let i = 0; i < form.elements.length; i++) {
       console.log(form.elements[i].name + ' = ' + form.elements[i].value);
     }
 
-
-
-
+    // Update button status
     const btnCancel = document.getElementById('btnCancel');
     const btnSubmit = document.getElementById('btnSubmit');
 
-    // While sending
     btnCancel.style.display = 'none';
     btnSubmit.innerHTML = "Sending"
     btnSubmit.classList.add('sending');
@@ -221,10 +218,7 @@ export default function (data){
 
   function dspMessage() {
 
-    // Hide the summary modal
-    modal.modalContainer.style.display = 'hidden';
-
-    //alert(form);
+    modal.removeModal();
 
     // Create our message element
     const messageContainer = document.createElement('div');
@@ -233,11 +227,11 @@ export default function (data){
     // Message content
     messageContainer.innerHTML =
         `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent">
-         <span>${app.thanks}</span>`;
-    modal.overlay.appendChild(messageContainer);
+         <span>${data.thanks}</span>`;
+    modal.modalOverlay.appendChild(messageContainer);
 
     // Display message
-    messageContainer.style.display = 'flex';
+    messageContainer.style.display = 'grid';
     messageContainer.classList.add('fade-in-fast');
 
     // Confirm to user
@@ -246,66 +240,9 @@ export default function (data){
       messageContainer.style.display = 'none';
       messageContainer.style.display = 'none';
       modal.modalContainer.style.display = "block";
-      formReset();
-    }, 2000);
+      modal.close();
+    }, 5000);
   }
-
-  // Reset the UI for any future requests
-  function formReset() {
-    document.getElementById('btnCancel').style.display = 'block'
-    const btnSubmit = document.getElementById('btnSubmit')
-    btnSubmit.innerHTML = "Booking Request"
-    btnSubmit.disabled = false;
-    modal.close();
-  }
-
-  // Update DOM after window load
-  // window.addEventListener('load', function () {
-  //
-  //   console.log('Window loaded!');
-  //
-  //   // Date input field
-  //   const bkgDate = document.getElementById('selectDate');
-  //   const bkgDateInput = document.getElementById('bkgDateInput');
-  //   bkgDateInput.value = new Date().toLocaleDateString(htmlLang, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'});
-  //
-  //   console.log(bkgDateInput.value);
-  //
-  //   // Set booking request values
-  //   const bkgAdvDays = Number(app.advanceDays || 30);
-  //   const bkgMaxCovers = Number(app.maxCovers || 10);
-  //
-  //   // Create cover select options
-  //   const coversSelect = document.getElementById('selectCovers');
-  //   const person = coversSelect.dataset.labelPerson || 'person';
-  //   const people = coversSelect.dataset.labelPeople || 'people';
-  //   const options = document.createDocumentFragment();
-  //
-  //   for (let i = 1; i <= bkgMaxCovers; i++) {
-  //     let opt = document.createElement('option');
-  //     opt.innerHTML = `${i} ${people}`;
-  //     opt.value = `${i}`;
-  //     if (i === 1) { opt.innerHTML = `${i} ${person}`; }
-  //     if (i === 2) { opt.selected = true; }
-  //     options.appendChild(opt);
-  //   }
-  //   coversSelect.appendChild(options);
-  //
-  //
-  //   // Use 3rd party datepicker as Safari
-  //   // doesn't support the Html5 default picker
-  //
-
-  //
-  //   // Hide if flatpickr activates the mobile UI
-  //   // which uses a native date picker
-  //   if(!!document.querySelector('.flatpickr-mobile')) {
-  //     const elems = document.querySelectorAll('.hide-on-mobile');
-  //     elems.forEach( el => {
-  //       el.style.opacity = '0';
-  //     })
-  //   }
-  // });
 };
 
 
