@@ -1,0 +1,100 @@
+---
+title: "Apptiser FR"
+language: "fr"
+layout: "layouts/apptiser-standard.hbs"
+gtag: "G-4FPKM2SVKM"
+permalink: "/templates/app_fr-standard-{{ pkg.version }}.html"
+brand:
+    name: "Apptiser FR"
+    prefix: "app_fr"
+    url: "https://fr.apptiser.io/"
+    theme: "apptiser"
+---
+
+<!-- mobile nav -->
+<div class="nav-menu" id="navMenu">
+    <button id="navBtn" class="hamburger hamburger--spin" type="button" aria-label="{{ nav.label.navMenuMobile }}">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+    </button>
+</div>
+
+<!-- global nav -->
+<nav id="navBar" aria-label="primary">
+    <a href="#hero" class="brand" aria-label="{{ nav.label.backToTop }}">
+
+        <h1>{{ data.name }}</h1>
+    </a>
+    <ul class="nav-list-mobile" role="list">
+        {{> partials/nav-options }}
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="section-hero">
+
+    {{> partials/brand }}
+    {{> partials/hero-image }}
+
+</section>
+
+<main id="home">
+    <!-- ABOUT -->
+    <section id="about" class="content-section" aria-label="introduction">
+        <div class="content-block">
+
+            <div class="description" aria-label="description">
+                <p>{{ data.description.full }}</p>
+                <!-- feature tags-->
+                <ul class="additional-features" aria-label="features">
+                    <!-- {{ data.features }} -->
+                    {{#each data.features }}
+                    <li>{{ this }}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            <!-- opening times -->
+            <div>
+
+
+            </div>
+            <aside id="hours" class="opening-times" data-book-online>
+                <dl>
+                    <dt>{{ section.about.tel }}</dt>
+                    <dd><a href="tel:{{ data.phone }}">{{ data.phone }}</a></dd>
+                    <dt>{{ section.about.address }}</dt>
+                    <dd>{{ data.addressStreet }}</dd>
+                    <dd>{{ data.addressLocality }}</dd>
+                    <dd>{{ data.addressRegion }} {{ data.postalCode }}</dd>
+                    <dt>{{ section.about.openingTimes }}</dt>
+                    <dd class="times">{{ data.openingTimes }}</dd>
+                    <!-- RDL OPENING NOTES -->
+                    <dt>{{ section.about.openingNotes }}</dt>
+                    <dd>{{ data.openingNotes }}</dd>
+                    <!-- /RDL OPENING NOTES -->
+                </dl>
+            </aside>
+        </div>
+
+        {{> partials/gallery }}
+
+    </section>
+
+    {{> partials/section-menus }}
+
+    {{> partials/section-takeaway }}
+
+    {{> partials/section-events }}
+
+    {{> partials/section-reservations }}
+
+    {{> partials/section-contacts }}
+
+    {{> partials/map }}
+
+</main>
+
+{{> partials/footer-standard }}
+
+

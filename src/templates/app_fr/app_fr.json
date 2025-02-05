@@ -1,0 +1,131 @@
+{
+	"bookings": {
+		"person": "personne",
+		"people": "personnes",
+		"email": {
+			"covers": {
+				"aria": "Demander la taille du groupe",
+				"people": "personnes",
+				"person": "personne"
+			},
+			"date": {
+				"aria": "Demander une date de réservation"
+			},
+			"submit": {
+				"aria": "Faire une demande de réservation",
+				"sending": ""
+			},
+			"summary": {
+				"instructions": "Veuillez fournir vos coordonnées ci-dessous",
+				"label-cancel": "Annuler",
+				"label-email": "Votre adresse email",
+				"label-name": "Votre nom complet",
+				"label-send": "Demande de réservation",
+				"thanks": "Merci! Nous vous contacterons sous peu.",
+				"title": "Demande de réservation",
+				"warning": "**Attention**: les demandes de réservation sont soumises à disponibilité et ne sont confirmées qu'après avoir été contacté par l'établissement."
+			},
+			"time": {
+				"aria": "Temps de la demande"
+			}
+		}
+	},
+	"button": {
+		"bkgRequest": "Table disponible",
+		"book": "Réserver maintenant",
+		"cancel": "Annuler",
+		"directions": "Itinéraire",
+		"send": "Envoyer"
+	},
+	"footer": {
+		"generated": "Généré par"
+	},
+	"nav": {
+		"label": {
+			"about": "Description",
+			"backToTop": "Retour au début de la page",
+			"contacts": "Coordonnées",
+			"events": "Événements",
+			"hours": "Horaires d'ouverture",
+			"location": "Localisation",
+			"menuMobile": "Menu de navigation mobile",
+			"menus": "Menus",
+			"reservations": "Réservations"
+		}
+	},
+	"section": {
+		"about": {
+			"address": "Adresse",
+			"description": "Description",
+			"features": "Caractéristiques",
+			"openingNotes": "Remarques",
+			"openingTimes": "Horaires",
+			"tel": "Téléphone",
+			"title": "La description"
+		},
+		"contacts": {
+			"address": "Adresse",
+			"alt": {
+				"email": "Adresse email"
+			},
+			"links": "Liens",
+			"parking": "Parking",
+			"tel": "Téléphone",
+			"title": "Coordonnées",
+			"transport": "Transports"
+		},
+		"events": {
+			"title": "Événements"
+		},
+		"gallery": {
+			"alt": {
+				"open": "Ouvrir",
+				"thumbnail": "Image de la galerie"
+			}
+		},
+		"hero": {
+			"alt": {
+				"bgdImage": "Image d'arrière-plan de"
+			}
+		},
+		"menuDownloads": {
+			"alt": "Ouvrir",
+			"aria": "Téléchargement des menus",
+			"info": "Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.",
+			"title": "Menus téléchargeables"
+		},
+		"menus": {
+			"alt": {
+				"aria": "Exemple de menu",
+				"gluten": "Ce plat est sans gluten",
+				"vegan": "Convient aux végétaliens",
+				"veggie": "Convient aux végétariens"
+			},
+			"label": {
+				"gluten": "Sans gluten",
+				"vegan": "Végétalien",
+				"veggie": "Végétarien"
+			},
+			"title": "Nos menus"
+		},
+		"reservations": {
+			"aria": "Outil de réservation",
+			"groups": "RÉSERVATIONS DE GROUPE",
+			"private": "Evénement privé",
+			"title": "Reservations",
+			"widget": {
+				"covers": {
+					"aria": "Taille du groupe"
+				},
+				"time": {
+					"aria": "Heure"
+				}
+			}
+		},
+		"takeaway": {
+			"title": "A Emporter",
+			"subtitle": "Instructions",
+			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander et vous faire livrer vos plats préférés avec notre partenaire. Cliquez ci-dessous pour passer votre commande :"
+		}
+	}
+}
