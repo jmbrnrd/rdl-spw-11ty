@@ -386,7 +386,7 @@ export default function (config){
     const fp = flatpickr (selectDate, {
       dateFormat: 'D, d M Y',
       defaultDate: 'today',
-      disable: [],
+      disable: [new Date('2025-02-19'),new Date('2025-02-7')],
       minDate: 'today',
       // Max date doesn't play nicely on iPhone/iPad
       maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),

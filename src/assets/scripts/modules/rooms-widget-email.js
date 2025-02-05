@@ -1,7 +1,6 @@
 import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
-import { app } from './app-config';
 
 // Added for debug
 // import uaDetection from './ua-detection';
@@ -14,7 +13,7 @@ export default function (data){
   console.log('Rooms dataset', data);
 
   // Abort if there's no widget
-  if(!data.provider) {
+  if (!data.provider) {
     console.warn('No ROOMS provider specified!');
     return false;
   }
@@ -103,7 +102,7 @@ export default function (data){
                 <!-- Actions -->
                 <div class="modal-actions">
                   <button id="btnCancel" type="button" class="btn-cancel">${data.labelCancel}</button>
-                  <button id="btnSubmit" type="submit" class="btn">${data.labelSend}...</button>
+                  <button id="btnSubmit" type="submit" class="btn">${data.labelSend}</button>
                 </div>
                 </form>`;
 
@@ -150,7 +149,7 @@ export default function (data){
       },200);
 
     }
-  //
+
   /**
    * Send email request
    * @param form
@@ -171,6 +170,7 @@ export default function (data){
     btnSubmit.classList.add('sending');
     btnSubmit.disabled = true;
 
+    updateUI();
     dspMessage();
 
     // Send
@@ -214,6 +214,13 @@ export default function (data){
     //   .catch(error => {
     //     console.error(error);
     //   });
+  }
+
+  function updateUI() {
+    const btnRoomsRequest = document.getElementById('btnRoomsRequest');
+    btnRoomsRequest.disable = true;
+    btnRoomsRequest.style.backgroundColor = '#333';
+    btnRoomsRequest.innerHTML = 'YOUR ENQUIRY HAS BEEN SENT';
   }
 
   function dspMessage() {

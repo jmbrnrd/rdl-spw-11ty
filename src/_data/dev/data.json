@@ -190,7 +190,7 @@
     },
     "reservations": {
         "maxCovers": 6,
-        "advanceDays": 30,
+        "advanceDays": 90,
         "person": "person",
         "people": "people",
         "provider": {
