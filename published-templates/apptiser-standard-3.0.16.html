@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-id="{{ id }}" data-template-version="3.0.14" data-template-brand="apptiser" xmlns="http://www.w3.org/1999/html">
+<html lang="en" data-id="{{ id }}" data-template-version="3.0.16" data-template-brand="apptiser" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
     <title>{{ name }} |  {{ postalCode }}</title>
@@ -50,7 +50,7 @@
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="https://assets.apptiser.io/images/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="https://assets.apptiser.io/images/apple-touch-icon.png">
-    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=3.0.14">
+    <link rel="manifest" href="https://assets.apptiser.io/manifest.json?v=3.0.16">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,13 +66,13 @@
               href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap">
     </noscript>
 
-    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=3.0.14" />
+    <link rel="stylesheet" href="https://assets.apptiser.io/styles/themes/apptiser.css?v=3.0.16" />
 
-	<link rel="stylesheet" href="https://assets.apptiser.io/styles/bundle-main.css?v=3.0.14" />
+	<link rel="stylesheet" href="https://assets.apptiser.io/styles/bundle-main.css?v=3.0.16" />
 
-	<script type="module" src="https://assets.apptiser.io/scripts/bundle-main.js?v=3.0.14" defer></script>
+	<script type="module" src="https://assets.apptiser.io/scripts/bundle-main.js?v=3.0.16" defer></script>
 
-    <script type="module" src="https://assets.apptiser.io/scripts/bundle-booking-widgets.js?v=3.0.14" defer></script>
+    <script type="module" src="https://assets.apptiser.io/scripts/bundle-booking-widgets.js?v=3.0.16" defer></script>
 
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-4FPKM2SVKM"></script>
     <script>
@@ -129,7 +129,7 @@
         </li>
         <!-- /RDL MENU NAV -->
         
-        <!-- RDL TAKEAWAY NAV -->
+         RDL TAKEAWAY NAV
         <li>
             <a href="#takeaway"
                aria-label="{{ name }} Takeaway">
@@ -139,12 +139,12 @@
         <!-- /RDL TAKEAWAY NAV -->
         
         <!-- RDL ROOMS NAV -->
-<!--        <li>-->
-<!--            <a href="#rooms"-->
-<!--               aria-label="{{ name }} Room Bookings">-->
-<!--                Room Bookings-->
-<!--            </a>-->
-<!--        </li>-->
+        <li>
+            <a href="#rooms"
+               aria-label="{{ name }} Room Bookings">
+                Room Bookings
+            </a>
+        </li>
         <!-- /RDL ROOMS NAV -->
         
         <!-- RDL RESERVATIONS NAV -->
@@ -213,7 +213,7 @@
             </li>
             <!-- /RDL MENU NAV -->
             
-            <!-- RDL TAKEAWAY NAV -->
+             RDL TAKEAWAY NAV
             <li>
                 <a href="#takeaway"
                    aria-label="{{ name }} Takeaway">
@@ -223,12 +223,12 @@
             <!-- /RDL TAKEAWAY NAV -->
             
             <!-- RDL ROOMS NAV -->
-<!--            <li>-->
-<!--                <a href="#rooms"-->
-<!--                   aria-label="{{ name }} Room Bookings">-->
-<!--                    Room Bookings-->
-<!--                </a>-->
-<!--            </li>-->
+            <li>
+                <a href="#rooms"
+                   aria-label="{{ name }} Room Bookings">
+                    Room Bookings
+                </a>
+            </li>
             <!-- /RDL ROOMS NAV -->
             
             <!-- RDL RESERVATIONS NAV -->
@@ -285,11 +285,7 @@
                 <p>{{ description.full }}</p>
                 <!-- feature tags-->
                 <ul class="additional-features" aria-label="features">
-                    <!-- RDL LOOP FEATURES
-                    {{#each features}}
-                        <li>{{ this }}</li>
-                    {{/each}}
-                    /RDL LOOP FEATURES -->
+                    <!-- -----------------[[ INSERT FEATURES LOOP ]]-------------------- -->
                 </ul>
             </div>
 
@@ -314,16 +310,7 @@
 
         <!-- RDL IMAGE GALLERY -->
         <div class="image-gallery" aria-roledescription="Image gallery" aria-label="Image gallery">
-            <!-- RDL LOOP IMAGES
-            {{#each image.gallery}}
-            <a class="glightbox"
-                href="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}">
-                    <img loading="lazy"
-                        src="https://res.cloudinary.com/rdl/image/upload/w_1920,c_limit,q_auto,dpr_auto,f_auto/restaurants/{{ ../number }}/{{ this.filename }}"
-                        alt="{{ ../name }} gallery image">
-                    </a>
-            {{/each}}
-            /RDL LOOP IMAGES -->
+            <!-- ---------------[[ INSERT IMAGE GALLERY LOOP ]]--------------- -->
         </div>
         <!-- /RDL IMAGE GALLERY -->
 
@@ -348,25 +335,7 @@
                             <li><i class="vg" aria-hidden="true"></i>Vegan</li>
                             <li><i class="gf" aria-hidden="true"></i>Gluten-free</li>
                         </ul>
-                        <!-- RDL LOOP HTML MENUS
-                        {{#each menus.sections }}
-                        <div id="menu_section_{{@index}}" class="menu-section">
-                            <h3 class="menu-section-title">{{ name }}</h3>
-                            <ul class="menu-items">
-                                {{#each dishes }}
-                                    <li>
-                                        <h4>{{ this.dish_name }}</h4>
-                                        <span>£{{ this.dish_price }}</span>
-                                        <span>{{ this.dish_desc }}</span>
-                                        {{#each this.dish_attributes}}
-                                            <i class="{{ this }}"></i>
-                                        {{/each}}
-                                    </li>
-                                {{/each }}
-                            </ul>
-                        </div>
-                        {{/each}}
-                        /RDL LOOP HTML MENUS -->
+                        <!-- ---------------[[ INSERT MENU SECTION LOOP ]]--------------- -->
         
                     </div>
                 </div>
@@ -380,16 +349,7 @@
             <h2 class="section-title">Downloadable Menus</h2>
             <p>Any of these menus can be downloaded to your device in PDF format. How quickly they download will be dependant upon your connection speed.</p>
             <div class="content-block menu-downloads">
-                <!-- RDL LOOP DOWNLOAD MENUS
-                {{#each menus.pdfs }}
-                <div class="menu-card-container">
-                <a class="menu-card" download="{{ name }}-{{ date }}" href="{{ path }}">
-                    <h3>{{ name }}</h3>
-                    <span>Published: {{ date }}</span>
-                </a>
-                </div>
-                {{/each }}
-                /RDL LOOP DOWNLOAD MENUS -->
+                <!-- --------------[[ INSERT PDF MENU LOOP ]]--------------- -->
             </div>
         </section>
         <!-- /RDL MENUS DOWNLOAD -->
@@ -401,21 +361,7 @@
     <section id="takeaway" class="content-section" data-elem-takeaway>
         <h2 class="section-title">Takeaway</h2>
         <div class="content-block">
-            <!-- RDL LOOP TAKEAWAY
-            {{#each takeawayServices.services}}
-                <div>
-                    <p>{{ instructions }}</p>
-                    <p><a class="btn btn-takeaway-service" href="{{ url }}" target="_blank">{{ label }}</a></p>
-                </div>
-                <div>
-                    <a href="{{ url }}" class="btn-takeaway-logo"
-                       aria-label="{{ label }}"
-                       target="_blank">
-                        <img src="https://res.cloudinary.com/rdl/image/upload/{{ providerLogo }}" alt="{{ providerName }}">
-                    </a>
-                </div>
-            {{/each}}
-            /RDL LOOP TAKEAWAY -->
+            <!-- -----------------[[ INSERT TAKEAWAY LOOP ]]-------------------- -->
         </div>
     </section>
     <!-- /RDL TAKEAWAY -->
@@ -482,6 +428,69 @@
     </section>
     <!-- /RDL RESERVATIONS -->
 
+    <!-- RDL ROOMS -->
+    <section id="rooms"
+             class="content-section room-section"
+             aria-label=""
+             data-id="{{ id }}"
+             data-name="{{ name }}"
+             data-email="{{ email }}"
+             data-provider=""
+             data-provider-id=""
+             data-provider-key=""
+             data-provider-url=""
+             data-max-guests=""
+             data-advance-days=""
+             data-person="person"
+             data-people="people"
+             data-summary-title=""
+             data-instructions="Please complete all fields."
+             data-label-request=""
+             data-label-name="Full Name"
+             data-label-email="Email Address"
+             data-label-phone="Telephone"
+             data-label-cancel="Cancel"
+             data-label-send="Send Room Enquiry"
+             data-warning="" data-thanks="Thank you for your enquiry. We will contact you shortly, to discuss your requirement."
+             data-sender="{{ brand.prefix }}">
+    
+        <h2 class="section-title">Room Reservations</h2>
+    
+        <div class="content-block-grid">
+            <div>
+                <h3>Overview</h3>
+                <p>The Plough is a stone-built village pub with an open plan bar and dining room. Step inside and you will find leather chesterfields, open fires, and wooden dining tables. The pub has five comfortable single, double, and twin bedrooms and is within proximity of Bicester Shopping Village. A convenient stop-over for overnight shopping trips or as a base for exploring the Oxfordshire Cotswolds.</p>
+                <h3>Room Facilities</h3>
+                <!-- feature tags-->
+                <ul class="additional-features rooms" aria-label="features">
+                    <!-- Wi-Fi,Breakfast included,Dog-friendly -->
+                        <li>Wi-Fi</li>
+                        <li>Breakfast included</li>
+                        <li>Dog-friendly</li>
+                </ul>
+                <button id="btnRoomsRequest" class="btn btn-book rooms" aria-label="Check room availability">Room booking enquiry</button>
+                <p><strong>Room prices start from £75 per night.</strong></p>
+            </div>
+    
+            <div id="roomImageContainer" class="img-widget" data-room-images="">
+            
+                <div class="img-grid">
+                    <img loading="lazy"
+                         alt="Background image of {{ name }}"
+                         src="https://res.cloudinary.com/rdl/image/upload//restaurants/{{ number }}/"
+                         sizes="100vw">
+                </div>
+            
+            </div>
+    
+        </div>
+    
+        <div id="roomsWidgetContainer" data-rooms></div>
+    
+    </section>
+    <!-- /RDL ROOMS -->
+
+    
     <section id="contacts" class="content-section contact-section">
         <h2 class="section-title">Contacts</h2>
         <div class="content-block">
@@ -502,16 +511,7 @@
                     <dt>Links</dt>
                     <dd>
                         <div class="social-links">
-                            <!-- RDL LOOP SOCIAL LINKS
-                            {{#each social.networks }}
-                            <div>
-                                <a class="social-link" href="{{ this.url }}" title="{{ this.alt }}">
-                                    <img src="https://assets.apptiser.io/images/icon-{{ this.name }}.svg" alt="{{ this
-                                    .name }} logo" width="28" height="28">
-                                </a>
-                            </div>
-                            {{/each}}
-                            /RDL LOOP SOCIAL LINKS -->
+                            <!-- ---------------[[ INSERT SOCIAL LOOP ]]--------------- -->
                         </div>
                     </dd>
                 </dl>
