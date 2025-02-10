@@ -316,13 +316,39 @@ export default function (config){
 
   }
 
-
   function formReset() {
     document.getElementById('btnCancel').style.display = 'block'
     const btnSubmit = document.getElementById('btnSubmit')
     btnSubmit.innerHTML = "Booking Request"
     btnSubmit.disabled = false;
     modal.close();
+  }
+
+  function loadBlockedDates() {
+    let blockedDates = [];
+    // fetch(`${api}/public/getblockeddates`, {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
+    //     user_code: 'CF-418-Beta',
+    //     restaurant_id: htmlData.id,
+    //     company_prefix: form.elements['sender'].value
+    //   })
+    // })
+    //     .then(response => {
+    //       // Guard clause
+    //       if (!response.ok) {
+    //         // get error message from body or default to response status
+    //         const error = (response.message) || response.status;
+    //         return Promise.reject(response);
+    //       }
+    //       blockedDates = response;
+    //     })
+    //     .catch(error => {
+    //       console.error(error);
+    //     });
+    return blockedDates;
   }
 
   // Update DOM after window load
@@ -333,9 +359,9 @@ export default function (config){
     const selectCovers = document.getElementById('selectCovers');
     const selectTime = document.getElementById('selectTime');
 
+
     // Generate request summary
     bkgForm.addEventListener('submit', (e) => {
-
       e.preventDefault();
 
       // Update the latest params
@@ -383,14 +409,13 @@ export default function (config){
     }
     selectCovers.appendChild(options);
 
-
-    // Use 3rd party datepicker as Safari
+    // init calendar picker
     // doesn't support the Html5 default picker
 
     const fp = flatpickr (selectDate, {
       dateFormat: 'D, d M Y',
       defaultDate: 'today',
-      disable: [new Date('2025-02-19'),new Date('2025-02-7')],
+      disable: loadBlockedDates(),
       minDate: 'today',
       // Max date doesn't play nicely on iPhone/iPad
       maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
