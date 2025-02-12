@@ -2,11 +2,6 @@ import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
 
-// Added for debug
-import uaDetection from './ua-detection';
-
-
-
 const api= process.env.NODE_ENV === 'production'
     ? `https://api.restaurantcollective.io`
     : `http://localhost:4000`;
@@ -39,12 +34,7 @@ console.log('API', api);
  */
 export default function (config){
 
-
-
-
-
-
-  // Abort if there's no widget
+  // Abort if there's no booking provider
   if(!config.provider) {
     console.warn('No booking provider specified!');
     return false;
@@ -138,10 +128,11 @@ export default function (config){
 
   domFragment.append(bkgForm);
   bookingWidgetContainer.appendChild(domFragment);
+
   let bkgParams = {};
 
   // Generate request summary
-  const openEmailRequest = () => {
+  const openBookingRequestSummary = () => {
 
     // console.log(config);
 
@@ -201,7 +192,7 @@ export default function (config){
         });
         document.getElementById('emailRequestForm').addEventListener('submit', (e) => {
           e.preventDefault();
-          sendBkgRequest(e.target);
+          submitBookingRequest(e.target);
         });
 
       } else {
@@ -222,11 +213,7 @@ export default function (config){
 
     };
 
-  /**
-   * Send email request
-   * @param form
-   */
-  function sendBkgRequest(form) {
+  function submitBookingRequest(form) {
 
     console.log(form);
 
@@ -257,8 +244,7 @@ export default function (config){
         booking_email: form.elements['email'].value,
         company_prefix: form.elements['sender'].value,
         email_system: form.elements['email_system'].value,
-        template_version: htmlData.templateVersion,
-        user_agent: uaDetection() || 'No detection'
+        template_version: htmlData.templateVersion
       })
     })
       .then(response => {
@@ -275,14 +261,14 @@ export default function (config){
         });
 
         // Display success message
-        dspThankYouMessage();
+        displayThankYouMessage();
       })
       .catch(error => {
         console.error(error);
       });
   }
 
-  function dspThankYouMessage() {
+  function displayThankYouMessage() {
 
     // Hide the summary modal
     modal.modalContainer.style.display = "none";
@@ -290,8 +276,6 @@ export default function (config){
     // Create our message element
     const messageContainer = document.createElement('div');
     messageContainer.className = 'booking-request-thanks';
-
-
 
     // Message content
     messageContainer.innerHTML =
@@ -310,44 +294,53 @@ export default function (config){
       messageContainer.style.display = 'none';
       messageContainer.style.display = 'none';
       modal.modalContainer.style.display = "block";
-      formReset();
+      resetBookingRequestForm();
     }, 10000);
-
 
   }
 
-  function formReset() {
-    document.getElementById('btnCancel').style.display = 'block'
+  function resetBookingRequestForm() {
+    // show cancel option
+    document.getElementById('btnCancel').style.display = 'block';
+    // reset submit button
     const btnSubmit = document.getElementById('btnSubmit')
     btnSubmit.innerHTML = "Booking Request"
     btnSubmit.disabled = false;
+
     modal.close();
   }
 
-  function loadBlockedDates() {
+  async function initDatePicker(advance_days) {
+
+    // list of unavailable dates
     let blockedDates = [];
-    // fetch(`${api}/public/getblockeddates`, {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({
-    //     api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
-    //     user_code: 'CF-418-Beta',
-    //     restaurant_id: htmlData.id,
-    //     company_prefix: form.elements['sender'].value
-    //   })
-    // })
-    //     .then(response => {
-    //       // Guard clause
-    //       if (!response.ok) {
-    //         // get error message from body or default to response status
-    //         const error = (response.message) || response.status;
-    //         return Promise.reject(response);
-    //       }
-    //       blockedDates = response;
-    //     })
-    //     .catch(error => {
-    //       console.error(error);
-    //     });
+
+    // wait until we've fetched any blacked dates
+    await fetch(`${api}/public/blocked`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
+        user_code: 'CF-418-apptiser',
+        restaurant_id: 92976,
+        advance_days,
+        include_closed: 'true'
+      })
+    }).then((response) => {
+      // Guard clause
+      if (!response.ok) {
+        // get error message from body or default to response status
+        const error = (response.message) || response.status;
+        return Promise.reject(response);
+      }
+      return response.json();
+    }).then((data) => {
+      // create an array of date objects
+      data['blocked_dates'].forEach((item) => {
+        blockedDates.push(new Date(item['date']));
+      });
+    }).catch();
+
     return blockedDates;
   }
 
@@ -358,32 +351,6 @@ export default function (config){
 
     const selectCovers = document.getElementById('selectCovers');
     const selectTime = document.getElementById('selectTime');
-
-
-    // Generate request summary
-    bkgForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Update the latest params
-      bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
-      bkgParams.bkgSize = document.getElementById('selectCovers').value;
-      bkgParams.bkgTime = document.getElementById('selectTime').value;
-
-      // Display request summary
-      openEmailRequest();
-
-    });
-
-    // Update the mock cover & time select fields
-    selectCovers.addEventListener('change', (e) => {
-      const covers = e.target;
-      document.getElementById('txtCovers').innerHTML = covers?.value;
-    });
-
-    selectTime.addEventListener('change', (e) => {
-      const time = e.target;
-      document.getElementById('txtTime').innerHTML = time?.value;
-    });
 
     // Date input field
     const selectDate = document.getElementById('selectDate');
@@ -397,8 +364,33 @@ export default function (config){
     const person = selectCovers.dataset.labelPerson || 'person';
     const people = selectCovers.dataset.labelPeople || 'people';
 
-    const options = document.createDocumentFragment();
+    // Create booking request summary
+    bkgForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
+      // Update the latest params
+      bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
+      bkgParams.bkgSize = document.getElementById('selectCovers').value;
+      bkgParams.bkgTime = document.getElementById('selectTime').value;
+
+      // Display request summary
+      openBookingRequestSummary();
+
+    });
+
+    // Update the mock cover & time select fields
+    selectCovers.addEventListener('change', (e) => {
+      const covers = e.target;
+      document.getElementById('txtCovers').innerHTML = covers?.value;
+    });
+    selectTime.addEventListener('change', (e) => {
+      const time = e.target;
+      document.getElementById('txtTime').innerHTML = time?.value;
+    });
+
+    // build DOM elements
+    const options = document.createDocumentFragment();
+    // Cover select
     for (let i = 1; i <= bkgMaxCovers; i++) {
       let opt = document.createElement('option');
       opt.innerHTML = `${i} ${people}`;
@@ -409,39 +401,41 @@ export default function (config){
     }
     selectCovers.appendChild(options);
 
-    // init calendar picker
-    // doesn't support the Html5 default picker
+    // load disabled dates & init calendar picker
+    initDatePicker(bkgAdvDays || 60)
+        .then((blockedDatesArray) => {
+          // console.log(dates);
+          const fp = flatpickr (selectDate, {
+            dateFormat: 'D, d M Y',
+            defaultDate: 'today',
+            disable: blockedDatesArray,
+            minDate: 'today',
+            // Max date doesn't play nicely on iPhone/iPad
+            maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
+            monthSelectorType: 'static',
+            disableMobile: "false",
+            locale: htmlLang === 'fr' ? French : 'en',
+            wrap: true,
+            clickOpens: false,
+            onChange: (selectedDate, dateStr) => {
+              dateInput.value = dateStr;
+            }
+          });
+          // open flatpickr manually so that we can trigger it from
+          // anywhere in the containing element - i.e. including the icons
+          selectDate.addEventListener('click', () => {
+            fp.open();
+          });
+          // Hide if flatpickr activates the mobile UI
+          // which uses a native date picker
+          if(!!document.querySelector('.flatpickr-mobile')) {
+            const elems = document.querySelectorAll('.hide-on-mobile');
+            elems.forEach( el => {
+              el.style.opacity = '0';
+            })
+          }
+        });
 
-    const fp = flatpickr (selectDate, {
-      dateFormat: 'D, d M Y',
-      defaultDate: 'today',
-      disable: loadBlockedDates(),
-      minDate: 'today',
-      // Max date doesn't play nicely on iPhone/iPad
-      maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
-      monthSelectorType: 'static',
-      disableMobile: "false",
-      locale: htmlLang === 'fr' ? French : 'en',
-      wrap: true,
-      clickOpens: false,
-      onChange: (selectedDate, dateStr) => {
-        dateInput.value = dateStr;
-      }
-    });
-    // open flatpickr manually so that we can trigger it from
-    // anywhere in the containing element - i.e. including the icons
-    selectDate.addEventListener('click', () => {
-      fp.open();
-    })
-
-    // Hide if flatpickr activates the mobile UI
-    // which uses a native date picker
-    if(!!document.querySelector('.flatpickr-mobile')) {
-      const elems = document.querySelectorAll('.hide-on-mobile');
-      elems.forEach( el => {
-        el.style.opacity = '0';
-      })
-    }
   });
 
 };
