@@ -322,24 +322,26 @@ export default function (config){
       body: JSON.stringify({
         api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
         user_code: 'CF-418-apptiser',
-        restaurant_id: 92976,
+        restaurant_id: htmlData.id,
         advance_days,
         include_closed: 'true'
       })
     }).then((response) => {
       // Guard clause
       if (!response.ok) {
+        console.error(response);
         // get error message from body or default to response status
         const error = (response.message) || response.status;
         return Promise.reject(response);
       }
       return response.json();
+
     }).then((data) => {
       // create an array of date objects
       data['blocked_dates'].forEach((item) => {
         blockedDates.push(new Date(item['date']));
       });
-    }).catch();
+    }).catch((err) => console.error(err));
 
     return blockedDates;
   }
@@ -404,7 +406,6 @@ export default function (config){
     // load disabled dates & init calendar picker
     initDatePicker(bkgAdvDays || 60)
         .then((blockedDatesArray) => {
-          // console.log(dates);
           const fp = flatpickr (selectDate, {
             dateFormat: 'D, d M Y',
             defaultDate: 'today',
