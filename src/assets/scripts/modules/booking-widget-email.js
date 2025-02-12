@@ -252,6 +252,7 @@ export default function (config){
         if (!response.ok) {
           // get error message from body or default to response status
           const error = (response.message) || response.status;
+          console.error(error);
           return Promise.reject(response);
         }
         // Analytics
@@ -262,10 +263,10 @@ export default function (config){
 
         // Display success message
         displayThankYouMessage();
+
       })
-      .catch(error => {
-        console.error(error);
-      });
+      .catch(error => console.error(error)
+      );
   }
 
   function displayThankYouMessage() {
@@ -327,16 +328,9 @@ export default function (config){
         include_closed: 'true'
       })
     }).then((response) => {
-      // Guard clause
-      if (!response.ok) {
-        console.error(response);
-        // get error message from body or default to response status
-        const error = (response.message) || response.status;
-        return Promise.reject(response);
-      }
       return response.json();
-
     }).then((data) => {
+      // console.log(data);
       // create an array of date objects
       data['blocked_dates'].forEach((item) => {
         blockedDates.push(new Date(item['date']));
