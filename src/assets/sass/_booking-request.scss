@@ -85,6 +85,9 @@
   //  height: min(100svh, 62%);
   //}
 }
+.modal-content {
+  width: 100%;
+}
 .modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -104,6 +107,12 @@
     }
   }
 }
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: flex-end;
+}
+
 
 .form-email-request {
   h2 {
@@ -162,15 +171,17 @@
 }
 .booking-request-thanks {
   display: none;
-  align-items: center;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 2rem;
+  max-width: 400px;
   padding: 24px;
   font-weight: $font-weight-bold;
   background: white;
   border-radius: 10px;
   opacity: 0;
   img {
-    display: inline-block;
-    margin-right: 8px;
+    display: block;
   }
 }
 

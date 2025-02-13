@@ -38,7 +38,7 @@ export default function(config) {
         widgetContent.width = '600';
         widgetContent.height = '600';
         widgetContent.allowFullscreen = true;
-        modal.container.appendChild(widgetContent);
+        modal.modalContainer.appendChild(widgetContent);
     }
 
     // Wait for DOM to be loaded

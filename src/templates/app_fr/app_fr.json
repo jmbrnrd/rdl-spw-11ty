@@ -1,5 +1,7 @@
 {
 	"bookings": {
+		"person": "personne",
+		"people": "personnes",
 		"email": {
 			"covers": {
 				"aria": "Demander la taille du groupe",
@@ -14,27 +16,25 @@
 				"sending": ""
 			},
 			"summary": {
-				"cancel": "Annuler",
-				"email": "Votre adresse email",
-				"instructions": "Veuillez entrer vos coordonnées ci-dessous",
-				"name": "Ton nom complet",
-				"send": "Demande de réservation",
+				"instructions": "Veuillez fournir vos coordonnées ci-dessous",
+				"label-cancel": "Annuler",
+				"label-email": "Votre adresse email",
+				"label-name": "Votre nom complet",
+				"label-send": "Demande de réservation",
 				"thanks": "Merci! Nous vous contacterons sous peu.",
 				"title": "Demande de réservation",
-				"warning": "Attention: les demandes de réservation sont soumises à disponibilité et ne sont confirmées qu'après avoir été contacté par le restaurant."
+				"warning": "**Attention**: les demandes de réservation sont soumises à disponibilité et ne sont confirmées qu'après avoir été contacté par l'établissement."
 			},
 			"time": {
-				"aria": "Temps de demande"
+				"aria": "Temps de la demande"
 			}
-		},
-		"people": "personnes",
-		"person": "personne"
+		}
 	},
 	"button": {
-		"bkgRequest": "Table disponsible",
-		"book": "Reserve maintenant",
+		"bkgRequest": "Table disponible",
+		"book": "Réserver maintenant",
 		"cancel": "Annuler",
-		"directions": "Obtenir des directions",
+		"directions": "Itinéraire",
 		"send": "Envoyer"
 	},
 	"footer": {
@@ -44,15 +44,14 @@
 		"label": {
 			"about": "Description",
 			"backToTop": "Retour au début de la page",
-			"contacts": "Contacts",
+			"contacts": "Coordonnées",
 			"events": "Événements",
+			"takeaway": "A Emporter",
 			"hours": "Horaires d'ouverture",
-			"location": "Emplacement",
+			"location": "Localisation",
 			"menuMobile": "Menu de navigation mobile",
 			"menus": "Menus",
-			"reservations": "Réservations",
-			"rooms": "Réservations de chambres",
-			"takeaway": ""
+			"reservations": "Réservations"
 		}
 	},
 	"section": {
@@ -60,7 +59,7 @@
 			"address": "Adresse",
 			"description": "Description",
 			"features": "Caractéristiques",
-			"openingNotes": "Notez s'il vous plaît",
+			"openingNotes": "Remarques",
 			"openingTimes": "Horaires",
 			"tel": "Téléphone",
 			"title": "La description"
@@ -68,13 +67,13 @@
 		"contacts": {
 			"address": "Adresse",
 			"alt": {
-				"email": "Adresse électronique"
+				"email": "Adresse email"
 			},
 			"links": "Liens",
 			"parking": "Parking",
 			"tel": "Téléphone",
-			"title": "Contacts",
-			"transport": "Transport public"
+			"title": "Coordonnées",
+			"transport": "Transports"
 		},
 		"events": {
 			"title": "Événements"
@@ -92,7 +91,7 @@
 		},
 		"menuDownloads": {
 			"alt": "Ouvrir",
-			"aria": "Téléchargements de menus",
+			"aria": "Téléchargement des menus",
 			"info": "Chacun de ces menus peut être téléchargé sur votre appareil au format PDF. La rapidité avec laquelle ils seront téléchargés dépendra de la vitesse de votre connexion.",
 			"title": "Menus téléchargeables"
 		},
@@ -111,33 +110,23 @@
 			"title": "Nos menus"
 		},
 		"reservations": {
-			"aria": "Widget de réservation",
+			"aria": "Outil de réservation",
 			"groups": "RÉSERVATIONS DE GROUPE",
-			"private": "Dîner privé",
+			"private": "Evénement privé",
 			"title": "Reservations",
 			"widget": {
 				"covers": {
-					"aria": "Taille du groupe de réservation"
+					"aria": "Taille du groupe"
 				},
 				"time": {
-					"aria": "Heure de réservation"
+					"aria": "Heure"
 				}
 			}
 		},
-		"rooms": {
-			"features": [
-				"",
-				"",
-				""
-			],
-			"info": "",
-			"labelFeatures": "",
-			"title": "Réservations de chambres"
-		},
 		"takeaway": {
-			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander vos plats préférés en utilisant notre partenaire de livraison de confiance choisi. Cliquez pour passer votre commande :",
-			"subtitle": "Instructions de commande",
-			"title": "Emporter"
+			"title": "A Emporter",
+			"subtitle": "Instructions",
+			"instructions": "Pour les jours où vous ne voulez tout simplement pas quitter la maison, vous pouvez commander et vous faire livrer vos plats préférés avec notre partenaire. Cliquez ci-dessous pour passer votre commande :"
 		}
 	}
 }

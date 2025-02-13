@@ -1,0 +1,50 @@
+<!-- RDL ROOMS -->
+<section id="rooms"
+         class="content-section room-section"
+         aria-label="{{ section.rooms.aria }}"
+         data-id="{{ data.id }}"
+         data-name="{{ data.name }}"
+         data-email="{{ data.email }}"
+         data-provider="{{ data.rooms.provider.name }}"
+         data-provider-id="{{ data.rooms.provider.id }}"
+         data-provider-key="{{ data.rooms.provider.key }}"
+         data-provider-url="{{ data.rooms.provider.url }}"
+         data-advance-days="{{ data.rooms.advanceDays }}"
+         data-summary-title="{{ bookings.rooms.summary.title }}"
+         data-instructions="{{ section.rooms.instructions }}"
+         data-label-request="{{ button.roomRequest }}"
+         data-label-name="{{ section.rooms.labelName }}"
+         data-label-email="{{ section.rooms.labelEmail }}"
+         data-label-phone="{{ section.rooms.labelPhone }}"
+         data-label-cancel="{{ section.rooms.labelCancel }}"
+         data-label-send="{{ section.rooms.labelSend }}"
+         data-warning="{{ bookings.rooms.summary.warning }}"
+         data-thanks="{{ section.rooms.acknowledgement }}"
+         data-sender="{{ data.brand.prefix }}">
+
+    <h2 class="section-title">{{ section.rooms.title }}</h2>
+
+    <div class="content-block-grid">
+        <div>
+            <h3>Overview</h3>
+            <p>{{ section.rooms.info }}</p>
+            <h3>{{ section.rooms.labelFeatures }}</h3>
+            <!-- {{ data.rooms.features }} -->
+            <ul class="additional-features rooms" aria-label="features">
+                <!-- {{ section.rooms.features }} -->
+                {{#each section.rooms.features }}
+                    <li>{{ this }}</li>
+                {{/each}}
+            </ul>
+            <button id="btnRoomsRequest" class="btn btn-book rooms" aria-label="Check room availability">Room booking enquiry</button>
+            <p><strong>Room prices start from £75 per night.</strong></p>
+        </div>
+
+        {{> partials/room-img-widget }}
+
+    </div>
+
+    <div id="roomsWidgetContainer" data-rooms></div>
+
+</section>
+<!-- /RDL ROOMS -->
