@@ -9,10 +9,7 @@
          data-provider-id="{{ data.rooms.provider.id }}"
          data-provider-key="{{ data.rooms.provider.key }}"
          data-provider-url="{{ data.rooms.provider.url }}"
-         data-max-guests="{{ data.rooms.maxGuests }}"
          data-advance-days="{{ data.rooms.advanceDays }}"
-         data-person="{{ bookings.person }}"
-         data-people="{{ bookings.people }}"
          data-summary-title="{{ bookings.rooms.summary.title }}"
          data-instructions="{{ section.rooms.instructions }}"
          data-label-request="{{ button.roomRequest }}"
@@ -32,7 +29,7 @@
             <h3>Overview</h3>
             <p>{{ section.rooms.info }}</p>
             <h3>{{ section.rooms.labelFeatures }}</h3>
-            <!-- feature tags-->
+            <!-- {{ data.rooms.features }} -->
             <ul class="additional-features rooms" aria-label="features">
                 <!-- {{ section.rooms.features }} -->
                 {{#each section.rooms.features }}
