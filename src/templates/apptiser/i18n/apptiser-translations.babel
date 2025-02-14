@@ -551,6 +551,21 @@
 										</translations>
 									</concept_node>
 									<concept_node>
+										<name>rooms</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>en-GB</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>fr-FR</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
 										<name>takeaway</name>
 										<description/>
 										<comment/>
@@ -1190,6 +1205,106 @@
 											</folder_node>
 										</children>
 									</folder_node>
+								</children>
+							</folder_node>
+							<folder_node>
+								<name>rooms</name>
+								<children>
+									<folder_node>
+										<name>features</name>
+										<children>
+											<concept_node>
+												<name>0</name>
+												<description/>
+												<comment/>
+												<translations>
+													<translation>
+														<language>en-GB</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>fr-FR</language>
+														<approved>false</approved>
+													</translation>
+												</translations>
+											</concept_node>
+											<concept_node>
+												<name>1</name>
+												<description/>
+												<comment/>
+												<translations>
+													<translation>
+														<language>en-GB</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>fr-FR</language>
+														<approved>false</approved>
+													</translation>
+												</translations>
+											</concept_node>
+											<concept_node>
+												<name>2</name>
+												<description/>
+												<comment/>
+												<translations>
+													<translation>
+														<language>en-GB</language>
+														<approved>false</approved>
+													</translation>
+													<translation>
+														<language>fr-FR</language>
+														<approved>false</approved>
+													</translation>
+												</translations>
+											</concept_node>
+										</children>
+									</folder_node>
+									<concept_node>
+										<name>info</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>en-GB</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>fr-FR</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>labelFeatures</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>en-GB</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>fr-FR</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
+									<concept_node>
+										<name>title</name>
+										<description/>
+										<comment/>
+										<translations>
+											<translation>
+												<language>en-GB</language>
+												<approved>false</approved>
+											</translation>
+											<translation>
+												<language>fr-FR</language>
+												<approved>false</approved>
+											</translation>
+										</translations>
+									</concept_node>
 								</children>
 							</folder_node>
 							<folder_node>

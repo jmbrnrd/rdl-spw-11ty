@@ -2,9 +2,6 @@ import flatpickr from 'flatpickr';
 import { French } from 'flatpickr/dist/l10n/fr';
 import * as modal from './booking-modal';
 
-// Added for debug
-import uaDetection from './ua-detection';
-
 const api= process.env.NODE_ENV === 'production'
     ? `https://api.restaurantcollective.io`
     : `http://localhost:4000`;
@@ -37,9 +34,7 @@ console.log('API', api);
  */
 export default function (config){
 
-  // console.log('Dataset', config);
-
-  // Abort if there's no widget
+  // Abort if there's no booking provider
   if(!config.provider) {
     console.warn('No booking provider specified!');
     return false;
@@ -133,12 +128,13 @@ export default function (config){
 
   domFragment.append(bkgForm);
   bookingWidgetContainer.appendChild(domFragment);
+
   let bkgParams = {};
 
   // Generate request summary
-  const openEmailRequest = () => {
+  const openBookingRequestSummary = () => {
 
-    console.log(config);
+    // console.log(config);
 
       if (!document.getElementById('emailRequest')) {
 
@@ -188,16 +184,19 @@ export default function (config){
                   <button id="btnSubmit" type="submit" class="btn">${config.labelSend}</button>
                 </div>
                 </form>`;
-        modal.container.appendChild(emailRequestSummary);
+
+        modal.clearContent();
+        modal.modalContent.appendChild(emailRequestSummary);
         document.getElementById('btnCancel').addEventListener('click', () => {
           modal.close();
         });
         document.getElementById('emailRequestForm').addEventListener('submit', (e) => {
           e.preventDefault();
-          sendBkgRequest(e.target);
+          submitBookingRequest(e.target);
         });
 
       } else {
+
         // If the modal had already been created then just
         // update the summary values accordingly
         document.getElementById('partySize').innerHTML = bkgParams.bkgSize;
@@ -214,11 +213,7 @@ export default function (config){
 
     };
 
-  /**
-   * Send email request
-   * @param form
-   */
-  function sendBkgRequest(form) {
+  function submitBookingRequest(form) {
 
     console.log(form);
 
@@ -249,35 +244,31 @@ export default function (config){
         booking_email: form.elements['email'].value,
         company_prefix: form.elements['sender'].value,
         email_system: form.elements['email_system'].value,
-        template_version: htmlData.templateVersion,
-        user_agent: uaDetection() || 'No detection'
+        template_version: htmlData.templateVersion
       })
     })
       .then(response => {
         // Guard clause
         if (!response.ok) {
-          // get error message from body or default to response status
-          const error = (response.message) || response.status;
-          return Promise.reject(response);
+          throw Error(`${response.status}: ${response.statusText}`);
         }
         // Analytics
         gtag('event', 'booking_request_sent', {
           'provider': config.provider,
           'covers': Number(document.getElementById('selectCovers').value)
         });
-
         // Display success message
-        dspThankYouMessage();
+        displayThankYouMessage();
+
       })
-      .catch(error => {
-        console.error(error);
-      });
+      .catch(error => console.error(error)
+      );
   }
 
-  function dspThankYouMessage() {
+  function displayThankYouMessage() {
 
     // Hide the summary modal
-    modal.container.style.display = "none";
+    modal.modalContainer.style.display = "none";
 
     // Create our message element
     const messageContainer = document.createElement('div');
@@ -285,33 +276,79 @@ export default function (config){
 
     // Message content
     messageContainer.innerHTML =
-        `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABQtJREFUWAnNmU1oXFUUx++9E9KGpB9gkRh00cl006+NrR8rcS2oRRTRjWtxVQkuNJmXhIBQ2pW41o2gINWCC9OFuBKRbtpJEJpko8QgFVqbkDSducfzv2/OmzNv3qQv80adC9N77n33nvPL/Tzn1poe0/ytymTD+VeIzNPG0IQxln8GP6R1ruOfXbfW3Ch59+30mZXV+NP+/rX7aR6tTD5udvx7RPYCGTq9n77W2Jq1dNUcdJ9EldU/8/bNBXhp4+zo1l+b7/NoTRHRWF7lWe2stZs8qpdGHxu7PDV+cyurja57JODs8uQF7/2nDDeuOxaVGXLDOfdu9eTq1b10dQXkkbIMN+2JIkOmox2PxC5P8w/O2GuG3LIZ8uvGj/C64+S2J0zdTRjrT3pDL/P0vsj6hjtALPe0NmLIedZHHd+5osMwGl357fmRu/c2Pmew19Od8Jezslkz7L6ITqz8nf6eVY5uVw6bXf8WQ1azZoIhvjpydPydi0/9tJ3u3wGIkasulb/sgLP2Af89C4eOjV7Js3bShlDGWr5/Z+si7/APDdEB3QaQ0em1N9Mj2QEYLZVnvKfZts48aiU79OrMqds/6/pe5bmlE882qP5NejSds9Xo1Nqc1tsGiA3R8P5rveZ4/dy0B91LPJ2/645FZZ72J2nHf8fr+Gyii9dkybnX9MZJADH8m3fur+i/Kqy3A6Xz/YYToAD5oPFL2ubYsUMVWUZOGjfPudZRwmsO0/pvwcEudMOGCes7JgEsWIQrAOKG4A9TUhnndqFfa07rjZYrz0W1yY+kLrZhF6SMHCzh1mI5HsFwfbVuCEwtdqvu1A8Zm4O8/96Tn49qx5PNAFuwKTb4JBnDlYpyAMTdKh+R45yTNaDri8gYuQY1Ftn4YejxZKajW+UIMmyFsxWFZhImB69EX/zccBeHsDTsRy4jJ3CZOtlmsC2A7IyAzcFl0h1wffHizXVD6H7d5PjMa42ctOMrcjY6sxZJGTZhW8rIweZ4QbI/10rhbm0VC0npaRVlaThVf01k5GDjNQhnUyVc/CrN1MofRL+Wz6mqXGK3ae0GF5SmbIONAYMn3DIKr6SZwiIm+pge0vW5Wvm81D8qzzutHXqU7fibBWDipsd1TZcJcOwqVVHJftDRBtFiHsie4WBI3DXIcQqAUgj5SKmeXH/6AyDrZK5HS8ef0fVaLgTHitK22SZhBJMphbFtevgEcuwwrBfIrURHvLeLWZBF4WBDbIs9Hqk/sEnaAIMn3GyRF7IfcMEkvPC2ROvYJO2A7KbrNntBAqxvcDCasg02DgnMDQ2EGEKXIXeDxNWlry/pt+dRIo0y8rRtsDkE1botApwQQ+hKlrMgcXWlr69e4WATtrVZsDlE/PyhJh/Y4DACHCnrPAtSf+8VDjr8jn872G4qBBPYsIvZe+GIXyVuWIWHraoSsRtkETjYYoaZxAgLwhQA8RzBnsSmNOA7cDyOvqSmPU9DFoGDZtiCTbESWJgJ5eRQ7ojm2A0fsqUX9vKqxZ8DsCjfb45ToE6NH3UYqqO7BHDggyZ4tXgr4THlGyZOGHaEhoi+pK5feYjoEHaqqYVtMGhvPl6DTauIR/FWoiEQtxKHhpgKXV9Ehi7ohG6tp/lO07ZhkymWhryDB/vpA6B4PLp3d+Mznus3BFxyRF+8y/6/xyMBwUgO7PObQCIf2AdMDYkjaGCfgDXowD6ia0iR/6v/hvgH4k9DCSezZfMAAAAASUVORK5CYII=" alt="An email request has been sent">
-         <span>${config.thanks}</span>`;
-    modal.overlay.appendChild(messageContainer);
+        `<span>${config.thanks}</span>
+        <span id="btnAcknowledged" class="modal-ok-close"></span>`;
+    modal.modalOverlay.appendChild(messageContainer);
 
     // Display message
-    messageContainer.style.display = 'flex';
+    messageContainer.style.display = 'grid';
+    messageContainer.style.position = 'relative';
+    messageContainer.style.textAlign = 'center';
     messageContainer.classList.add('fade-in-fast');
 
-    // Confirm to user
+    // Create dismiss option
+    document.getElementById('btnAcknowledged').addEventListener('click', () => {
+      messageContainer.classList.remove('fade-in-fast');
+      messageContainer.style.display = 'none';
+      messageContainer.style.display = 'none';
+      modal.modalContainer.style.display = "block";
+      resetBookingRequestForm();
+    });
+
+    // dismiss if user hasn't
     setTimeout(() => {
       messageContainer.classList.remove('fade-in-fast');
       messageContainer.style.display = 'none';
       messageContainer.style.display = 'none';
-      modal.container.style.display = "block";
-      formReset();
-    }, 2000);
+      modal.modalContainer.style.display = "block";
+      resetBookingRequestForm();
+    }, 15000);
+
   }
 
-  function formReset() {
-    document.getElementById('btnCancel').style.display = 'block'
+  function resetBookingRequestForm() {
+    // show cancel option
+    document.getElementById('btnCancel').style.display = 'block';
+    // reset submit button
     const btnSubmit = document.getElementById('btnSubmit')
     btnSubmit.innerHTML = "Booking Request"
     btnSubmit.disabled = false;
+
     modal.close();
   }
 
+  async function initDatePicker(advance_days) {
 
+    // list of unavailable dates
+    let blockedDates = [];
+
+    // wait until we've fetched any blacked dates
+    await fetch(`${api}/public/blocked`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        api_key: 'e21421ieb2l1eb2134g21ieg21be2i1n42432',
+        user_code: 'CF-418-apptiser',
+        restaurant_id: htmlData.id,
+        advance_days,
+        include_closed: 'true'
+      })
+    })
+        .then((response) => {
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          return response.json();
+    })
+        .then((data) => {
+          const { blocked_dates } = data;
+          console.log(blocked_dates);
+          blockedDates = blocked_dates.map((item) => new Date(item.date));
+    })
+        .catch((e) => console.error('RDL', e))
+
+    return blockedDates;
+  }
 
   // Update DOM after window load
   window.addEventListener('load', function () {
@@ -320,32 +357,6 @@ export default function (config){
 
     const selectCovers = document.getElementById('selectCovers');
     const selectTime = document.getElementById('selectTime');
-
-    // Generate request summary
-    bkgForm.addEventListener('submit', (e) => {
-
-      e.preventDefault();
-
-      // Update the latest params
-      bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
-      bkgParams.bkgSize = document.getElementById('selectCovers').value;
-      bkgParams.bkgTime = document.getElementById('selectTime').value;
-
-      // Display request summary
-      openEmailRequest();
-
-    });
-
-    // Update the mock cover & time select fields
-    selectCovers.addEventListener('change', (e) => {
-      const covers = e.target;
-      document.getElementById('txtCovers').innerHTML = covers?.value;
-    });
-
-    selectTime.addEventListener('change', (e) => {
-      const time = e.target;
-      document.getElementById('txtTime').innerHTML = time?.value;
-    });
 
     // Date input field
     const selectDate = document.getElementById('selectDate');
@@ -359,8 +370,33 @@ export default function (config){
     const person = selectCovers.dataset.labelPerson || 'person';
     const people = selectCovers.dataset.labelPeople || 'people';
 
-    const options = document.createDocumentFragment();
+    // Create booking request summary
+    bkgForm.addEventListener('submit', (e) => {
+      e.preventDefault();
 
+      // Update the latest params
+      bkgParams.bkgDate = document.getElementById('bkgDateInput').value;
+      bkgParams.bkgSize = document.getElementById('selectCovers').value;
+      bkgParams.bkgTime = document.getElementById('selectTime').value;
+
+      // Display request summary
+      openBookingRequestSummary();
+
+    });
+
+    // Update the mock cover & time select fields
+    selectCovers.addEventListener('change', (e) => {
+      const covers = e.target;
+      document.getElementById('txtCovers').innerHTML = covers?.value;
+    });
+    selectTime.addEventListener('change', (e) => {
+      const time = e.target;
+      document.getElementById('txtTime').innerHTML = time?.value;
+    });
+
+    // build DOM elements
+    const options = document.createDocumentFragment();
+    // Cover select
     for (let i = 1; i <= bkgMaxCovers; i++) {
       let opt = document.createElement('option');
       opt.innerHTML = `${i} ${people}`;
@@ -371,40 +407,40 @@ export default function (config){
     }
     selectCovers.appendChild(options);
 
+    // load disabled dates & init calendar picker
+    initDatePicker(bkgAdvDays || 60)
+        .then((blockedDatesArray) => {
+          const fp = flatpickr (selectDate, {
+            dateFormat: 'D, d M Y',
+            defaultDate: 'today',
+            disable: blockedDatesArray,
+            minDate: 'today',
+            // Max date doesn't play nicely on iPhone/iPad
+            maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
+            monthSelectorType: 'static',
+            disableMobile: "false",
+            locale: htmlLang === 'fr' ? French : 'en',
+            wrap: true,
+            clickOpens: false,
+            onChange: (selectedDate, dateStr) => {
+              dateInput.value = dateStr;
+            }
+          });
+          // open flatpickr manually so that we can trigger it from
+          // anywhere in the containing element - i.e. including the icons
+          selectDate.addEventListener('click', () => {
+            fp.open();
+          });
+          // Hide if flatpickr activates the mobile UI
+          // which uses a native date picker
+          if(!!document.querySelector('.flatpickr-mobile')) {
+            const elems = document.querySelectorAll('.hide-on-mobile');
+            elems.forEach( el => {
+              el.style.opacity = '0';
+            })
+          }
+        });
 
-    // Use 3rd party datepicker as Safari
-    // doesn't support the Html5 default picker
-
-    const fp = flatpickr (selectDate, {
-      dateFormat: 'D, d M Y',
-      defaultDate: 'today',
-      disable: [],
-      minDate: 'today',
-      // Max date doesn't play nicely on iPhone/iPad
-      maxDate: iOS ? null : new Date().fp_incr(bkgAdvDays),
-      monthSelectorType: 'static',
-      disableMobile: "false",
-      locale: htmlLang === 'fr' ? French : 'en',
-      wrap: true,
-      clickOpens: false,
-      onChange: (selectedDate, dateStr) => {
-        dateInput.value = dateStr;
-      }
-    });
-    // open flatpickr manually so that we can trigger it from
-    // anywhere in the containing element - i.e. including the icons
-    selectDate.addEventListener('click', () => {
-      fp.open();
-    })
-
-    // Hide if flatpickr activates the mobile UI
-    // which uses a native date picker
-    if(!!document.querySelector('.flatpickr-mobile')) {
-      const elems = document.querySelectorAll('.hide-on-mobile');
-      elems.forEach( el => {
-        el.style.opacity = '0';
-      })
-    }
   });
 
 };

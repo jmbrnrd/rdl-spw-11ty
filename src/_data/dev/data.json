@@ -190,7 +190,7 @@
     },
     "reservations": {
         "maxCovers": 6,
-        "advanceDays": 30,
+        "advanceDays": 90,
         "person": "person",
         "people": "people",
         "provider": {
@@ -202,6 +202,23 @@
         "info": "For table reservations, please telephone the restaurant during opening hours.",
         "groups": "For group reservations, please contact Bruno Mafflard by email at info@sarao-restaurant.com or by phone at +33 (0) 4 92 00 50 90.",
         "private": "We have several spaces than we can offer for private functions ranging from 10 to 130 seats. We also offer the entire restaurant for private events."
+    },
+    "rooms": {
+        "info": "All rooms at The Deddington Arms provide en suite private bathrooms, free Wi-Fi, and TVs with Sky channels. Guests can also make use of hairdryers and tea/coffee facilities. Some rooms also overlook Deddington's market square.\n\nGuests can enjoy award-winning, locally sourced fresh food at the hotel restaurant, which offers both á la carte and vegetarian menus. Fresh fish and a traditional Sunday roast are also available.\n\nWith its weekly farmers market and lively market square, Deddington also has the remains of the Norman Deddington Castle. Broughton Castle is just a 15-minute drive  and Blenheim Palace is 20 minutes’ drive away.  Free parking is available, and the M40 motorway is just 10 minutes away by car.",
+        "images": {
+            "default": "Jacobs-Plough-Oxfordshire-Bedroom-4",
+            "gallery": [
+                "Jacobs-Plough-Oxfordshire-Bedroom-4",
+                "Jacobs-Plough-Oxfordshire-Bedroom-4",
+                "Jacobs-Plough-Oxfordshire-Bedroom-4"
+            ]
+        },
+        "provider": {
+            "name": "Email",
+            "id": "email",
+            "key": "",
+            "url": "https://apptiseer.io"
+        }
     },
     "config": {
         "theme": "apptiser",

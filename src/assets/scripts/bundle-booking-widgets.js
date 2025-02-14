@@ -8,10 +8,29 @@ import serbWidget from './modules/booking-widget-serb';
 import resdiaryWidget from './modules/booking-widget-resdiary'
 import opentableWidget from './modules/booking-widget-opentable';
 import resyWidget from './modules/booking-widget-resy';
+import roomsWidgetEmail from './modules/rooms-widget-email';
 
-init()
 
-function init() {
+initTableBookings();
+initRoomBookings();
+
+function initRoomBookings() {
+
+    // Abort if there is no ROOMS section
+    if (!document.getElementById('rooms')) {
+        console.warn('No ROOMS section found');
+        return false;
+    }
+
+    // Reference section data
+    const rooms = document.getElementById('rooms');
+    console.log('ROOMS data', rooms.dataset);
+
+    roomsWidgetEmail(rooms.dataset)
+
+}
+
+function initTableBookings() {
 
     // Abort if there is no reservation section
     if (!document.getElementById('reservations')) {
