@@ -341,11 +341,9 @@ export default function (config){
           return response.json();
     })
         .then((data) => {
-        // console.log(data);
-        // create an array of date objects
-        data['blocked_dates'].forEach((item) => {
-          blockedDates.push(new Date(item['date']));
-        });
+          const { blocked_dates } = data;
+          console.log(blocked_dates);
+          blockedDates = blocked_dates.map((item) => new Date(item.date));
     })
         .catch((e) => console.error('RDL', e))
 
